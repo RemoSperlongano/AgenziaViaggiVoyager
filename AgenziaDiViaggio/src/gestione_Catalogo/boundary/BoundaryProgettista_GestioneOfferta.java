@@ -1,5 +1,5 @@
 /**
- * 
+ * Boudary del progettista...
  */
 package gestione_Catalogo.boundary;
 
