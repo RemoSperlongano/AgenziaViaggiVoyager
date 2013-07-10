@@ -19,10 +19,10 @@ import java.util.Set;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class ControlloreGestionePrenotazione extends Controllore{
+public class ControlloreAggiungiPrenotazione extends Controllore{
 	
 	//costruttore
-	public ControlloreGestionePrenotazione(){
+	public ControlloreAggiungiPrenotazione(){
 		super();
 	}
 	

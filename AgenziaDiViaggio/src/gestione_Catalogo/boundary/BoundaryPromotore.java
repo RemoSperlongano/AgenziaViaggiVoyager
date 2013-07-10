@@ -125,22 +125,6 @@ public class BoundaryPromotore {
 		//Ascoltatori per secondo pannello
 		ascoltatoreGestioneCatalogo = new GestioneCatalogoAA();
 		bottoneGestioneCatalogo.addActionListener(ascoltatoreGestioneCatalogo);
-		
-		
-		/*
-		 * 
-		 * Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
-		 * 
-		 */
-		
-		
-		panelNext = new JPanel();
-		panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
-		panelNext.setLocation(0, superPanel.getHeight()/10*2);
-		panelNext.setBackground(Color.BLACK);
-		panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
-		panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
-		superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
 	    	
 	    	
 	    }
@@ -210,10 +194,24 @@ public class BoundaryPromotore {
 				panelTitolo.setVisible(true);
 				panelBottoni.setVisible(false);
 				panelBottoni.setVisible(true);
-				new BoundaryPromotore_GestioneCatalogo(panelNext);  //Passo il resto del Pannello
 				
 				//Disattivo tutti i bottoni di questo Pannello
 				bottoneGestioneCatalogo.setEnabled(false); 
+				
+				
+				//Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
+				panelNext.setLocation(0, superPanel.getHeight()/10*2);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryPromotore_GestioneCatalogo(panelNext);  //Passo il resto del Pannello
+				
+				
 			}
 			
 		}

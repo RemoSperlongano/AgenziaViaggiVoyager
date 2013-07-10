@@ -119,21 +119,6 @@ public class BoundaryVenditore {
 		ascoltatoreGestionePrenotazione = new GestionePrenotazioneAA();
 		bottoneGestionePrenotazione.addActionListener(ascoltatoreGestionePrenotazione);
 		
-		
-		/*
-		 * 
-		 * Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
-		 * 
-		 */
-		
-		
-		panelNext = new JPanel();
-		panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
-		panelNext.setLocation(0, superPanel.getHeight()/10*2);
-		panelNext.setBackground(Color.BLACK);
-		panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
-		panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
-		superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
 	    	
 	    	
 	    }
@@ -203,10 +188,23 @@ public class BoundaryVenditore {
 				panelTitolo.setVisible(true);
 				panelBottoni.setVisible(false);
 				panelBottoni.setVisible(true);
-				new BoundaryVenditore_GestionePrenotazione(panelNext);  //Passo il resto del Pannello
 				
 				//Disattivo tutti i bottoni di questo Pannello
 				bottoneGestionePrenotazione.setEnabled(false); 
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
+				panelNext.setLocation(0, superPanel.getHeight()/10*2);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryVenditore_GestionePrenotazione(panelNext);  //Passo il resto del Pannello
+				
+			
 			}
 			
 		}
