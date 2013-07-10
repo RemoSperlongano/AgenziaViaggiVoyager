@@ -295,3 +295,133 @@ Data di Partenza: 17/07/2013, 07:00
 Data di Arrivo: 17/07/2013, 08:05
 Posti disponibili: 20
 
+[10/07/2013, 11:31:26] RIMOSSA OFFERTA: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 17/07/2013, 07:00
+
+[10/07/2013, 11:31:51] AGGIUNTA NUOVA OFFERTA: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 17/07/2013, 07:00
+Data di Arrivo: 17/07/2013, 08:05
+Posti disponibili: 20
+
+[10/07/2013, 11:39:07] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[10/07/2013, 11:39:07] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[10/07/2013, 11:39:07] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[10/07/2013, 11:39:08] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[10/07/2013, 11:39:08] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[10/07/2013, 11:39:08] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[10/07/2013, 11:39:08] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[10/07/2013, 11:39:09] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[10/07/2013, 11:39:09] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[10/07/2013, 11:39:09] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[10/07/2013, 11:39:10] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[10/07/2013, 11:39:10] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[10/07/2013, 11:39:10] AGGIUNTO VIAGGIO Via Terra:
+Treno  ->  Roma : Milano  ->  (Diretto)
+
+[10/07/2013, 11:39:10] AGGIUNTO VIAGGIO Via Terra:
+Treno  ->  Roma : Parigi  ->  (Diretto)
+
+[10/07/2013, 11:39:11] AGGIUNTO VIAGGIO Via Terra:
+Treno  ->  Roma : Ginevra  ->  (Diretto)
+
+[10/07/2013, 11:39:11] AGGIUNTO VIAGGIO Via Terra:
+Treno  ->  Napoli : Cagliari  ->  (Diretto)
+
+[10/07/2013, 11:39:11] AGGIUNTO VIAGGIO Via Terra:
+Treno  ->  Napoli : Isernia  ->  (Diretto)
+
+[10/07/2013, 11:39:11] AGGIUNTO VIAGGIO Via Terra:
+Treno  ->  Napoli : Torino  ->  (Diretto)
+
+[10/07/2013, 11:39:12] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Milano  ->  (Diretto)
+
+[10/07/2013, 11:39:12] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Parigi  ->  (Diretto)
+
+[10/07/2013, 11:39:12] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Ginevra  ->  (Diretto)
+
+[10/07/2013, 11:39:12] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Cagliari  ->  (Diretto)
+
+[10/07/2013, 11:39:13] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Isernia  ->  (Diretto)
+
+[10/07/2013, 11:39:13] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Torino  ->  (Diretto)
+
+[10/07/2013, 11:39:13] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Milano  ->  (Diretto)
+
+[10/07/2013, 11:39:14] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Parigi  ->  (Diretto)
+
+[10/07/2013, 11:39:14] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Ginevra  ->  (Diretto)
+
+[10/07/2013, 11:39:16] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Cagliari  ->  (Diretto)
+
+[10/07/2013, 11:39:16] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Isernia  ->  (Diretto)
+
+[10/07/2013, 11:39:17] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Torino  ->  (Diretto)
+
+[10/07/2013, 11:39:17] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Milano  ->  (Diretto)
+
+[10/07/2013, 11:39:17] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Parigi  ->  (Diretto)
+
+[10/07/2013, 11:39:17] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Ginevra  ->  (Diretto)
+
+[10/07/2013, 11:39:17] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Cagliari  ->  (Diretto)
+
+[10/07/2013, 11:39:18] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Isernia  ->  (Diretto)
+
+[10/07/2013, 11:39:18] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Torino  ->  (Diretto)
+
+[10/07/2013, 11:42:00] AGGIUNTA NUOVA OFFERTA: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 17/07/2013, 07:00
+Data di Arrivo: 17/07/2013, 08:05
+Posti disponibili: 20
+
+[10/07/2013, 11:42:18] AGGIUNTA NUOVA OFFERTA: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 18/07/2013, 10:00
+Data di Arrivo: 18/07/2013, 11:10
+Posti disponibili: 25
+
