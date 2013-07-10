@@ -97,6 +97,10 @@ public class BoundaryVenditore_GestionePrenotazione {
 	private JLabel labelCognomePannello2;
 	private JTextField campoCognomePannello2;
 	
+	private JLabel labelEmailPannello2;
+	private JTextField campoEmailPannello2;
+	
+	private JButton bottoneAggiungiBiglietto;	
 
 	private JButton bottoneAggiungi;
 	private JButton bottoneSvuotaPannello2;
@@ -109,6 +113,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 	private TendinaArriviPannello2AA ascoltatoreTendinaArriviPannello2;
 	private TendinaViaPannello2AA ascoltatoreTendinaViaPannello2;
 	private TendinaOffertePannello2AA ascoltatoreTendinaOffertePannello2;
+	private AggiungiBigliettoAA ascoltatoreBottoneAggiungiBiglietto;
 	private ChiudiPannello2AA ascoltatoreBottoneChiudiPannello2;
 	private AggiungiAA ascoltatoreBottoneAggiungi;
 	private SvuotaPannello2AA ascoltatoreBottoneSvuotaPannello2;
@@ -137,13 +142,9 @@ public class BoundaryVenditore_GestionePrenotazione {
 	private JLabel labelOffertaPannello3;
 	private JComboBox<String> tendinaOffertaPannello3;
 	
-	private JLabel labelNomePannello3;
-	private JTextField campoNomePannello3;
+	private JLabel labelPrenotazionePannello3;
+	private JComboBox<String> tendinaPrenotazionePannello3;
 	
-	private JLabel labelCognomePannello3;
-	private JTextField campoCognomePannello3;
-	
-
 	private JButton bottoneRimuovi;
 	private JButton bottoneSvuotaPannello3;
 	
@@ -336,6 +337,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 		areaTestoPannello2.setFont(new Font("Arial", 0, 15));
 		areaTestoPannello2.setEditable(false);
 		areaTestoPannello2.setLineWrap(false);
+		areaTestoPannello2.setCaretPosition(0);
 		scrollAreaTestoPannello2 = new JScrollPane(areaTestoPannello2);   //creo un piccolo scroll e lo aggiungo alla text area
 		scrollAreaTestoPannello2.setBounds(panel2.getWidth()/11-35, panel2.getHeight()/6*2-20, panel2.getWidth()/2-50, panel2.getHeight()/6*3);
 		panel2.add(scrollAreaTestoPannello2);
@@ -384,16 +386,34 @@ public class BoundaryVenditore_GestionePrenotazione {
 	    
 	    
 	    
+	    labelEmailPannello2 = new JLabel();
+	    labelEmailPannello2.setFont(new Font("Arial",0,15));
+	    labelEmailPannello2.setBounds(panel2.getWidth()/4*2+50, panel2.getHeight()/6*4-40,panel2.getWidth()/6, 20);
+	    labelEmailPannello2.setText("Email");
+		panel2.add(labelEmailPannello2);
+	    
+		campoEmailPannello2 = new JTextField(panel2.getWidth()/6);
+		campoEmailPannello2.setFont(new Font("Arial", 0, 18));
+		campoEmailPannello2.setBounds(panel2.getWidth()/4*2+50, panel2.getHeight()/6*4-20, panel2.getWidth()/6, 20);
+		campoEmailPannello2.setEditable(false);
+	    panel2.add(campoEmailPannello2);
+	    
+	    
+	    bottoneAggiungiBiglietto = new JButton("AGGIUNGI BIGLIETTO");
+	    bottoneAggiungiBiglietto.setBounds(panel2.getWidth()/4*3, panel2.getHeight()/6*4-20, panel2.getWidth()/6, 20);
+		panel2.add(bottoneAggiungiBiglietto);
 		
 	    
+		
+		
 	    bottoneSvuotaPannello2 = new JButton("AZZERA CAMPI");
 		bottoneSvuotaPannello2.setBackground(Color.YELLOW);
-		bottoneSvuotaPannello2.setBounds(panel2.getWidth()/5*3-60, panel2.getHeight()/6*4, panel2.getWidth()/5, panel2.getHeight()/14);
+		bottoneSvuotaPannello2.setBounds(panel2.getWidth()/5*3-60, panel2.getHeight()/6*5-20, panel2.getWidth()/5, panel2.getHeight()/14);
 		panel2.add(bottoneSvuotaPannello2);
 		
 		bottoneAggiungi = new JButton("AGGIUNGI PRENOTAZIONE");
 		bottoneAggiungi.setBackground(Color.ORANGE);
-		bottoneAggiungi.setBounds(panel2.getWidth()/5*4-25, panel2.getHeight()/6*4, panel2.getWidth()/5, panel2.getHeight()/14);
+		bottoneAggiungi.setBounds(panel2.getWidth()/5*4-25, panel2.getHeight()/6*5-20, panel2.getWidth()/5, panel2.getHeight()/14);
 		panel2.add(bottoneAggiungi);
 		
 		bottoneChiudiPannello2 = new JButton("X");
@@ -422,6 +442,9 @@ public class BoundaryVenditore_GestionePrenotazione {
 		
 		ascoltatoreTendinaOffertePannello2 = new TendinaOffertePannello2AA();
 		tendinaOffertaPannello2.addActionListener(ascoltatoreTendinaOffertePannello2);
+		
+		ascoltatoreBottoneAggiungiBiglietto = new AggiungiBigliettoAA();
+		bottoneAggiungiBiglietto.addActionListener(ascoltatoreBottoneAggiungiBiglietto);
 		
 		ascoltatoreBottoneChiudiPannello2 = new ChiudiPannello2AA();
 		bottoneChiudiPannello2.addActionListener(ascoltatoreBottoneChiudiPannello2);
@@ -537,6 +560,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 		areaTestoPannello3.setFont(new Font("Arial", 0, 15));
 		areaTestoPannello3.setEditable(false);
 		areaTestoPannello3.setLineWrap(false);
+		areaTestoPannello3.setCaretPosition(0);
 		scrollAreaTestoPannello3 = new JScrollPane(areaTestoPannello3);   //creo un piccolo scroll e lo aggiungo alla text area
 		scrollAreaTestoPannello3.setBounds(panel3.getWidth()/11-35, panel3.getHeight()/6*2-20, panel3.getWidth()/2-50, panel3.getHeight()/6*3);
 		panel3.add(scrollAreaTestoPannello3);
@@ -559,32 +583,21 @@ public class BoundaryVenditore_GestionePrenotazione {
 		
 		
 		
-		labelNomePannello3 = new JLabel();
-		labelNomePannello3.setFont(new Font("Arial",0,15));
-		labelNomePannello3.setBounds(panel3.getWidth()/4*2+50, panel3.getHeight()/6*3-20,panel3.getWidth()/6, 20);
-		labelNomePannello3.setText("Nome");
-		panel3.add(labelNomePannello3);
-		
-		campoNomePannello3 = new JTextField(panel3.getWidth()/6);
-		campoNomePannello3.setFont(new Font("Arial", 0, 18));
-		campoNomePannello3.setBounds(panel3.getWidth()/4*2+50, panel3.getHeight()/6*3, panel3.getWidth()/6, 20);
-		campoNomePannello3.setEditable(false);
-	    panel3.add(campoNomePannello3);
+		labelPrenotazionePannello3 = new JLabel();
+		labelPrenotazionePannello3.setFont(new Font("Arial",0,15));
+		labelPrenotazionePannello3.setBounds(panel3.getWidth()/4*2+100, panel3.getHeight()/6*3-20,panel3.getWidth()/6, 20);
+		labelPrenotazionePannello3.setText("Prenotazione");
+		panel3.add(labelPrenotazionePannello3);
 		
 		
+		tendinaPrenotazionePannello3 = new JComboBox<String>();
+		tendinaPrenotazionePannello3.setBackground(Color.WHITE);
+		tendinaPrenotazionePannello3.setBounds(panel3.getWidth()/4*2+100, panel3.getHeight()/6*3, panel3.getWidth()/4, 20);
+		tendinaPrenotazionePannello3.setEnabled(false);
+		panel3.add(tendinaPrenotazionePannello3);
 		
-		labelCognomePannello3 = new JLabel();
-		labelCognomePannello3.setFont(new Font("Arial",0,15));
-		labelCognomePannello3.setBounds(panel3.getWidth()/4*3, panel3.getHeight()/6*3-20,panel3.getWidth()/6, 20);
-		labelCognomePannello3.setText("Cognome");
-		panel3.add(labelCognomePannello3);
 		
-		campoCognomePannello3 = new JTextField(panel3.getWidth()/6);
-		campoCognomePannello3.setFont(new Font("Arial", 0, 18));
-		campoCognomePannello3.setBounds(panel3.getWidth()/4*3, panel3.getHeight()/6*3, panel3.getWidth()/6, 20);
-		campoCognomePannello3.setEditable(false);
-	    panel3.add(campoCognomePannello3);
-	    
+		
 		
 		
 		bottoneSvuotaPannello3 = new JButton("AZZERA CAMPI");
@@ -1123,6 +1136,9 @@ public class BoundaryVenditore_GestionePrenotazione {
 	   		campoCognomePannello2.setText("");
 			campoCognomePannello2.setEditable(false);
 			
+			campoEmailPannello2.setText("");
+			campoEmailPannello2.setEditable(false);
+			
 			
 			offertaScelta = (String) tendinaOffertaPannello2.getSelectedItem();
 			
@@ -1130,8 +1146,24 @@ public class BoundaryVenditore_GestionePrenotazione {
 			
 					campoNomePannello2.setEditable(true);
 					campoCognomePannello2.setEditable(true);
+					campoEmailPannello2.setEditable(true);
 			
 			}
+			
+		}
+		
+	}
+	
+	
+	private class AggiungiBigliettoAA implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+			/*
+			 * DA IMPLEMENTARE
+			 */
 			
 		}
 		
@@ -1142,6 +1174,10 @@ public class BoundaryVenditore_GestionePrenotazione {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			
+			/*
+			 * DA IMPLEMENTARE
+			 */
 
 		/*	if (tendinaOffertaPannello3.getItemCount() != 0){
 			
@@ -1479,19 +1515,17 @@ public class BoundaryVenditore_GestionePrenotazione {
 		public void actionPerformed(ActionEvent e) {
 			
 			
-	   		campoNomePannello3.setText("");
-			campoNomePannello3.setEditable(false);
-			
-	   		campoCognomePannello3.setText("");
-			campoCognomePannello3.setEditable(false);
+			tendinaPrenotazionePannello3.removeAllItems();
+			tendinaPrenotazionePannello3.setEnabled(false);
 			
 			
 			offertaScelta = (String) tendinaOffertaPannello3.getSelectedItem();
 			
 			if (tendinaOffertaPannello3.getItemCount() != 0 && !offertaScelta.equals("-----")){
 			
-					campoNomePannello3.setEditable(true);
-					campoCognomePannello3.setEditable(true);
+				/*
+				 * DA IMPLEMENTARE
+				 */
 			
 			}
 			
@@ -1504,7 +1538,11 @@ public class BoundaryVenditore_GestionePrenotazione {
 	private class RimuoviAA implements ActionListener{
 
 		@Override
-		public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent e) {	
+			
+			/*
+			 * DA IMPLEMENTARE
+			 */
 			
 	/*		if (tendinaOffertaPannello3.getItemCount() != 0){
 				
