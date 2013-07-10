@@ -115,9 +115,10 @@ public class DBTest {
 				"CREATE TABLE IF NOT EXISTS offerta(" +
 						"ID INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, " +
 						"idtratta INTEGER, " +
-						"datapartenza DATE, " +
-						"dataarrivo DATE, " +
+						"datapartenza DATETIME, " +
+						"dataarrivo DATETIME, " +
 						"posti INTEGER, " +
+						"datainserimento DATETIME, " +
 						"FOREIGN KEY (idtratta) REFERENCES catalogo (ID) "   +
 						")";
 		

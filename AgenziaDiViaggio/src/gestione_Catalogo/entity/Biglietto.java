@@ -7,6 +7,8 @@ package gestione_Catalogo.entity;
  */
 public class Biglietto {
 	
+	private Integer idBiglietto;
+	public Integer idPrenotazione;
 	private Viaggiatore viaggiatore;
 
 }

@@ -33,6 +33,7 @@ public class Catalogo {
 	private Catalogo() {
 		listaTratte = new ArrayList<Tratta>();
 		listaOfferte = new ArrayList<Offerta>();
+		listaPrenotazioni = new ArrayList<Prenotazione>();
 		mappaCatalogo = new MappaCatalogo(); //istanziato il catalogo, creo subito una mappa per gli ambienti
 		CatalogoDAO dao = CatalogoDAO.getIstanza();
 		listaTratte = dao.getCatalogo();
