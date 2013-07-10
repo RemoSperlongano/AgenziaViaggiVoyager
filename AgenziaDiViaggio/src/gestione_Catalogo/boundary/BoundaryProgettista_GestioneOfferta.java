@@ -14,6 +14,7 @@ import gestione_Catalogo.exception.OffertaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
 import gestione_Catalogo.exception.PrenotazioneException;
+import gestione_Catalogo.exception.QuantitaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.awt.Color;
@@ -945,6 +946,18 @@ public class BoundaryProgettista_GestioneOfferta {
 			
 			
 		}
+		
+		
+		private void controlloSintatticoDati(int durata, int posti) throws QuantitaException {
+			if (durata == 0){
+				throw new QuantitaException("La durata del viaggio non può essere nulla. Inserire una durata maggiore di 0 minuti.");
+			}
+			if (posti == 0){
+				throw new QuantitaException("I posti disponibili non possono essere nulli. Inserire una quantita' di posti maggiore di 0.");
+			}
+			
+		}
+
     	
     
     
@@ -1436,6 +1449,8 @@ public class BoundaryProgettista_GestioneOfferta {
 						int posti = Integer.parseInt(campoPostiPannello2.getText());
 					
 						Integer[] data = {giorno, mese, anno, ora, minuto};
+						
+						controlloSintatticoDati(durata, posti);
 					
 						// chiedo conferma
 						int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere l'offerta per il viaggio?", "Conferma Aggiunta Offerta", JOptionPane.YES_NO_OPTION);
@@ -1456,6 +1471,8 @@ public class BoundaryProgettista_GestioneOfferta {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (OffertaException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+					} catch (QuantitaException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
 					}
 						
 				} else {
@@ -1463,6 +1480,7 @@ public class BoundaryProgettista_GestioneOfferta {
 				}
 				
 			}
+
 
 		}
 	
