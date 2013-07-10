@@ -50,6 +50,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 	private String areaTestoOfferta;
 	private String areaTestoCatalogo;
 	private String areaTestoImp;
+	private String areaTestoPrenotazione;
 	
 	private ArrayList<String> listaNomi;
 	private ArrayList<String> listaCognomi;
@@ -179,7 +180,8 @@ public class BoundaryVenditore_GestionePrenotazione {
 		arrivoScelto = null;
 		viaScelta = null;
 		offertaScelta = null;
-		areaTestoOfferta = null;
+		areaTestoOfferta = "";
+		areaTestoPrenotazione = "";
 		
 		listaNomi = new ArrayList<String>();
 		listaCognomi = new ArrayList<String>();
@@ -762,6 +764,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 			
 			areaTestoPannello2.setText("");
 			areaTestoOfferta="";
+			areaTestoPrenotazione="BIGLIETTI PER LA PRENOTAZIONE:\n";
 			
 			if (tendinaOffertaPannello2.getItemCount() != 0) {
 				
@@ -769,11 +772,21 @@ public class BoundaryVenditore_GestionePrenotazione {
 				if (!tendinaOffertaPannello2.equals("-----")){
 					
 					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
-
-					//ImpostoareaTestoOfferta
-					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta; 
 					
-					areaTestoPannello2.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);
+					//ImpostoareaTestoOfferta
+					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
+					
+					if (!listaNomi.isEmpty()){
+						for (int i=0; i<listaNomi.size(); i++){
+							areaTestoPrenotazione+= i+1 + "\t" + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
+						}
+					} else {
+						areaTestoPrenotazione = "Non ci sono ancora biglietti per questa prenotazione.";
+					}
+
+					
+					
+					areaTestoPannello2.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione);
 					
 				}
 				
@@ -1216,15 +1229,27 @@ public class BoundaryVenditore_GestionePrenotazione {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {			
-				
+			
 			String nome = campoNomePannello2.getText();
 			String cognome = campoCognomePannello2.getText();
 			String email = campoEmailPannello2.getText();
+			
+			if (nome.equals("")||cognome.equals("")||email.equals("")){
+				JOptionPane.showMessageDialog(null, "Tutti i campi devono essere completati!", "Attenzione!", JOptionPane.WARNING_MESSAGE);
+			} else {
 				
-			listaNomi.add(nome);
-			listaCognomi.add(cognome);
-			listaEmail.add(email);
-				
+				listaNomi.add(nome);
+				listaCognomi.add(cognome);
+				listaEmail.add(email);
+			
+				aggiornaPrenotazioniPannello2();
+			
+				campoNomePannello2.setText("");
+				campoCognomePannello2.setText("");
+				campoEmailPannello2.setText("");
+			
+			}
+
 		}
 		
 	}
