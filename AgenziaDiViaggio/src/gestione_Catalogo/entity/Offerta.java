@@ -16,28 +16,33 @@ public class Offerta {
 	private Integer posti;
 	private MappaPrenotazioni mappaPrenotazioni;
 	
+	private Data dataInserimento;
+	
 
 	public Offerta(Integer idTratta, Data dataPartenza, Integer durata, Integer posti) {
 		this.idTratta = idTratta;
 		this.dataPartenza = dataPartenza;
 		this.dataArrivo = dataPartenza.getNuovaData(durata);
 		this.posti = posti;
+		this.dataInserimento = new Data();
 		this.mappaPrenotazioni = new MappaPrenotazioni();
+
 		
 		//inserisco l'offerta appena creata nel db
 		OffertaDAO dao = OffertaDAO.getIstanza();
-		this.idOfferta = dao.insertAndReturnId(idTratta, dataPartenza, dataPartenza, posti);
+		this.idOfferta = dao.insertAndReturnId(idTratta, dataPartenza, dataPartenza, posti, dataInserimento);
 	}
 	
 	
 	
-	public Offerta(Integer idOfferta, Integer idTratta, Data dataPartenza, Data dataArrivo, Integer posti){
+	public Offerta(Integer idOfferta, Integer idTratta, Data dataPartenza, Data dataArrivo, Integer posti, Data dataInserimento){
 		this.idOfferta = idOfferta;
 		this.idTratta = idTratta;
 		this.dataPartenza = dataPartenza;
 		this.dataArrivo = dataArrivo;
 		this.posti = posti;
 		this.mappaPrenotazioni = new MappaPrenotazioni();
+		this.dataInserimento = dataInserimento;
 	}
 
 

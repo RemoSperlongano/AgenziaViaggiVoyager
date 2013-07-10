@@ -35,16 +35,17 @@ public class OffertaDAO extends DAO {
 					"datapartenza DATETIME, " +
 					"dataarrivo DATETIME, " +
 					"posti INTEGER, " +
+					"datainserimento DATETIME, " +
 					"FOREIGN KEY (idtratta) REFERENCES catalogo (ID) "   +
 					")";
 
 	private static final String insertQuery = 
 			"INSERT INTO offerta " +
-			"VALUES(?, ?, ?, ?, ?)";
+			"VALUES(?, ?, ?, ?, ?, ?)";
 	
 	private static final String insertByValueQuery = 
-		"INSERT INTO offerta(idtratta,datapartenza,dataarrivo,posti) " +
-		"VALUES(?, ?, ?, ?)";
+		"INSERT INTO offerta(idtratta,datapartenza,dataarrivo,posti, dataInserimento) " +
+		"VALUES(?, ?, ?, ?, ?)";
 	
 	private static final String updateQuery = 
 			"UPDATE offerta SET " +
@@ -93,7 +94,7 @@ public class OffertaDAO extends DAO {
 	 * La Insert viene invocata dal costruttore di Offerta, collegata alla creazione dell'oggetto
 	 * Questa particolare insert mi deve ritornare l'id da associare all'oggetto appena creato
 	 */
-	public Integer insertAndReturnId(Integer idTratta, Data dataPartenza, Data dataArrivo, Integer posti) {
+	public Integer insertAndReturnId(Integer idTratta, Data dataPartenza, Data dataArrivo, Integer posti, Data dataInserimento) {
 		ResultSet rs;
 		try {
 			conn = Persistenza.getConnection();
@@ -103,7 +104,7 @@ public class OffertaDAO extends DAO {
 			System.out.println(ps.toString());
 			
 			rs = ps.executeQuery();
-			if(rs.next()) { // elemento gi√† presente, ritorno direttamente l'ID. 
+			if(rs.next()) { // elemento gia'† presente, ritorno direttamente l'ID. 
 				Integer a = rs.getInt(1);
 				closeResource();
 				return a;
@@ -114,15 +115,16 @@ public class OffertaDAO extends DAO {
 				ps.setTimestamp(3, dataArrivo.getDataForDB());
 				//System.out.println(ps.toString());
 				ps.setInt(4, posti);
+				ps.setTimestamp(5, dataInserimento.getDataForDB());
 				ps.executeUpdate();
 				
-				// ora che l'elemento √® inserito, richiedo l'ID associato e lo ritorno.
+				// ora che l'elemento e' inserito, richiedo l'ID associato e lo ritorno.
 				ps = conn.prepareStatement(findByValueQuery);
 				ps.setInt(1, idTratta);
 				ps.setTimestamp(2, dataPartenza.getDataForDB());
 				rs = ps.executeQuery();
 				
-				if(rs.next()) { // elemento gi√† presente, ritorno direttamente l'ID. 
+				if(rs.next()) { // elemento gia'† presente, ritorno direttamente l'ID. 
 					Integer a = rs.getInt(1);
 					closeResource();
 					return a;
@@ -184,7 +186,8 @@ public class OffertaDAO extends DAO {
 				Data dataPartenza = new Data(rs.getTimestamp(3));
 				Data dataArrivo = new Data(rs.getTimestamp(4));
 				Integer posti = rs.getInt(5);
-				Offerta offerta = new Offerta(idOfferta, idTratta, dataPartenza, dataArrivo, posti);
+				Data dataInserimento = new Data(rs.getTimestamp(5));
+				Offerta offerta = new Offerta(idOfferta, idTratta, dataPartenza, dataArrivo, posti, dataInserimento);
 				listaOfferte.add(offerta);
 			}
 
