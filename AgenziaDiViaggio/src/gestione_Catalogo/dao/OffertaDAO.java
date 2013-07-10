@@ -186,7 +186,7 @@ public class OffertaDAO extends DAO {
 				Data dataPartenza = new Data(rs.getTimestamp(3));
 				Data dataArrivo = new Data(rs.getTimestamp(4));
 				Integer posti = rs.getInt(5);
-				Data dataInserimento = new Data(rs.getTimestamp(5));
+				Data dataInserimento = new Data(rs.getTimestamp(6));
 				Offerta offerta = new Offerta(idOfferta, idTratta, dataPartenza, dataArrivo, posti, dataInserimento);
 				listaOfferte.add(offerta);
 			}

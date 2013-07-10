@@ -744,6 +744,31 @@ public class BoundaryVenditore_GestionePrenotazione {
 					
 			} 
 		}
+		
+		private void aggiornaPrenotazioniPannello2(){
+			
+			offertaScelta = (String) tendinaOffertaPannello2.getSelectedItem();
+			
+			areaTestoPannello2.setText("");
+			areaTestoOfferta="";
+			
+			if (tendinaOffertaPannello2.getItemCount() != 0) {
+				
+				
+				if (!tendinaOffertaPannello2.equals("-----")){
+					
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+
+					//ImpostoareaTestoOfferta
+					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta; 
+					
+					areaTestoPannello2.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);
+					
+				}
+				
+		} 
+			
+		}
 			
     	
     	
@@ -1143,11 +1168,22 @@ public class BoundaryVenditore_GestionePrenotazione {
 			
 			offertaScelta = (String) tendinaOffertaPannello2.getSelectedItem();
 			
-			if (tendinaOffertaPannello2.getItemCount() != 0 && !offertaScelta.equals("-----")){
-			
+			if (tendinaOffertaPannello2.getItemCount() != 0){
+				
+				if (!offertaScelta.equals("-----")){
+					
 					campoNomePannello2.setEditable(true);
 					campoCognomePannello2.setEditable(true);
 					campoEmailPannello2.setEditable(true);
+					
+					aggiornaPrenotazioniPannello2();
+					
+				} else {
+					
+					aggiornaOffertePannello2();
+				}
+			
+					
 			
 			}
 			

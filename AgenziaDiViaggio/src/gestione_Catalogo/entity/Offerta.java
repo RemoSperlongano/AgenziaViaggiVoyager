@@ -30,7 +30,7 @@ public class Offerta {
 		
 		//inserisco l'offerta appena creata nel db
 		OffertaDAO dao = OffertaDAO.getIstanza();
-		this.idOfferta = dao.insertAndReturnId(idTratta, dataPartenza, dataPartenza, posti, dataInserimento);
+		this.idOfferta = dao.insertAndReturnId(idTratta, dataPartenza, dataArrivo, posti, dataInserimento);
 	}
 	
 	
