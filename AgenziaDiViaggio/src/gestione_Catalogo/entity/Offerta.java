@@ -14,6 +14,7 @@ public class Offerta {
 	private Data dataPartenza;
 	private Data dataArrivo;
 	private Integer posti;
+	private MappaPrenotazioni mappaPrenotazioni;
 	
 
 	public Offerta(Integer idTratta, Data dataPartenza, Integer durata, Integer posti) {
@@ -21,6 +22,7 @@ public class Offerta {
 		this.dataPartenza = dataPartenza;
 		this.dataArrivo = dataPartenza.getNuovaData(durata);
 		this.posti = posti;
+		this.mappaPrenotazioni = new MappaPrenotazioni();
 		
 		//inserisco l'offerta appena creata nel db
 		OffertaDAO dao = OffertaDAO.getIstanza();
@@ -35,6 +37,7 @@ public class Offerta {
 		this.dataPartenza = dataPartenza;
 		this.dataArrivo = dataArrivo;
 		this.posti = posti;
+		this.mappaPrenotazioni = new MappaPrenotazioni();
 	}
 
 
