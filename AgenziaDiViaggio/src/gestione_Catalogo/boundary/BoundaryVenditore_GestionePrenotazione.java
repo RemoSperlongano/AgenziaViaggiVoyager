@@ -15,6 +15,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -49,6 +50,10 @@ public class BoundaryVenditore_GestionePrenotazione {
 	private String areaTestoOfferta;
 	private String areaTestoCatalogo;
 	private String areaTestoImp;
+	
+	private ArrayList<String> listaNomi;
+	private ArrayList<String> listaCognomi;
+	private ArrayList<String> listaEmail;
 
 	//Pannelli
 	private JPanel superPanel;
@@ -175,6 +180,11 @@ public class BoundaryVenditore_GestionePrenotazione {
 		viaScelta = null;
 		offertaScelta = null;
 		areaTestoOfferta = null;
+		
+		listaNomi = new ArrayList<String>();
+		listaCognomi = new ArrayList<String>();
+		listaEmail = new ArrayList<String>();
+		
 		controllore = new ControlloreGestionePrenotazione();
 		
 		areaTestoImp = "Offerte per il viaggio:   ";
@@ -402,6 +412,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 	    bottoneAggiungiBiglietto = new JButton("AGGIUNGI BIGLIETTO");
 	    bottoneAggiungiBiglietto.setBackground(Color.GREEN);
 	    bottoneAggiungiBiglietto.setBounds(panel2.getWidth()/4*3, panel2.getHeight()/6*4-20, panel2.getWidth()/6, 20);
+	    bottoneAggiungiBiglietto.setEnabled(false);
 		panel2.add(bottoneAggiungiBiglietto);
 		
 	    
@@ -1165,6 +1176,8 @@ public class BoundaryVenditore_GestionePrenotazione {
 			campoEmailPannello2.setText("");
 			campoEmailPannello2.setEditable(false);
 			
+			bottoneAggiungiBiglietto.setEnabled(false);
+			
 			
 			offertaScelta = (String) tendinaOffertaPannello2.getSelectedItem();
 			
@@ -1175,6 +1188,13 @@ public class BoundaryVenditore_GestionePrenotazione {
 					campoNomePannello2.setEditable(true);
 					campoCognomePannello2.setEditable(true);
 					campoEmailPannello2.setEditable(true);
+				    bottoneAggiungiBiglietto.setEnabled(true);
+					
+					while (!listaNomi.isEmpty()){
+						listaNomi.remove(0);
+						listaCognomi.remove(0);
+						listaEmail.remove(0);
+					}
 					
 					aggiornaPrenotazioniPannello2();
 					
@@ -1195,68 +1215,16 @@ public class BoundaryVenditore_GestionePrenotazione {
 	private class AggiungiBigliettoAA implements ActionListener{
 
 		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
-			
-			/*
-			 * DA IMPLEMENTARE
-			 */
-			
-			
-			if (tendinaOffertaPannello2.getItemCount() != 0 && !offertaScelta.equals("-----")){
+		public void actionPerformed(ActionEvent arg0) {			
 				
-				String offerta = (String) tendinaOffertaPannello2.getSelectedItem();
+			String nome = campoNomePannello2.getText();
+			String cognome = campoCognomePannello2.getText();
+			String email = campoEmailPannello2.getText();
 				
-				String nome = campoNomePannello2.getText();
-				String cognome = campoCognomePannello2.getText();
-				String email = campoEmailPannello2.getText();
+			listaNomi.add(nome);
+			listaCognomi.add(cognome);
+			listaEmail.add(email);
 				
-			}
-			
-			
-			
-	/*		if (tendinaViaPannello2.getItemCount() != 0 && !viaScelta.equals("-----")){
-				
-				String via = (String) tendinaViaPannello2.getSelectedItem();
-				
-				try {
-					
-					int giorno = (Integer) tendinaGiornoPannello2.getSelectedItem();
-					int mese = (Integer) tendinaMesePannello2.getSelectedItem();
-					int anno = (Integer) tendinaAnnoPannello2.getSelectedItem();
-					int ora = (Integer) tendinaOrePannello2.getSelectedItem();
-					int minuto = Integer.parseInt((String) tendinaMinutoPannello2.getSelectedItem());
-					int durata = Integer.parseInt(campoDurataPannello2.getText());
-					int posti = Integer.parseInt(campoPostiPannello2.getText());
-				
-					Integer[] data = {giorno, mese, anno, ora, minuto};
-				
-					// chiedo conferma
-					int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere l'offerta per il viaggio?", "Conferma Aggiunta Offerta", JOptionPane.YES_NO_OPTION);
-					if (conferma == JOptionPane.YES_OPTION){
-					
-						//aggiungo l'offerta
-						controllore.aggiungiOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, via, data, durata, posti);
-						JOptionPane.showMessageDialog(null, "L'offerta e' stata aggiunta correttamente.", "Offerta Aggiunta", JOptionPane.INFORMATION_MESSAGE);
-						svuotaPartePannello2();
-						tendinaViaPannello2.setSelectedIndex(0);
-					}
-					
-				} catch (NumberFormatException e1) {
-					JOptionPane.showMessageDialog(null, "Input non valido ("+e1.getMessage()+"). Digitare caratteri numerici.", "Attenzione!", JOptionPane.WARNING_MESSAGE);
-				} catch (TrattaInesistenteException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (IDEsternoElementoException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (OffertaException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
-				}
-					
-			} else {
-				JOptionPane.showMessageDialog(null, "Nessun viaggio selezionato!");
-			}
-	*/		
-			
 		}
 		
 	}
@@ -1334,6 +1302,12 @@ public class BoundaryVenditore_GestionePrenotazione {
 			
 			areaTestoPannello2.setText("");
 			
+			while (!listaNomi.isEmpty()){
+				listaNomi.remove(0);
+				listaCognomi.remove(0);
+				listaEmail.remove(0);
+			}
+			
 			}
 
 		}
@@ -1367,6 +1341,12 @@ public class BoundaryVenditore_GestionePrenotazione {
 			offertaScelta = null;
 			
 			areaTestoPannello2.setText("");
+			
+			while (!listaNomi.isEmpty()){
+				listaNomi.remove(0);
+				listaCognomi.remove(0);
+				listaEmail.remove(0);
+			}
 
 
 		}
