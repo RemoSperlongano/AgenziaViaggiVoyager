@@ -1,22 +1,28 @@
 package gestione_Catalogo.entity;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import gestione_Catalogo.dao.OffertaDAO;
+import gestione_Catalogo.exception.OffertaInesistenteException;
+import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 
 /**
  * @authors 
  * Remo Sperlongano
  * Ivan Torre
  */
-public class Offerta {
+public class Offerta implements Cloneable{
 	
 	private Integer idOfferta;
 	private Integer idTratta;
 	private Data dataPartenza;
 	private Data dataArrivo;
 	private Integer posti;
+	private Data dataInserimento;
 	private MappaPrenotazioni mappaPrenotazioni;
 	
-	private Data dataInserimento;
+	
 	
 
 	public Offerta(Integer idTratta, Data dataPartenza, Integer durata, Integer posti) {
@@ -75,12 +81,57 @@ public class Offerta {
 		return dataArrivo;
 	}
 	
+	public Data getDataInserimento(){
+		return dataInserimento;
+	}
+	
 	public Integer getIdTratta(){
 		return idTratta;
 	}
 	
 	public Integer getPosti(){
 		return posti;
+	}
+	
+	public void assegnaPosti(int nPosti){
+		this.posti -= nPosti;
+	}
+	
+	public boolean esistenzaPrenotazione(String nomeAcquirente){
+		return mappaPrenotazioni.containsKey(nomeAcquirente);
+	}
+	
+	public Set<String> listaChiaviPrenotazioni(){
+		return mappaPrenotazioni.keySet();
+	}
+	
+	public Prenotazione getPrenotazione(String nomeAcquirente) throws OffertaInesistenteException, PrenotazioneInesistenteException{
+		return mappaPrenotazioni.getPrenotazione(nomeAcquirente);
+	}
+	
+	public void aggiungiPrenotazione(String nomeAcquirente, Prenotazione p){
+		mappaPrenotazioni.aggiungiPrenotazione(nomeAcquirente, p);
+	}
+	
+	public void rimuoviPrenotazione(String nomeAcquirente) throws OffertaInesistenteException, PrenotazioneInesistenteException{
+		mappaPrenotazioni.rimuoviPrenotazione(nomeAcquirente);
+	}
+	
+	
+	//Clone
+	
+	public Offerta clone() throws CloneNotSupportedException{
+		//creo un oggetto richiamando il metodo clone della superclasse
+		Offerta clonato = (Offerta) super.clone();
+		//per clonare anche le variabili oggetto invoco in clone per quella variabile!
+		clonato.idOfferta = this.idOfferta;
+		clonato.idTratta = this.idTratta;
+		clonato.dataPartenza = this.dataPartenza;
+		clonato.dataArrivo = this.dataArrivo;
+		clonato.posti = this.posti;
+		clonato.dataInserimento = this.dataInserimento;
+		clonato.mappaPrenotazioni = this.mappaPrenotazioni;
+		return clonato;
 	}
 	
 }

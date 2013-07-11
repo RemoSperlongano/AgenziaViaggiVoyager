@@ -11,7 +11,7 @@ import java.util.GregorianCalendar;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class Data extends GregorianCalendar {
+public class Data extends GregorianCalendar implements Cloneable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -112,6 +112,12 @@ public class Data extends GregorianCalendar {
 		Data data = new Data();
 		data.setTime(d);
 		return data;
+	}
+	
+	public Data clone(){
+		//creo un oggetto richiamando il metodo clone della superclasse
+				Data clonato = (Data) super.clone();
+				return clonato;
 	}
 	
 

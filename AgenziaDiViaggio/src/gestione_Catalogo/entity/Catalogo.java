@@ -7,6 +7,7 @@ import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
+import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.util.ArrayList;
@@ -102,7 +103,6 @@ public class Catalogo {
 		} return false;
 		
 	}
-
 	
 	//IMPLEMENTAZIONE ORIGINARIA CON MAPPA. Verifica se esistono offerte per un determinato viaggio. Un viaggio non puo' essere rimosso se esistono offerte ad esso associate.
 	public boolean verificaEsistenzaOfferte(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via) throws IDEsternoElementoException {
@@ -118,6 +118,10 @@ public class Catalogo {
 		return false;
 	}
 
+	//IMPLEMENTAZIONE CON MAPPE
+	public boolean verificaEsistenzaPrenotazione(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via, Data dataPartenza, String nomeAcquirente) throws OffertaInesistenteException, IDEsternoElementoException{
+		return mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(cittaPartenza).getElemento(cittaArrivo).getElemento(via).getOfferta(dataPartenza).esistenzaPrenotazione(nomeAcquirente);
+	}
 	
 	public boolean verificaEsistenzaPrenotazioni(){
 		return false;
@@ -152,6 +156,24 @@ public class Catalogo {
 		aggiungiInMappaOfferte(tratta, offerta);
 	}
 	
+	public void modificaOffertaNelCatalogo(Offerta offertaVecchia, Offerta offertaNuova, Tratta tratta) throws IDEsternoElementoException, OffertaInesistenteException{
+		
+		//prima elimino la vecchia offerta
+		listaOfferte.remove(offertaVecchia);
+		
+		rimuoviDaMappaOfferte(tratta, offertaVecchia);
+		
+		//aggiungo quella nuova
+		listaOfferte.add(offertaNuova);
+		
+		aggiungiInMappaOfferte(tratta, offertaNuova);
+		
+		//invoco il DAO per modificare il db
+		OffertaDAO dao = OffertaDAO.getIstanza();
+		dao.update(offertaNuova);
+		
+	}
+	
 	
 	public void rimuoviOffertaDalCatalogo(Offerta offerta, Tratta tratta) throws IDEsternoElementoException, OffertaInesistenteException {
 		listaOfferte.remove(offerta);
@@ -161,6 +183,20 @@ public class Catalogo {
 		OffertaDAO dao = OffertaDAO.getIstanza();
 		dao.delete(offerta);
 		
+	}
+	
+	public void aggiungiPrenotazioneAlCatalogo(Prenotazione prenotazione, Offerta offerta, Tratta tratta ) throws OffertaInesistenteException, IDEsternoElementoException{
+		listaPrenotazioni.add(prenotazione);
+		
+		aggiungiInMappaPrenotazioni(tratta, offerta, prenotazione);
+	}
+	
+	public void rimuoviPrenotazioneDalCatalogo(Prenotazione prenotazione, Offerta offerta, Tratta tratta) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException{
+		listaPrenotazioni.remove(prenotazione);
+		
+		rimuoviDaMappaPrenotazioni(tratta, offerta, prenotazione);
+		
+		//QUI INSERIRE IL DAO PER LA RIMOZIONE DAL DB
 	}
 
 
@@ -211,6 +247,14 @@ public class Catalogo {
 		} else
 			return offerte;
 	
+	}
+	
+	public Set<String> getChiaviPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataPartenza) throws OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException {
+		Set<String> prenotazioni = mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(partenza).getElemento(arrivo).getElemento(via).getOfferta(dataPartenza).listaChiaviPrenotazioni();
+		if (prenotazioni.isEmpty()){
+			throw new PrenotazioneInesistenteException("Non ci sono prenotazioni per questo viaggio");
+		} else
+		return prenotazioni;
 	}
 	
 	
@@ -327,6 +371,31 @@ public class Catalogo {
 		String via = tratta.getVia().getIDEsternoElemento();
 		mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(partenza).getElemento(arrivo).getElemento(via).rimuoviOfferta(offerta.getData());
 	}
+	
+	
+	
+	private void aggiungiInMappaPrenotazioni(Tratta tratta, Offerta offerta, Prenotazione prenotazione) throws OffertaInesistenteException, IDEsternoElementoException{
+		String ambiente = tratta.getAmbiente().getIDEsternoElemento();
+		String mezzo = tratta.getMezzo().getIDEsternoElemento();
+		String partenza = tratta.getPartenza().getIDEsternoElemento();
+		String arrivo = tratta.getArrivo().getIDEsternoElemento();
+		String via = tratta.getVia().getIDEsternoElemento();
+		Data dataPartenza = offerta.getData();
+		mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(partenza).getElemento(arrivo).getElemento(via).getOfferta(dataPartenza).aggiungiPrenotazione(prenotazione.getnomeAcquirente(), prenotazione);
+	}
+	
+	private void rimuoviDaMappaPrenotazioni(Tratta tratta, Offerta offerta, Prenotazione prenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException{
+		String ambiente = tratta.getAmbiente().getIDEsternoElemento();
+		String mezzo = tratta.getMezzo().getIDEsternoElemento();
+		String partenza = tratta.getPartenza().getIDEsternoElemento();
+		String arrivo = tratta.getArrivo().getIDEsternoElemento();
+		String via = tratta.getVia().getIDEsternoElemento();
+		Data dataPartenza = offerta.getData();
+		mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(partenza).getElemento(arrivo).getElemento(via).getOfferta(dataPartenza).rimuoviPrenotazione(prenotazione.getnomeAcquirente());
+	}
+
+
+	
 
 
 

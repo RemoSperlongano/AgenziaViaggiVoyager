@@ -6,6 +6,7 @@ package gestione_Catalogo.control;
  * Ivan Torre
  */
 
+import java.text.ParseException;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -18,6 +19,7 @@ import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
+import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 
@@ -60,6 +62,11 @@ public abstract class Controllore {
 		
 	public Set<Data> mostraOffertePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException{
 		return catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
+	}
+	
+	public Set<String> mostraPrenotazioniPerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException{
+		Data dp = Data.parseTimestamp(dataPartenza);
+		return catalogo.getChiaviPrenotazione(ambiente, mezzo, partenza, arrivo, via, dp);
 	}
 	
 	

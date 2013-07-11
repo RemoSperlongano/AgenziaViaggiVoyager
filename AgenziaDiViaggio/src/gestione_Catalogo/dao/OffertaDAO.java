@@ -49,7 +49,7 @@ public class OffertaDAO extends DAO {
 	
 	private static final String updateQuery = 
 			"UPDATE offerta SET " +
-			"idtratta=?, datapartenza=?, dataarrivo=?, posti=? " +
+			"idtratta=?, datapartenza=?, dataarrivo=?, posti=?, datainserimento=? " +
 			"WHERE ID=? LIMIT 1";
 	private static final String deleteQuery = 
 			"DELETE FROM offerta " +
@@ -215,15 +215,25 @@ public class OffertaDAO extends DAO {
 	 * Da invocare nei metodo set di Mezzo
 	 */
 
-	public void update(Mezzo mezzo){
+	public void update(Offerta offerta){
 		// TODO Auto-generated method stub
 		try {
 			conn = Persistenza.getConnection();
 
 			ps = conn.prepareStatement(updateQuery);
+			
+			/*"UPDATE offerta SET " +
+			"idtratta=?, datapartenza=?, dataarrivo=?, posti=?, datainserimento=? " +
+			"WHERE ID=? LIMIT 1"; */
+			
+			ps.setInt(1, offerta.getIdTratta());
+			ps.setTimestamp(2, offerta.getData().getDataForDB());
+			ps.setTimestamp(3, offerta.getDataArrivo().getDataForDB());
+			ps.setInt(4, offerta.getPosti());
+			ps.setTimestamp(5, offerta.getDataInserimento().getDataForDB());
+			ps.setInt(6, offerta.getIdOfferta());
 
-			ps.setString(1, mezzo.getIDEsternoElemento().toString());
-			ps.setInt(2, mezzo.getID());
+			
 
 			ps.executeUpdate();
 

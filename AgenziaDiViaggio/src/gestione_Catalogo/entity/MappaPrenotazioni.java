@@ -13,7 +13,7 @@ import java.util.TreeMap;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class MappaPrenotazioni extends TreeMap<Integer, Prenotazione>{
+public class MappaPrenotazioni extends TreeMap<String, Prenotazione>  implements Cloneable{
 
 	/**
 	 * 
@@ -25,24 +25,34 @@ public class MappaPrenotazioni extends TreeMap<Integer, Prenotazione>{
 		super();
 	}
 	
-	public void aggiungiPrenotazione(Integer idPrenotazione, Prenotazione p){
-		if(!containsKey(idPrenotazione)){
-			super.put(idPrenotazione, p);
+	public void aggiungiPrenotazione(String nomeAcquirente, Prenotazione p){
+		if(!containsKey(nomeAcquirente)){
+			super.put(nomeAcquirente, p);
 		}
 		
 	}
 	
-	public void rimuoviPrenotazione(Integer idPrenotazione) throws PrenotazioneInesistenteException{
-		if(!containsKey(idPrenotazione)){
-			throw new PrenotazioneInesistenteException("Errore in rimozione. Prenotazione numero  \""+idPrenotazione+"\" non presente.");
+	public void rimuoviPrenotazione(String nomeAcquirente) throws PrenotazioneInesistenteException{
+		if(!containsKey(nomeAcquirente)){
+			throw new PrenotazioneInesistenteException("Errore in rimozione. Prenotazione del signor  \""+nomeAcquirente+"\" non presente.");
 		}
+		super.remove(nomeAcquirente);
 	}
 	
-	public Prenotazione getPrenotazione(Integer idPrenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException {
-		if (!containsKey(idPrenotazione)){
-			throw new PrenotazioneInesistenteException("Errore in rimozione. Prenotazione numero  \""+idPrenotazione+"\" non presente.");
+	public Prenotazione getPrenotazione(String nomeAcquirente) throws OffertaInesistenteException, PrenotazioneInesistenteException {
+		if (!containsKey(nomeAcquirente)){
+			throw new PrenotazioneInesistenteException("Errore in rimozione. Prenotazione del signor  \""+nomeAcquirente+"\" non presente.");
 		}
-		return super.get(idPrenotazione);
+		return super.get(nomeAcquirente);
+	}
+	
+	
+	
+	//clone
+	public MappaPrenotazioni clone(){
+		//creo un oggetto richiamando il metodo clone della superclasse
+			MappaPrenotazioni clonato = (MappaPrenotazioni) super.clone();
+			return clonato;
 	}
 
 }

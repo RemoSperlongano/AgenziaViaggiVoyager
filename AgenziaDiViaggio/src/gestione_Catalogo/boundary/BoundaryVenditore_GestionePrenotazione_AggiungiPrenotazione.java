@@ -9,12 +9,17 @@ import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
+import gestione_Catalogo.exception.PostiNonSufficientiException;
+import gestione_Catalogo.exception.PrenotazioneException;
+import gestione_Catalogo.exception.PrenotazioneInesistenteException;
+import gestione_Catalogo.exception.QuantitaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
@@ -49,6 +54,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	private String areaTestoCatalogo;
 	private String areaTestoImp;
 	private String areaTestoPrenotazione;
+	private String areaTestoBiglietti;
 	
 	private ArrayList<String> listaNomi;
 	private ArrayList<String> listaCognomi;
@@ -123,6 +129,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		offertaScelta = null;
 		areaTestoOfferta = "";
 		areaTestoPrenotazione = "";
+		areaTestoBiglietti = "";
 		areaTestoImp = "Offerte per il viaggio:   ";
 		
 		listaNomi = new ArrayList<String>();
@@ -462,7 +469,53 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		
 		areaTesto.setText("");
 		areaTestoOfferta="";
-		areaTestoPrenotazione="BIGLIETTI PER LA PRENOTAZIONE:\n";
+		areaTestoPrenotazione="PRENOTAZIONI EFFETTUATE:\n\n";
+		
+		try {
+			
+			if (tendinaOfferta.getItemCount() != 0) {
+				
+				
+				if (!tendinaOfferta.equals("-----")){
+					
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+					
+					//ImpostoareaTestoOfferta
+					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
+					
+					Set<String> s = controllore.mostraPrenotazioniPerOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
+					Iterator<String> it = s.iterator();
+					
+					while(it.hasNext()){
+						areaTestoPrenotazione += it.next() + "\n";
+					}
+					
+				}
+				
+		} 
+			
+		} catch (ParseException e) {
+			areaTestoPrenotazione = e.getMessage();
+		} catch (OffertaInesistenteException e) {
+			areaTestoPrenotazione = e.getMessage();
+		} catch (IDEsternoElementoException e) {
+			areaTestoPrenotazione = e.getMessage();
+		} catch (PrenotazioneInesistenteException e) {
+			areaTestoPrenotazione = e.getMessage();
+		} finally{
+			areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione);
+		}
+		
+		
+	}
+	
+	private void aggiornaBiglietti(){
+		
+		offertaScelta = (String) tendinaOfferta.getSelectedItem();
+		
+		areaTesto.setText("");
+		areaTestoOfferta="";
+		areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
 		
 		if (tendinaOfferta.getItemCount() != 0) {
 			
@@ -476,20 +529,27 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 				
 				if (!listaNomi.isEmpty()){
 					for (int i=0; i<listaNomi.size(); i++){
-						areaTestoPrenotazione+= i+1 + "\t" + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
+						areaTestoBiglietti+= i+1 + "\t" + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
 					}
 				} else {
-					areaTestoPrenotazione = "Non ci sono ancora biglietti per questa prenotazione.";
+					areaTestoBiglietti = "Non ci sono ancora biglietti per questa prenotazione.";
 				}
 
 				
 				
-				areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione);
+				areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoBiglietti);
 				
 			}
 			
 	} 
 		
+	}
+	
+	
+	private void controlloSintatticoDati() throws QuantitaException{
+		if (listaNomi.size() == 0){
+			throw new QuantitaException("Occorre compilare almeno un biglietto per inserire una Prenotazione");
+		}
 	}
 	
 	
@@ -788,7 +848,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 				listaCognomi.add(cognome);
 				listaEmail.add(email);
 			
-				aggiornaPrenotazioni();
+				aggiornaBiglietti();
 			
 				campoNome.setText("");
 				campoCognome.setText("");
@@ -805,6 +865,53 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			
+			//Prendo la data dalla tendina offerte
+			ambienteScelto 	= 	(String) tendinaAmbiente.getSelectedItem();
+			mezzoScelto		= 	(String) tendinaMezzi.getSelectedItem();
+			partenzaScelta 	=	(String) tendinaCittaPartenza.getSelectedItem();
+			arrivoScelto 	= 	(String) tendinaCittaArrivo.getSelectedItem();
+			viaScelta		= 	(String) tendinaVia.getSelectedItem();
+			offertaScelta 	= 	(String) tendinaOfferta.getSelectedItem();
+			
+										
+				try {
+					
+					controlloSintatticoDati();
+					
+					// chiedo conferma
+					int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere la Prenotazione per il viaggio?", "Conferma Aggiunta Prenotazione", JOptionPane.YES_NO_OPTION);
+					if (conferma == JOptionPane.YES_OPTION){
+					
+					
+					//aggiungo la prenotazione all'offerta
+					controllore.aggiungiPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, listaNomi, listaCognomi, listaEmail);
+					JOptionPane.showMessageDialog(null, "La Prenotazione e' stata aggiunta correttamente.", "Prenotazione Aggiunta", JOptionPane.INFORMATION_MESSAGE);
+					aggiornaPrenotazioni();
+					tendinaOfferta.setSelectedIndex(0);
+					}
+				
+				} catch (ParseException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (IDEsternoElementoException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (OffertaInesistenteException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (QuantitaException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (PrenotazioneException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (TrattaInesistenteException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (PostiNonSufficientiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (CloneNotSupportedException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				}
+				
+				
+			
+			
 			
 			/*
 			 * DA IMPLEMENTARE

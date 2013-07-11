@@ -7,9 +7,33 @@ package gestione_Catalogo.entity;
  */
 public class Viaggiatore {
 	
-	private Integer idTraveler;
+	private Integer idViaggiatore;
 	private String nome;
 	private String cognome;
-	private String email;
+	private String eMail;
+	
+	public Viaggiatore(String nome, String cognome, String eMail){
+		this.nome = nome;
+		this.cognome = cognome;
+		this.eMail = eMail;
+		
+		//QUI ANDREBBE IL DAO VIAGGIATORE, PER FARSI DARE L'ID DEL VIAGGIATORE
+	}
+	
+	public Integer getIdViaggiatore(){
+		return idViaggiatore;
+	}
+	
+	public String getNome(){
+		return nome;
+	}
+	
+	public String getCognome(){
+		return cognome;
+	}
+	
+	public String getEmail(){
+		return eMail;
+	}
 
 }
