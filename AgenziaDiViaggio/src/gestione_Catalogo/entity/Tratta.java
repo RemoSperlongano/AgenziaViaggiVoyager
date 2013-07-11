@@ -15,6 +15,7 @@ public class Tratta {
 	
 	private Ambiente ambiente;
 	private Mezzo mezzo;
+	private String categoria;
 	private Citta partenza;
 	private Citta arrivo;
 	private Via via;
@@ -24,13 +25,14 @@ public class Tratta {
 	private Data dataInserimento;
 	
 	
-	public Tratta(Ambiente ambiente, Mezzo mezzo, Citta partenza, Citta arrivo, Via via, Info info){
+	public Tratta(Ambiente ambiente, Mezzo mezzo, String categoria, Citta partenza, Citta arrivo, Via via, Info info){
 		
 		//necessito di un ID disponibile dal db
 		TrattaDAO dao = TrattaDAO.getIstanza();
 		ID = dao.getNextId();
 		this.ambiente = ambiente;
 		this.mezzo = mezzo;
+		this.categoria = categoria;
 		this.partenza = partenza;
 		this.arrivo = arrivo;
 		this.via = via;
@@ -46,11 +48,12 @@ public class Tratta {
 	}
 
 	
-	public Tratta(Integer ID, Ambiente ambiente, Mezzo mezzo, Citta partenza, Citta arrivo, Via via, Info info, Data dataInserimento){
+	public Tratta(Integer ID, Ambiente ambiente, Mezzo mezzo, String categoria, Citta partenza, Citta arrivo, Via via, Info info, Data dataInserimento){
 		
 		this.ID = ID;
 		this.ambiente = ambiente;
 		this.mezzo = mezzo;
+		this.categoria = categoria;
 		this.partenza = partenza;
 		this.arrivo = arrivo;
 		this.via = via;
@@ -77,6 +80,10 @@ public class Tratta {
 
 	public Mezzo getMezzo() {
 		return mezzo;
+	}
+	
+	public String getCategoria(){
+		return categoria;
 	}
 
 	public Citta getPartenza() {

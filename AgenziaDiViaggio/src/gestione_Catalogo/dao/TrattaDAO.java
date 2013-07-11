@@ -27,6 +27,7 @@ public class TrattaDAO extends DAO {
 				"ID INTEGER PRIMARY KEY, " +
 				"ambiente INTEGER, " +
 				"mezzo INTEGER, " +
+				"categoria VARCHAR(30), " +
 				"cittapartenza INTEGER, " +
 				"cittaarrivo INTEGER, " +
 				"via INTEGER, " +
@@ -42,10 +43,10 @@ public class TrattaDAO extends DAO {
 
 	private static final String insertQuery = 
 			"INSERT INTO catalogo " +
-			"VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+			"VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	private static final String updateQuery = 
 			"UPDATE catalogo SET " +
-			"ID=?, ambiente=?, mezzo=?, cittapartenza=?, cittarrivo=?, via=?, info=?, data=? " +
+			"ID=?, ambiente=?, mezzo=?, categoria=?, cittapartenza=?, cittarrivo=?, via=?, info=?, data=? " +
 			"WHERE ID=?";
 	private static final String deleteQuery = 
 			"DELETE FROM " +
@@ -105,11 +106,12 @@ public class TrattaDAO extends DAO {
 			ps.setInt(1, tratta.getID());
 			ps.setInt(2, tratta.getAmbiente().getID());
 			ps.setInt(3, tratta.getMezzo().getID());
-			ps.setInt(4, tratta.getPartenza().getID());
-			ps.setInt(5, tratta.getArrivo().getID());
-			ps.setInt(6, tratta.getVia().getID());
-			ps.setString(7, tratta.getInfo());
-			ps.setTimestamp(8, tratta.getDataInserimento().getDataForDB());
+			ps.setString(4, tratta.getCategoria());
+			ps.setInt(5, tratta.getPartenza().getID());
+			ps.setInt(6, tratta.getArrivo().getID());
+			ps.setInt(7, tratta.getVia().getID());
+			ps.setString(8, tratta.getInfo());
+			ps.setTimestamp(9, tratta.getDataInserimento().getDataForDB());
 			System.out.println(ps.toString());
 			ps.executeUpdate();
 
@@ -160,22 +162,24 @@ public class TrattaDAO extends DAO {
 
 			valore = readValue("MEZZO", rs.getInt(3));
 			Mezzo mezzo = new Mezzo(rs.getInt(3), new IDEsternoElemento(valore));
-
-			valore = readValue("CITTA", rs.getInt(4));
-			Citta cittaPartenza = new Citta(rs.getInt(4), new IDEsternoElemento(valore));
+			
+			String categoria = rs.getString(4);
 
 			valore = readValue("CITTA", rs.getInt(5));
-			Citta cittaArrivo = new Citta(rs.getInt(5), new IDEsternoElemento(valore));
+			Citta cittaPartenza = new Citta(rs.getInt(5), new IDEsternoElemento(valore));
 
-			valore = readValue("VIA", rs.getInt(6));
-			Via via = new Via(rs.getInt(6), new IDEsternoElemento(valore));
+			valore = readValue("CITTA", rs.getInt(6));
+			Citta cittaArrivo = new Citta(rs.getInt(6), new IDEsternoElemento(valore));
+
+			valore = readValue("VIA", rs.getInt(7));
+			Via via = new Via(rs.getInt(7), new IDEsternoElemento(valore));
 			
-			Info info = new Info(rs.getString(7));
+			Info info = new Info(rs.getString(8));
 			
-			Data data = new Data(rs.getTimestamp(8));
+			Data data = new Data(rs.getTimestamp(9));
 		
 			closeResource();
-			return new Tratta(id, ambiente, mezzo, cittaPartenza, cittaArrivo, via, info, data );
+			return new Tratta(id, ambiente, mezzo, categoria, cittaPartenza, cittaArrivo, via, info, data );
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

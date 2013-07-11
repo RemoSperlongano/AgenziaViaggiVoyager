@@ -40,6 +40,7 @@ public class CatalogoDAO extends DAO {
 					"ID INTEGER PRIMARY KEY, " +
 					"ambiente INTEGER, " +
 					"mezzo INTEGER, " +
+					"categoria VARCHAR(30), " +
 					"cittapartenza INTEGER, " +
 					"cittaarrivo INTEGER, " +
 					"via INTEGER, " +
@@ -114,6 +115,7 @@ public class CatalogoDAO extends DAO {
 		
 				Ambiente ambiente;
 				Mezzo mezzo;
+				String categoria;
 				Citta cittaPartenza;
 				Citta cittaArrivo;
 				Via via;
@@ -153,32 +155,35 @@ public class CatalogoDAO extends DAO {
 				valore = daoMezzo.readOnlyValue(id);
 				mezzo = new Mezzo(id, valore);
 
+				// prendo la categoria
+				categoria = rs.getString(4);
+				
                 //creo oggetto citta per la partenza
 				CittaDAO daoCitta = CittaDAO.getIstanza();
-				id = rs.getInt(4);
+				id = rs.getInt(5);
 				valore = daoCitta.readOnlyValue(id);
 				cittaPartenza = new Citta(id, valore);
 
 				//creo oggetto citta per l'arrivo
-				id = rs.getInt(5);
+				id = rs.getInt(6);
 				valore = daoCitta.readOnlyValue(id);
 				cittaArrivo = new Citta(id, valore);
 
 				//creo oggetto via
 				ViaDAO daoVia = ViaDAO.getIstanza();
-				id = rs.getInt(6);
+				id = rs.getInt(7);
 				valore = daoVia.readOnlyValue(id);
 				via = new Via(id, valore);
 
 				
 				//creo l'oggetto per le Info
-				info = new Info(rs.getString(7));
+				info = new Info(rs.getString(8));
 				
 				//creo l'oggetto per la data
-				data = new Data(rs.getTimestamp(8));
+				data = new Data(rs.getTimestamp(9));
 				
 				//creo l'oggetto tratta e l'aggiungo
-				Tratta tratta = new Tratta(idTratta, ambiente, mezzo, cittaPartenza, cittaArrivo, via, info, data);
+				Tratta tratta = new Tratta(idTratta, ambiente, mezzo, categoria, cittaPartenza, cittaArrivo, via, info, data);
 				tratte.add(tratta);
 				
 			}

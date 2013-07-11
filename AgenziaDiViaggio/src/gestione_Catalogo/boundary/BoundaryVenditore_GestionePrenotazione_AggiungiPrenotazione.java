@@ -5,6 +5,7 @@ package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreAggiungiPrenotazione;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.exception.DatiPersonaliErratiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -552,6 +553,33 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		}
 	}
 	
+	private void controlloSintatticoBiglietto(String nome, String cognome) throws DatiPersonaliErratiException{
+
+		String s = nome+cognome;
+		for (int i = 0; i < s.length(); i++){
+			char c = s.charAt(i);
+			if (!Character.isLetter(s.charAt(i))&&!Character.isWhitespace(c))
+				throw new DatiPersonaliErratiException("Caratteri non validi. Controllare i dati inseriti...");
+		}
+	}
+	
+	
+	private String uppercaseFirstLetters(String str) {
+	    boolean prevWasWhiteSp = true;
+	    char[] chars = str.trim().replaceAll("\\s+"," ").toLowerCase().toCharArray();
+	    for (int i = 0; i < chars.length; i++) {
+	        if (Character.isLetter(chars[i])){
+	            if (prevWasWhiteSp) {
+	                chars[i] = Character.toUpperCase(chars[i]);    
+	            } 
+	            prevWasWhiteSp = false;
+	        } else {
+	            prevWasWhiteSp = Character.isWhitespace(chars[i]);
+	        }
+	    }
+	    return new String(chars);
+	}
+	
 	
 	
 	/*
@@ -840,20 +868,30 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			String cognome = campoCognome.getText();
 			String email = campoEmail.getText();
 			
+			
+			
 			if (nome.equals("")||cognome.equals("")||email.equals("")){
 				JOptionPane.showMessageDialog(null, "Tutti i campi devono essere completati!", "Attenzione!", JOptionPane.WARNING_MESSAGE);
 			} else {
 				
-				listaNomi.add(nome);
-				listaCognomi.add(cognome);
-				listaEmail.add(email);
-			
-				aggiornaBiglietti();
-			
-				campoNome.setText("");
-				campoCognome.setText("");
-				campoEmail.setText("");
-			
+				nome = uppercaseFirstLetters(nome);
+				cognome = uppercaseFirstLetters(cognome);
+				try {
+					
+					controlloSintatticoBiglietto(nome, cognome);
+					
+					listaNomi.add(nome);
+					listaCognomi.add(cognome);
+					listaEmail.add(email);
+				
+					aggiornaBiglietti();
+				
+					campoNome.setText("");
+					campoCognome.setText("");
+					campoEmail.setText("");
+				} catch (DatiPersonaliErratiException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} 
 			}
 
 		}

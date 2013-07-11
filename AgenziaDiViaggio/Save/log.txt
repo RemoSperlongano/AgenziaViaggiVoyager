@@ -728,3 +728,888 @@ Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
 Data di Partenza: 15/08/2013, 10:00
 Nome Acquirente: Sonia Strada
 
+[11/07/2013, 15:19:11] AGGIUNTO VIAGGIO Via Aria:
+Charter   ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:19:12] AGGIUNTO VIAGGIO Via Aria:
+Charter   ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:19:12] AGGIUNTO VIAGGIO Via Aria:
+Charter   ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:19:12] AGGIUNTO VIAGGIO Via Aria:
+Charter   ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:19:12] AGGIUNTO VIAGGIO Via Aria:
+Charter   ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:19:13] AGGIUNTO VIAGGIO Via Aria:
+Charter   ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:19:13] AGGIUNTO VIAGGIO Via Aria:
+Boing   ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:19:13] AGGIUNTO VIAGGIO Via Aria:
+Boing   ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:19:13] AGGIUNTO VIAGGIO Via Aria:
+Boing   ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:19:13] AGGIUNTO VIAGGIO Via Aria:
+Boing   ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:19:14] AGGIUNTO VIAGGIO Via Aria:
+Boing   ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:19:14] AGGIUNTO VIAGGIO Via Aria:
+Boing   ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:19:14] AGGIUNTO VIAGGIO Via Terra:
+Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:19:14] AGGIUNTO VIAGGIO Via Terra:
+Treno Tav  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:19:15] AGGIUNTO VIAGGIO Via Terra:
+Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:19:15] AGGIUNTO VIAGGIO Via Terra:
+Treno Intercity  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:19:15] AGGIUNTO VIAGGIO Via Terra:
+Treno Intercity  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:19:15] AGGIUNTO VIAGGIO Via Terra:
+Treno Intercity  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:19:15] AGGIUNTO VIAGGIO Via Terra:
+Bus   ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:19:16] AGGIUNTO VIAGGIO Via Terra:
+Bus   ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:19:16] AGGIUNTO VIAGGIO Via Terra:
+Bus   ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:19:16] AGGIUNTO VIAGGIO Via Terra:
+Bus   ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:19:16] AGGIUNTO VIAGGIO Via Terra:
+Bus   ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:19:16] AGGIUNTO VIAGGIO Via Terra:
+Bus   ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:19:17] AGGIUNTO VIAGGIO Via Mare:
+Panfilo   ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:19:17] AGGIUNTO VIAGGIO Via Mare:
+Panfilo   ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:19:17] AGGIUNTO VIAGGIO Via Mare:
+Panfilo   ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:19:17] AGGIUNTO VIAGGIO Via Mare:
+Panfilo   ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:19:17] AGGIUNTO VIAGGIO Via Mare:
+Panfilo   ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:19:17] AGGIUNTO VIAGGIO Via Mare:
+Panfilo   ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:19:18] AGGIUNTO VIAGGIO Via Mare:
+Traghetto   ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:19:18] AGGIUNTO VIAGGIO Via Mare:
+Traghetto   ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:19:18] AGGIUNTO VIAGGIO Via Mare:
+Traghetto   ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:19:18] AGGIUNTO VIAGGIO Via Mare:
+Traghetto   ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:19:18] AGGIUNTO VIAGGIO Via Mare:
+Traghetto   ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:19:18] AGGIUNTO VIAGGIO Via Mare:
+Traghetto   ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:20:35] AGGIUNTO VIAGGIO Via Terra:
+Treno Intercity   ->  Fregene : Andria  ->  Vercelli
+
+[11/07/2013, 15:22:12] AGGIUNTO VIAGGIO Via Aria:
+Boing    ->  Roma : Catania  ->  (Diretto)
+
+[11/07/2013, 15:22:48] RIMOSSO VIAGGIO Via Aria:
+Boing    ->  Roma : Catania  ->  (Diretto)
+
+[11/07/2013, 15:22:59] RIMOSSO VIAGGIO Via Terra:
+Treno Intercity   ->  Fregene : Andria  ->  Vercelli
+
+[11/07/2013, 15:27:47] AGGIUNTO VIAGGIO Via Terra:
+Treno Intercity   ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:30:37] AGGIUNTO VIAGGIO Via Terra:
+Treno Intercity  ->  Napoli : Roma  ->  (Diretto)
+
+[11/07/2013, 15:31:43] AGGIUNTO VIAGGIO Via Terra:
+Treno   ->  Milano : Napoli  ->  (Diretto)
+
+[11/07/2013, 15:31:55] AGGIUNTO VIAGGIO Via Terra:
+Treno  Intercity  ->  Milano : Napoli  ->  (Diretto)
+
+[11/07/2013, 15:32:15] RIMOSSO VIAGGIO Via Terra:
+Treno  Intercity  ->  Milano : Napoli  ->  (Diretto)
+
+[11/07/2013, 15:32:22] RIMOSSO VIAGGIO Via Terra:
+Treno Intercity   ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:37:46] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:37:46] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:37:46] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:37:47] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:37:47] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:37:47] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:37:47] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:37:47] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:37:48] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:37:48] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:37:48] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:37:48] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:39:27] AGGIUNTO VIAGGIO Via Terra:
+Treno  Intercity  ->  Milano : Napoli  ->  (Diretto)
+
+[11/07/2013, 15:40:30] AGGIUNTO VIAGGIO Via Terra:
+Treno Intercity  ->  Napoli : Bologna  ->  (Diretto)
+
+[11/07/2013, 15:40:49] AGGIUNTO VIAGGIO Via Terra:
+Treno  Intercity  ->  Milano : Bologna  ->  (Diretto)
+
+[11/07/2013, 15:44:47] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:44:47] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:44:47] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:44:47] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:44:47] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:44:47] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:44:48] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:44:48] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:44:48] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:44:48] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:44:48] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:44:49] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:44:49] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:44:49] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:44:49] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:44:49] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:44:50] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:44:50] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:44:50] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:44:50] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:44:50] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:44:50] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:44:50] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:44:51] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:44:51] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:44:51] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:44:51] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:44:51] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:44:51] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:44:52] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:44:52] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:44:52] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:44:52] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:44:52] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:44:52] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:44:53] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:46:44] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:46:44] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:46:44] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:46:44] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:46:44] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:46:45] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:46:45] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:46:45] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:46:45] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:46:45] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:46:45] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:46:46] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:46:46] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:46:46] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:46:46] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:46:46] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:46:46] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:46:47] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:46:47] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:46:47] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:46:47] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:46:47] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:46:47] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:46:48] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:46:48] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:46:48] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:46:48] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:46:48] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:46:48] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:46:48] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:46:49] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:46:49] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:46:49] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:46:49] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:46:49] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:46:49] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:47:13] AGGIUNTO VIAGGIO Via Terra:
+Treno  ->  Roma : Milano  ->  Firenze
+
+[11/07/2013, 15:47:23] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:48:36] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:48:36] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:48:37] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:48:37] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:48:37] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:48:37] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:48:37] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:48:37] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:48:38] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:48:38] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:48:38] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:48:38] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:51:58] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:51:58] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:51:58] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:51:59] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:51:59] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:51:59] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:51:59] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:51:59] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:52:00] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:52:00] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:52:00] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:52:00] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:52:00] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:52:01] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:52:01] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:52:01] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:52:01] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:52:01] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:52:02] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:52:02] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:52:02] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:52:02] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:52:02] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:52:02] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:52:02] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:52:03] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:52:03] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:52:03] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:52:03] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:52:03] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:52:03] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:52:04] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:52:04] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:52:04] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:52:04] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:52:04] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:52:26] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Milano : Roma  ->  (Diretto)
+
+[11/07/2013, 15:52:41] AGGIUNTO VIAGGIO Via Terra:
+Treno  ->  Milano : Roma  ->  (Diretto)
+
+[11/07/2013, 15:52:55] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Milano : Palermo  ->  (Diretto)
+
+[11/07/2013, 15:54:10] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:54:10] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:54:10] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:54:11] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:54:11] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:54:11] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:54:11] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:54:11] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:54:11] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:54:12] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:54:12] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:54:12] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:54:34] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:54:35] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:54:35] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:54:35] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:54:35] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:54:35] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:54:36] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:54:36] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:54:36] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:54:36] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:54:36] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:54:37] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:56:18] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:56:18] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:56:19] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:56:19] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:56:19] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:56:19] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:56:19] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:56:19] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:56:20] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:56:20] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:56:20] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:56:20] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:56:20] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:56:21] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:56:21] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:56:21] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:56:21] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:56:21] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:56:22] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:56:22] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:56:22] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:56:22] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:56:22] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:56:22] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:56:23] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:56:23] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:56:23] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:56:23] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:56:23] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:56:24] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:56:24] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 15:56:24] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 15:56:24] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 15:56:24] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 15:56:24] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 15:56:25] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 15:58:16] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Milano : Roma  ->  (Diretto)
+
+[11/07/2013, 15:58:35] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Milano : Firenze  ->  (Diretto)
+
+[11/07/2013, 15:58:50] AGGIUNTO VIAGGIO Via Terra:
+Treno  ->  Bologna : Pescara  ->  (Diretto)
+
+[11/07/2013, 16:00:22] AGGIUNTO VIAGGIO Via Terra:
+TrenoIntercity  ->  Bologna : Pescara  ->  (Diretto)
+
+[11/07/2013, 16:06:47] AGGIUNTO VIAGGIO Via Terra:
+Trenotav  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 16:07:16] RIMOSSO VIAGGIO Via Terra:
+Trenotav  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 16:12:34] AGGIUNTO VIAGGIO Via Aria:
+CharterH  ->  Milano : Rio De Janeiro  ->  Roma
+
+[11/07/2013, 16:13:01] AGGIUNTO VIAGGIO Via Aria:
+Char TerH  ->  Roma : Rio  ->  (Diretto)
+
+[11/07/2013, 16:13:29] AGGIUNTO VIAGGIO Via Aria:
+Porta  ->  R : R  ->  (Diretto)
+
+[11/07/2013, 16:14:23] RIMOSSO VIAGGIO Via Aria:
+Char TerH  ->  Roma : Rio  ->  (Diretto)
+
+[11/07/2013, 16:14:29] RIMOSSO VIAGGIO Via Aria:
+CharterH  ->  Milano : Rio De Janeiro  ->  Roma
+
+[11/07/2013, 16:15:54] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 16:15:54] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 16:15:54] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 16:15:54] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 16:15:55] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 16:15:55] AGGIUNTO VIAGGIO Via Aria:
+Charter  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 16:15:55] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 16:15:55] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 16:15:56] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 16:15:56] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 16:15:56] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 16:15:56] AGGIUNTO VIAGGIO Via Aria:
+Boing  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 16:15:56] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 16:15:57] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 16:15:57] AGGIUNTO VIAGGIO Via Terra:
+TrenoTav  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 16:15:57] AGGIUNTO VIAGGIO Via Terra:
+TrenoBase  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 16:15:57] AGGIUNTO VIAGGIO Via Terra:
+TrenoBase  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 16:15:57] AGGIUNTO VIAGGIO Via Terra:
+TrenoBase  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 16:15:58] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 16:15:58] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 16:15:58] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 16:15:58] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 16:15:58] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 16:15:58] AGGIUNTO VIAGGIO Via Terra:
+Bus  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 16:15:59] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 16:15:59] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 16:15:59] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 16:15:59] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 16:15:59] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 16:15:59] AGGIUNTO VIAGGIO Via Mare:
+Panfilo  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 16:16:00] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Milano  ->  (Diretto)
+
+[11/07/2013, 16:16:00] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Parigi  ->  (Diretto)
+
+[11/07/2013, 16:16:00] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Roma : Ginevra  ->  (Diretto)
+
+[11/07/2013, 16:16:00] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Cagliari  ->  (Diretto)
+
+[11/07/2013, 16:16:00] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Isernia  ->  (Diretto)
+
+[11/07/2013, 16:16:01] AGGIUNTO VIAGGIO Via Mare:
+Traghetto  ->  Napoli : Torino  ->  (Diretto)
+
+[11/07/2013, 16:17:42] AGGIUNTO VIAGGIO Via Terra:
+TrenoBase  ->  Napoli : Latina  ->  (Diretto)
+
+[11/07/2013, 16:18:04] AGGIUNTO VIAGGIO Via Terra:
+TrenoBase  ->  Napoli : Latina  ->  Formia
+

@@ -32,15 +32,27 @@ public class ControlloreGestioneCatalogo extends ControlloreGestioneOfferta {
 	
 	
 	//metodi
-	public void aggiungiViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException {
+	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException {
 		if (via.equals("")) via = Via.DIRETTO;
+		
+		//Il mezzo è uguale a mezzo + tipo
+		
+		String categoriaMezzo = "";
+		
+		if (!tipoMezzo.equals("")){
+			categoriaMezzo = mezzo;
+			mezzo = mezzo + tipoMezzo;
+		} else {
+			categoriaMezzo = mezzo;
+		}
+		
 		
 		//verifico l'esistenza del viaggio nel catalogo
 		if (catalogo.verificaEsistenzaViaggio(ambiente, mezzo, cittaPartenza, cittaArrivo, via)){
 			//System.out.println("Viaggio gia' presente");
 			throw new TrattaException("Il viaggio e' gia' presente nel catalogo!");
 		} else {
-			Tratta nuovaTratta = creaTratta(ambiente, mezzo, cittaPartenza, cittaArrivo, via, info);
+			Tratta nuovaTratta = creaTratta(ambiente, mezzo, categoriaMezzo, cittaPartenza, cittaArrivo, via, info);
 			//aggiungo il viaggio
 			catalogo.aggiungiViaggioAlCatalogo(nuovaTratta);
 			log.aggiornaLogAggiungiViaggio(ambiente,mezzo,cittaPartenza,cittaArrivo,via);
@@ -363,7 +375,7 @@ public class ControlloreGestioneCatalogo extends ControlloreGestioneOfferta {
 
 	
 	
-	private Tratta creaTratta(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+	private Tratta creaTratta(String ambiente, String mezzo, String categoria, String cittaPartenza, String cittaArrivo, String via, String info) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
 		/*
 		 * FASE 1 : creo l'oggetto Ambiente
 		 */
@@ -396,7 +408,7 @@ public class ControlloreGestioneCatalogo extends ControlloreGestioneOfferta {
 			i = new Info(info);
 		}
 		
-		return new Tratta (a,mt,cp,ca,v,i);
+		return new Tratta (a,mt,categoria,cp,ca,v,i);
 		
 	}
 	

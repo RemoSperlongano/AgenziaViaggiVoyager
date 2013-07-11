@@ -81,6 +81,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 	private JLabel labelMezziPannello2;
 	private JComboBox<String> tendinaMezziPannello2;
 	private JTextField campoMezziPannello2;
+	
+	private JLabel labelTipoPannello2;
+	private JTextField campoTipoPannello2;
 
 	private JLabel labelCittaPartenzaPannello2;
 	private JComboBox<String> tendinaCittaPartenzaPannello2;
@@ -265,27 +268,45 @@ public class BoundaryPromotore_GestioneCatalogo {
 		
 		labelMezziPannello2 = new JLabel();        //Etichetta per i mezzi
 		labelMezziPannello2.setFont(new Font("Arial", 0, 15));
-		labelMezziPannello2.setBounds(panel2.getWidth()/7-10, panel2.getHeight()/6*2, panel2.getWidth()/6, 20);
+		labelMezziPannello2.setBounds(panel2.getWidth()/5, panel2.getHeight()/6*2, panel2.getWidth()/5, 20);
 		labelMezziPannello2.setText("Mezzo di Trasporto*");
 		panel2.add(labelMezziPannello2);
 		
 		
 		tendinaMezziPannello2 = new JComboBox<String>();	  //Tendina per i mezzi
 		tendinaMezziPannello2.setBackground(Color.WHITE);
-		tendinaMezziPannello2.setBounds(panel2.getWidth()/7-10, panel2.getHeight()/6*2+20, panel2.getWidth()/6, 20);
+		tendinaMezziPannello2.setBounds(panel2.getWidth()/5, panel2.getHeight()/6*2+20, panel2.getWidth()/5, 20);
 		tendinaMezziPannello2.setEnabled(false);
 		panel2.add(tendinaMezziPannello2);
 		
-		campoMezziPannello2 = new JTextField(panel2.getWidth()/7);	  //campo per aggiungere dei nuovi mezzi
+		
+		
+		campoMezziPannello2 = new JTextField(panel2.getWidth()/5);	  //campo per aggiungere dei nuovi mezzi
 		campoMezziPannello2.setFont(new Font("Arial", 0, 18));
-		campoMezziPannello2.setBounds(panel2.getWidth()/7-10, panel2.getHeight()/6*2+45, panel2.getWidth()/6, 20);
+		campoMezziPannello2.setBounds(panel2.getWidth()/5, panel2.getHeight()/6*2+45, panel2.getWidth()/5, 20);
 		campoMezziPannello2.setEditable(false);   				// all'inizio e' disattivato, si attiva solo con new...
 		panel2.add(campoMezziPannello2);
 		
 		
+		
+		labelTipoPannello2 = new JLabel(); 				//Etichetta per il tipo del mezzo
+		labelTipoPannello2.setFont(new Font("Arial", 0, 15));
+		labelTipoPannello2.setBounds(panel2.getWidth()/5*3, panel2.getHeight()/6*2, panel2.getWidth()/5, 20);
+		labelTipoPannello2.setText("Tipo di Mezzo");
+		panel2.add(labelTipoPannello2);
+		
+		
+		campoTipoPannello2 = new JTextField(panel2.getWidth()/5);	//campo per aggiungere il tipo
+		campoTipoPannello2.setFont(new Font("Arial", 0, 18));
+		campoTipoPannello2.setBounds(panel2.getWidth()/5*3, panel2.getHeight()/6*2+45, panel2.getWidth()/5, 20);
+		campoTipoPannello2.setEditable(false);   				// all'inizio e' disattivato, si attiva solo con new...
+		panel2.add(campoTipoPannello2);
+		
+		
+		
 		labelCittaPartenzaPannello2 = new JLabel();        //Etichetta per Stazione di partenza
 		labelCittaPartenzaPannello2.setFont(new Font("Arial", 0, 15));
-		labelCittaPartenzaPannello2.setBounds(panel2.getWidth()/7*3-10, panel2.getHeight()/6*2, panel2.getWidth()/6, 20);
+		labelCittaPartenzaPannello2.setBounds(panel2.getWidth()/5, panel2.getHeight()/6*3, panel2.getWidth()/5, 20);
 		labelCittaPartenzaPannello2.setText("Citta' di Partenza*");
 		panel2.add(labelCittaPartenzaPannello2);
 		
@@ -293,33 +314,33 @@ public class BoundaryPromotore_GestioneCatalogo {
 		tendinaCittaPartenzaPannello2 = new JComboBox<String>();	  //Tendina per le partenze
 		tendinaCittaPartenzaPannello2.setBackground(Color.WHITE);
 		tendinaCittaPartenzaPannello2.setEnabled(false);
-		tendinaCittaPartenzaPannello2.setBounds(panel2.getWidth()/7*3-10, panel2.getHeight()/6*2+20, panel2.getWidth()/6, 20);
+		tendinaCittaPartenzaPannello2.setBounds(panel2.getWidth()/5, panel2.getHeight()/6*3+20, panel2.getWidth()/5, 20);
 		panel2.add(tendinaCittaPartenzaPannello2);
 		
 		
 		campoCittaPartenzaPannello2 = new JTextField (panel2.getWidth()/7);	 //Campo per stazione di partenza
 		campoCittaPartenzaPannello2.setFont(new Font("Arial",0,18));
-		campoCittaPartenzaPannello2.setBounds(panel2.getWidth()/7*3-10, panel2.getHeight()/6*2+45, panel2.getWidth()/6, 20);
+		campoCittaPartenzaPannello2.setBounds(panel2.getWidth()/5, panel2.getHeight()/6*3+45, panel2.getWidth()/5, 20);
 		campoCittaPartenzaPannello2.setEditable(false);
 		panel2.add(campoCittaPartenzaPannello2);
 		
 		
 		labelCittaArrivoPannello2 = new JLabel();        //Etichetta per Stazione di arrivo
 		labelCittaArrivoPannello2.setFont(new Font("Arial", 0, 15));
-		labelCittaArrivoPannello2.setBounds(panel2.getWidth()/7*5-10, panel2.getHeight()/6*2, panel2.getWidth()/6, 20);
+		labelCittaArrivoPannello2.setBounds(panel2.getWidth()/5*3, panel2.getHeight()/6*3, panel2.getWidth()/5, 20);
 		labelCittaArrivoPannello2.setText("Citta' di Arrivo*");
 		panel2.add(labelCittaArrivoPannello2);
 		
 		tendinaCittaeArrivoPannello2 = new JComboBox<String>();     // Tendina per gli arrivi
 		tendinaCittaeArrivoPannello2.setBackground(Color.WHITE);
 		tendinaCittaeArrivoPannello2.setEnabled(false);
-		tendinaCittaeArrivoPannello2.setBounds(panel2.getWidth()/7*5-10, panel2.getHeight()/6*2+20, panel2.getWidth()/6, 20);
+		tendinaCittaeArrivoPannello2.setBounds(panel2.getWidth()/5*3, panel2.getHeight()/6*3+20, panel2.getWidth()/5, 20);
 		panel2.add(tendinaCittaeArrivoPannello2);
 		
 		
 		campoCittaArrivoPannello2 = new JTextField (panel2.getWidth()/7);	 //Campo per stazione di arrivo
 		campoCittaArrivoPannello2.setFont(new Font("Arial",0,18));
-		campoCittaArrivoPannello2.setBounds(panel2.getWidth()/7*5-10, panel2.getHeight()/6*2+45, panel2.getWidth()/6, 20);
+		campoCittaArrivoPannello2.setBounds(panel2.getWidth()/5*3, panel2.getHeight()/6*3+45, panel2.getWidth()/5, 20);
 		campoCittaArrivoPannello2.setEditable(false);
 		panel2.add(campoCittaArrivoPannello2);
 		
@@ -327,7 +348,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 		
 		labelViaPannello2 = new JLabel();	//Etichetta per Stazioni Intermedie
 		labelViaPannello2.setFont(new Font("Arial",0,15));
-		labelViaPannello2.setBounds(panel2.getWidth()/7-10, panel2.getHeight()/6*3, panel2.getWidth()/6, 20);
+		labelViaPannello2.setBounds(panel2.getWidth()/7-10, panel2.getHeight()/6*4, panel2.getWidth()/6, 20);
 		labelViaPannello2.setText("Via");
 		panel2.add(labelViaPannello2);
 		
@@ -335,7 +356,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 		
 	    campoViaPannello2 = new JTextField (panel2.getWidth()/6); //Campo per stazioni intermedie
 	    campoViaPannello2.setFont(new Font("Arial", 0, 18));
-	    campoViaPannello2.setBounds(panel2.getWidth()/7-10, panel2.getHeight()/6*3+20, panel2.getWidth()/6, 20);
+	    campoViaPannello2.setBounds(panel2.getWidth()/7-10, panel2.getHeight()/6*4+20, panel2.getWidth()/6, 20);
 	    campoViaPannello2.setEditable(false);
 	    panel2.add(campoViaPannello2);
 	    
@@ -343,7 +364,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 	    
 	    labelInfoPannello2 = new JLabel();			//Etichetta per le info
 	    labelInfoPannello2.setFont(new Font("Arial", 0, 15));
-	    labelInfoPannello2.setBounds(panel2.getWidth()/7*3-10, panel2.getHeight()/6*3, panel2.getWidth()/6, 20);
+	    labelInfoPannello2.setBounds(panel2.getWidth()/7*3-10, panel2.getHeight()/6*4, panel2.getWidth()/6, 20);
 	    labelInfoPannello2.setText("Info");
 	    panel2.add(labelInfoPannello2);
 	    
@@ -351,7 +372,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 	    
 	    campoInfoPannello2 = new JTextField(panel2.getWidth()/7*3);			//Campo per le info
 	    campoInfoPannello2.setFont(new Font("Arial", 0, 18));
-	    campoInfoPannello2.setBounds(panel2.getWidth()/7*3-10, panel2.getHeight()/6*3+20, panel2.getWidth()/7*3, 20);
+	    campoInfoPannello2.setBounds(panel2.getWidth()/7*3-10, panel2.getHeight()/6*4+20, panel2.getWidth()/7*3, 20);
 	    campoInfoPannello2.setEditable(false);
 	    panel2.add(campoInfoPannello2);
 	    
@@ -359,12 +380,12 @@ public class BoundaryPromotore_GestioneCatalogo {
 		
 		bottoneSvuotaPannello2 = new JButton("AZZERA CAMPI");
 		bottoneSvuotaPannello2.setBackground(Color.YELLOW);
-		bottoneSvuotaPannello2.setBounds(panel2.getWidth()/5-30, panel2.getHeight()/6*4, panel2.getWidth()/5+10, panel2.getHeight()/14);
+		bottoneSvuotaPannello2.setBounds(panel2.getWidth()/5-30, panel2.getHeight()/6*5, panel2.getWidth()/5+10, panel2.getHeight()/14);
 		panel2.add(bottoneSvuotaPannello2);
 		
 		bottoneAggiungi = new JButton("AGGIUNGI AL CATALOGO");
 		bottoneAggiungi.setBackground(Color.ORANGE);
-		bottoneAggiungi.setBounds(panel2.getWidth()/5*3+16, panel2.getHeight()/6*4, panel2.getWidth()/5+10, panel2.getHeight()/14);
+		bottoneAggiungi.setBounds(panel2.getWidth()/5*3+16, panel2.getHeight()/6*5, panel2.getWidth()/5+10, panel2.getHeight()/14);
 		panel2.add(bottoneAggiungi);
 		
 		bottoneChiudiPannello2 = new JButton("X");
@@ -568,6 +589,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 		}
 		
 		tendinaMezziPannello2.addItem("new..."); //per mettercene uno nuovo!!!
+		campoTipoPannello2.setText("");
 		campoCittaPartenzaPannello2.setText("");
 		campoCittaArrivoPannello2.setText("");
 		campoViaPannello2.setText("");
@@ -616,13 +638,13 @@ public class BoundaryPromotore_GestioneCatalogo {
 
 	}
 	
-	private void controlloSintatticoDati(String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException{
+	private void controlloSintatticoDati(String mezzo, String tipo,  String partenza, String arrivo, String via) throws IDEsternoElementoException{
 		
 		if (mezzo.equals("")||partenza.equals("")||arrivo.equals(""))
 			throw new IDEsternoElementoException("I campi con * sono obbligatori.");
 		
 		
-		String s = mezzo+partenza+arrivo+via;
+		String s = mezzo+tipo+partenza+arrivo+via;
 		for (int i = 0; i < s.length(); i++){
 			char c = s.charAt(i);
 			if (!Character.isLetter(s.charAt(i))&&!Character.isWhitespace(c))
@@ -796,10 +818,13 @@ public class BoundaryPromotore_GestioneCatalogo {
 		public void actionPerformed(ActionEvent e) {
 
 			
+			campoTipoPannello2.setText("");
+			
 			if (tendinaMezziPannello2.getItemCount() != 0) { //ci deve essere almeno un elemento, se ho la tendina vuota mi va in null pointer exception.
 				
 				if (tendinaMezziPannello2.getSelectedItem().toString().equals("new...")){
 					campoMezziPannello2.setEditable(true); //attiva il campo sotto per inserire un mezzo non ancora usato
+					campoTipoPannello2.setEditable(true);
 					campoCittaPartenzaPannello2.setEditable(true);
 					campoCittaArrivoPannello2.setEditable(true);
 					tendinaCittaPartenzaPannello2.removeAllItems();
@@ -809,6 +834,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 				} else {
 					campoMezziPannello2.setText("");
 					campoMezziPannello2.setEditable(false);
+					campoTipoPannello2.setText("");
+					campoTipoPannello2.setEditable(false);
 					campoCittaPartenzaPannello2.setText("");
 					campoCittaPartenzaPannello2.setEditable(false);
 					campoCittaArrivoPannello2.setText("");
@@ -925,6 +952,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 			if (ambienteScelto != null){
 				
 				String mezzoTrasporto;
+				String tipoMezzo = "";
 				String cittaPartenza;
 				String cittaArrivo;
 				String via;
@@ -936,6 +964,10 @@ public class BoundaryPromotore_GestioneCatalogo {
 				} else {
 					mezzoTrasporto = (String) tendinaMezziPannello2.getSelectedItem();
 				}
+				
+				if(!campoTipoPannello2.getText().equals("")){
+					tipoMezzo = uppercaseFirstLetters(campoTipoPannello2.getText());
+				}	
 			
 				if (!tendinaCittaPartenzaPannello2.isEnabled() || tendinaCittaPartenzaPannello2.getSelectedItem().toString().equals("new...")){
 					cittaPartenza = uppercaseFirstLetters(campoCittaPartenzaPannello2.getText());
@@ -956,12 +988,14 @@ public class BoundaryPromotore_GestioneCatalogo {
 						
 				//aggiungo il viaggio
 				try {
-					controlloSintatticoDati(mezzoTrasporto, cittaPartenza, cittaArrivo, via);
+					
+					controlloSintatticoDati(mezzoTrasporto, tipoMezzo, cittaPartenza, cittaArrivo, via);
 					
 					int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere il viaggio nel catalogo?", "Conferma Nuovo Viaggio in Catalogo", JOptionPane.YES_NO_OPTION);
 					
 					if (conferma == JOptionPane.YES_OPTION){	
-						controllore.aggiungiViaggio(ambienteScelto, mezzoTrasporto, cittaPartenza, cittaArrivo, via, info);
+						
+						controllore.aggiungiViaggio(ambienteScelto, mezzoTrasporto, tipoMezzo, cittaPartenza, cittaArrivo, via, info);
 						JOptionPane.showMessageDialog(null, "Il nuovo viaggio e' stato aggiunto correttamente nel catalogo.", "Viaggio Aggiunto", JOptionPane.INFORMATION_MESSAGE);
 						aggiornaTendinePannello2(); //aggiorno le tendine
 					}
@@ -1022,12 +1056,14 @@ public class BoundaryPromotore_GestioneCatalogo {
 			tendinaCittaeArrivoPannello2.removeAllItems();
 			
 			campoMezziPannello2.setText("");		//svuota tutti i campi testo
+			campoTipoPannello2.setText("");
 			campoCittaPartenzaPannello2.setText("");
 			campoCittaArrivoPannello2.setText("");
 			campoViaPannello2.setText("");
 			campoInfoPannello2.setText("");
 			
 			campoMezziPannello2.setEditable(false);
+			campoTipoPannello2.setEditable(false);
 			campoCittaPartenzaPannello2.setEditable(false);
 			tendinaMezziPannello2.setEnabled(false);
 			tendinaCittaPartenzaPannello2.setEnabled(false);
@@ -1063,12 +1099,14 @@ public class BoundaryPromotore_GestioneCatalogo {
 			tendinaCittaeArrivoPannello2.setEnabled(false);
 			
 			campoMezziPannello2.setText("");		//svuota tutti i campi testo
+			campoTipoPannello2.setText("");
 			campoCittaPartenzaPannello2.setText("");
 			campoCittaArrivoPannello2.setText("");
 			campoViaPannello2.setText("");
 			campoInfoPannello2.setText("");
 			
 			campoMezziPannello2.setEditable(false);
+			campoTipoPannello2.setEditable(false);
 			campoCittaPartenzaPannello2.setEditable(false);
 			campoCittaArrivoPannello2.setEditable(false);
 			campoViaPannello2.setEditable(false);

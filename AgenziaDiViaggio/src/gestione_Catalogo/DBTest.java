@@ -95,6 +95,7 @@ public class DBTest {
 						"ID INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, " +
 						"ambiente INTEGER, " +
 						"mezzo INTEGER, " +
+						"categoria VARCHAR(30), " +
 						"cittapartenza INTEGER, " +
 						"cittaarrivo INTEGER, " +
 						"via INTEGER, " +
