@@ -2,6 +2,7 @@ package gestione_Catalogo.dao;
 
 import gestione_Catalogo.entity.Biglietto;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
 
 import java.sql.Connection;
@@ -179,6 +180,36 @@ public class PrenotazioneDAO extends DAO{
 			closeResource();
 		}
 
+	}
+	
+	
+	/*
+	 * CRUD - Delete
+	 * Da invocare nell'eliminazione di una Prenotazione dall'Offerta
+	 */
+	public void delete(Prenotazione prenotazione){
+		// TODO Auto-generated method stub
+		try {
+
+			//prima di togliere una prenotazione, devo eliminare tutti i suoi biglietti
+			BigliettoDAO dao = BigliettoDAO.getIstanza();
+			dao.delete(prenotazione);
+			
+			conn = Persistenza.getConnection();
+
+			ps = conn.prepareStatement(deleteQuery);
+
+			ps.setInt(1, prenotazione.getIdPrenotazione());
+
+			ps.executeUpdate();
+
+		} catch (ClassCastException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeResource();
+		}
 	}
 	
 

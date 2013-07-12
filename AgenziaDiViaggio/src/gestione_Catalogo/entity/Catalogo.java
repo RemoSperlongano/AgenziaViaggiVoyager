@@ -162,7 +162,8 @@ public class Catalogo {
 		
 		rimuoviDaMappaPrenotazioni(tratta, offerta, prenotazione);
 		
-		//QUI INSERIRE IL DAO PER LA RIMOZIONE DAL DB
+		PrenotazioneDAO dao = PrenotazioneDAO.getIstanza();
+		dao.delete(prenotazione);
 	}
 
 

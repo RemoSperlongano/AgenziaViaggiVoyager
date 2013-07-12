@@ -6,6 +6,7 @@ package gestione_Catalogo.dao;
 import gestione_Catalogo.entity.Biglietto;
 import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.entity.Offerta;
+import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Viaggiatore;
 
 import java.sql.Connection;
@@ -49,6 +50,9 @@ public class BigliettoDAO extends DAO{
 	private static final String deleteQuery = 
 			"DELETE FROM biglietto " +
 			"WHERE ID=? LIMIT 1";
+	private static final String deletePrenotazioneQuery =
+			"DELETE FROM biglietto " +
+			"WHERE idPrenotazione=?";
 	private static final String findQuery = 
 			"SELECT * FROM biglietto " +
 			"WHERE ID=? LIMIT 1";
@@ -188,6 +192,33 @@ public class BigliettoDAO extends DAO{
 			closeResource();
 		}
 
+	}
+	
+	
+	/*
+	 * CRUD - Delete
+	 * Da invocare nella delete del DaoPrenotazione, per eliminare tutta la prenotazione
+	 */
+	public void delete(Prenotazione prenotazione){
+		try {
+
+			conn = Persistenza.getConnection();
+			
+			//prima di togliere una prenotazione, devo eliminare tutti i suoi biglietti
+
+			ps = conn.prepareStatement(deletePrenotazioneQuery);
+
+			ps.setInt(1, prenotazione.getIdPrenotazione());
+
+			ps.executeUpdate();
+
+		} catch (ClassCastException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeResource();
+		}
 	}
 
 }

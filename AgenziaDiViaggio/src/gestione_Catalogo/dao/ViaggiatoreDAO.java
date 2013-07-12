@@ -185,5 +185,10 @@ public class ViaggiatoreDAO extends DAO{
 		}
 
 	}
+	
+	/*
+	 * CRUD - Delete
+	 * NON IMPLEMENTATA: il sistema vuole aver memoria dei viaggiatori per future campagne promozionali
+	 */
 
 }
