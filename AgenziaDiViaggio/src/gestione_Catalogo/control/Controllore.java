@@ -76,9 +76,6 @@ public abstract class Controllore {
 	
 	public String mostraListaOffertaInCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, TrattaInesistenteException, OfferteNonPresentiException, OffertaInesistenteException{
 		
-		
-		//NUOVA IMPLEMENTAZIONE, PRENDE LE OFFERTE DALLA MAPPA :)
-		
 		String stringaOfferte = "";
 		
 		//prendo tutte le chiavi dalla mappa
@@ -97,34 +94,8 @@ public abstract class Controllore {
 		
 		return stringaOfferte;
 		
-		
-		/*   	VECCHIA IMPLEMENTAZIONE, PRENDE LE OFFERTE DALL'ARRAYLIST
-		String stringaOfferte = "";
-		//prendo tutte le chiavi della mappaOfferta
-		Set<Data> s = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo , via);
-		
-		//prendo l'id della tratta
-		Integer idTratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via).getID();
-		
-		//itero il set di Date, mi faccio dare l'offerta per quella data
-		Iterator<Data> it = s.iterator();
-		
-		while (it.hasNext()){
-			Data data = it.next();
-			Offerta o = catalogo.getOffertaByData(idTratta, data);
-			//Inserisce gli elementi nella stringa da ritornare
-			stringaOfferte += o.getData().stampaData() + "\t" + o.getDataArrivo().stampaData() + "\t" + o.getPosti() + "\n";
-		}
-		
-		return stringaOfferte;
-		
-		
-		
-//		//prendo l'id della tratta
-//		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
-//		//Inserisco in una stringa tutte le offerte per una tratta e la ritorno
-//		return catalogo.getListaOffertePerLaTratta(tratta.getID()); */
 	}
+	
 	
 	public String mostraListaBigliettiPerPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offerta, String prenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, ParseException {
 			

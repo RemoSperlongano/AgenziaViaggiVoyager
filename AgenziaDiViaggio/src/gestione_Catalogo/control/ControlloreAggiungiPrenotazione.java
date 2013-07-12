@@ -5,17 +5,13 @@ import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Tratta;
 import gestione_Catalogo.exception.IDEsternoElementoException;
-import gestione_Catalogo.exception.OffertaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
-import gestione_Catalogo.exception.OfferteNonPresentiException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Set;
 
 /**
  * @authors 

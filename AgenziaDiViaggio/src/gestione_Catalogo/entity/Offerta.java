@@ -1,6 +1,5 @@
 package gestione_Catalogo.entity;
 
-import java.util.Iterator;
 import java.util.Set;
 
 import gestione_Catalogo.dao.OffertaDAO;
@@ -51,24 +50,7 @@ public class Offerta {
 		this.dataInserimento = dataInserimento;
 	}
 
-
-	public boolean verifyExistence(Integer idTratta, Data dataPartenza){
-		//serve per verificare se l'offerta da inserire e' gia presente
-		if(this.idTratta.equals(idTratta) &&
-		   this.dataPartenza.equals(dataPartenza)) return true;
-		else return false;
-		
-	}
 	
-	
-	public boolean verifyExistence(Integer idTratta) {
-		//serve per verificare se nella lista delle offerte, c'e' almeno un offerta per una particolare tratta
-		//evita di eliminare quella tratta
-		if (this.idTratta.equals(idTratta))
-			return true;
-		return false;
-	}
-
 	public Integer getIdOfferta(){
 		return idOfferta;
 	}
