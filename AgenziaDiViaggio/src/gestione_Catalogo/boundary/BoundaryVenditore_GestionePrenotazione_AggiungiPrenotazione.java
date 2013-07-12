@@ -324,7 +324,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			bottoneChiudi = new JButton("X");
 			bottoneChiudi.setBackground(Color.RED);
-			bottoneChiudi.setBounds(panel.getWidth()/20*19-10, 0, panel.getWidth()/20, panel.getHeight()/18);
+			bottoneChiudi.setBounds(panel.getWidth()/20*19, 0, panel.getWidth()/20, panel.getHeight()/18);
 			panel.add(bottoneChiudi);
 	    
 			
@@ -425,10 +425,10 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 						Set<Data> set = controllore.mostraOffertePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 		
 						Iterator<Data> it = set.iterator();
-						if(set.size() > 1){
-							//inserisco l'elemento neutro
-							tendinaOfferta.addItem("-----");
-						}
+	
+						//inserisco l'elemento neutro
+						tendinaOfferta.addItem("-----");
+				
 					    
 						while(it.hasNext()){
 							Data d = it.next();
@@ -530,7 +530,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 				
 				if (!listaNomi.isEmpty()){
 					for (int i=0; i<listaNomi.size(); i++){
-						areaTestoBiglietti+= i+1 + "\t" + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
+						areaTestoBiglietti+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
 					}
 				} else {
 					areaTestoBiglietti = "Non ci sono ancora biglietti per questa prenotazione.";
@@ -904,13 +904,15 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			//Prendo la data dalla tendina offerte
-			ambienteScelto 	= 	(String) tendinaAmbiente.getSelectedItem();
-			mezzoScelto		= 	(String) tendinaMezzi.getSelectedItem();
-			partenzaScelta 	=	(String) tendinaCittaPartenza.getSelectedItem();
-			arrivoScelto 	= 	(String) tendinaCittaArrivo.getSelectedItem();
-			viaScelta		= 	(String) tendinaVia.getSelectedItem();
-			offertaScelta 	= 	(String) tendinaOfferta.getSelectedItem();
+			if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
+			
+				//Prendo la data dalla tendina offerte
+				ambienteScelto 	= 	(String) tendinaAmbiente.getSelectedItem();
+				mezzoScelto		= 	(String) tendinaMezzi.getSelectedItem();
+				partenzaScelta 	=	(String) tendinaCittaPartenza.getSelectedItem();
+				arrivoScelto 	= 	(String) tendinaCittaArrivo.getSelectedItem();
+				viaScelta		= 	(String) tendinaVia.getSelectedItem();
+				offertaScelta 	= 	(String) tendinaOfferta.getSelectedItem();
 			
 										
 				try {
@@ -947,48 +949,10 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				}
 				
-				
-			
-			
-			
-			/*
-			 * DA IMPLEMENTARE
-			 */
-
-		/*	if (tendinaOffertaPannello3.getItemCount() != 0){
-			
-				offertaScelta = (String) tendinaOffertaPannello3.getSelectedItem();
-			
-				if (!offertaScelta.equals("-----")){
-					int conferma = JOptionPane.showConfirmDialog(null, "Rimuovere l'offerta per il viaggio?", "Conferma Rimozione Offerta", JOptionPane.YES_NO_OPTION);
-					if (conferma == JOptionPane.YES_OPTION){
-					
-						// rimuovo il viaggio
-						try {
-							controllore.rimuoviOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
-							JOptionPane.showMessageDialog(null, "L'offerta e' stata rimossa correttamente.", "Offerta Rimossa", JOptionPane.INFORMATION_MESSAGE);
-							aggiornaOffertePannello3();
-						
-						} catch (IDEsternoElementoException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
-						} catch (TrattaInesistenteException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-						} catch (OffertaInesistenteException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-						} catch (ParseException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-						} catch (PrenotazioneException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
-						}
-					}
-				}  else {
-					JOptionPane.showMessageDialog(null, "Nessuna offerta selezionata!");
-				}
-			
 			} else {
 				JOptionPane.showMessageDialog(null, "Nessuna offerta selezionata!");
 			}
-*/		
+			
 		}
 
 	}

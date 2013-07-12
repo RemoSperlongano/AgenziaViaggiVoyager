@@ -1,6 +1,5 @@
 package gestione_Catalogo.entity;
 
-import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 
 import java.util.TreeMap;

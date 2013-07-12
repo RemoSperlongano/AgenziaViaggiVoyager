@@ -1,31 +1,12 @@
 package gestione_Catalogo.boundary;
 
-import gestione_Catalogo.entity.Data;
-import gestione_Catalogo.exception.IDEsternoElementoException;
-import gestione_Catalogo.exception.MappaException;
-import gestione_Catalogo.exception.OffertaException;
-import gestione_Catalogo.exception.OffertaInesistenteException;
-import gestione_Catalogo.exception.OfferteNonPresentiException;
-import gestione_Catalogo.exception.PrenotazioneException;
-import gestione_Catalogo.exception.TrattaInesistenteException;
-
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Set;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 /**
  * @authors 
@@ -37,18 +18,6 @@ public class BoundaryVenditore_GestionePrenotazione {
 	/*
 	 * Attributi di istanza
 	 */
-	
-	//Entita'
-	private String ambienteScelto;
-	private String mezzoScelto;
-	private String partenzaScelta;
-	private String arrivoScelto;
-	private String viaScelta;
-	private String offertaScelta;
-	private String areaTestoOfferta;
-	private String areaTestoCatalogo;
-	private String areaTestoImp;
-	private String areaTestoPrenotazione;
 	
 
 	//Pannelli
@@ -103,29 +72,29 @@ public class BoundaryVenditore_GestionePrenotazione {
 		
 		bottoneAggiungiPrenotazione = new JButton("Aggiungi Prenotazione");
 		bottoneAggiungiPrenotazione.setBackground(Color.CYAN);
-		bottoneAggiungiPrenotazione.setBounds(panel1.getWidth()/25, panel1.getHeight()/6, panel1.getWidth()/6, panel1.getHeight()/2);
+		bottoneAggiungiPrenotazione.setBounds(panel1.getWidth()/25-15, panel1.getHeight()/6, panel1.getWidth()/6+5, panel1.getHeight()/2);
 		panel1.add(bottoneAggiungiPrenotazione);//aggiungo il bottone al secondo pannello
 		
 		bottoneModificaPrenotazione = new JButton("Modifica Prenotazione");
 		bottoneModificaPrenotazione.setBackground(Color.GREEN);
-		bottoneModificaPrenotazione.setBounds(panel1.getWidth()/25*7, panel1.getHeight()/6, panel1.getWidth()/6, panel1.getHeight()/2);
+		bottoneModificaPrenotazione.setBounds(panel1.getWidth()/25*7-15, panel1.getHeight()/6, panel1.getWidth()/6+5, panel1.getHeight()/2);
 		panel1.add(bottoneModificaPrenotazione);
 		
 		
 		bottoneRimuoviPrenotazione = new JButton("Rimuovi Prenotazione");
 		bottoneRimuoviPrenotazione.setBackground(Color.YELLOW);
-		bottoneRimuoviPrenotazione.setBounds(panel1.getWidth()/25*13, panel1.getHeight()/6, panel1.getWidth()/6, panel1.getHeight()/2);
+		bottoneRimuoviPrenotazione.setBounds(panel1.getWidth()/25*13-15, panel1.getHeight()/6, panel1.getWidth()/6+5, panel1.getHeight()/2);
 		panel1.add(bottoneRimuoviPrenotazione);//aggiungo il bottone al secondo pannello
 		
 		
 		bottoneEmissioneBiglietto = new JButton("Emissione Biglietto");
 		bottoneEmissioneBiglietto.setBackground(Color.PINK);
-		bottoneEmissioneBiglietto.setBounds(panel1.getWidth()/25*19, panel1.getHeight()/6, panel1.getWidth()/6, panel1.getHeight()/2);
+		bottoneEmissioneBiglietto.setBounds(panel1.getWidth()/25*19-15, panel1.getHeight()/6, panel1.getWidth()/6+5, panel1.getHeight()/2);
 		panel1.add(bottoneEmissioneBiglietto);
 		
 		bottoneChiudiPannello1 = new JButton("X");
 		bottoneChiudiPannello1.setBackground(Color.RED);
-		bottoneChiudiPannello1.setBounds(panel1.getWidth()/20*19-10, 0, panel1.getWidth()/20, panel1.getHeight()/2-3);
+		bottoneChiudiPannello1.setBounds(panel1.getWidth()/20*19, 0, panel1.getWidth()/20, panel1.getHeight()/2-3);
 		panel1.add(bottoneChiudiPannello1);
 		
 		

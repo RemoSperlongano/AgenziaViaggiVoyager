@@ -59,7 +59,7 @@ public class ControlloreAggiungiPrenotazione extends Controllore{
 		
 		//Aggiungo la prenotazione al catalogo
 		catalogo.aggiungiPrenotazioneAlCatalogo(prenotazione, offerta, tratta);
-		log.aggiornaLogAggiungiPrenotazione(ambiente, mezzo, partenza, arrivo, via, dataOfferta, nomeAcquirente);
+		log.aggiornaLogAggiungiPrenotazione(ambiente, mezzo, partenza, arrivo, via, dataPartenza, nomeAcquirente);
 		
 		
 	}

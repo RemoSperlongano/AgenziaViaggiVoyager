@@ -63,15 +63,26 @@ public class Log {
 		
 	}
 	
-	public void aggiornaLogAggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataPartenza, String nomeAcquirente) {
+	public void aggiornaLogAggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
 		log = "[" + Data.stampaDataAttuale() + "] AGGIUNTA NUOVA PRENOTAZIONE: \n";
 		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
-		log+= "Data di Partenza: " + dataPartenza.stampaData()+"\n";
+		log+= "Data di Partenza: " + dataPartenza +"\n";
 		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
 		System.out.println(log);
 		salvaLog(log); 
 
 		
+	}
+	
+
+	public void aggiornaLogRimuoviPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = "[" + Data.stampaDataAttuale() + "] RIMOSSA PRENOTAZIONE: \n";
+		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
+		log+= "Data di Partenza: " + dataPartenza +"\n";
+		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
+		System.out.println(log);
+		salvaLog(log); 
+
 	}
 
 	
@@ -119,6 +130,5 @@ public class Log {
 	}
 
 
-	
 
 }
