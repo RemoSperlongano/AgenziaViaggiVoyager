@@ -156,24 +156,6 @@ public class Catalogo {
 		aggiungiInMappaOfferte(tratta, offerta);
 	}
 	
-	public void modificaOffertaNelCatalogo(Offerta offertaVecchia, Offerta offertaNuova, Tratta tratta) throws IDEsternoElementoException, OffertaInesistenteException{
-		
-		//prima elimino la vecchia offerta
-		listaOfferte.remove(offertaVecchia);
-		
-		rimuoviDaMappaOfferte(tratta, offertaVecchia);
-		
-		//aggiungo quella nuova
-		listaOfferte.add(offertaNuova);
-		
-		aggiungiInMappaOfferte(tratta, offertaNuova);
-		
-		//invoco il DAO per modificare il db
-		OffertaDAO dao = OffertaDAO.getIstanza();
-		dao.update(offertaNuova);
-		
-	}
-	
 	
 	public void rimuoviOffertaDalCatalogo(Offerta offerta, Tratta tratta) throws IDEsternoElementoException, OffertaInesistenteException {
 		listaOfferte.remove(offerta);
@@ -398,7 +380,7 @@ public class Catalogo {
 		Data dataPartenza = offerta.getData();
 		mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(partenza).getElemento(arrivo).getElemento(via).getOfferta(dataPartenza).rimuoviPrenotazione(prenotazione.getnomeAcquirente());
 	}
-
+	
 
 	
 	

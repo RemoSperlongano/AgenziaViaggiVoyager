@@ -13,7 +13,7 @@ import java.util.TreeMap;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class MappaPrenotazioni extends TreeMap<String, Prenotazione>  implements Cloneable{
+public class MappaPrenotazioni extends TreeMap<String, Prenotazione>{
 
 	/**
 	 * 
@@ -46,13 +46,5 @@ public class MappaPrenotazioni extends TreeMap<String, Prenotazione>  implements
 		return super.get(nomeAcquirente);
 	}
 	
-	
-	
-	//clone
-	public MappaPrenotazioni clone(){
-		//creo un oggetto richiamando il metodo clone della superclasse
-			MappaPrenotazioni clonato = (MappaPrenotazioni) super.clone();
-			return clonato;
-	}
 
 }

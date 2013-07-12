@@ -42,7 +42,6 @@ public class ControlloreAggiungiPrenotazione extends Controllore{
 			throw new PrenotazioneException("Prenotazione già esistente per questo viaggio");
 		}
 		
-		System.out.println("Sono qui");
 		//prendo la  Tratta
 		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
 		
@@ -55,12 +54,8 @@ public class ControlloreAggiungiPrenotazione extends Controllore{
 			throw new PostiNonSufficientiException("Non ci sono abbastanza Posti disponibili per soddisfare tale prenotazione");
 		}
 		
-		//clone sull'offerta
-		Offerta offertaModificata = offerta.clone();
-		
-		//Diminuisco il numero di posti disponibili per l'offerta e la sostituisco
-		offertaModificata.assegnaPosti(listaNomi.size());
-		catalogo.modificaOffertaNelCatalogo(offerta, offertaModificata, tratta);
+
+		offerta.assegnaPosti(listaNomi.size());
 		
 		
 		//creo una nuova Prenotazione

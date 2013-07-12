@@ -12,7 +12,7 @@ import gestione_Catalogo.exception.PrenotazioneInesistenteException;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class Offerta implements Cloneable{
+public class Offerta {
 	
 	private Integer idOfferta;
 	private Integer idTratta;
@@ -95,6 +95,9 @@ public class Offerta implements Cloneable{
 	
 	public void assegnaPosti(int nPosti){
 		this.posti -= nPosti;
+		
+		OffertaDAO dao = OffertaDAO.getIstanza();
+		dao.update(this);
 	}
 	
 	public boolean esistenzaPrenotazione(String nomeAcquirente){
@@ -117,21 +120,5 @@ public class Offerta implements Cloneable{
 		mappaPrenotazioni.rimuoviPrenotazione(nomeAcquirente);
 	}
 	
-	
-	//Clone
-	
-	public Offerta clone() throws CloneNotSupportedException{
-		//creo un oggetto richiamando il metodo clone della superclasse
-		Offerta clonato = (Offerta) super.clone();
-		//per clonare anche le variabili oggetto invoco in clone per quella variabile!
-		clonato.idOfferta = this.idOfferta;
-		clonato.idTratta = this.idTratta;
-		clonato.dataPartenza = this.dataPartenza;
-		clonato.dataArrivo = this.dataArrivo;
-		clonato.posti = this.posti;
-		clonato.dataInserimento = this.dataInserimento;
-		clonato.mappaPrenotazioni = this.mappaPrenotazioni;
-		return clonato;
-	}
 	
 }
