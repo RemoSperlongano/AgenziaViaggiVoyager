@@ -248,7 +248,7 @@ public class OffertaDAO extends DAO {
 	}
 
 	/*
-	 * CRUD - Delete
+	 * CRUD -  Delete
 	 * Da invocare nell'eliminazione di un offerta dal Catalogo
 	 */
 	public void delete(Offerta offerta){
