@@ -3,12 +3,16 @@
  */
 package gestione_Catalogo.dao;
 
+import gestione_Catalogo.entity.Biglietto;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.entity.Offerta;
+import gestione_Catalogo.entity.Viaggiatore;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * @authors
@@ -135,6 +139,51 @@ public class ViaggiatoreDAO extends DAO{
 			closeResource();
 			return null;
 		}
+	}
+	
+	
+	/*
+	 * CRUD - Read
+	 * La Read invocata nel BigliettoDAO - devo riprendere il nome del viaggiatore di quel biglietto
+	 * 
+	 */
+
+	
+	public Viaggiatore read(Integer idViaggiatore){
+		
+		Viaggiatore viaggiatore = null;
+		
+		try {
+			conn = Persistenza.getConnection();
+			ps = conn.prepareStatement(findQuery);
+			ps.setInt(1, idViaggiatore);
+			rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				String nome = rs.getString(2);
+				String cognome = rs.getString(3);
+				String mail = rs.getString(4);
+				
+				viaggiatore = new Viaggiatore(idViaggiatore, nome, cognome, mail);
+				
+			}
+
+			closeResource();
+			return viaggiatore;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		} catch (SecurityException e) {
+			e.printStackTrace();
+			return null;
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			closeResource();
+		}
+
 	}
 
 }

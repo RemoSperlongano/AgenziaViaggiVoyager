@@ -1,11 +1,14 @@
 package gestione_Catalogo.dao;
 
+import gestione_Catalogo.entity.Biglietto;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.entity.Prenotazione;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * @authors 
@@ -129,6 +132,53 @@ public class PrenotazioneDAO extends DAO{
 			closeResource();
 			return null;
 		}
+	}
+	
+	
+	/*
+	 * CRUD - Read
+	 * La Read invocata nel Catalogo - siamo in fase di fetch del Catalogo dal DB 
+	 * 
+	 */
+
+	
+	public ArrayList<Prenotazione> getListaPrenotazioni(){
+		ArrayList<Prenotazione> listaPrenotazioni = new ArrayList<Prenotazione>();
+		try {
+			conn = Persistenza.getConnection();
+			ps = conn.prepareStatement(getListaPrenotazioneQuery);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Integer idPrenotazione = rs.getInt(1);
+				Integer idOfferta = rs.getInt(2);
+				String acquirente= rs.getString(3);
+				Data dataInserimento = new Data(rs.getTimestamp(4));
+				
+				//Interrogo il bigliettoDAO per avere la lista dei biglietti per questa tratta!
+				BigliettoDAO dao = BigliettoDAO.getIstanza();
+				
+				ArrayList<Biglietto> listaBiglietti = dao.getListaBiglietti(idPrenotazione);
+				
+				Prenotazione prenotazione = new Prenotazione(idPrenotazione, idOfferta, acquirente, dataInserimento, listaBiglietti);
+				listaPrenotazioni.add(prenotazione);
+			}
+
+			closeResource();
+			return listaPrenotazioni;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		} catch (SecurityException e) {
+			e.printStackTrace();
+			return null;
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			closeResource();
+		}
+
 	}
 	
 

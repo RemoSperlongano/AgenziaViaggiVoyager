@@ -23,6 +23,13 @@ public class Viaggiatore {
 		this.idViaggiatore = dao.insertAndReturnId(nome, cognome, eMail);
 	}
 	
+	public Viaggiatore(Integer idViaggiatore, String nome, String cognome, String eMail){
+		this.idViaggiatore = idViaggiatore;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.eMail = eMail;
+	}
+	
 	public Integer getIdViaggiatore(){
 		return idViaggiatore;
 	}

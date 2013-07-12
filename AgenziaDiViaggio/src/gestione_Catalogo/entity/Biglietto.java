@@ -21,9 +21,12 @@ public class Biglietto {
 		
 		BigliettoDAO dao = BigliettoDAO.getIstanza();
 		this.idBiglietto = dao.insertAndReturnId(idPrenotazione, viaggiatore.getIdViaggiatore());
-		
-		
-		
+		}
+	
+	public Biglietto(Integer idBiglietto, Integer idPrenotazione, Viaggiatore viaggiatore){
+		this.idBiglietto = idBiglietto;
+		this.idPrenotazione = idPrenotazione;
+		this.viaggiatore = viaggiatore;
 	}
 	
 	

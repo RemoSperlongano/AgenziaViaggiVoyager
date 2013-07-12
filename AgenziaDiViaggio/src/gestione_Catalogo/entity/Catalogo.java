@@ -2,6 +2,7 @@ package gestione_Catalogo.entity;
 
 import gestione_Catalogo.dao.CatalogoDAO;
 import gestione_Catalogo.dao.OffertaDAO;
+import gestione_Catalogo.dao.PrenotazioneDAO;
 import gestione_Catalogo.dao.TrattaDAO;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
@@ -43,9 +44,15 @@ public class Catalogo {
 		OffertaDAO offertaDao = OffertaDAO.getIstanza();
 		listaOfferte = offertaDao.getListaOfferte();
 		
+		PrenotazioneDAO prenotazioneDao = PrenotazioneDAO.getIstanza();
+		listaPrenotazioni = prenotazioneDao.getListaPrenotazioni();
+		
 		try {
 			caricaCatalogo();
 		} catch (IDEsternoElementoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (OffertaInesistenteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -159,17 +166,27 @@ public class Catalogo {
 	}
 
 
-	public void caricaCatalogo() throws IDEsternoElementoException{
+	public void caricaCatalogo() throws IDEsternoElementoException, OffertaInesistenteException{
 		for (Tratta tratta : listaTratte){
 			aggiungiInMappaCatalogo(tratta);
 			caricaOfferte(tratta);
 		}
 	}
 	
-	public void caricaOfferte(Tratta tratta) throws IDEsternoElementoException{
+	public void caricaOfferte(Tratta tratta) throws IDEsternoElementoException, OffertaInesistenteException{
 		for (Offerta offerta : listaOfferte){
-			if (tratta.getID().equals(offerta.getIdTratta()))
+			if (tratta.getID().equals(offerta.getIdTratta())){
 				aggiungiInMappaOfferte(tratta, offerta);
+			    caricaPrenotazioni(tratta, offerta);
+			}
+		}		
+	}
+	
+	public void caricaPrenotazioni(Tratta tratta, Offerta offerta) throws OffertaInesistenteException, IDEsternoElementoException{
+		for (Prenotazione prenotazione : listaPrenotazioni){
+			if (offerta.getIdOfferta().equals(prenotazione.getIdOfferta())){
+				aggiungiInMappaPrenotazioni(tratta, offerta, prenotazione);
+			}
 		}
 	}
 	

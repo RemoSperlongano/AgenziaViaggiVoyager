@@ -39,6 +39,14 @@ public class Prenotazione {
 		}
 	}
 	
+	public Prenotazione(Integer idPrenotazione, Integer idOfferta, String nomeAcquirente, Data dataInserimento, ArrayList<Biglietto> listaBiglietti){
+		this.idPrenotazione = idPrenotazione;
+		this.idOfferta = idOfferta;
+		this.nomeAcquirente = nomeAcquirente;
+		this.dataInserimento = dataInserimento;
+		this.listaBiglietti = listaBiglietti;
+	}
+	
 	
 	public Integer getIdPrenotazione(){
 		return idPrenotazione;

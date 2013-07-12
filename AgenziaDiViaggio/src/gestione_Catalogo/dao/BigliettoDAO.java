@@ -3,12 +3,16 @@
  */
 package gestione_Catalogo.dao;
 
+import gestione_Catalogo.entity.Biglietto;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.entity.Offerta;
+import gestione_Catalogo.entity.Viaggiatore;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * @authors
@@ -53,6 +57,12 @@ public class BigliettoDAO extends DAO{
 			"SELECT * FROM biglietto " + 
 			"WHERE idprenotazione=? AND idviaggiatore=? LIMIT 1";
 
+	
+	private static final String findByIdQuery =
+			"SELECT * FROM biglietto " + 
+			"WHERE idprenotazione=?";
+	
+	
 	private static final String dropQuery = "DROP TABLE biglietto IF EXISTS";
 	
 	private static Connection conn = null;
@@ -132,6 +142,52 @@ public class BigliettoDAO extends DAO{
 			closeResource();
 			return null;
 		}
+	}
+	
+	
+	/*
+	 * CRUD - Read
+	 * La Read invocata nella PrenotazioneDAO - devo riprendere tutti i biglietti per ogni prenotazione
+	 * 
+	 */
+
+	
+	public ArrayList<Biglietto> getListaBiglietti(Integer idPrenotazione){
+		ArrayList<Biglietto> listaBiglietti = new ArrayList<Biglietto>();
+		try {
+			conn = Persistenza.getConnection();
+			ps = conn.prepareStatement(findByIdQuery);
+			ps.setInt(1, idPrenotazione);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Integer idBiglietto = rs.getInt(1);
+				
+				//interrogo il viaggiatore Dao per riprendere il viaggiatore
+
+				ViaggiatoreDAO dao = ViaggiatoreDAO.getIstanza();
+				Viaggiatore viaggiatore = dao.read(rs.getInt(3));
+				
+				
+				Biglietto biglietto = new Biglietto(idBiglietto, idPrenotazione, viaggiatore);
+				listaBiglietti.add(biglietto);
+			}
+
+			closeResource();
+			return listaBiglietti;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		} catch (SecurityException e) {
+			e.printStackTrace();
+			return null;
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			closeResource();
+		}
+
 	}
 
 }

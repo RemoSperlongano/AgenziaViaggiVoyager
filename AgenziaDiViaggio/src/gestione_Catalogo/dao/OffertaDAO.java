@@ -148,8 +148,8 @@ public class OffertaDAO extends DAO {
 	
 	/*
 	 * CRUD - Read
-	 * La Read invocata nel CatalogoDAO - siamo in fase di fetch del Catalogo dal DB 
-	 * Questa particolare read, mi torna solo il valore, l'id l'ho preso dal CatalogoDAO
+	 * La Read invocata nel Catalogo - siamo in fase di fetch del Catalogo dal DB 
+	 * 
 	 */
 
 //	public IDEsternoElemento readOnlyValue(Integer id) {
