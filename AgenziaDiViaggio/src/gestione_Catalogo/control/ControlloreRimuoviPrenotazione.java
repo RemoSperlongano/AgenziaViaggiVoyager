@@ -14,4 +14,6 @@ public class ControlloreRimuoviPrenotazione extends Controllore {
 		super();
 	}
 
+	
+
 }

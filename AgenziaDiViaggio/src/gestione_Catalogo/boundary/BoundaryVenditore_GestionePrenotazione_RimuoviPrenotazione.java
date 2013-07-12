@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -24,6 +25,7 @@ import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
+import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 /**
@@ -44,10 +46,12 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 	private String arrivoScelto;
 	private String viaScelta;
 	private String offertaScelta;
+	private String prenotazioneScelta;
 	private String areaTestoOfferta;
 	private String areaTestoCatalogo;
 	private String areaTestoImp;
 	private String areaTestoPrenotazione;
+	private String areaTestoBiglietto;
 	
 	//Pannelli
 	private JPanel 	panel;   //C'e' un solo pannello in questa boundary!!!
@@ -91,6 +95,7 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 	private TendinaArriviAA ascoltatoreTendinaArrivi;
 	private TendinaViaAA ascoltatoreTendinaVia;
 	private TendinaOfferteAA ascoltatoreTendinaOfferte;
+	private TendinaPrenotazioniAA ascoltatoreTendinaPrenotazioni;
 	private ChiudiAA ascoltatoreBottoneChiudi;
 	private RimuoviAA ascoltatoreBottoneRimuovi;
 	private SvuotaAA ascoltatoreBottoneSvuota;
@@ -110,6 +115,7 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 		offertaScelta = null;
 		areaTestoOfferta = "";
 		areaTestoPrenotazione = "";
+		areaTestoBiglietto = "";
 		areaTestoImp = "Offerte per il viaggio:   ";
 		
 		
@@ -292,6 +298,9 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 		ascoltatoreTendinaOfferte = new TendinaOfferteAA();
 		tendinaOfferta.addActionListener(ascoltatoreTendinaOfferte);
 		
+		ascoltatoreTendinaPrenotazioni = new TendinaPrenotazioniAA();
+		tendinaPrenotazione.addActionListener(ascoltatoreTendinaPrenotazioni);
+		
 		ascoltatoreBottoneChiudi = new ChiudiAA();
 		bottoneChiudi.addActionListener(ascoltatoreBottoneChiudi);
 		
@@ -397,8 +406,10 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 						areaTestoOfferta = e.getMessage();
 					} catch (OffertaInesistenteException e) {
 						areaTestoOfferta = e.getMessage();
-					} 
-					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);	
+					} finally{
+						areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);	
+					}
+				
 					
 				}
 				
@@ -407,6 +418,97 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 				
 		
 		
+	}
+	
+	
+	private void aggiornaPrenotazioni(){
+		
+		tendinaPrenotazione.removeAllItems();
+		tendinaPrenotazione.setEnabled(false);
+		
+		areaTesto.setText("");
+		areaTestoOfferta = "";
+		areaTestoPrenotazione="PRENOTAZIONI EFFETTUATE:\n\n";
+		
+		
+		
+		if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
+		
+			if(!offertaScelta.equals("-----")){
+				
+				try { //cerca nella mappa tutte le chiavi da aggiungere in tendina
+					Set<String> s = controllore.mostraPrenotazioniPerOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
+					Iterator<String> it = s.iterator();
+					
+					if(s.size() > 1){
+						//inserisco l'elemento neutro
+						tendinaPrenotazione.addItem("-----");
+					}
+					
+					while(it.hasNext()){ 	//itero l'insieme di chiavi
+						String str = it.next();
+						tendinaPrenotazione.addItem(str);    //ne aggiungo uno alla volta
+						areaTestoPrenotazione += str + "\n"; // aggiorno l'insieme di prenotazioni
+					}
+					
+					tendinaPrenotazione.setEnabled(true);
+					tendinaPrenotazione.setSelectedIndex(0);
+					
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+					
+					//ImpostoareaTestoOfferta
+					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
+					
+						
+					
+				} catch (IDEsternoElementoException e1) {
+					areaTestoCatalogo = e1.getMessage();
+				} catch (ParseException e1) {
+					areaTestoOfferta = e1.getMessage();
+				} catch (OffertaInesistenteException e1) {
+					areaTestoOfferta = e1.getMessage();
+				} catch (PrenotazioneInesistenteException e1) {
+					areaTestoPrenotazione = e1.getMessage();
+				}finally{
+					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione);	
+				}
+			}
+		
+		}
+	}
+	
+	private void aggiornaBiglietti(){
+		
+		areaTesto.setText("");
+		areaTestoOfferta = "";
+		areaTestoBiglietto = "";
+		
+		if (tendinaPrenotazione.getItemCount()!=0){
+			if (!prenotazioneScelta.equals("-----")){
+				
+				
+				try {
+					//Imposto le varie stringhe
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
+					areaTestoPrenotazione = "A nome di " + prenotazioneScelta + "\n\n";
+					
+					areaTestoBiglietto += controllore.mostraListaBigliettiPerPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, prenotazioneScelta);
+				} catch (OffertaInesistenteException e) {
+					areaTestoOfferta = e.getMessage();
+				} catch (PrenotazioneInesistenteException e) {
+					areaTestoPrenotazione = e.getMessage();
+				} catch (IDEsternoElementoException e) {
+					areaTestoCatalogo = e.getMessage();
+				} catch (ParseException e) {
+					e.printStackTrace();
+				} finally{
+					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione + areaTestoBiglietto); 
+				}
+				
+				
+			}
+		}
 	}
 	
 	
@@ -645,21 +747,51 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			
+			//Svuotiamo tutte le tendine successive (non le precedenti) e le disattiviamo
 			tendinaPrenotazione.removeAllItems();
 			tendinaPrenotazione.setEnabled(false);
 			
 			
+			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
+			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
+			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
+			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
 			offertaScelta = (String) tendinaOfferta.getSelectedItem();
 			
-			if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
-			
-				/*
-				 * DA IMPLEMENTARE
-				 */
-			
+			if (tendinaOfferta.getItemCount()!=0){
+				if (offertaScelta.equals("-----")){
+					aggiornaOfferte();
+				} else {
+					aggiornaPrenotazioni();
+				}
 			}
+		
 			
+			
+			
+		}
+		
+	}
+	
+	private class TendinaPrenotazioniAA implements ActionListener{
+
+		
+		public void actionPerformed(ActionEvent arg0) {
+		
+			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
+			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
+			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
+			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
+			offertaScelta = (String) tendinaOfferta.getSelectedItem();
+			prenotazioneScelta = (String) tendinaPrenotazione.getSelectedItem();
+			
+			if (tendinaPrenotazione.getItemCount()!=0){
+				if (prenotazioneScelta.equals("-----")){
+					aggiornaPrenotazioni();
+				} else {
+					aggiornaBiglietti();
+				}
+			}
 			
 		}
 		

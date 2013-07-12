@@ -1613,3 +1613,86 @@ TrenoBase  ->  Napoli : Latina  ->  (Diretto)
 [11/07/2013, 16:18:04] AGGIUNTO VIAGGIO Via Terra:
 TrenoBase  ->  Napoli : Latina  ->  Formia
 
+[12/07/2013, 00:44:21] AGGIUNTA NUOVA OFFERTA: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 08/10/2013, 10:00
+Data di Arrivo: 08/10/2013, 12:00
+Posti disponibili: 100
+
+[12/07/2013, 00:44:49] AGGIUNTA NUOVA OFFERTA: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 08/09/2013, 16:00
+Data di Arrivo: 08/09/2013, 20:00
+Posti disponibili: 100
+
+[12/07/2013, 00:45:24] AGGIUNTA NUOVA OFFERTA: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Data di Arrivo: 04/09/2013, 13:00
+Posti disponibili: 50
+
+[12/07/2013, 00:46:31] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Remo Sperlongano
+
+[12/07/2013, 01:16:19] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Remo Sperlongano
+
+[12/07/2013, 01:16:46] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Sonia Strada
+
+[12/07/2013, 01:22:00] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Remo Sperlongano
+
+[12/07/2013, 01:24:51] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Remo Sperlongano
+
+[12/07/2013, 01:26:54] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Sonia Strada
+
+[12/07/2013, 01:32:12] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Remo Sperlongano
+
+[12/07/2013, 02:03:03] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Remo Sperlongano
+
+[12/07/2013, 02:03:16] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Sonia Strada
+
+[12/07/2013, 02:03:36] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Ivan Torre
+
+[12/07/2013, 02:06:44] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Remo Sperlongano
+
+[12/07/2013, 02:07:08] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Sonia Strada
+
+[12/07/2013, 02:07:37] AGGIUNTA NUOVA PRENOTAZIONE: 
+Viaggio Via Aria: Boing  ->  Napoli : Cagliari  ->  (Diretto)
+Data di Partenza: 04/09/2013, 12:15
+Nome Acquirente: Ivan Torre
+

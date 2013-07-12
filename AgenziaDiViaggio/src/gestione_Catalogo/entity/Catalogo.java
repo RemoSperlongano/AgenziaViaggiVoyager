@@ -283,6 +283,11 @@ public class Catalogo {
 		return mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(partenza).getElemento(arrivo).getElemento(via).getOfferta(data);
 	}
 	
+	public Prenotazione getPrenotazioneFromMappa(String ambiente,String mezzo, String partenza, String arrivo, String via, Data dataPartenza, String prenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException {
+		
+		return mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(partenza).getElemento(arrivo).getElemento(via).getOfferta(dataPartenza).getPrenotazione(prenotazione);
+	}
+	
 	
 	private void aggiungiInMappaCatalogo(Tratta tratta) throws IDEsternoElementoException {
 		/*
@@ -393,6 +398,10 @@ public class Catalogo {
 		Data dataPartenza = offerta.getData();
 		mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(partenza).getElemento(arrivo).getElemento(via).getOfferta(dataPartenza).rimuoviPrenotazione(prenotazione.getnomeAcquirente());
 	}
+
+
+	
+	
 
 
 	

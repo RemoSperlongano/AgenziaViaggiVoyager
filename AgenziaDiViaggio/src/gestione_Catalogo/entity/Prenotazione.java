@@ -52,5 +52,9 @@ public class Prenotazione {
 	public Data getDataInserimento(){
 		return dataInserimento;
 	}
+	
+	public ArrayList<Biglietto> getListaBiglietti(){
+		return listaBiglietti;
+	}
 
 }

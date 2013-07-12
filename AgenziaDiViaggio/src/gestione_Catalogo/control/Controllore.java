@@ -7,13 +7,17 @@ package gestione_Catalogo.control;
  */
 
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
+import gestione_Catalogo.entity.Biglietto;
 import gestione_Catalogo.entity.Catalogo;
 import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.entity.Log;
 import gestione_Catalogo.entity.Offerta;
+import gestione_Catalogo.entity.Prenotazione;
+import gestione_Catalogo.entity.Viaggiatore;
 
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
@@ -120,6 +124,27 @@ public abstract class Controllore {
 //		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
 //		//Inserisco in una stringa tutte le offerte per una tratta e la ritorno
 //		return catalogo.getListaOffertePerLaTratta(tratta.getID()); */
+	}
+	
+	public String mostraListaBigliettiPerPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offerta, String prenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, ParseException {
+			
+		String stringaBiglietti = "ELENCO BIGLIETTI:\n\n";
+		
+		Data dataPartenza = Data.parseTimestamp(offerta);
+		
+		Prenotazione p = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataPartenza, prenotazione);
+
+		ArrayList<Biglietto> listaBiglietti = p.getListaBiglietti();
+		
+		
+		
+		for (int i=0; i<listaBiglietti.size(); i++){
+			Viaggiatore v = listaBiglietti.get(i).getViaggiatore();
+			stringaBiglietti += v.getNome() + "\t" + v.getCognome() + "\t" + v.getEmail() + "\n";
+		}
+		
+		
+		return stringaBiglietti;
 	}
 	
 
