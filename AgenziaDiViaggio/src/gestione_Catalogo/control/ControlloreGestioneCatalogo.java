@@ -36,16 +36,10 @@ public class ControlloreGestioneCatalogo extends ControlloreGestioneOfferta {
 		if (via.equals("")) via = Via.DIRETTO;
 		
 		//Il mezzo è uguale a mezzo + tipo
-		
-		String categoriaMezzo = "";
-		
+		String categoriaMezzo = mezzo;
 		if (!tipoMezzo.equals("")){
-			categoriaMezzo = mezzo;
-			mezzo = mezzo + tipoMezzo;
-		} else {
-			categoriaMezzo = mezzo;
+			mezzo = mezzo + " " + tipoMezzo;
 		}
-		
 		
 		//verifico l'esistenza del viaggio nel catalogo
 		if (catalogo.verificaEsistenzaViaggio(ambiente, mezzo, cittaPartenza, cittaArrivo, via)){

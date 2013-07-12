@@ -364,7 +364,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 	    
 	    labelInfoPannello2 = new JLabel();			//Etichetta per le info
 	    labelInfoPannello2.setFont(new Font("Arial", 0, 15));
-	    labelInfoPannello2.setBounds(panel2.getWidth()/10*3-10, panel2.getHeight()/6*4, panel2.getWidth()/6, 20);
+	    labelInfoPannello2.setBounds(panel2.getWidth()/10*3-15, panel2.getHeight()/6*4-5, panel2.getWidth()/6, 20);
 	    labelInfoPannello2.setText("Info");
 	    panel2.add(labelInfoPannello2);
 	    
@@ -372,7 +372,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 	    
 	    campoInfoPannello2 = new JTextField(panel2.getWidth()/7*3);			//Campo per le info
 	    campoInfoPannello2.setFont(new Font("Arial", 0, 18));
-	    campoInfoPannello2.setBounds(panel2.getWidth()/10*3-10, panel2.getHeight()/6*4+20, panel2.getWidth()/7*3, 20);
+	    campoInfoPannello2.setBounds(panel2.getWidth()/10*3-15, panel2.getHeight()/6*4+15, panel2.getWidth()/7*3, 20);
 	    campoInfoPannello2.setEditable(false);
 	    panel2.add(campoInfoPannello2);
 	    
