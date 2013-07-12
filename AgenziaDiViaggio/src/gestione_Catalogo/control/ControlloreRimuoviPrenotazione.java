@@ -34,6 +34,7 @@ public class ControlloreRimuoviPrenotazione extends Controllore {
 		Prenotazione prenotazione = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta, prenotazioneScelta);
 		
 		catalogo.rimuoviPrenotazioneDalCatalogo(prenotazione, offerta, tratta);
+		offerta.liberaPosti(prenotazione.getListaBiglietti().size());
 		log.aggiornaLogRimuoviPrenotazione(ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
 		
 	}

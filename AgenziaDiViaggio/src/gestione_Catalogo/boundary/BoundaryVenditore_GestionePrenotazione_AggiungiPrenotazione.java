@@ -98,6 +98,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	private JTextField campoEmail;
 	
 	private JButton bottoneAggiungiBiglietto;	
+	private JButton bottoneRimuoviUltimoBiglietto;
 
 	private JButton bottoneAggiungi;
 	private JButton bottoneSvuota;
@@ -111,6 +112,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	private TendinaViaAA ascoltatoreTendinaVia;
 	private TendinaOfferteAA ascoltatoreTendinaOfferte;
 	private AggiungiBigliettoAA ascoltatoreBottoneAggiungiBiglietto;
+	private RimuoviUltimoBigliettoAA ascoltatoreBottoneRimuoviUltimoBiglietto;
 	private ChiudiAA ascoltatoreBottoneChiudi;
 	private AggiungiAA ascoltatoreBottoneAggiungi;
 	private SvuotaAA ascoltatoreBottoneSvuota;
@@ -311,15 +313,21 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		    bottoneAggiungiBiglietto.setEnabled(false);
 			panel.add(bottoneAggiungiBiglietto);
 			
+		    bottoneRimuoviUltimoBiglietto = new JButton("RIMUOVI ULTIMO BIGLIETTO");
+		    bottoneRimuoviUltimoBiglietto.setBackground(Color.PINK);
+		    bottoneRimuoviUltimoBiglietto.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*4+20, panel.getWidth()/4, 20);
+		    bottoneRimuoviUltimoBiglietto.setEnabled(false);
+			panel.add(bottoneRimuoviUltimoBiglietto);
+			
 			
 		    bottoneSvuota = new JButton("AZZERA CAMPI");
 			bottoneSvuota.setBackground(Color.YELLOW);
-			bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5-20, panel.getWidth()/5, panel.getHeight()/14);
+			bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5, panel.getWidth()/5, panel.getHeight()/14);
 			panel.add(bottoneSvuota);
 			
 			bottoneAggiungi = new JButton("AGGIUNGI PRENOTAZIONE");
 			bottoneAggiungi.setBackground(Color.ORANGE);
-			bottoneAggiungi.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5-20, panel.getWidth()/5, panel.getHeight()/14);
+			bottoneAggiungi.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5, panel.getWidth()/5, panel.getHeight()/14);
 			panel.add(bottoneAggiungi);
 			
 			bottoneChiudi = new JButton("X");
@@ -351,6 +359,9 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			ascoltatoreBottoneAggiungiBiglietto = new AggiungiBigliettoAA();
 			bottoneAggiungiBiglietto.addActionListener(ascoltatoreBottoneAggiungiBiglietto);
+			
+			ascoltatoreBottoneRimuoviUltimoBiglietto = new RimuoviUltimoBigliettoAA();
+			bottoneRimuoviUltimoBiglietto.addActionListener(ascoltatoreBottoneRimuoviUltimoBiglietto);
 			
 			ascoltatoreBottoneChiudi = new ChiudiAA();
 			bottoneChiudi.addActionListener(ascoltatoreBottoneChiudi);
@@ -511,7 +522,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	}
 	
 	private void aggiornaBiglietti(){
-		
+				
 		offertaScelta = (String) tendinaOfferta.getSelectedItem();
 		
 		areaTesto.setText("");
@@ -519,7 +530,6 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
 		
 		if (tendinaOfferta.getItemCount() != 0) {
-			
 			
 			if (!tendinaOfferta.equals("-----")){
 				
@@ -529,17 +539,17 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 				areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
 				
 				if (!listaNomi.isEmpty()){
+					bottoneRimuoviUltimoBiglietto.setEnabled(true);
 					for (int i=0; i<listaNomi.size(); i++){
 						areaTestoBiglietti+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
-					}
+					}	
 				} else {
+					bottoneRimuoviUltimoBiglietto.setEnabled(false);
 					areaTestoBiglietti = "Non ci sono ancora biglietti per questa prenotazione.";
 				}
 
-				
-				
 				areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoBiglietti);
-				
+								
 			}
 			
 	} 
@@ -561,6 +571,13 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			if (!Character.isLetter(s.charAt(i))&&!Character.isWhitespace(c))
 				throw new DatiPersonaliErratiException("Caratteri non validi. Controllare i dati inseriti...");
 		}
+		
+		for (int i=0; i<listaNomi.size();i++){
+			if (nome.equalsIgnoreCase(listaNomi.get(i)) && cognome.equalsIgnoreCase(listaCognomi.get(i))){
+				throw new DatiPersonaliErratiException("Dati personali gia' presenti!");
+			}	
+		}
+		
 	}
 	
 	
@@ -890,10 +907,25 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 					campoCognome.setText("");
 					campoEmail.setText("");
 				} catch (DatiPersonaliErratiException e) {
-					JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, e.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
 				} 
 			}
 
+		}
+		
+	}
+	
+	
+	private class RimuoviUltimoBigliettoAA implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int i = listaNomi.size()-1;
+			listaNomi.remove(i);
+			listaCognomi.remove(i);
+			listaEmail.remove(i);
+			
+			aggiornaBiglietti();
 		}
 		
 	}

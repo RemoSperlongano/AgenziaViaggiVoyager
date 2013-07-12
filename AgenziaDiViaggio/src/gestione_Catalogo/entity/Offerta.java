@@ -82,6 +82,13 @@ public class Offerta {
 		dao.update(this);
 	}
 	
+	public void liberaPosti(int nPosti){
+		this.posti += nPosti;
+		
+		OffertaDAO dao = OffertaDAO.getIstanza();
+		dao.update(this);
+	}
+	
 	public boolean esistenzaPrenotazione(String nomeAcquirente){
 		return mappaPrenotazioni.containsKey(nomeAcquirente);
 	}

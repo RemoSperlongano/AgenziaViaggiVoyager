@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -203,7 +202,25 @@ public class BoundaryVenditore_GestionePrenotazione {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			JOptionPane.showMessageDialog(null, "Funzionalità al momento non disponibile, ci scusiamo per il disagio", "Funzione non implementata", JOptionPane.INFORMATION_MESSAGE);
+			panel1.setVisible(false);
+			panel1.setVisible(true);
+			
+			bottoneAggiungiPrenotazione.setEnabled(false); //disattiva i bottoni
+			bottoneModificaPrenotazione.setEnabled(false);
+			bottoneRimuoviPrenotazione.setEnabled(false);
+			bottoneEmissioneBiglietto.setEnabled(false);
+			bottoneChiudiPannello1.setEnabled(false);
+			
+			
+			// Imposto le dimensioni per il pannello che ospiterà la boudary successive
+			nextPanel = new JPanel();
+			nextPanel.setSize(superPanel.getWidth(), superPanel.getHeight()/8*7);
+			nextPanel.setLocation(0, superPanel.getHeight()/8);	
+			nextPanel.setLayout(null); 			//ora il pannello puo' contenere oggetti
+			superPanel.add(nextPanel);
+			nextPanel.setVisible(false);
+			
+			new BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione(nextPanel);
 			
 		}
 		
@@ -215,7 +232,25 @@ public class BoundaryVenditore_GestionePrenotazione {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			JOptionPane.showMessageDialog(null, "Funzionalità al momento non disponibile, ci scusiamo per il disagio", "Funzione non implementata", JOptionPane.INFORMATION_MESSAGE);
+			panel1.setVisible(false);
+			panel1.setVisible(true);
+			
+			bottoneAggiungiPrenotazione.setEnabled(false); //disattiva i bottoni
+			bottoneModificaPrenotazione.setEnabled(false);
+			bottoneRimuoviPrenotazione.setEnabled(false);
+			bottoneEmissioneBiglietto.setEnabled(false);
+			bottoneChiudiPannello1.setEnabled(false);
+			
+			
+			// Imposto le dimensioni per il pannello che ospiterà la boudary successive
+			nextPanel = new JPanel();
+			nextPanel.setSize(superPanel.getWidth(), superPanel.getHeight()/8*7);
+			nextPanel.setLocation(0, superPanel.getHeight()/8);	
+			nextPanel.setLayout(null); 			//ora il pannello puo' contenere oggetti
+			superPanel.add(nextPanel);
+			nextPanel.setVisible(false);
+			
+			new BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto(nextPanel);
 			
 		}
 		
