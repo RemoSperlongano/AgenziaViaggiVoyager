@@ -152,27 +152,27 @@ public class OffertaDAO extends DAO {
 	 * Questa particolare read, mi torna solo il valore, l'id l'ho preso dal CatalogoDAO
 	 */
 
-	public IDEsternoElemento readOnlyValue(Integer id) {
-		String s;
-		try {
-			conn = Persistenza.getConnection();
-			ps = conn.prepareStatement(findQuery);
-			ps.setInt(1, id);
-			rs = ps.executeQuery();
-			if (rs.next()) {
-				s = rs.getString(2);
-			} else { 
-				s = null;
-			}
-			closeResource();
-			return new IDEsternoElemento(s);
-		} catch (ClassCastException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+//	public IDEsternoElemento readOnlyValue(Integer id) {
+//		String s;
+//		try {
+//			conn = Persistenza.getConnection();
+//			ps = conn.prepareStatement(findQuery);
+//			ps.setInt(1, id);
+//			rs = ps.executeQuery();
+//			if (rs.next()) {
+//				s = rs.getString(2);
+//			} else { 
+//				s = null;
+//			}
+//			closeResource();
+//			return new IDEsternoElemento(s);
+//		} catch (ClassCastException e) {
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return null;
+//	}
 	
 	public ArrayList<Offerta> getListaOfferte(){
 		ArrayList<Offerta> listaOfferte = new ArrayList<Offerta>();
@@ -249,7 +249,7 @@ public class OffertaDAO extends DAO {
 
 	/*
 	 * CRUD - Delete
-	 * Da Invocare (probabilmente) alla rimozione di una tratta, quando non vi sono pi� Ambienti uguali
+	 * Da invocare nell'eliminazione di un offerta dal Catalogo
 	 */
 	public void delete(Offerta offerta){
 		// TODO Auto-generated method stub

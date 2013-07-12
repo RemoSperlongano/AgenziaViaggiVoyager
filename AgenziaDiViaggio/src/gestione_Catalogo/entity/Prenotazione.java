@@ -1,5 +1,7 @@
 package gestione_Catalogo.entity;
 
+import gestione_Catalogo.dao.PrenotazioneDAO;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,8 @@ public class Prenotazione {
 	    this.dataInserimento = new Data();
 	    listaBiglietti = new ArrayList<Biglietto>();
 	    
-		//QUI ANDREBBE IL DAO PRENOTAZIONE, DEVO SALVARE LA PRENOTAZIONE IN DB E PRENDERE IL SUO ID...
+		PrenotazioneDAO dao = PrenotazioneDAO.getIstanza();
+		this.idPrenotazione = dao.insertAndReturnId(idOfferta, nomeAcquirente, dataInserimento);
 		
 		while (!listaNomi.isEmpty()){
 			//creo un nuovo biglietto

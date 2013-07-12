@@ -53,20 +53,6 @@ public class CatalogoDAO extends DAO {
 					"FOREIGN KEY (via) REFERENCES via (ID) " +
 					")";
 
-/*	SPOSTATE IN TRATTA DAO
-	private static final String insertQuery = 
-			"INSERT INTO CATALOGO " +
-			"VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-	private static final String updateQuery = 
-			"UPDATE CATALOGO SET " +
-			"ID=?, AMBIENTE=?, MEZZO=?, CITTAPARTENZA=?, CITTAARRIVO=?, VIA=?, INFO=?, DATA=? " +
-			"WHERE ID=?";
-	private static final String deleteQuery = 
-			"DELETE FROM " +
-			"CATALOGO WHERE ID=?";
-	private static final String findQuery = 
-			"SELECT * FROM CATALOGO " +
-			"WHERE ID=?";    */
 
 	private static final String dropQuery = 
 			"DROP TABLE catalogo IF EXISTS";     
@@ -100,7 +86,7 @@ public class CatalogoDAO extends DAO {
 	 * Viene letto tutta la tabella catalogo, e per ogni riga vengono lette tutti gli elementi e creati i corrispettivi oggetti
 	 * la riga non contiene il nome dei vari elementi, ma solo il loro id!!!
 	 * Per questo viene invocato il rispettivo DAO per ottenere dall'id il valore giusto
-	 * Infine verr� creato l'oggetto usando il giusto controllore (per capirci, quello che non invoca il DAO per salvare da db)
+	 * Infine verra' creato l'oggetto usando il giusto controllore (per capirci, quello che non invoca il DAO per salvare da db)
 	 * Creati tutti gli oggetti per un riga, lo aggiunge ad un arrayList.
 	 * Terminato il resultSet, ritorna l'Arraylist
 	 */
@@ -229,24 +215,4 @@ public class CatalogoDAO extends DAO {
 
 	}
 
-
-	/* SPOSTATO IN TRATTA DAO
-	public Integer getNextId() throws DAOException {
-		try {
-			// Situazione 1. Tabella Vuota. Id da ritornare 1.
-			conn = getConnection(usr, pass);
-			ps = conn.prepareStatement(getCatalogoQuery);
-			rs = ps.executeQuery();
-			if (!rs.next())
-				return 1;
-
-			// Situazione 2. Almeno un Elemento presente.
-			rs.last();
-			return (rs.getInt(1)) + 1;
-		} catch (ClassCastException e) {
-			throw new DAOException("Errore in getNextId.");
-		} catch (SQLException e) {
-			throw new DAOException("Errore in getNextID.");
-		}
-	}   */
 }

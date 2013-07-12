@@ -1,5 +1,7 @@
 package gestione_Catalogo.entity;
 
+import gestione_Catalogo.dao.ViaggiatoreDAO;
+
 /**
  * @authors 
  * Remo Sperlongano
@@ -17,7 +19,8 @@ public class Viaggiatore {
 		this.cognome = cognome;
 		this.eMail = eMail;
 		
-		//QUI ANDREBBE IL DAO VIAGGIATORE, PER FARSI DARE L'ID DEL VIAGGIATORE
+		ViaggiatoreDAO dao = ViaggiatoreDAO.getIstanza();
+		this.idViaggiatore = dao.insertAndReturnId(nome, cognome, eMail);
 	}
 	
 	public Integer getIdViaggiatore(){

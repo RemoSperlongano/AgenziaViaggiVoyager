@@ -126,6 +126,43 @@ public class DBTest {
 		ps = conn.prepareStatement(createQuery);
 		ps.executeUpdate();
 		
+		System.out.println("Creo Tabella prenotazioni");
+		createQuery = 
+				"CREATE TABLE IF NOT EXISTS prenotazione(" +
+						"ID INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, " +
+						"idofferta INTEGER, " +
+						"acquirente VARCHAR(30), " +
+						"datainserimento DATETIME, " +
+						"FOREIGN KEY (idofferta) REFERENCES offerta (ID) "   +
+						")";
+
+		ps = conn.prepareStatement(createQuery);
+		ps.executeUpdate();
+		
+		System.out.println("Creo Tabella viaggiatori");
+		createQuery = 
+				"CREATE TABLE IF NOT EXISTS viaggiatore(" +
+						"ID INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, " +
+						"nome VARCHAR(30), " +
+						"cognome VARCHAR(30), " +
+						"mail VARCHAR(50) " +
+						")";
+		
+		ps = conn.prepareStatement(createQuery);
+		ps.executeUpdate();
+		
+		System.out.println("Creo Tabella biglietti");
+		createQuery = 
+				"CREATE TABLE IF NOT EXISTS biglietto(" +
+		"ID INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, " +
+		"idprenotazione INTEGER, " +
+		"idviaggiatore INTEGER, " +
+		"FOREIGN KEY (idprenotazione) REFERENCES prenotazione (ID), "   +
+		"FOREIGN KEY (idviaggiatore) REFERENCES viaggiatore (ID) " +
+		")";
+		
+		ps = conn.prepareStatement(createQuery);
+		ps.executeUpdate();
 		
 		
 		

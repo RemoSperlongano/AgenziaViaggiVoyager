@@ -1,5 +1,7 @@
 package gestione_Catalogo.entity;
 
+import gestione_Catalogo.dao.BigliettoDAO;
+
 /**
  * @authors 
  * Remo Sperlongano
@@ -17,7 +19,8 @@ public class Biglietto {
 		this.idPrenotazione = idPrenotazione;	
 		this.viaggiatore = new Viaggiatore(nome, cognome, eMail);
 		
-		//QUI ANDREBBE IL DAO BIGLIETTO, PER SALVARE IL BIGLIETTO SU DB E GENERARE L'ID DEL BIGLIETTO
+		BigliettoDAO dao = BigliettoDAO.getIstanza();
+		this.idBiglietto = dao.insertAndReturnId(idPrenotazione, viaggiatore.getIdViaggiatore());
 		
 		
 		
