@@ -343,12 +343,12 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		
 		bottoneSvuota = new JButton("AZZERA CAMPI");
 		bottoneSvuota.setBackground(Color.YELLOW);
-		bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5+20, panel.getWidth()/5, panel.getHeight()/14);
+		bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5+30, panel.getWidth()/5, panel.getHeight()/14);
 		panel.add(bottoneSvuota);
 		
 		bottoneModifica = new JButton("MODIFICA PRENOTAZIONE");
 		bottoneModifica.setBackground(Color.ORANGE);
-		bottoneModifica.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5+20, panel.getWidth()/5, panel.getHeight()/14);
+		bottoneModifica.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5+30, panel.getWidth()/5, panel.getHeight()/14);
 		panel.add(bottoneModifica);
 		
 		bottoneChiudi = new JButton("X");
