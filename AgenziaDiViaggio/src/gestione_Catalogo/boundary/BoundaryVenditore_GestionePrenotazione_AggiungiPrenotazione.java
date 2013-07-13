@@ -253,7 +253,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			labelOfferta = new JLabel();	//Etichetta elementi data
 			labelOfferta.setFont(new Font("Arial",0,15));
-			labelOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2-20, panel.getWidth()/4, 20);
+			labelOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2, panel.getWidth()/4, 20);
 			labelOfferta.setText("Offerta");
 			panel.add(labelOfferta); 
 			
@@ -261,7 +261,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			tendinaOfferta = new JComboBox<String>(); //Tendina per stazioni intermedie
 			tendinaOfferta.setBackground(Color.WHITE);
-			tendinaOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2, panel.getWidth()/4, 20);
+			tendinaOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2+20, panel.getWidth()/4, 20);
 			tendinaOfferta.setEnabled(false);
 			panel.add(tendinaOfferta);
 			
@@ -269,26 +269,26 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			labelNome = new JLabel();
 			labelNome.setFont(new Font("Arial",0,15));
-			labelNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3-20,panel.getWidth()/6, 20);
+			labelNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3,panel.getWidth()/6, 20);
 			labelNome.setText("Nome");
 			panel.add(labelNome);
 			
 			campoNome = new JTextField(panel.getWidth()/6);
 			campoNome.setFont(new Font("Arial", 0, 18));
-			campoNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3, panel.getWidth()/6, 20);
+			campoNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3+20, panel.getWidth()/6, 20);
 			campoNome.setEditable(false);
 		    panel.add(campoNome);
 			
 		    
 			labelCognome = new JLabel();
 			labelCognome.setFont(new Font("Arial",0,15));
-			labelCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3-20,panel.getWidth()/6, 20);
+			labelCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3,panel.getWidth()/6, 20);
 			labelCognome.setText("Cognome");
 			panel.add(labelCognome);
 			
 			campoCognome = new JTextField(panel.getWidth()/6);
 			campoCognome.setFont(new Font("Arial", 0, 18));
-			campoCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3, panel.getWidth()/6, 20);
+			campoCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3+20, panel.getWidth()/6, 20);
 			campoCognome.setEditable(false);
 		    panel.add(campoCognome);
 		    
@@ -296,38 +296,38 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		    
 		    labelEmail = new JLabel();
 		    labelEmail.setFont(new Font("Arial",0,15));
-		    labelEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4-40,panel.getWidth()/6, 20);
+		    labelEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4-20,panel.getWidth()/6, 20);
 		    labelEmail.setText("Email");
 			panel.add(labelEmail);
 		    
 			campoEmail = new JTextField(panel.getWidth()/6);
 			campoEmail.setFont(new Font("Arial", 0, 18));
-			campoEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4-20, panel.getWidth()/6, 20);
+			campoEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4, panel.getWidth()/6, 20);
 			campoEmail.setEditable(false);
 		    panel.add(campoEmail);
 		    
 		    
 		    bottoneAggiungiBiglietto = new JButton("AGGIUNGI BIGLIETTO");
 		    bottoneAggiungiBiglietto.setBackground(Color.GREEN);
-		    bottoneAggiungiBiglietto.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*4-20, panel.getWidth()/6, 20);
+		    bottoneAggiungiBiglietto.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*4, panel.getWidth()/6, 20);
 		    bottoneAggiungiBiglietto.setEnabled(false);
 			panel.add(bottoneAggiungiBiglietto);
 			
 		    bottoneRimuoviUltimoBiglietto = new JButton("RIMUOVI ULTIMO BIGLIETTO");
 		    bottoneRimuoviUltimoBiglietto.setBackground(Color.PINK);
-		    bottoneRimuoviUltimoBiglietto.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*4+20, panel.getWidth()/4, 20);
+		    bottoneRimuoviUltimoBiglietto.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*4+40, panel.getWidth()/4, 20);
 		    bottoneRimuoviUltimoBiglietto.setEnabled(false);
 			panel.add(bottoneRimuoviUltimoBiglietto);
 			
 			
 		    bottoneSvuota = new JButton("AZZERA CAMPI");
 			bottoneSvuota.setBackground(Color.YELLOW);
-			bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5, panel.getWidth()/5, panel.getHeight()/14);
+			bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5+20, panel.getWidth()/5, panel.getHeight()/14);
 			panel.add(bottoneSvuota);
 			
 			bottoneAggiungi = new JButton("AGGIUNGI PRENOTAZIONE");
 			bottoneAggiungi.setBackground(Color.ORANGE);
-			bottoneAggiungi.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5, panel.getWidth()/5, panel.getHeight()/14);
+			bottoneAggiungi.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5+20, panel.getWidth()/5, panel.getHeight()/14);
 			panel.add(bottoneAggiungi);
 			
 			bottoneChiudi = new JButton("X");
@@ -563,13 +563,21 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		}
 	}
 	
-	private void controlloSintatticoBiglietto(String nome, String cognome) throws DatiPersonaliErratiException{
+	private void controlloSintatticoBiglietto(String nome, String cognome, String email) throws DatiPersonaliErratiException{
+		
+		if (nome.equals("")||cognome.equals("")||email.equals("")){
+			throw new DatiPersonaliErratiException("Tutti i campi devono essere completati!");
+		}
 
 		String s = nome+cognome;
 		for (int i = 0; i < s.length(); i++){
 			char c = s.charAt(i);
 			if (!Character.isLetter(s.charAt(i))&&!Character.isWhitespace(c))
 				throw new DatiPersonaliErratiException("Caratteri non validi. Controllare i dati inseriti...");
+		}
+		
+		if (!email.contains("@")){
+			throw new DatiPersonaliErratiException("Indirizzo email non valido. Controllare i dati inseriti...");
 		}
 		
 		for (int i=0; i<listaNomi.size();i++){
@@ -841,6 +849,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			campoEmail.setEditable(false);
 			
 			bottoneAggiungiBiglietto.setEnabled(false);
+			bottoneRimuoviUltimoBiglietto.setEnabled(false);
 			
 			
 			offertaScelta = (String) tendinaOfferta.getSelectedItem();
@@ -881,35 +890,27 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {			
 			
-			String nome = campoNome.getText();
-			String cognome = campoCognome.getText();
-			String email = campoEmail.getText();
+			String nome = uppercaseFirstLetters(campoNome.getText());
+			String cognome = uppercaseFirstLetters(campoCognome.getText());
+			String email = campoEmail.getText().toLowerCase();
 			
-			
-			
-			if (nome.equals("")||cognome.equals("")||email.equals("")){
-				JOptionPane.showMessageDialog(null, "Tutti i campi devono essere completati!", "Attenzione!", JOptionPane.WARNING_MESSAGE);
-			} else {
+			try {
 				
-				nome = uppercaseFirstLetters(nome);
-				cognome = uppercaseFirstLetters(cognome);
-				try {
+				controlloSintatticoBiglietto(nome, cognome,email);
 					
-					controlloSintatticoBiglietto(nome, cognome);
-					
-					listaNomi.add(nome);
-					listaCognomi.add(cognome);
-					listaEmail.add(email);
+				listaNomi.add(nome);
+				listaCognomi.add(cognome);
+				listaEmail.add(email);
 				
-					aggiornaBiglietti();
+				aggiornaBiglietti();
 				
-					campoNome.setText("");
-					campoCognome.setText("");
-					campoEmail.setText("");
-				} catch (DatiPersonaliErratiException e) {
-					JOptionPane.showMessageDialog(null, e.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
-				} 
-			}
+				campoNome.setText("");
+				campoCognome.setText("");
+				campoEmail.setText("");
+				
+			} catch (DatiPersonaliErratiException e) {
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+			} 
 
 		}
 		
@@ -976,8 +977,6 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 				} catch (TrattaInesistenteException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (PostiNonSufficientiException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (CloneNotSupportedException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				}
 				

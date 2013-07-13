@@ -230,7 +230,7 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 		
 		labelOfferta = new JLabel();	//Etichetta elementi data
 		labelOfferta.setFont(new Font("Arial",0,15));
-		labelOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2-20, panel.getWidth()/4, 20);
+		labelOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2, panel.getWidth()/4, 20);
 		labelOfferta.setText("Offerta");
 		panel.add(labelOfferta); 
 		
@@ -238,7 +238,7 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 		
 		tendinaOfferta = new JComboBox<String>(); //Tendina per stazioni intermedie
 		tendinaOfferta.setBackground(Color.WHITE);
-		tendinaOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2, panel.getWidth()/4, 20);
+		tendinaOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2+20, panel.getWidth()/4, 20);
 		tendinaOfferta.setEnabled(false);
 		panel.add(tendinaOfferta);
 		
@@ -246,14 +246,14 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 		
 		labelPrenotazione = new JLabel();
 		labelPrenotazione.setFont(new Font("Arial",0,15));
-		labelPrenotazione.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*3-20,panel.getWidth()/6, 20);
+		labelPrenotazione.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*3,panel.getWidth()/6, 20);
 		labelPrenotazione.setText("Prenotazione");
 		panel.add(labelPrenotazione);
 		
 		
 		tendinaPrenotazione = new JComboBox<String>();
 		tendinaPrenotazione.setBackground(Color.WHITE);
-		tendinaPrenotazione.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*3, panel.getWidth()/4, 20);
+		tendinaPrenotazione.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*3+20, panel.getWidth()/4, 20);
 		tendinaPrenotazione.setEnabled(false);
 		panel.add(tendinaPrenotazione);
 		
@@ -263,12 +263,12 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 		
 		bottoneSvuota = new JButton("AZZERA CAMPI");
 		bottoneSvuota.setBackground(Color.YELLOW);
-		bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*4, panel.getWidth()/5, panel.getHeight()/14);
+		bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*4+20, panel.getWidth()/5, panel.getHeight()/14);
 		panel.add(bottoneSvuota);
 		
 		bottoneRimuovi = new JButton("RIMUOVI PRENOTAZIONE");
 		bottoneRimuovi.setBackground(Color.ORANGE);
-		bottoneRimuovi.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*4, panel.getWidth()/5, panel.getHeight()/14);
+		bottoneRimuovi.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*4+20, panel.getWidth()/5, panel.getHeight()/14);
 		panel.add(bottoneRimuovi);
 		
 		bottoneChiudi = new JButton("X");
@@ -808,7 +808,7 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 				
 				prenotazioneScelta = (String) tendinaPrenotazione.getSelectedItem();
 				
-				int conferma = JOptionPane.showConfirmDialog(null, "Rimuovere la prenotazione per l'offerta?", "Conferma Rimozione Prenotazione", JOptionPane.YES_NO_OPTION);
+				int conferma = JOptionPane.showConfirmDialog(null, "Rimuovere la prenotazione selezionata?", "Conferma Rimozione Prenotazione", JOptionPane.YES_NO_OPTION);
 				if (conferma == JOptionPane.YES_OPTION){
 					
 					//rimuovo la prenotazione

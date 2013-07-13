@@ -26,7 +26,7 @@ public class ControlloreAggiungiPrenotazione extends Controllore{
 	}
 
 	
-	public void aggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, ArrayList<String> listaNomi,ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneException, TrattaInesistenteException, PostiNonSufficientiException, CloneNotSupportedException {
+	public void aggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, ArrayList<String> listaNomi,ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneException, TrattaInesistenteException, PostiNonSufficientiException {
 		
 		
 		

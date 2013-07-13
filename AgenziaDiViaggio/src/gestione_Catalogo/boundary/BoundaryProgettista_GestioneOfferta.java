@@ -371,21 +371,21 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		labelDataPannello2 = new JLabel();	//Etichetta per Data
 		labelDataPannello2.setFont(new Font("Arial",0,15));
-		labelDataPannello2.setBounds(panel2.getWidth()/2+50, panel2.getHeight()/6*2, panel2.getWidth()/12, 20);
+		labelDataPannello2.setBounds(panel2.getWidth()/2+47, panel2.getHeight()/6*2+20, panel2.getWidth()/12, 20);
 		labelDataPannello2.setText("Data");
 		panel2.add(labelDataPannello2);
 		
 		
 		labelGiornoPannello2 = new JLabel();	//Etichetta elementi data
 		labelGiornoPannello2.setFont(new Font("Arial",0,15));
-		labelGiornoPannello2.setBounds(panel2.getWidth()/24*13+60, panel2.getHeight()/6*2-20, panel2.getWidth()/36, 20);
+		labelGiornoPannello2.setBounds(panel2.getWidth()/24*13+60, panel2.getHeight()/6*2, panel2.getWidth()/36, 20);
 		labelGiornoPannello2.setText("GG");
 		panel2.add(labelGiornoPannello2); 
 		
 		
 		tendinaGiornoPannello2 = new JComboBox<Integer>(); //Tendina per giorno
 		tendinaGiornoPannello2.setBackground(Color.WHITE);
-		tendinaGiornoPannello2.setBounds(panel2.getWidth()/24*13+50, panel2.getHeight()/6*2, panel2.getWidth()/24, 20);
+		tendinaGiornoPannello2.setBounds(panel2.getWidth()/24*13+50, panel2.getHeight()/6*2+20, panel2.getWidth()/24, 20);
 		tendinaGiornoPannello2.setEnabled(false);
 		panel2.add(tendinaGiornoPannello2);
 	    
@@ -393,7 +393,7 @@ public class BoundaryProgettista_GestioneOfferta {
 	    
 	    labelSlash1Pannello2 = new JLabel();	//Etichetta elementi data
 	    labelSlash1Pannello2.setFont(new Font("Arial",0,15));
-	    labelSlash1Pannello2.setBounds(panel2.getWidth()/24*13+95, panel2.getHeight()/6*2, panel2.getWidth()/36, 20);
+	    labelSlash1Pannello2.setBounds(panel2.getWidth()/24*13+95, panel2.getHeight()/6*2+20, panel2.getWidth()/36, 20);
 	    labelSlash1Pannello2.setText("/");
 		panel2.add(labelSlash1Pannello2); 
 		
@@ -401,7 +401,7 @@ public class BoundaryProgettista_GestioneOfferta {
 	
 		labelMesePannello2 = new JLabel();	//Etichetta elementi data
 		labelMesePannello2.setFont(new Font("Arial",0,15));
-		labelMesePannello2.setBounds(panel2.getWidth()/24*13+115, panel2.getHeight()/6*2-20, panel2.getWidth()/36, 20);
+		labelMesePannello2.setBounds(panel2.getWidth()/24*13+115, panel2.getHeight()/6*2, panel2.getWidth()/36, 20);
 		labelMesePannello2.setText("MM");
 		panel2.add(labelMesePannello2); 
 		
@@ -409,21 +409,21 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		tendinaMesePannello2 = new JComboBox<Integer>(); //Tendina per mesi
 		tendinaMesePannello2.setBackground(Color.WHITE);
-		tendinaMesePannello2.setBounds(panel2.getWidth()/24*13+105, panel2.getHeight()/6*2, panel2.getWidth()/24, 20);
+		tendinaMesePannello2.setBounds(panel2.getWidth()/24*13+105, panel2.getHeight()/6*2+20, panel2.getWidth()/24, 20);
 		tendinaMesePannello2.setEnabled(false);
 		panel2.add(tendinaMesePannello2);
 		
 		
 		labelSlash2Pannello2 = new JLabel();	//Etichetta elementi data
 		labelSlash2Pannello2.setFont(new Font("Arial",0,15));
-		labelSlash2Pannello2.setBounds(panel2.getWidth()/24*13+150, panel2.getHeight()/6*2, panel2.getWidth()/36, 20);
+		labelSlash2Pannello2.setBounds(panel2.getWidth()/24*13+150, panel2.getHeight()/6*2+20, panel2.getWidth()/36, 20);
 		labelSlash2Pannello2.setText("/");
 		panel2.add(labelSlash2Pannello2); 
 		
 		
 		labelAnnoPannello2 = new JLabel();	//Etichetta elementi data
 		labelAnnoPannello2.setFont(new Font("Arial",0,15));
-		labelAnnoPannello2.setBounds(panel2.getWidth()/24*13+170, panel2.getHeight()/6*2-20, panel2.getWidth()/18, 20);
+		labelAnnoPannello2.setBounds(panel2.getWidth()/24*13+170, panel2.getHeight()/6*2, panel2.getWidth()/18, 20);
 		labelAnnoPannello2.setText("YYYY");
 		panel2.add(labelAnnoPannello2); 
 		
@@ -431,7 +431,7 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		tendinaAnnoPannello2 = new JComboBox<Integer>(); //Tendina per anni
 		tendinaAnnoPannello2.setBackground(Color.WHITE);
-		tendinaAnnoPannello2.setBounds(panel2.getWidth()/24*13+160, panel2.getHeight()/6*2, panel2.getWidth()/18, 20);
+		tendinaAnnoPannello2.setBounds(panel2.getWidth()/24*13+160, panel2.getHeight()/6*2+20, panel2.getWidth()/18, 20);
 		tendinaAnnoPannello2.setEnabled(false);
 		panel2.add(tendinaAnnoPannello2);
 		
@@ -439,14 +439,14 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		labelOraPannello2 = new JLabel();	//Etichetta Ora
 		labelOraPannello2.setFont(new Font("Arial", 0, 15));
-		labelOraPannello2.setBounds(panel2.getWidth()/4*3+50, panel2.getHeight()/6*2, panel2.getWidth()/12, 20);
+		labelOraPannello2.setBounds(panel2.getWidth()/4*3+50, panel2.getHeight()/6*2+20, panel2.getWidth()/12, 20);
 		labelOraPannello2.setText("Ora");
 		panel2.add(labelOraPannello2);
 		
 		
 		labelOrePannello2 = new JLabel();	//Etichetta elementi ora
 		labelOrePannello2.setFont(new Font("Arial", 0, 15));
-		labelOrePannello2.setBounds(panel2.getWidth()/24*19+60, panel2.getHeight()/6*2-20, panel2.getWidth()/12, 20);
+		labelOrePannello2.setBounds(panel2.getWidth()/24*19+60, panel2.getHeight()/6*2, panel2.getWidth()/12, 20);
 		labelOrePannello2.setText("HH");
 		panel2.add(labelOrePannello2);
 		
@@ -456,14 +456,14 @@ public class BoundaryProgettista_GestioneOfferta {
 		for (int i=0; i<24; i++){
 			tendinaOrePannello2.addItem(new Integer(i));
 		}
-		tendinaOrePannello2.setBounds(panel2.getWidth()/24*19+50, panel2.getHeight()/6*2, panel2.getWidth()/24, 20);
+		tendinaOrePannello2.setBounds(panel2.getWidth()/24*19+50, panel2.getHeight()/6*2+20, panel2.getWidth()/24, 20);
 		tendinaOrePannello2.setEnabled(false);
 		panel2.add(tendinaOrePannello2);
 		
 		
 		labelPuntiniPannello2 = new JLabel();	//Etichetta elementi data
 		labelPuntiniPannello2.setFont(new Font("Arial",0,15));
-		labelPuntiniPannello2.setBounds(panel2.getWidth()/24*19+95, panel2.getHeight()/6*2, panel2.getWidth()/36, 20);
+		labelPuntiniPannello2.setBounds(panel2.getWidth()/24*19+95, panel2.getHeight()/6*2+20, panel2.getWidth()/36, 20);
 		labelPuntiniPannello2.setText(":");
 		panel2.add(labelPuntiniPannello2); 
 		
@@ -471,7 +471,7 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		labelMinutiPannello2 = new JLabel();	//Etichetta elementi ora
 		labelMinutiPannello2.setFont(new Font("Arial", 0, 15));
-		labelMinutiPannello2.setBounds(panel2.getWidth()/24*19+115, panel2.getHeight()/6*2-20, panel2.getWidth()/12, 20);
+		labelMinutiPannello2.setBounds(panel2.getWidth()/24*19+115, panel2.getHeight()/6*2, panel2.getWidth()/12, 20);
 		labelMinutiPannello2.setText("MM");
 		panel2.add(labelMinutiPannello2);
 		
@@ -487,7 +487,7 @@ public class BoundaryProgettista_GestioneOfferta {
 			min+=i;
 			tendinaMinutoPannello2.addItem(min);
 		}
-		tendinaMinutoPannello2.setBounds(panel2.getWidth()/24*19+105, panel2.getHeight()/6*2, panel2.getWidth()/24, 20);
+		tendinaMinutoPannello2.setBounds(panel2.getWidth()/24*19+105, panel2.getHeight()/6*2+20, panel2.getWidth()/24, 20);
 		tendinaMinutoPannello2.setEnabled(false);
 		panel2.add(tendinaMinutoPannello2);
     
@@ -495,47 +495,47 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		labelDurataPannello2 = new JLabel();	//Etichetta Ora
 		labelDurataPannello2.setFont(new Font("Arial", 0, 15));
-		labelDurataPannello2.setBounds(panel2.getWidth()/2+50, panel2.getHeight()/6*3, panel2.getWidth()/12, 20);
+		labelDurataPannello2.setBounds(panel2.getWidth()/2+43, panel2.getHeight()/6*3+20, panel2.getWidth()/12, 20);
 		labelDurataPannello2.setText("Durata");
 		panel2.add(labelDurataPannello2);
 		
 		
 		labelInMinutiPannello2 = new JLabel();	//Etichetta elementi ora
 		labelInMinutiPannello2.setFont(new Font("Arial", 0, 15));
-		labelInMinutiPannello2.setBounds(panel2.getWidth()/24*13+80, panel2.getHeight()/6*3-20, panel2.getWidth()/12, 20);
+		labelInMinutiPannello2.setBounds(panel2.getWidth()/24*13+73, panel2.getHeight()/6*3, panel2.getWidth()/12, 20);
 		labelInMinutiPannello2.setText("in Minuti");
 		panel2.add(labelInMinutiPannello2);
 		
 		
 	    campoDurataPannello2 = new JTextField (panel2.getWidth()/6); //Campo per stazioni intermedie
 	    campoDurataPannello2.setFont(new Font("Arial", 0, 18));
-	    campoDurataPannello2.setBounds(panel2.getWidth()/24*13+60, panel2.getHeight()/6*3, panel2.getWidth()/12, 20);
+	    campoDurataPannello2.setBounds(panel2.getWidth()/24*13+60, panel2.getHeight()/6*3+20, panel2.getWidth()/12, 20);
 	    campoDurataPannello2.setEditable(false);
 	    panel2.add(campoDurataPannello2); 
 	    
 	    
 	    labelPostiPannello2 = new JLabel();	//Etichetta elementi ora
 	    labelPostiPannello2.setFont(new Font("Arial", 0, 15));
-	    labelPostiPannello2.setBounds(panel2.getWidth()/24*19, panel2.getHeight()/6*3-20, panel2.getWidth()/8, 20);
+	    labelPostiPannello2.setBounds(panel2.getWidth()/24*19, panel2.getHeight()/6*3, panel2.getWidth()/8, 20);
 	    labelPostiPannello2.setText("Posti Disponibili");
 		panel2.add(labelPostiPannello2);
 		
 		
 	    campoPostiPannello2 = new JTextField (panel2.getWidth()/6); //Campo per stazioni intermedie
 	    campoPostiPannello2.setFont(new Font("Arial", 0, 18));
-	    campoPostiPannello2.setBounds(panel2.getWidth()/24*19, panel2.getHeight()/6*3, panel2.getWidth()/8, 20);
+	    campoPostiPannello2.setBounds(panel2.getWidth()/24*19, panel2.getHeight()/6*3+20, panel2.getWidth()/8, 20);
 	    campoPostiPannello2.setEditable(false);
 	    panel2.add(campoPostiPannello2); 
 	    
 	    
 	    bottoneSvuotaPannello2 = new JButton("AZZERA CAMPI");
 		bottoneSvuotaPannello2.setBackground(Color.YELLOW);
-		bottoneSvuotaPannello2.setBounds(panel2.getWidth()/5*3-60, panel2.getHeight()/6*4, panel2.getWidth()/5, panel2.getHeight()/14);
+		bottoneSvuotaPannello2.setBounds(panel2.getWidth()/5*3-60, panel2.getHeight()/6*4+20, panel2.getWidth()/5, panel2.getHeight()/14);
 		panel2.add(bottoneSvuotaPannello2);
 		
 		bottoneAggiungi = new JButton("AGGIUNGI OFFERTA");
 		bottoneAggiungi.setBackground(Color.ORANGE);
-		bottoneAggiungi.setBounds(panel2.getWidth()/5*4-25, panel2.getHeight()/6*4, panel2.getWidth()/5, panel2.getHeight()/14);
+		bottoneAggiungi.setBounds(panel2.getWidth()/5*4-25, panel2.getHeight()/6*4+20, panel2.getWidth()/5, panel2.getHeight()/14);
 		panel2.add(bottoneAggiungi);
 		
 		bottoneChiudiPannello2 = new JButton("X");
@@ -691,7 +691,7 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		labelOffertaPannello3 = new JLabel();	//Etichetta elementi data
 		labelOffertaPannello3.setFont(new Font("Arial",0,15));
-		labelOffertaPannello3.setBounds(panel3.getWidth()/4*2+100, panel3.getHeight()/6*2-20, panel3.getWidth()/4, 20);
+		labelOffertaPannello3.setBounds(panel3.getWidth()/4*2+100, panel3.getHeight()/6*2, panel3.getWidth()/4, 20);
 		labelOffertaPannello3.setText("Offerta");
 		panel3.add(labelOffertaPannello3); 
 		
@@ -699,7 +699,7 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		tendinaOffertaPannello3 = new JComboBox<String>(); //Tendina per stazioni intermedie
 		tendinaOffertaPannello3.setBackground(Color.WHITE);
-		tendinaOffertaPannello3.setBounds(panel3.getWidth()/4*2+100, panel3.getHeight()/6*2, panel3.getWidth()/4, 20);
+		tendinaOffertaPannello3.setBounds(panel3.getWidth()/4*2+100, panel3.getHeight()/6*2+20, panel3.getWidth()/4, 20);
 		tendinaOffertaPannello3.setEnabled(false);
 		panel3.add(tendinaOffertaPannello3);
 		
@@ -707,12 +707,12 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		bottoneSvuotaPannello3 = new JButton("AZZERA CAMPI");
 		bottoneSvuotaPannello3.setBackground(Color.YELLOW);
-		bottoneSvuotaPannello3.setBounds(panel3.getWidth()/5*3-60, panel3.getHeight()/6*4, panel3.getWidth()/5, panel3.getHeight()/14);
+		bottoneSvuotaPannello3.setBounds(panel3.getWidth()/5*3-60, panel3.getHeight()/6*4+20, panel3.getWidth()/5, panel3.getHeight()/14);
 		panel3.add(bottoneSvuotaPannello3);
 		
 		bottoneRimuovi = new JButton("RIMUOVI OFFERTA");
 		bottoneRimuovi.setBackground(Color.ORANGE);
-		bottoneRimuovi.setBounds(panel3.getWidth()/5*4-25, panel3.getHeight()/6*4, panel3.getWidth()/5, panel3.getHeight()/14);
+		bottoneRimuovi.setBounds(panel3.getWidth()/5*4-25, panel3.getHeight()/6*4+20, panel3.getWidth()/5, panel3.getHeight()/14);
 		panel3.add(bottoneRimuovi);
 		
 		bottoneChiudiPannello3 = new JButton("X");

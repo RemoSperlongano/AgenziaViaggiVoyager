@@ -111,7 +111,7 @@ public abstract class Controllore {
 		
 		for (int i=0; i<listaBiglietti.size(); i++){
 			Viaggiatore v = listaBiglietti.get(i).getViaggiatore();
-			stringaBiglietti += v.getNome() + "\t" + v.getCognome() + "\t" + v.getEmail() + "\n";
+			stringaBiglietti += i+1 + ".   " + v.getNome() + "\t" + v.getCognome() + "\t" + v.getEmail() + "\n";
 		}
 		
 		

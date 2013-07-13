@@ -1,9 +1,9 @@
 package gestione_Catalogo.entity;
 
+import gestione_Catalogo.dao.BigliettoDAO;
 import gestione_Catalogo.dao.PrenotazioneDAO;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @authors 
@@ -67,5 +67,15 @@ public class Prenotazione {
 	public ArrayList<Biglietto> getListaBiglietti(){
 		return listaBiglietti;
 	}
-
+	
+	public void clearListaBiglietti(){
+		listaBiglietti.clear();
+		BigliettoDAO dao = BigliettoDAO.getIstanza();
+		dao.delete(this);
+	}
+	
+	public void setListaBiglietti(ArrayList<Biglietto> listaBiglietti){
+		this.listaBiglietti = listaBiglietti;
+	}
+	
 }

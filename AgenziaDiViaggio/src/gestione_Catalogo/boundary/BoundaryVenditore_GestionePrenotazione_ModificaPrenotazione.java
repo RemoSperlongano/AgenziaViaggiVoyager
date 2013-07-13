@@ -3,12 +3,15 @@
  */
 package gestione_Catalogo.boundary;
 
-import gestione_Catalogo.control.ControlloreRimuoviPrenotazione;
+import gestione_Catalogo.control.ControlloreModificaPrenotazione;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.exception.DatiPersonaliErratiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
+import gestione_Catalogo.exception.ListaBigliettiNonModificataException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
+import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
@@ -17,6 +20,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -40,7 +44,7 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 	 * Attributi di istanza
 	 */
 	
-	private ControlloreRimuoviPrenotazione controllore;
+	private ControlloreModificaPrenotazione controllore;
 	private String ambienteScelto;
 	private String mezzoScelto;
 	private String partenzaScelta;
@@ -53,6 +57,10 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 	private String areaTestoImp;
 	private String areaTestoPrenotazione;
 	private String areaTestoBiglietto;
+	
+	private ArrayList<String> listaNomi;
+	private ArrayList<String> listaCognomi;
+	private ArrayList<String> listaEmail;
 	
 	//Pannelli
 	private JPanel 	panel;   //C'e' un solo pannello in questa boundary!!!
@@ -110,6 +118,8 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 	private TendinaViaAA ascoltatoreTendinaVia;
 	private TendinaOfferteAA ascoltatoreTendinaOfferte;
 	private TendinaPrenotazioniAA ascoltatoreTendinaPrenotazioni;
+	private AggiungiBigliettoAA ascoltatoreBottoneAggiungiBiglietto;
+	private RimuoviUltimoBigliettoAA ascoltatoreBottoneRimuoviUltimoBiglietto;
 	private ChiudiAA ascoltatoreBottoneChiudi;
 	private ModificaAA ascoltatoreBottoneModifica;
 	private SvuotaAA ascoltatoreBottoneSvuota;
@@ -132,8 +142,11 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		areaTestoBiglietto = "";
 		areaTestoImp = "Offerte per il viaggio:   ";
 		
+		listaNomi = new ArrayList<String>();
+		listaCognomi = new ArrayList<String>();
+		listaEmail = new ArrayList<String>();
 		
-		controllore = new ControlloreRimuoviPrenotazione();
+		controllore = new ControlloreModificaPrenotazione();
 		
 		
 		
@@ -244,7 +257,7 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		
 		labelOfferta = new JLabel();	//Etichetta elementi data
 		labelOfferta.setFont(new Font("Arial",0,15));
-		labelOfferta.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*2-20, panel.getWidth()/6, 20);
+		labelOfferta.setBounds(panel.getWidth()/4*2+25, panel.getHeight()/6*2, panel.getWidth()/5, 20);
 		labelOfferta.setText("Offerta");
 		panel.add(labelOfferta); 
 		
@@ -252,7 +265,7 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		
 		tendinaOfferta = new JComboBox<String>(); //Tendina per stazioni intermedie
 		tendinaOfferta.setBackground(Color.WHITE);
-		tendinaOfferta.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*2, panel.getWidth()/6, 20);
+		tendinaOfferta.setBounds(panel.getWidth()/4*2+25, panel.getHeight()/6*2+20, panel.getWidth()/5, 20);
 		tendinaOfferta.setEnabled(false);
 		panel.add(tendinaOfferta);
 		
@@ -260,14 +273,14 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		
 		labelPrenotazione = new JLabel();
 		labelPrenotazione.setFont(new Font("Arial",0,15));
-		labelPrenotazione.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*2-20,panel.getWidth()/6, 20);
+		labelPrenotazione.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*2,panel.getWidth()/5, 20);
 		labelPrenotazione.setText("Prenotazione");
 		panel.add(labelPrenotazione);
 		
 		
 		tendinaPrenotazione = new JComboBox<String>();
 		tendinaPrenotazione.setBackground(Color.WHITE);
-		tendinaPrenotazione.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*2, panel.getWidth()/6, 20);
+		tendinaPrenotazione.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*2+20, panel.getWidth()/5, 20);
 		tendinaPrenotazione.setEnabled(false);
 		panel.add(tendinaPrenotazione);
 		
@@ -275,26 +288,26 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		
 		labelNome = new JLabel();
 		labelNome.setFont(new Font("Arial",0,15));
-		labelNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4-20,panel.getWidth()/6, 20);
+		labelNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3,panel.getWidth()/6, 20);
 		labelNome.setText("Nome");
 		panel.add(labelNome);
 		
 		campoNome = new JTextField(panel.getWidth()/6);
 		campoNome.setFont(new Font("Arial", 0, 18));
-		campoNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4, panel.getWidth()/6, 20);
+		campoNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3+20, panel.getWidth()/6, 20);
 		campoNome.setEditable(false);
 	    panel.add(campoNome);
 		
 	    
 		labelCognome = new JLabel();
 		labelCognome.setFont(new Font("Arial",0,15));
-		labelCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*4-20,panel.getWidth()/6, 20);
+		labelCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3,panel.getWidth()/6, 20);
 		labelCognome.setText("Cognome");
 		panel.add(labelCognome);
 		
 		campoCognome = new JTextField(panel.getWidth()/6);
 		campoCognome.setFont(new Font("Arial", 0, 18));
-		campoCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*4, panel.getWidth()/6, 20);
+		campoCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3+20, panel.getWidth()/6, 20);
 		campoCognome.setEditable(false);
 	    panel.add(campoCognome);
 	    
@@ -302,26 +315,26 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 	    
 	    labelEmail = new JLabel();
 	    labelEmail.setFont(new Font("Arial",0,15));
-	    labelEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*5-40,panel.getWidth()/6, 20);
+	    labelEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4-20,panel.getWidth()/6, 20);
 	    labelEmail.setText("Email");
 		panel.add(labelEmail);
 	    
 		campoEmail = new JTextField(panel.getWidth()/6);
 		campoEmail.setFont(new Font("Arial", 0, 18));
-		campoEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*5-20, panel.getWidth()/6, 20);
+		campoEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4, panel.getWidth()/6, 20);
 		campoEmail.setEditable(false);
 	    panel.add(campoEmail);
 	    
 	    
 	    bottoneAggiungiBiglietto = new JButton("AGGIUNGI BIGLIETTO");
 	    bottoneAggiungiBiglietto.setBackground(Color.GREEN);
-	    bottoneAggiungiBiglietto.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*5-20, panel.getWidth()/6, 20);
+	    bottoneAggiungiBiglietto.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*4, panel.getWidth()/6, 20);
 	    bottoneAggiungiBiglietto.setEnabled(false);
 		panel.add(bottoneAggiungiBiglietto);
 		
 	    bottoneRimuoviUltimoBiglietto = new JButton("RIMUOVI ULTIMO BIGLIETTO");
 	    bottoneRimuoviUltimoBiglietto.setBackground(Color.PINK);
-	    bottoneRimuoviUltimoBiglietto.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*5+20, panel.getWidth()/4, 20);
+	    bottoneRimuoviUltimoBiglietto.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*4+40, panel.getWidth()/4, 20);
 	    bottoneRimuoviUltimoBiglietto.setEnabled(false);
 		panel.add(bottoneRimuoviUltimoBiglietto);
 		
@@ -330,13 +343,13 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		
 		bottoneSvuota = new JButton("AZZERA CAMPI");
 		bottoneSvuota.setBackground(Color.YELLOW);
-		bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*4, panel.getWidth()/5, panel.getHeight()/14);
-	//	panel.add(bottoneSvuota);
+		bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5+20, panel.getWidth()/5, panel.getHeight()/14);
+		panel.add(bottoneSvuota);
 		
 		bottoneModifica = new JButton("MODIFICA PRENOTAZIONE");
 		bottoneModifica.setBackground(Color.ORANGE);
-		bottoneModifica.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*4, panel.getWidth()/5, panel.getHeight()/14);
-	//	panel.add(bottoneModifica);
+		bottoneModifica.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5+20, panel.getWidth()/5, panel.getHeight()/14);
+		panel.add(bottoneModifica);
 		
 		bottoneChiudi = new JButton("X");
 		bottoneChiudi.setBackground(Color.RED);
@@ -367,6 +380,13 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		
 		ascoltatoreTendinaPrenotazioni = new TendinaPrenotazioniAA();
 		tendinaPrenotazione.addActionListener(ascoltatoreTendinaPrenotazioni);
+		
+		ascoltatoreBottoneAggiungiBiglietto = new AggiungiBigliettoAA();
+		bottoneAggiungiBiglietto.addActionListener(ascoltatoreBottoneAggiungiBiglietto);
+		
+		ascoltatoreBottoneRimuoviUltimoBiglietto = new RimuoviUltimoBigliettoAA();
+		bottoneRimuoviUltimoBiglietto.addActionListener(ascoltatoreBottoneRimuoviUltimoBiglietto);
+		
 		
 		ascoltatoreBottoneChiudi = new ChiudiAA();
 		bottoneChiudi.addActionListener(ascoltatoreBottoneChiudi);
@@ -553,30 +573,80 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		if (tendinaPrenotazione.getItemCount()!=0){
 			if (!prenotazioneScelta.equals("-----")){
 				
-				
-				try {
-					//Imposto le varie stringhe
-					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
-					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
-					areaTestoPrenotazione = "A nome di " + prenotazioneScelta + "\n\n";
+				//Imposto le varie stringhe
+				areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+				areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
+				areaTestoPrenotazione = "A nome di " + prenotazioneScelta + "\n\n";
 					
-					areaTestoBiglietto += controllore.mostraListaBigliettiPerPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, prenotazioneScelta);
-				} catch (OffertaInesistenteException e) {
-					areaTestoOfferta = e.getMessage();
-				} catch (PrenotazioneInesistenteException e) {
-					areaTestoPrenotazione = e.getMessage();
-				} catch (IDEsternoElementoException e) {
-					areaTestoCatalogo = e.getMessage();
-				} catch (ParseException e) {
-					e.printStackTrace();
-				} finally{
-					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione + areaTestoBiglietto); 
+				if (!listaNomi.isEmpty()){
+					bottoneRimuoviUltimoBiglietto.setEnabled(true);
+					for (int i=0; i<listaNomi.size(); i++){
+						areaTestoBiglietto+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
+					}	
+				} else {
+					bottoneRimuoviUltimoBiglietto.setEnabled(false);
+					areaTestoBiglietto = "Non ci sono ancora biglietti per questa prenotazione.";
 				}
-				
-				
+				areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione + areaTestoBiglietto); 
+
 			}
 		}
 	}
+	
+	
+	private void controlloSintatticoBiglietto(String nome, String cognome, String email) throws DatiPersonaliErratiException{
+		
+		if (nome.equals("")||cognome.equals("")||email.equals("")){
+			throw new DatiPersonaliErratiException("Tutti i campi devono essere completati!");
+		}
+
+		String s = nome+cognome;
+		for (int i = 0; i < s.length(); i++){
+			char c = s.charAt(i);
+			if (!Character.isLetter(s.charAt(i))&&!Character.isWhitespace(c))
+				throw new DatiPersonaliErratiException("Caratteri non validi. Controllare i dati inseriti...");
+		}
+		
+		if (!email.contains("@")){
+			throw new DatiPersonaliErratiException("Indirizzo email non valido. Controllare i dati inseriti...");
+		}
+		
+		for (int i=0; i<listaNomi.size();i++){
+			if (nome.equalsIgnoreCase(listaNomi.get(i)) && cognome.equalsIgnoreCase(listaCognomi.get(i))){
+				throw new DatiPersonaliErratiException("Dati personali gia' presenti!");
+			}	
+		}
+		
+	}
+	
+	
+	private void controlloSintatticoDati() throws ListaBigliettiNonModificataException, OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, ParseException {
+		
+		ArrayList<ArrayList<String>> listaDatiViaggiatori = controllore.getDatiViaggiatoriPerPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, prenotazioneScelta);
+		
+		if (listaNomi.equals(listaDatiViaggiatori.get(0)))
+			if (listaCognomi.equals(listaDatiViaggiatori.get(1)))
+				throw new ListaBigliettiNonModificataException("Nessun cambiamento rilevato. La prenotazione non sara' modificata.");
+		
+	}
+	
+	
+	private String uppercaseFirstLetters(String str) {
+	    boolean prevWasWhiteSp = true;
+	    char[] chars = str.trim().replaceAll("\\s+"," ").toLowerCase().toCharArray();
+	    for (int i = 0; i < chars.length; i++) {
+	        if (Character.isLetter(chars[i])){
+	            if (prevWasWhiteSp) {
+	                chars[i] = Character.toUpperCase(chars[i]);    
+	            } 
+	            prevWasWhiteSp = false;
+	        } else {
+	            prevWasWhiteSp = Character.isWhitespace(chars[i]);
+	        }
+	    }
+	    return new String(chars);
+	}
+	
 	
 	
 	
@@ -844,6 +914,18 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 
 		
 		public void actionPerformed(ActionEvent arg0) {
+			
+	   		campoNome.setText("");
+			campoNome.setEditable(false);
+			
+	   		campoCognome.setText("");
+			campoCognome.setEditable(false);
+			
+			campoEmail.setText("");
+			campoEmail.setEditable(false);
+			
+			bottoneAggiungiBiglietto.setEnabled(false);
+			bottoneRimuoviUltimoBiglietto.setEnabled(false);
 		
 			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
 			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
@@ -856,6 +938,30 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 				if (prenotazioneScelta.equals("-----")){
 					aggiornaPrenotazioni();
 				} else {
+					
+					campoNome.setEditable(true);
+					campoCognome.setEditable(true);
+					campoEmail.setEditable(true);
+				    bottoneAggiungiBiglietto.setEnabled(true);
+					
+					try {
+						
+						//recupero i dati dei biglietti della prenotazione scelta
+						ArrayList<ArrayList<String>> listaDatiViaggiatori = controllore.getDatiViaggiatoriPerPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, prenotazioneScelta);
+						listaNomi = listaDatiViaggiatori.get(0);
+						listaCognomi = listaDatiViaggiatori.get(1);
+						listaEmail = listaDatiViaggiatori.get(2);
+							
+					} catch (OffertaInesistenteException e) {
+						areaTestoOfferta = e.getMessage();
+					} catch (PrenotazioneInesistenteException e) {
+						areaTestoPrenotazione = e.getMessage();
+					} catch (IDEsternoElementoException e) {
+						areaTestoCatalogo = e.getMessage();
+					} catch (ParseException e) {
+						e.printStackTrace();
+					} 
+					
 					aggiornaBiglietti();
 				}
 			}
@@ -863,6 +969,60 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 		}
 		
 	}
+	
+	
+	private class AggiungiBigliettoAA implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {			
+			
+			String nome = uppercaseFirstLetters(campoNome.getText());
+			String cognome = uppercaseFirstLetters(campoCognome.getText());
+			String email = campoEmail.getText().toLowerCase();
+			
+			try {
+					
+				controlloSintatticoBiglietto(nome, cognome,email);
+					
+				listaNomi.add(nome);
+				listaCognomi.add(cognome);
+				listaEmail.add(email);
+				
+				aggiornaBiglietti();
+				
+				campoNome.setText("");
+				campoCognome.setText("");
+				campoEmail.setText("");
+				
+			} catch (DatiPersonaliErratiException e) {
+				JOptionPane.showMessageDialog(null, e.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+			} 
+			
+		}
+		
+	}
+	
+	
+	private class RimuoviUltimoBigliettoAA implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int i = listaNomi.size()-1;
+			
+			if (i>0){
+				listaNomi.remove(i);
+				listaCognomi.remove(i);
+				listaEmail.remove(i);
+				
+				aggiornaBiglietti();
+			} else {
+				JOptionPane.showMessageDialog(null, "Non e' possibile rimuovere il biglietto dell'acquirente cui e' associata la prenotazione. Scegliere \"Rimuovi Prenotazione\".", "Attenzione!",JOptionPane.WARNING_MESSAGE);
+			}
+
+		}
+		
+	}
+		
 	
 	
 	private class ModificaAA implements ActionListener{
@@ -875,29 +1035,34 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 				
 				prenotazioneScelta = (String) tendinaPrenotazione.getSelectedItem();
 				
-				int conferma = JOptionPane.showConfirmDialog(null, "Rimuovere la prenotazione per l'offerta?", "Conferma Rimozione Prenotazione", JOptionPane.YES_NO_OPTION);
-				if (conferma == JOptionPane.YES_OPTION){
+		
 					
-					//rimuovo la prenotazione
-					try {
-						controllore.rimuoviPrenotazione(ambienteScelto,mezzoScelto,partenzaScelta,arrivoScelto,viaScelta,offertaScelta,prenotazioneScelta);
-						JOptionPane.showMessageDialog(null, "La prenotazione e' stata rimossa correttamente.", "Prenotazione Rimossa", JOptionPane.INFORMATION_MESSAGE);
+				//modifico la prenotazione
+				try {
+					
+					controlloSintatticoDati();
+					
+					int conferma = JOptionPane.showConfirmDialog(null, "Modificare la prenotazione selezionata?", "Conferma Rimozione Prenotazione", JOptionPane.YES_NO_OPTION);
+					if (conferma == JOptionPane.YES_OPTION){
+						controllore.modificaPrenotazione(ambienteScelto,mezzoScelto,partenzaScelta,arrivoScelto,viaScelta,offertaScelta,prenotazioneScelta,listaNomi,listaCognomi,listaEmail);
+						JOptionPane.showMessageDialog(null, "La prenotazione e' stata modificata correttamente.", "Prenotazione Modificata", JOptionPane.INFORMATION_MESSAGE);
 						aggiornaPrenotazioni();
-						
-					} catch (IDEsternoElementoException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
-					} catch (TrattaInesistenteException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-					} catch (OffertaInesistenteException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-					} catch (ParseException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-					} catch (PrenotazioneInesistenteException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
-					
+						
+				} catch (IDEsternoElementoException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
+				} catch (OffertaInesistenteException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (ParseException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (PrenotazioneInesistenteException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (ListaBigliettiNonModificataException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+				} catch (PostiNonSufficientiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
 				}
-				
+					
 			} else {
 				JOptionPane.showMessageDialog(null, "Nessuna prenotazione selezionata!");
 			}
