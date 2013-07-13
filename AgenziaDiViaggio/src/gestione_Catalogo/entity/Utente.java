@@ -30,6 +30,16 @@ public class Utente {
 		this.ruolo = ruolo;
 	}
 	
+	//costruttore usato da Controllore login per controllo credenziali da db
+	public Utente(String username, String password){
+		this.nome = null;
+		this.cognome = null;
+		this.eMail = null;
+		this.username = username;
+		this.password = password;
+		this.ruolo = null;
+	}
+	
 	
 	public void registraUtente(String nome, String cognome, String mail, String username, String password, String ruolo) throws UtenteEsistenteException{
 		UtenteDAO dao = UtenteDAO.getIstanza();
