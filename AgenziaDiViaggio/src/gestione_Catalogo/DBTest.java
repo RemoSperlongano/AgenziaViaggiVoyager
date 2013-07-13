@@ -18,7 +18,9 @@ public class DBTest {
 	public static void main(String[] args) {
 		
 		String createQuery = null;
+		String dropQuery = null;
 		PreparedStatement ps = null;
+		
 				
 				
 		System.out.println("Test di connessione a MySQL.");
@@ -37,6 +39,11 @@ public class DBTest {
 		System.out.println("Connesso.");
 		
 		
+		System.out.println("Piallo il db!!!");
+		dropQuery = "DROP TABLE `biglietto`, `viaggiatore`, `prenotazione`, `offerta`, `catalogo`, `ambiente`, `citta`, `mezzo`, `via`";
+		
+		ps = conn.prepareStatement(dropQuery);
+		ps.executeUpdate();
 		
 		
 		System.out.println("Creo Tabella ambiente");
