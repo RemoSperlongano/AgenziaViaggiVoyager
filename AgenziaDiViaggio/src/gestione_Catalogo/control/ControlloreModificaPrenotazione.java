@@ -35,14 +35,18 @@ public class ControlloreModificaPrenotazione extends Controllore {
 		// prendo l'offerta dalla mappa
 		Offerta offerta = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, dataPartenza);
 		//controllo disponibilità biglietti
-		if (offerta.getPosti() < listaNomi.size()){
-			throw new PostiNonSufficientiException("Non ci sono abbastanza Posti disponibili per soddisfare tale prenotazione");
-		}
 		
 		// prendo la prenotazione dalla mappa
 		Prenotazione prenotazione = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataPartenza, prenotazioneScelta);
 		// libero i posti precedentemente prenotati e svuoto la lista dei biglietti
 		offerta.liberaPosti(prenotazione.getListaBiglietti().size());
+		
+		if (offerta.getPosti() < listaNomi.size()){
+			//riassegno i posti precedentemente liberati, la prenotazione non viene modificata.
+			offerta.assegnaPosti(prenotazione.getListaBiglietti().size()); 
+			throw new PostiNonSufficientiException("Non ci sono abbastanza Posti disponibili per soddisfare tale prenotazione.");
+		}
+		
 		prenotazione.clearListaBiglietti();
 		
 		ArrayList<Biglietto> listaBiglietti = new ArrayList<Biglietto>();

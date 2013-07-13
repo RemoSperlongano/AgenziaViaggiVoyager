@@ -195,7 +195,7 @@ public class BoundaryVenditore {
 				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
 				panelNext = new JPanel();
 				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
-				panelNext.setLocation(0, superPanel.getHeight()/10*2);
+				panelNext.setLocation(0, superPanel.getHeight()/10*2+6);
 				panelNext.setBackground(Color.BLACK);
 				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
 				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
