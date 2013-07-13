@@ -29,13 +29,13 @@ public class BoundaryVenditore_GestionePrenotazione {
     private static JButton bottoneAggiungiPrenotazione;
 	private static JButton bottoneRimuoviPrenotazione;
 	private static JButton bottoneModificaPrenotazione;
-	private static JButton bottoneEmissioneBiglietto;
+	private static JButton bottoneEmissioneBiglietti;
 	private static JButton bottoneChiudiPannello1;
 	    
 	private AggiungiPrenotazioneAA ascoltatoreBottoneAggiungiPrenotazione;
 	private RimuoviPrenotazioneAA ascoltatoreBottoneRimuoviPrenotazione;
     private ModificaPrenotazioneAA ascoltatoreBottoneModificaPrenotazione;
-    private EmissioneBigliettoAA ascoltatoreBottoneEmissioneBiglietto;
+    private EmissioneBigliettiAA ascoltatoreBottoneEmissioneBiglietti;
     private ChiudiPannello1AA ascoltatoreBottoneChiudiPannello1;
     
     
@@ -86,10 +86,10 @@ public class BoundaryVenditore_GestionePrenotazione {
 		panel1.add(bottoneRimuoviPrenotazione);//aggiungo il bottone al secondo pannello
 		
 		
-		bottoneEmissioneBiglietto = new JButton("Emissione Biglietto");
-		bottoneEmissioneBiglietto.setBackground(Color.PINK);
-		bottoneEmissioneBiglietto.setBounds(panel1.getWidth()/25*19-15, panel1.getHeight()/6, panel1.getWidth()/6+5, panel1.getHeight()/2);
-		panel1.add(bottoneEmissioneBiglietto);
+		bottoneEmissioneBiglietti = new JButton("Emissione Biglietti");
+		bottoneEmissioneBiglietti.setBackground(Color.PINK);
+		bottoneEmissioneBiglietti.setBounds(panel1.getWidth()/25*19-15, panel1.getHeight()/6, panel1.getWidth()/6+5, panel1.getHeight()/2);
+		panel1.add(bottoneEmissioneBiglietti);
 		
 		bottoneChiudiPannello1 = new JButton("X");
 		bottoneChiudiPannello1.setBackground(Color.RED);
@@ -108,8 +108,8 @@ public class BoundaryVenditore_GestionePrenotazione {
 		ascoltatoreBottoneRimuoviPrenotazione = new RimuoviPrenotazioneAA();			//creo ascoltatore per bottone
 		bottoneRimuoviPrenotazione.addActionListener(ascoltatoreBottoneRimuoviPrenotazione);		//associo ascoltatore al bottone
 		
-		ascoltatoreBottoneEmissioneBiglietto = new EmissioneBigliettoAA();
-		bottoneEmissioneBiglietto.addActionListener(ascoltatoreBottoneEmissioneBiglietto);
+		ascoltatoreBottoneEmissioneBiglietti = new EmissioneBigliettiAA();
+		bottoneEmissioneBiglietti.addActionListener(ascoltatoreBottoneEmissioneBiglietti);
 		
 		
 		ascoltatoreBottoneChiudiPannello1 = new ChiudiPannello1AA();
@@ -126,7 +126,7 @@ public class BoundaryVenditore_GestionePrenotazione {
     		 bottoneAggiungiPrenotazione.setEnabled(true);
     		 bottoneRimuoviPrenotazione.setEnabled(true);
     		 bottoneModificaPrenotazione.setEnabled(true);
-    		 bottoneEmissioneBiglietto.setEnabled(true);
+    		 bottoneEmissioneBiglietti.setEnabled(true);
     		 bottoneChiudiPannello1.setEnabled(true);
     		
     	}
@@ -149,7 +149,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 			bottoneAggiungiPrenotazione.setEnabled(false); //disattiva i bottoni
 			bottoneModificaPrenotazione.setEnabled(false);
 			bottoneRimuoviPrenotazione.setEnabled(false);
-			bottoneEmissioneBiglietto.setEnabled(false);
+			bottoneEmissioneBiglietti.setEnabled(false);
 			bottoneChiudiPannello1.setEnabled(false);
 			
 			
@@ -177,7 +177,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 			bottoneAggiungiPrenotazione.setEnabled(false); //disattiva i bottoni
 			bottoneModificaPrenotazione.setEnabled(false);
 			bottoneRimuoviPrenotazione.setEnabled(false);
-			bottoneEmissioneBiglietto.setEnabled(false);
+			bottoneEmissioneBiglietti.setEnabled(false);
 			bottoneChiudiPannello1.setEnabled(false);
 			
 			
@@ -208,7 +208,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 			bottoneAggiungiPrenotazione.setEnabled(false); //disattiva i bottoni
 			bottoneModificaPrenotazione.setEnabled(false);
 			bottoneRimuoviPrenotazione.setEnabled(false);
-			bottoneEmissioneBiglietto.setEnabled(false);
+			bottoneEmissioneBiglietti.setEnabled(false);
 			bottoneChiudiPannello1.setEnabled(false);
 			
 			
@@ -227,7 +227,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 	}
 	
 	
-	private class EmissioneBigliettoAA implements ActionListener{
+	private class EmissioneBigliettiAA implements ActionListener{
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -238,7 +238,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 			bottoneAggiungiPrenotazione.setEnabled(false); //disattiva i bottoni
 			bottoneModificaPrenotazione.setEnabled(false);
 			bottoneRimuoviPrenotazione.setEnabled(false);
-			bottoneEmissioneBiglietto.setEnabled(false);
+			bottoneEmissioneBiglietti.setEnabled(false);
 			bottoneChiudiPannello1.setEnabled(false);
 			
 			
@@ -250,7 +250,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 			superPanel.add(nextPanel);
 			nextPanel.setVisible(false);
 			
-			new BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto(nextPanel);
+			new BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti(nextPanel);
 			
 		}
 		

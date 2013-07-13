@@ -68,7 +68,7 @@ public class DBTest {
 				"('p', 'p', 'p@voyager.it', 'p', 'p', 'Promotore'), " +
 				"('d', 'd', 'd@voyager.it', 'd', 'd', 'Progettista'), " +
 				"('c', 'c', 'c@voyager.it', 'c', 'c', 'Cliente'), " +
-				"('g', 'g', 'g@voyager.it', 'g', 'g', 'Gestore Eccezioni') ";
+				"('g', 'g', 'g@voyager.it', 'g', 'g', 'GestoreEccezioni') ";
 		
 		ps = conn.prepareStatement(insertQuery);
 		ps.executeUpdate();

@@ -208,7 +208,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 		
 		bottoneChiudiPannello1 = new JButton("X");
 		bottoneChiudiPannello1.setBackground(Color.RED);
-		bottoneChiudiPannello1.setBounds(panel1.getWidth()/20*19-10, 0, panel1.getWidth()/20, panel1.getHeight()/2-3);
+		bottoneChiudiPannello1.setBounds(panel1.getWidth()/20*19, 0, panel1.getWidth()/20, panel1.getHeight()/2-3);
 		panel1.add(bottoneChiudiPannello1);
 		
 		
@@ -380,17 +380,17 @@ public class BoundaryPromotore_GestioneCatalogo {
 		
 		bottoneSvuotaPannello2 = new JButton("AZZERA CAMPI");
 		bottoneSvuotaPannello2.setBackground(Color.YELLOW);
-		bottoneSvuotaPannello2.setBounds(panel2.getWidth()/5-30, panel2.getHeight()/6*5, panel2.getWidth()/5+10, panel2.getHeight()/14);
+		bottoneSvuotaPannello2.setBounds(panel2.getWidth()/5-30, panel2.getHeight()/6*5+15, panel2.getWidth()/5+10, panel2.getHeight()/14);
 		panel2.add(bottoneSvuotaPannello2);
 		
 		bottoneAggiungi = new JButton("AGGIUNGI AL CATALOGO");
 		bottoneAggiungi.setBackground(Color.ORANGE);
-		bottoneAggiungi.setBounds(panel2.getWidth()/5*3+16, panel2.getHeight()/6*5, panel2.getWidth()/5+10, panel2.getHeight()/14);
+		bottoneAggiungi.setBounds(panel2.getWidth()/5*3+16, panel2.getHeight()/6*5+15, panel2.getWidth()/5+10, panel2.getHeight()/14);
 		panel2.add(bottoneAggiungi);
 		
 		bottoneChiudiPannello2 = new JButton("X");
 		bottoneChiudiPannello2.setBackground(Color.RED);
-		bottoneChiudiPannello2.setBounds(panel2.getWidth()/20*19-10, 0, panel2.getWidth()/20, panel2.getHeight()/18);
+		bottoneChiudiPannello2.setBounds(panel2.getWidth()/20*19, 0, panel2.getWidth()/20, panel2.getHeight()/18);
 		panel2.add(bottoneChiudiPannello2);
 		
 		
@@ -444,12 +444,12 @@ public class BoundaryPromotore_GestioneCatalogo {
 		panel3.add(labelTitoloPannello3);
 		
 		areaTestoPannello3 = new JTextArea();
-		areaTestoPannello3 = new JTextArea(panel3.getWidth()/40*38, panel3.getHeight()/6*3);
+		areaTestoPannello3 = new JTextArea(panel3.getWidth()/40*39+10, panel3.getHeight()/6*3);
 		areaTestoPannello3.setFont(new Font("Arial", 0, 15));
 		areaTestoPannello3.setEditable(false);
 		areaTestoPannello3.setLineWrap(false);
 		scrollAreaTestoPannello3 = new JScrollPane(areaTestoPannello3);   //creo un piccolo scroll e lo aggiungo alla text area
-		scrollAreaTestoPannello3.setBounds(panel3.getWidth()/40, panel3.getHeight()/7, panel3.getWidth()/40*38, panel3.getHeight()/6*3);
+		scrollAreaTestoPannello3.setBounds(panel3.getWidth()/40, panel3.getHeight()/7, panel3.getWidth()/40*39+10, panel3.getHeight()/6*3);
 		panel3.add(scrollAreaTestoPannello3);
 		
 		
@@ -527,19 +527,19 @@ public class BoundaryPromotore_GestioneCatalogo {
 		
 		bottoneSvuotaPannello3 = new JButton("AZZERA CAMPI");
 		bottoneSvuotaPannello3.setBackground(Color.YELLOW);
-		bottoneSvuotaPannello3.setBounds(panel3.getWidth()/5-30, panel3.getHeight()/7*6-20, panel3.getWidth()/5+10, panel3.getHeight()/14);
+		bottoneSvuotaPannello3.setBounds(panel3.getWidth()/5-30, panel3.getHeight()/6*5+20, panel3.getWidth()/5+10, panel3.getHeight()/14);
 		panel3.add(bottoneSvuotaPannello3);
 
 		bottoneRimuovi = new JButton("RIMUOVI DAL CATALOGO");
 		bottoneRimuovi.setBackground(Color.ORANGE);
-		bottoneRimuovi.setBounds(panel3.getWidth()/5*3+16, panel3.getHeight()/7*6-20, panel3.getWidth()/5+10, panel3.getHeight()/14);
+		bottoneRimuovi.setBounds(panel3.getWidth()/5*3+16, panel3.getHeight()/6*5+20, panel3.getWidth()/5+10, panel3.getHeight()/14);
 		panel3.add(bottoneRimuovi);
 		
 		
 		
 		bottoneChiudiPannello3 = new JButton("X");
 		bottoneChiudiPannello3.setBackground(Color.RED);
-		bottoneChiudiPannello3.setBounds(panel3.getWidth()/20*19-10, 0, panel3.getWidth()/20, panel3.getHeight()/18);
+		bottoneChiudiPannello3.setBounds(panel3.getWidth()/20*19, 0, panel3.getWidth()/20, panel3.getHeight()/18);
 		panel3.add(bottoneChiudiPannello3);
 		
 		

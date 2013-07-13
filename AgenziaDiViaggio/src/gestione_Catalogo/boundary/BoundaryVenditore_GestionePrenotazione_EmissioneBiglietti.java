@@ -3,7 +3,7 @@
  */
 package gestione_Catalogo.boundary;
 
-import gestione_Catalogo.control.ControlloreRimuoviPrenotazione;
+import gestione_Catalogo.control.ControlloreEmissioneBiglietti;
 import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
@@ -33,13 +33,13 @@ import javax.swing.JTextArea;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
+public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 	
 	/*
 	 * Attributi di istanza
 	 */
 	
-	private ControlloreRimuoviPrenotazione controllore;
+	private ControlloreEmissioneBiglietti controllore;
 	private String ambienteScelto;
 	private String mezzoScelto;
 	private String partenzaScelta;
@@ -84,8 +84,11 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
 	private JLabel labelPrenotazione;
 	private JComboBox<String> tendinaPrenotazione;
 	
-	private JButton bottoneRimuovi;
+	private JButton bottoneEroga;
 	private JButton bottoneSvuota;
+	
+	private JButton bottoneInviaEmail;
+	private JButton bottoneInviaSMS;
 	
 	private JButton bottoneChiudi;
 	
@@ -97,15 +100,17 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
 	private TendinaOfferteAA ascoltatoreTendinaOfferte;
 	private TendinaPrenotazioniAA ascoltatoreTendinaPrenotazioni;
 	private ChiudiAA ascoltatoreBottoneChiudi;
-	private RimuoviAA ascoltatoreBottoneRimuovi;
+	private ErogaAA ascoltatoreBottoneEroga;
 	private SvuotaAA ascoltatoreBottoneSvuota;
+	private InviaEmailAA ascoltatoreBottoneInviaEmail;
+	private InviaSMSAA ascoltatoreBottoneInviaSMS;
 	
 	
 	/*
 	 * Costruttore
 	 */
 
-	public BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto(JPanel panelNext){
+	public BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti(JPanel panelNext){
 
 		ambienteScelto = null;
 		mezzoScelto = null;
@@ -119,7 +124,7 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
 		areaTestoImp = "Offerte per il viaggio:   ";
 		
 		
-		controllore = new ControlloreRimuoviPrenotazione();
+		controllore = new ControlloreEmissioneBiglietti();
 		
 		
 		
@@ -138,7 +143,7 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
 		labelTitolo.setBounds(panel.getWidth()/3, panel.getHeight()/200, panel.getWidth()/3, panel.getHeight()/7);
 		labelTitolo.setVerticalAlignment(JLabel.CENTER);
 		labelTitolo.setHorizontalAlignment(JLabel.CENTER);
-		labelTitolo.setText("EMISSIONE BIGLIETTO");
+		labelTitolo.setText("EMISSIONE BIGLIETTI");
 		panel.add(labelTitolo);
 		    
 		    
@@ -259,17 +264,29 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
 		
 		
 		
-		
-		
 		bottoneSvuota = new JButton("AZZERA CAMPI");
 		bottoneSvuota.setBackground(Color.YELLOW);
 		bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*4+20, panel.getWidth()/5, panel.getHeight()/14);
 		panel.add(bottoneSvuota);
 		
-		bottoneRimuovi = new JButton("RIMUOVI PRENOTAZIONE");
-		bottoneRimuovi.setBackground(Color.ORANGE);
-		bottoneRimuovi.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*4+20, panel.getWidth()/5, panel.getHeight()/14);
-		panel.add(bottoneRimuovi);
+		bottoneEroga = new JButton("EROGA BIGLIETTI");
+		bottoneEroga.setBackground(Color.ORANGE);
+		bottoneEroga.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*4+20, panel.getWidth()/5, panel.getHeight()/14);
+		panel.add(bottoneEroga);
+		
+		
+		bottoneInviaEmail = new JButton("INVIA EMAIL");
+		bottoneInviaEmail.setBackground(Color.PINK);
+		bottoneInviaEmail.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5+20, panel.getWidth()/5, 20);
+		bottoneInviaEmail.setEnabled(false);
+		panel.add(bottoneInviaEmail);
+		
+		bottoneInviaSMS = new JButton("INVIA SMS");
+		bottoneInviaSMS.setBackground(Color.PINK);
+		bottoneInviaSMS.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5+20, panel.getWidth()/5, 20);
+		bottoneInviaSMS.setEnabled(false);
+		panel.add(bottoneInviaSMS);
+		
 		
 		bottoneChiudi = new JButton("X");
 		bottoneChiudi.setBackground(Color.RED);
@@ -304,11 +321,17 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
 		ascoltatoreBottoneChiudi = new ChiudiAA();
 		bottoneChiudi.addActionListener(ascoltatoreBottoneChiudi);
 		
-		ascoltatoreBottoneRimuovi = new RimuoviAA();
-		bottoneRimuovi.addActionListener(ascoltatoreBottoneRimuovi);
+		ascoltatoreBottoneEroga = new ErogaAA();
+		bottoneEroga.addActionListener(ascoltatoreBottoneEroga);
 		
 		ascoltatoreBottoneSvuota = new SvuotaAA();
 		bottoneSvuota.addActionListener(ascoltatoreBottoneSvuota);
+		
+		ascoltatoreBottoneInviaEmail = new InviaEmailAA();
+		bottoneInviaEmail.addActionListener(ascoltatoreBottoneInviaEmail);
+		
+		ascoltatoreBottoneInviaSMS = new InviaSMSAA();
+		bottoneInviaSMS.addActionListener(ascoltatoreBottoneInviaSMS);
 		
 		
 		
@@ -798,7 +821,7 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
 	}
 	
 	
-	private class RimuoviAA implements ActionListener{
+	private class ErogaAA implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {	
@@ -806,29 +829,12 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
 			
 			if (tendinaPrenotazione.getItemCount() != 0 && !prenotazioneScelta.equals("-----")){
 				
-				prenotazioneScelta = (String) tendinaPrenotazione.getSelectedItem();
-				
-				int conferma = JOptionPane.showConfirmDialog(null, "Rimuovere la prenotazione per l'offerta?", "Conferma Rimozione Prenotazione", JOptionPane.YES_NO_OPTION);
+				int conferma = JOptionPane.showConfirmDialog(null, "Erogare i biglietti per la prenotazione selezionata?", "Conferma Emissione Biglietti", JOptionPane.YES_NO_OPTION);
 				if (conferma == JOptionPane.YES_OPTION){
 					
-					//rimuovo la prenotazione
-					try {
-						controllore.rimuoviPrenotazione(ambienteScelto,mezzoScelto,partenzaScelta,arrivoScelto,viaScelta,offertaScelta,prenotazioneScelta);
-						JOptionPane.showMessageDialog(null, "La prenotazione e' stata rimossa correttamente.", "Prenotazione Rimossa", JOptionPane.INFORMATION_MESSAGE);
-						aggiornaPrenotazioni();
-						
-					} catch (IDEsternoElementoException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
-					} catch (TrattaInesistenteException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-					} catch (OffertaInesistenteException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-					} catch (ParseException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-					} catch (PrenotazioneInesistenteException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-					}
-					
+					JOptionPane.showMessageDialog(null, "L'emissione dei biglietti per la prenotazione selezionata è stata portata a termine.\nScegliere una modalità di notifica dell'avvenuto acquisto.", "Biglietti Erogati", JOptionPane.INFORMATION_MESSAGE);
+					bottoneInviaEmail.setEnabled(true);
+					bottoneInviaSMS.setEnabled(true);
 				}
 				
 			} else {
@@ -867,6 +873,34 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietto {
 			
 			}
 
+		}
+		
+	}
+	
+	private class InviaEmailAA implements ActionListener{
+
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			bottoneInviaEmail.setEnabled(false);
+			bottoneInviaSMS.setEnabled(false);
+			
+			JOptionPane.showMessageDialog(null, "Una mail di notifica dell'avvenuto acquisto e' stata inoltrata ai clienti intestatari dei biglietti.", "Mail inviate", JOptionPane.INFORMATION_MESSAGE);
+			aggiornaPrenotazioni();	
+		}
+		
+	}
+	
+	
+	private class InviaSMSAA implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			bottoneInviaEmail.setEnabled(false);
+			bottoneInviaSMS.setEnabled(false);
+			
+			JOptionPane.showMessageDialog(null, "Un SMS di notifica dell'avvenuto acquisto e' stata inoltrato ai clienti intestatari dei biglietti.", "SMS inviati", JOptionPane.INFORMATION_MESSAGE);
+			aggiornaPrenotazioni();
 		}
 		
 	}

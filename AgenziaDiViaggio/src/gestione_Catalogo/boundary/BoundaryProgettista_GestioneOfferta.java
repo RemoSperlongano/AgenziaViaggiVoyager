@@ -244,7 +244,7 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		bottoneChiudiPannello1 = new JButton("X");
 		bottoneChiudiPannello1.setBackground(Color.RED);
-		bottoneChiudiPannello1.setBounds(panel1.getWidth()/20*19-10, 0, panel1.getWidth()/20, panel1.getHeight()/2-3);
+		bottoneChiudiPannello1.setBounds(panel1.getWidth()/20*19, 0, panel1.getWidth()/20, panel1.getHeight()/2-3);
 		panel1.add(bottoneChiudiPannello1);
 		
 		
@@ -540,7 +540,7 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		bottoneChiudiPannello2 = new JButton("X");
 		bottoneChiudiPannello2.setBackground(Color.RED);
-		bottoneChiudiPannello2.setBounds(panel2.getWidth()/20*19-10, 0, panel2.getWidth()/20, panel2.getHeight()/18);
+		bottoneChiudiPannello2.setBounds(panel2.getWidth()/20*19, 0, panel2.getWidth()/20, panel2.getHeight()/18);
 		panel2.add(bottoneChiudiPannello2);
     
 		
@@ -717,7 +717,7 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		bottoneChiudiPannello3 = new JButton("X");
 		bottoneChiudiPannello3.setBackground(Color.RED);
-		bottoneChiudiPannello3.setBounds(panel3.getWidth()/20*19-10, 0, panel3.getWidth()/20, panel3.getHeight()/18);
+		bottoneChiudiPannello3.setBounds(panel3.getWidth()/20*19, 0, panel3.getWidth()/20, panel3.getHeight()/18);
 		panel3.add(bottoneChiudiPannello3);
     
 		
@@ -1857,34 +1857,36 @@ public class BoundaryProgettista_GestioneOfferta {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			if (tendinaOffertaPannello3.getItemCount() != 0){
-				
-				offertaScelta = (String) tendinaOffertaPannello3.getSelectedItem();
-				
-				if (!offertaScelta.equals("-----")){
-					int conferma = JOptionPane.showConfirmDialog(null, "Rimuovere l'offerta per il viaggio?", "Conferma Rimozione Offerta", JOptionPane.YES_NO_OPTION);
-					if (conferma == JOptionPane.YES_OPTION){
+			
+			ambienteScelto = (String) tendinaAmbientePannello3.getSelectedItem();
+			mezzoScelto = (String) tendinaMezziPannello3.getSelectedItem();
+			partenzaScelta = (String) tendinaCittaPartenzaPannello3.getSelectedItem();
+			arrivoScelto = (String)tendinaCittaArrivoPannello3.getSelectedItem();
+			viaScelta = (String) tendinaViaPannello3.getSelectedItem();
+			offertaScelta = (String) tendinaOffertaPannello3.getSelectedItem();
+			
+			if (tendinaOffertaPannello3.getItemCount() != 0 && !offertaScelta.equals("-----")){
+	
+				int conferma = JOptionPane.showConfirmDialog(null, "Rimuovere l'offerta selezionata?", "Conferma Rimozione Offerta", JOptionPane.YES_NO_OPTION);
+				if (conferma == JOptionPane.YES_OPTION){
 						
-						// rimuovo il viaggio
-						try {
-							controllore.rimuoviOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
-							JOptionPane.showMessageDialog(null, "L'offerta e' stata rimossa correttamente.", "Offerta Rimossa", JOptionPane.INFORMATION_MESSAGE);
-							aggiornaOffertePannello3();
+					// rimuovo il viaggio
+					try {
+						controllore.rimuoviOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
+						JOptionPane.showMessageDialog(null, "L'offerta e' stata rimossa correttamente.", "Offerta Rimossa", JOptionPane.INFORMATION_MESSAGE);
+						aggiornaOffertePannello3();
 							
-						} catch (IDEsternoElementoException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-						} catch (TrattaInesistenteException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-						} catch (OffertaInesistenteException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-						} catch (ParseException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-						} catch (PrenotazioneException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
-						}
-					}
-				}  else {
-					JOptionPane.showMessageDialog(null, "Nessuna offerta selezionata!");
+					} catch (IDEsternoElementoException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (TrattaInesistenteException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (OffertaInesistenteException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (ParseException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (PrenotazioneException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+					}			
 				}
 				
 			} else {
