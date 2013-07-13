@@ -97,7 +97,7 @@ public class Catalogo {
 
 	// Verifica se esistono offerte per un determinato viaggio. Un viaggio non puo' essere rimosso se esistono offerte ad esso associate.
 	public boolean verificaEsistenzaOfferte(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via) throws IDEsternoElementoException {
-		return !mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(cittaPartenza).getElemento(cittaArrivo).getElemento(via).isEmpty();
+		return !mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(cittaPartenza).getElemento(cittaArrivo).getElemento(via).mapIsEmpty();
 	}
 	
 
@@ -106,10 +106,9 @@ public class Catalogo {
 		return mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(cittaPartenza).getElemento(cittaArrivo).getElemento(via).getOfferta(dataPartenza).esistenzaPrenotazione(nomeAcquirente);
 	}
 	
-	
-	public boolean verificaEsistenzaPrenotazioni(){
-		return false;
-		
+	// Verifica se esistono prenotazioni per una determinata offerta. Un'offerta non puo' essere rimossa se esistono prenotazioni ad essa associate.
+	public boolean verificaEsistenzaPrenotazioni(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via, Data dataPartenza) throws OffertaInesistenteException, IDEsternoElementoException{
+		return !mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(cittaPartenza).getElemento(cittaArrivo).getElemento(via).getOfferta(dataPartenza).mapIsEmpty();
 	}
 	
 	

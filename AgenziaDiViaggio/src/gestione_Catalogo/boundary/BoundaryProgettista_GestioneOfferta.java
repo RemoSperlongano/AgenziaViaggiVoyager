@@ -1872,7 +1872,7 @@ public class BoundaryProgettista_GestioneOfferta {
 							aggiornaOffertePannello3();
 							
 						} catch (IDEsternoElementoException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (TrattaInesistenteException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (OffertaInesistenteException e1) {
@@ -1880,7 +1880,7 @@ public class BoundaryProgettista_GestioneOfferta {
 						} catch (ParseException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (PrenotazioneException e1) {
-							JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
 						}
 					}
 				}  else {

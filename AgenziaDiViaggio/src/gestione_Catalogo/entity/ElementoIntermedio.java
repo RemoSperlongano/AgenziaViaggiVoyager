@@ -55,7 +55,7 @@ public abstract class ElementoIntermedio extends ElementoCatalogo {
 		return mappaCatalogo.esistenzaElemento(e);
 	}
 	
-	public boolean isEmpty(){
+	public boolean mapIsEmpty(){
 		return mappaCatalogo.isEmpty();
 	}
 	

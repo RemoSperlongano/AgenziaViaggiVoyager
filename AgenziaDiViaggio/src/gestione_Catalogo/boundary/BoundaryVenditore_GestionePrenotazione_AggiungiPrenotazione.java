@@ -253,7 +253,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			labelOfferta = new JLabel();	//Etichetta elementi data
 			labelOfferta.setFont(new Font("Arial",0,15));
-			labelOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2, panel.getWidth()/4, 20);
+			labelOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2-10, panel.getWidth()/4, 20);
 			labelOfferta.setText("Offerta");
 			panel.add(labelOfferta); 
 			
@@ -261,7 +261,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			tendinaOfferta = new JComboBox<String>(); //Tendina per stazioni intermedie
 			tendinaOfferta.setBackground(Color.WHITE);
-			tendinaOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2+20, panel.getWidth()/4, 20);
+			tendinaOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2+10, panel.getWidth()/4, 20);
 			tendinaOfferta.setEnabled(false);
 			panel.add(tendinaOfferta);
 			
@@ -269,26 +269,26 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			labelNome = new JLabel();
 			labelNome.setFont(new Font("Arial",0,15));
-			labelNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3,panel.getWidth()/6, 20);
+			labelNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3-10,panel.getWidth()/6, 20);
 			labelNome.setText("Nome");
 			panel.add(labelNome);
 			
 			campoNome = new JTextField(panel.getWidth()/6);
 			campoNome.setFont(new Font("Arial", 0, 18));
-			campoNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3+20, panel.getWidth()/6, 20);
+			campoNome.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*3+10, panel.getWidth()/6, 20);
 			campoNome.setEditable(false);
 		    panel.add(campoNome);
 			
 		    
 			labelCognome = new JLabel();
 			labelCognome.setFont(new Font("Arial",0,15));
-			labelCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3,panel.getWidth()/6, 20);
+			labelCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3-10,panel.getWidth()/6, 20);
 			labelCognome.setText("Cognome");
 			panel.add(labelCognome);
 			
 			campoCognome = new JTextField(panel.getWidth()/6);
 			campoCognome.setFont(new Font("Arial", 0, 18));
-			campoCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3+20, panel.getWidth()/6, 20);
+			campoCognome.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*3+10, panel.getWidth()/6, 20);
 			campoCognome.setEditable(false);
 		    panel.add(campoCognome);
 		    
@@ -296,26 +296,26 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		    
 		    labelEmail = new JLabel();
 		    labelEmail.setFont(new Font("Arial",0,15));
-		    labelEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4-20,panel.getWidth()/6, 20);
+		    labelEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4-30,panel.getWidth()/6, 20);
 		    labelEmail.setText("Email");
 			panel.add(labelEmail);
 		    
 			campoEmail = new JTextField(panel.getWidth()/6);
 			campoEmail.setFont(new Font("Arial", 0, 18));
-			campoEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4, panel.getWidth()/6, 20);
+			campoEmail.setBounds(panel.getWidth()/4*2+50, panel.getHeight()/6*4-10, panel.getWidth()/6, 20);
 			campoEmail.setEditable(false);
 		    panel.add(campoEmail);
 		    
 		    
 		    bottoneAggiungiBiglietto = new JButton("AGGIUNGI BIGLIETTO");
 		    bottoneAggiungiBiglietto.setBackground(Color.GREEN);
-		    bottoneAggiungiBiglietto.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*4, panel.getWidth()/6, 20);
+		    bottoneAggiungiBiglietto.setBounds(panel.getWidth()/4*3, panel.getHeight()/6*4-10, panel.getWidth()/6, 20);
 		    bottoneAggiungiBiglietto.setEnabled(false);
 			panel.add(bottoneAggiungiBiglietto);
 			
 		    bottoneRimuoviUltimoBiglietto = new JButton("RIMUOVI ULTIMO BIGLIETTO");
 		    bottoneRimuoviUltimoBiglietto.setBackground(Color.PINK);
-		    bottoneRimuoviUltimoBiglietto.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*4+40, panel.getWidth()/4, 20);
+		    bottoneRimuoviUltimoBiglietto.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*4+30, panel.getWidth()/4, 20);
 		    bottoneRimuoviUltimoBiglietto.setEnabled(false);
 			panel.add(bottoneRimuoviUltimoBiglietto);
 			

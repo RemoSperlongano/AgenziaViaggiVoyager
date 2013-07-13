@@ -51,7 +51,7 @@ public abstract class ElementoFinale extends ElementoCatalogo {
 		return mappaOfferte.containsKey(k);
 	}
 
-	public boolean isEmpty(){
+	public boolean mapIsEmpty(){
 		return mappaOfferte.isEmpty();
 	}
 

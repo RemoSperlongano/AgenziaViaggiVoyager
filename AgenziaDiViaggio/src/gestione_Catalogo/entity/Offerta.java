@@ -109,5 +109,8 @@ public class Offerta {
 		mappaPrenotazioni.rimuoviPrenotazione(nomeAcquirente);
 	}
 	
+	public boolean mapIsEmpty(){
+		return mappaPrenotazioni.isEmpty();
+	}
 	
 }

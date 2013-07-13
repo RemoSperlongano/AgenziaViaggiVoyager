@@ -91,7 +91,7 @@ public abstract class ElementoCatalogo {
 		return false;
 	}
 	
-	public boolean isEmpty(){
+	public boolean mapIsEmpty(){
 		return false;
 	}
 	

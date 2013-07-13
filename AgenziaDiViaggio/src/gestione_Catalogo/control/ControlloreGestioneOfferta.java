@@ -47,13 +47,14 @@ public class ControlloreGestioneOfferta extends Controllore {
 	
 	
 	public void rimuoviOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws TrattaInesistenteException, PrenotazioneException, OffertaInesistenteException, IDEsternoElementoException, ParseException{
-			
-		if (catalogo.verificaEsistenzaPrenotazioni()){
+		
+		Data dataOfferta = Data.parseTimestamp(dataPartenza);
+		
+		if (catalogo.verificaEsistenzaPrenotazioni(ambiente, mezzo, partenza, arrivo, via, dataOfferta)){
 			throw new PrenotazioneException("Ci sono prenotazioni attive! L'offerta non puo' essere rimossa.");
 		}
 		
 		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
-		Data dataOfferta = Data.parseTimestamp(dataPartenza);
 		Offerta offerta = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta);
 		
 		catalogo.rimuoviOffertaDalCatalogo(offerta, tratta);
