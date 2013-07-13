@@ -43,11 +43,16 @@ public class BoundaryAAAprimaria extends JFrame{
 	private JLabel labelTitolo;
 	private JLabel labelProprietari;
 	private JLabel labelLogin;
+	
+	private JButton	bottoneVisitatore;
+	private JButton bottoneLogin;
 
 	private JButton bottoneProgettista;
 	private JButton bottonePromotore;
 	private JButton bottoneVenditore;
 
+	private BottoneVisitatoreAA ascoltatoreBottoneVisitatore;
+	private BottoneLoginAA ascoltatoreBottoneLogin;
 	private BottoneProgettistaAA ascoltatoreBottoneProgettista;
 	private BottonePromotoreAA ascoltatoreBottonePromotore;
 	private BottoneVenditoreAA ascoltatoreBottoneVenditore;
@@ -116,7 +121,7 @@ public class BoundaryAAAprimaria extends JFrame{
 		labelProprietari.setSize(panel2.getWidth(), 20);
 		labelProprietari.setHorizontalAlignment(JLabel.CENTER);
 		labelProprietari.setVerticalAlignment(JLabel.CENTER);
-		labelProprietari.setText("Caso d'uso GestioneCatalogo");
+		labelProprietari.setText("AGENZIA DI VIAGGI");
 		panel2.add(labelProprietari);		//aggiungo proprietari al pannello2
 		
 		
@@ -129,14 +134,22 @@ public class BoundaryAAAprimaria extends JFrame{
 		superPanel.add(panel3);				//aggiungo il terzo pannello al superPannello
 		
 		
-		labelLogin = new JLabel();			//Sostituisce momentaneamente il login
-		labelLogin.setFont(new Font("Arial", 0, 15));
-		labelLogin.setLocation(0,0);
-		labelLogin.setSize(panel3.getWidth(), panel3.getHeight());
-		labelLogin.setHorizontalAlignment(JLabel.CENTER);
-		labelLogin.setVerticalAlignment(JLabel.CENTER);
-		labelLogin.setText("Login momentaneamente non disponibile");
-		panel3.add(labelLogin);				//aggiungo l'etichetta del Login
+		
+		bottoneVisitatore = new JButton("VISITATORE");
+		bottoneVisitatore.setBounds(panel3.getWidth()/5, panel3.getHeight()/2, panel3.getWidth()/5, panel3.getHeight()/4);
+		panel3.add(bottoneVisitatore);
+		
+		ascoltatoreBottoneVisitatore = new BottoneVisitatoreAA();
+		bottoneVisitatore.addActionListener(ascoltatoreBottoneVisitatore);
+		
+		
+		
+		bottoneLogin = new JButton("LOGIN");
+		bottoneLogin.setBounds(panel3.getWidth()/5*3, panel3.getHeight()/2, panel3.getWidth()/5, panel3.getHeight()/4);
+		panel3.add(bottoneLogin);//aggiungo il bottone al quarto pannello
+		
+		ascoltatoreBottoneLogin = new BottoneLoginAA();
+		bottoneLogin.addActionListener(ascoltatoreBottoneLogin);
 		
 		
 		
@@ -220,6 +233,29 @@ public class BoundaryAAAprimaria extends JFrame{
 
 
 		}
+	}
+	
+	private class BottoneLoginAA implements ActionListener{
+
+		
+		public void actionPerformed(ActionEvent arg0) {
+			superPanel.setVisible(false);
+			new BoundaryLogin();
+			
+		}
+		
+		
+	}
+	
+	
+	private class BottoneVisitatoreAA implements ActionListener{
+
+		
+		public void actionPerformed(ActionEvent arg0) {
+			//DA IMPLEMENTARE
+			
+		}
+		
 	}
 	
 

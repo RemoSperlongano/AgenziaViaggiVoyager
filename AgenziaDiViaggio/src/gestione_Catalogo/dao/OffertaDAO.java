@@ -222,9 +222,6 @@ public class OffertaDAO extends DAO {
 
 			ps = conn.prepareStatement(updateQuery);
 			
-			/*"UPDATE offerta SET " +
-			"idtratta=?, datapartenza=?, dataarrivo=?, posti=?, datainserimento=? " +
-			"WHERE ID=? LIMIT 1"; */
 			
 			ps.setInt(1, offerta.getIdTratta());
 			ps.setTimestamp(2, offerta.getData().getDataForDB());

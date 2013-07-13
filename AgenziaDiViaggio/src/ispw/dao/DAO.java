@@ -21,10 +21,10 @@ public abstract class DAO {
 	protected static final String connectionURL = "jdbc:mysql:";
 	protected static final String URL = connectionURL + "//" + "localhost:3306"
 			+ "/";
-	protected static final String dbName = URL + "voyager";
+	protected static final String dbName = URL + "gambella";
 
-	protected static final String usr = "root";
-	protected static final String pass = "root";
+	protected static final String usr = "gambella";
+	protected static final String pass = "gambella";
 
 	private static Connection conn = null;
 	private static PreparedStatement ps = null;

@@ -198,6 +198,7 @@ public class BigliettoDAO extends DAO{
 	/*
 	 * CRUD - Delete
 	 * Da invocare nella delete del DaoPrenotazione, per eliminare tutta la prenotazione
+	 * Invocato anche in Prenotazione, quando si vuole modificare editando la lista biglietti
 	 */
 	public void delete(Prenotazione prenotazione){
 		try {

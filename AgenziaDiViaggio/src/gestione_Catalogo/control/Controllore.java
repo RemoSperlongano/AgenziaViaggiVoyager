@@ -17,6 +17,7 @@ import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.entity.Log;
 import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
+import gestione_Catalogo.entity.Sessione;
 import gestione_Catalogo.entity.Viaggiatore;
 
 import gestione_Catalogo.exception.IDEsternoElementoException;
@@ -32,6 +33,7 @@ public abstract class Controllore {
 	//attributi di classe
 	protected static Catalogo catalogo;
 	protected Log log;
+	protected static Sessione sessione;
 	
 	//costruttore
 	public Controllore() {

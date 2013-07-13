@@ -19,6 +19,7 @@ public class DBTest {
 		
 		String createQuery = null;
 		String dropQuery = null;
+		String insertQuery = null;
 		PreparedStatement ps = null;
 		
 				
@@ -40,9 +41,36 @@ public class DBTest {
 		
 		
 		System.out.println("Piallo il db!!!");
-		dropQuery = "DROP TABLE `biglietto`, `viaggiatore`, `prenotazione`, `offerta`, `catalogo`, `ambiente`, `citta`, `mezzo`, `via`";
+		dropQuery = "DROP TABLE `utente`, `biglietto`, `viaggiatore`, `prenotazione`, `offerta`, `catalogo`, `ambiente`, `citta`, `mezzo`, `via`";
 		
 		ps = conn.prepareStatement(dropQuery);
+		ps.executeUpdate();
+		
+		System.out.println("Creo Tabella utente");
+		createQuery = 
+				"CREATE TABLE IF NOT EXISTS utente(" +
+						"ID INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, " +
+						"nome VARCHAR(30), " +
+						"cognome VARCHAR(30), " +
+						"mail VARCHAR(30), " +
+						"username VARCHAR(30), " +
+						"password VARCHAR(30), " +
+						"ruolo VARCHAR(30) " +
+						")";
+		ps = conn.prepareStatement(createQuery);
+		ps.executeUpdate();
+		
+		System.out.println("Inserisco utenti di base");
+		insertQuery =
+				"INSERT INTO `utente` (`nome`, `cognome`, `mail`, `username`, `password`, `ruolo`) VALUES " + 
+				"('admin', 'voyager', 'admin@voyager.it', 'admin', 'pas', 'Amministratore'), " +
+				"('v', 'v', 'v@voyager.it', 'v', 'v', 'Venditore'), " +
+				"('p', 'p', 'p@voyager.it', 'p', 'p', 'Promotore'), " +
+				"('d', 'd', 'd@voyager.it', 'd', 'd', 'Progettista'), " +
+				"('c', 'c', 'c@voyager.it', 'c', 'c', 'Cliente'), " +
+				"('g', 'g', 'g@voyager.it', 'g', 'g', 'Gestore Eccezioni') ";
+		
+		ps = conn.prepareStatement(insertQuery);
 		ps.executeUpdate();
 		
 		
