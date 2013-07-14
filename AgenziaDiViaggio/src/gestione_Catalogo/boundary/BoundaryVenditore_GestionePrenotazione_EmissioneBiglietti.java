@@ -801,9 +801,6 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 		
 		public void actionPerformed(ActionEvent arg0) {
 		
-			//bottoneInviaEmail.setVisible(false);
-			//bottoneInviaSMS.setVisible(false);
-			
 			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
 			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
 			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();

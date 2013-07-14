@@ -28,6 +28,7 @@ import javax.swing.JTextField;
 import gestione_Catalogo.thread.PromotoreThread;
 
 import gestione_Catalogo.control.ControlloreGestioneCatalogo;
+import gestione_Catalogo.exception.CittaCoincidentiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
@@ -1001,7 +1002,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 					}
 					
 				} catch (IDEsternoElementoException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (CittaCoincidentiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (TrattaException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
 				} catch (ClassNotFoundException e1) {

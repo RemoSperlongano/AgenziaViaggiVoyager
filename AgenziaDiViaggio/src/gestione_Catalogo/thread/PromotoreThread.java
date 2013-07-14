@@ -10,6 +10,7 @@ package gestione_Catalogo.thread;
 import java.lang.reflect.InvocationTargetException;
 
 import gestione_Catalogo.control.ControlloreGestioneCatalogo;
+import gestione_Catalogo.exception.CittaCoincidentiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.TrattaException;
 
@@ -69,6 +70,8 @@ public class PromotoreThread implements Runnable {
 			controllore.aggiungiViaggio("Mare", "Traghetto", "", "Napoli", "Torino", "", "");
 		
 		} catch (IDEsternoElementoException e) {
+			System.out.println(e.getMessage()+"\n");
+		} catch (CittaCoincidentiException e) {
 			System.out.println(e.getMessage()+"\n");
 		} catch (TrattaException e) {
 			System.out.println(e.getMessage()+"\n");

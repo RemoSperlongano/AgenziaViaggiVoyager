@@ -9,9 +9,11 @@ import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Viaggiatore;
 import gestione_Catalogo.exception.IDEsternoElementoException;
+import gestione_Catalogo.exception.ListaBigliettiNonModificataException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
+import gestione_Catalogo.exception.QuantitaException;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -28,8 +30,9 @@ public class ControlloreModificaPrenotazione extends Controllore {
 	}
 	
 	
-	public void modificaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta, ArrayList<String> listaNomi, ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, PostiNonSufficientiException{
+	public void modificaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta, ArrayList<String> listaNomi, ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, PostiNonSufficientiException, ListaBigliettiNonModificataException, QuantitaException{
 		
+
 		Data dataPartenza = Data.parseTimestamp(offertaScelta);
 		
 		//prendo l'offerta dalla mappa
@@ -38,24 +41,38 @@ public class ControlloreModificaPrenotazione extends Controllore {
 		//prendo la prenotazione dalla mappa
 		Prenotazione prenotazione = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataPartenza, prenotazioneScelta);
 		
+		//prendo la lista dei biglietti e i dati dei viaggiatori
+		ArrayList<Biglietto> listaBiglietti = prenotazione.getListaBiglietti();
+		ArrayList<ArrayList<String>> datiViaggiatori = getDatiViaggiatori(listaBiglietti);
+		
+		// controllo che la lista dei biglietti non sia vuota
+		if (listaNomi.size() == 0 || !listaNomi.get(0).equals(datiViaggiatori.get(0).get(0))){
+			throw new QuantitaException("Errore. Il biglietto dell'acquirente non puo' essere rimosso.");
+		}
+		
+		//verifico che la lista dei biglietti sia stata effettivamente modificata
+		if (listaNomi.equals(datiViaggiatori.get(0)))
+			if (listaCognomi.equals(datiViaggiatori.get(1)))
+				throw new ListaBigliettiNonModificataException("Nessun cambiamento rilevato. La prenotazione non sara' modificata.");
+		
 		//libero i posti precedentemente prenotati
-		offerta.liberaPosti(prenotazione.getListaBiglietti().size());
+		offerta.liberaPosti(listaBiglietti.size());
 		
 		//controllo disponibilità biglietti
 		if (offerta.getPosti() < listaNomi.size()){
 			//riassegno i posti precedentemente liberati, la prenotazione non viene modificata.
-			offerta.assegnaPosti(prenotazione.getListaBiglietti().size()); 
+			offerta.assegnaPosti(listaBiglietti.size()); 
 			throw new PostiNonSufficientiException("Non ci sono abbastanza Posti disponibili per soddisfare tale prenotazione.");
 		}
 		//svuoto la lista dei biglietti
 		prenotazione.clearListaBiglietti();
 		
-		ArrayList<Biglietto> listaBiglietti = new ArrayList<Biglietto>();
+		ArrayList<Biglietto> nuovaListaBiglietti = new ArrayList<Biglietto>();
 		
 		while (!listaNomi.isEmpty()){
 			//creo un nuovo biglietto
 			Biglietto b = new Biglietto(prenotazione.getIdPrenotazione(), listaNomi.get(0), listaCognomi.get(0), listaEmail.get(0));
-			listaBiglietti.add(b);
+			nuovaListaBiglietti.add(b);
 			
 			//assegno un posto per ogni biglietto creato
 			offerta.assegnaPosti(1); 
@@ -67,7 +84,7 @@ public class ControlloreModificaPrenotazione extends Controllore {
 		}
 		
 		//aggiungo la nuova lista dei biglietti alla prenotazione
-		prenotazione.setListaBiglietti(listaBiglietti);
+		prenotazione.setListaBiglietti(nuovaListaBiglietti);
 		
 		log.aggiornaLogModificaPrenotazione(ambiente, mezzo, partenza, arrivo, via, offertaScelta, prenotazioneScelta);
 		
@@ -75,16 +92,19 @@ public class ControlloreModificaPrenotazione extends Controllore {
 	
 	
 	public ArrayList<ArrayList<String>> getDatiViaggiatoriPerPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offerta, String prenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, ParseException{
+		Data dataPartenza = Data.parseTimestamp(offerta);
+		Prenotazione p = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataPartenza, prenotazione);
+		ArrayList<Biglietto> listaBiglietti = p.getListaBiglietti();
+
+		return getDatiViaggiatori(listaBiglietti);	
+	}
+	
+
+	private ArrayList<ArrayList<String>> getDatiViaggiatori(ArrayList<Biglietto> listaBiglietti) {
 		
 		ArrayList<String> listaNomi = new ArrayList<String>();
 		ArrayList<String> listaCognomi = new ArrayList<String>();
 		ArrayList<String> listaEmail = new ArrayList<String>();
-		
-		Data dataPartenza = Data.parseTimestamp(offerta);
-		
-		Prenotazione p = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataPartenza, prenotazione);
-
-		ArrayList<Biglietto> listaBiglietti = p.getListaBiglietti();
 		
 		for (int i=0; i<listaBiglietti.size(); i++){
 			Viaggiatore v = listaBiglietti.get(i).getViaggiatore();

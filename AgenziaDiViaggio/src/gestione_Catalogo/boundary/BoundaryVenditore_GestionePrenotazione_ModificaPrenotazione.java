@@ -13,6 +13,7 @@ import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
+import gestione_Catalogo.exception.QuantitaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.awt.Color;
@@ -620,17 +621,6 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 	}
 	
 	
-	private void controlloSintatticoDati() throws ListaBigliettiNonModificataException, OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, ParseException {
-		
-		ArrayList<ArrayList<String>> listaDatiViaggiatori = controllore.getDatiViaggiatoriPerPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, prenotazioneScelta);
-		
-		if (listaNomi.equals(listaDatiViaggiatori.get(0)))
-			if (listaCognomi.equals(listaDatiViaggiatori.get(1)))
-				throw new ListaBigliettiNonModificataException("Nessun cambiamento rilevato. La prenotazione non sara' modificata.");
-		
-	}
-	
-	
 	private String uppercaseFirstLetters(String str) {
 	    boolean prevWasWhiteSp = true;
 	    char[] chars = str.trim().replaceAll("\\s+"," ").toLowerCase().toCharArray();
@@ -1035,12 +1025,9 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 				
 				prenotazioneScelta = (String) tendinaPrenotazione.getSelectedItem();
 				
-		
 					
 				//modifico la prenotazione
 				try {
-					
-					controlloSintatticoDati();
 					
 					int conferma = JOptionPane.showConfirmDialog(null, "Modificare la prenotazione selezionata?", "Conferma Rimozione Prenotazione", JOptionPane.YES_NO_OPTION);
 					if (conferma == JOptionPane.YES_OPTION){
@@ -1056,6 +1043,8 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 				} catch (ParseException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (PrenotazioneInesistenteException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (QuantitaException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (ListaBigliettiNonModificataException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);

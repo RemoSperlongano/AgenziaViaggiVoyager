@@ -8,6 +8,7 @@ import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneException;
+import gestione_Catalogo.exception.QuantitaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.text.ParseException;
@@ -26,16 +27,19 @@ public class ControlloreAggiungiPrenotazione extends Controllore{
 	}
 
 	
-	public void aggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, ArrayList<String> listaNomi,ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneException, TrattaInesistenteException, PostiNonSufficientiException {
+	public void aggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, ArrayList<String> listaNomi,ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneException, TrattaInesistenteException, PostiNonSufficientiException, QuantitaException {
 		
+		// controllo che la lista dei biglietti non sia vuota
+		if (listaNomi.size() == 0){
+			throw new QuantitaException("Occorre compilare almeno un biglietto per inserire una Prenotazione.");
+		}
 		
-		
-		//Controllo se esiste già una prenotazione
+		//Controllo se esiste gia' una prenotazione
 		String nomeAcquirente = listaNomi.get(0) + " " + listaCognomi.get(0);
 		Data dataOfferta = Data.parseTimestamp(dataPartenza);
 		
 		if (catalogo.verificaEsistenzaPrenotazione(ambiente,mezzo,partenza,arrivo,via,dataOfferta,nomeAcquirente)){
-			throw new PrenotazioneException("Prenotazione già esistente per questo viaggio");
+			throw new PrenotazioneException("Prenotazione già esistente per questo viaggio.");
 		}
 		
 		//prendo la  Tratta
@@ -45,9 +49,9 @@ public class ControlloreAggiungiPrenotazione extends Controllore{
 		Offerta offerta = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta);
 		Integer idOfferta = offerta.getIdOfferta();
 		
-		//controllo disponibilità biglietti
+		//controllo disponibilita' biglietti
 		if (offerta.getPosti() < listaNomi.size()){
-			throw new PostiNonSufficientiException("Non ci sono abbastanza Posti disponibili per soddisfare tale prenotazione");
+			throw new PostiNonSufficientiException("Non ci sono abbastanza Posti disponibili per soddisfare tale prenotazione.");
 		}
 		
 

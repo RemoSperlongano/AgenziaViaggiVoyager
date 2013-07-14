@@ -7,6 +7,7 @@ import gestione_Catalogo.entity.Info;
 import gestione_Catalogo.entity.Mezzo;
 import gestione_Catalogo.entity.Tratta;
 import gestione_Catalogo.entity.Via;
+import gestione_Catalogo.exception.CittaCoincidentiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
@@ -32,13 +33,18 @@ public class ControlloreGestioneCatalogo extends ControlloreGestioneOfferta {
 	
 	
 	//metodi
-	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException {
+	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException {	
 		if (via.equals("")) via = Via.DIRETTO;
 		
 		//Il mezzo è uguale a mezzo + tipo
 		String categoriaMezzo = mezzo;
 		if (!tipoMezzo.equals("")){
 			mezzo = mezzo + " " + tipoMezzo;
+		}
+		
+		//verifico che non ci siano coincidenze tra partenza, arrivo o via.
+		if (cittaPartenza.equals(cittaArrivo)||cittaPartenza.equals(via)||cittaArrivo.equals(via)){
+			throw new CittaCoincidentiException("La citta' di partenza, la citta' di arrivo o la via non possono essere coincidenti!");
 		}
 		
 		//verifico l'esistenza del viaggio nel catalogo

@@ -946,19 +946,7 @@ public class BoundaryProgettista_GestioneOfferta {
 			
 		}
 		
-		
-		private void controlloSintatticoDati(int durata, int posti) throws QuantitaException {
-			if (durata == 0){
-				throw new QuantitaException("La durata del viaggio non può essere nulla. Inserire una durata maggiore di 0 minuti.");
-			}
-			if (posti == 0){
-				throw new QuantitaException("I posti disponibili non possono essere nulli. Inserire una quantita' di posti maggiore di 0.");
-			}
 			
-		}
-
-    	
-    
     
     
     /*
@@ -1448,8 +1436,6 @@ public class BoundaryProgettista_GestioneOfferta {
 						int posti = Integer.parseInt(campoPostiPannello2.getText());
 					
 						Integer[] data = {giorno, mese, anno, ora, minuto};
-						
-						controlloSintatticoDati(durata, posti);
 					
 						// chiedo conferma
 						int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere l'offerta per il viaggio?", "Conferma Aggiunta Offerta", JOptionPane.YES_NO_OPTION);

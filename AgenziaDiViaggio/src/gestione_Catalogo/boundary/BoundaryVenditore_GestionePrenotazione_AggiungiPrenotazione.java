@@ -557,13 +557,8 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	}
 	
 	
-	private void controlloSintatticoDati() throws QuantitaException{
-		if (listaNomi.size() == 0){
-			throw new QuantitaException("Occorre compilare almeno un biglietto per inserire una Prenotazione");
-		}
-	}
-	
 	private void controlloSintatticoBiglietto(String nome, String cognome, String email) throws DatiPersonaliErratiException{
+		
 		
 		if (nome.equals("")||cognome.equals("")||email.equals("")){
 			throw new DatiPersonaliErratiException("Tutti i campi devono essere completati!");
@@ -947,38 +942,40 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 				viaScelta		= 	(String) tendinaVia.getSelectedItem();
 				offertaScelta 	= 	(String) tendinaOfferta.getSelectedItem();
 			
-										
-				try {
+				if(listaNomi.size()!=0){
 					
-					controlloSintatticoDati();
-					
-					// chiedo conferma
-					int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere la Prenotazione per il viaggio?", "Conferma Aggiunta Prenotazione", JOptionPane.YES_NO_OPTION);
-					if (conferma == JOptionPane.YES_OPTION){
-					
-					
-					//aggiungo la prenotazione all'offerta
-					controllore.aggiungiPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, listaNomi, listaCognomi, listaEmail);
-					JOptionPane.showMessageDialog(null, "La Prenotazione e' stata aggiunta correttamente.", "Prenotazione Aggiunta", JOptionPane.INFORMATION_MESSAGE);
-					aggiornaPrenotazioni();
-					tendinaOfferta.setSelectedIndex(0);
+					try {
+						// chiedo conferma
+						int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere la Prenotazione per il viaggio?", "Conferma Aggiunta Prenotazione", JOptionPane.YES_NO_OPTION);
+						if (conferma == JOptionPane.YES_OPTION){
+						
+							//aggiungo la prenotazione all'offerta
+							controllore.aggiungiPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, listaNomi, listaCognomi, listaEmail);
+							JOptionPane.showMessageDialog(null, "La Prenotazione e' stata aggiunta correttamente.", "Prenotazione Aggiunta", JOptionPane.INFORMATION_MESSAGE);
+							aggiornaPrenotazioni();
+							tendinaOfferta.setSelectedIndex(0);
+						}
+					} catch (ParseException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (IDEsternoElementoException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (OffertaInesistenteException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (QuantitaException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (PrenotazioneException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (TrattaInesistenteException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (PostiNonSufficientiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
-				
-				} catch (ParseException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (IDEsternoElementoException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (OffertaInesistenteException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (QuantitaException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (PrenotazioneException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (TrattaInesistenteException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (PostiNonSufficientiException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					
+				} else {
+					JOptionPane.showMessageDialog(null, "Nessun biglietto aggiunto! Compilare almeno un biglietto.");
 				}
+				
+
 				
 			} else {
 				JOptionPane.showMessageDialog(null, "Nessuna offerta selezionata!");

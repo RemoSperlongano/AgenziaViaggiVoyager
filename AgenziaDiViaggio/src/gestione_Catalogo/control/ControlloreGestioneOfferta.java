@@ -10,6 +10,7 @@ import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.PrenotazioneException;
+import gestione_Catalogo.exception.QuantitaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.text.ParseException;
@@ -30,7 +31,14 @@ public class ControlloreGestioneOfferta extends Controllore {
 	
 	
 	
-	public void aggiungiOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, Integer[] data, int durata, int posti) throws TrattaInesistenteException, IDEsternoElementoException, OffertaException{
+	public void aggiungiOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, Integer[] data, int durata, int posti) throws TrattaInesistenteException, IDEsternoElementoException, OffertaException, QuantitaException{
+		
+		if (durata <= 0){
+			throw new QuantitaException("La durata del viaggio non può essere nulla. Inserire una durata maggiore di 0 minuti.");
+		}
+		if (posti <= 0){
+			throw new QuantitaException("I posti disponibili non possono essere nulli. Inserire una quantita' di posti maggiore di 0.");
+		}
 		
 		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
 		Integer idTratta = tratta.getID();
