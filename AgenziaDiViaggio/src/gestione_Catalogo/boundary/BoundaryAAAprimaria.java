@@ -47,15 +47,8 @@ public class BoundaryAAAprimaria extends JFrame{
 	private JButton	bottoneVisitatore;
 	private JButton bottoneLogin;
 
-	private JButton bottoneProgettista;
-	private JButton bottonePromotore;
-	private JButton bottoneVenditore;
-
 	private BottoneVisitatoreAA ascoltatoreBottoneVisitatore;
 	private BottoneLoginAA ascoltatoreBottoneLogin;
-	private BottoneProgettistaAA ascoltatoreBottoneProgettista;
-	private BottonePromotoreAA ascoltatoreBottonePromotore;
-	private BottoneVenditoreAA ascoltatoreBottoneVenditore;
 
 	
 	
@@ -161,79 +154,12 @@ public class BoundaryAAAprimaria extends JFrame{
 		superPanel.add(panel4);				//aggiungo il quarto pannello al superPannello
 		
 		
-		bottoneVenditore = new JButton("VENDITORE");
-		bottoneVenditore.setBounds(panel4.getWidth()/12*3, panel4.getHeight()/3, panel4.getWidth()/6, panel4.getHeight()/6);
-		panel4.add(bottoneVenditore);//aggiungo il bottone al quarto pannello
-		
-		ascoltatoreBottoneVenditore = new BottoneVenditoreAA();
-		bottoneVenditore.addActionListener(ascoltatoreBottoneVenditore);
-		
-		
-		
-		bottoneProgettista = new JButton("PROGETTISTA");
-		bottoneProgettista.setBounds(panel4.getWidth()/12*5, panel4.getHeight()/3, panel4.getWidth()/6, panel4.getHeight()/6);
-		panel4.add(bottoneProgettista);
-		
-		ascoltatoreBottoneProgettista = new BottoneProgettistaAA();
-		bottoneProgettista.addActionListener(ascoltatoreBottoneProgettista);
-		
-		
-		
-		
-		bottonePromotore = new JButton("PROMOTORE");
-		bottonePromotore.setBounds(panel4.getWidth()/12*7, panel4.getHeight()/3, panel4.getWidth()/6, panel4.getHeight()/6);
-		panel4.add(bottonePromotore);//aggiungo il bottone al quarto pannello
-		
-		ascoltatoreBottonePromotore = new BottonePromotoreAA();
-		bottonePromotore.addActionListener(ascoltatoreBottonePromotore);
-		
-		
 
 		
 		
 	}
 	
 	
-	
-	private class BottonePromotoreAA implements ActionListener{
-
-		
-		public void actionPerformed(ActionEvent arg0) {
-
-
-			superPanel.setVisible(false); 					//nasconde questo superpannello
-			new BoundaryPromotore();		//crea istanza della classe del prossimo superPannello
-
-
-		}
-	}
-	
-	private class BottoneProgettistaAA implements ActionListener{
-
-		
-		public void actionPerformed(ActionEvent arg0) {
-
-
-			superPanel.setVisible(false); 					//nasconde questo superpannello
-			new BoundaryProgettista();		//crea istanza della classe del prossimo superPannello
-
-
-		}
-	}
-	
-	
-	private class BottoneVenditoreAA implements ActionListener{
-
-		
-		public void actionPerformed(ActionEvent arg0) {
-
-
-			superPanel.setVisible(false); 					//nasconde questo superpannello
-			new BoundaryVenditore();		//crea istanza della classe del prossimo superPannello
-
-
-		}
-	}
 	
 	private class BottoneLoginAA implements ActionListener{
 
@@ -252,7 +178,8 @@ public class BoundaryAAAprimaria extends JFrame{
 
 		
 		public void actionPerformed(ActionEvent arg0) {
-			//DA IMPLEMENTARE
+			superPanel.setVisible(false);
+			new BoundaryVisitatore();
 			
 		}
 		
