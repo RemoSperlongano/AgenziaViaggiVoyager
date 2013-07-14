@@ -277,14 +277,14 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 		
 		bottoneInviaEmail = new JButton("INVIA EMAIL");
 		bottoneInviaEmail.setBackground(Color.PINK);
-		bottoneInviaEmail.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5+20, panel.getWidth()/5, 20);
-		bottoneInviaEmail.setEnabled(false);
+		bottoneInviaEmail.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*4+20, panel.getWidth()/5, panel.getHeight()/14);
+		bottoneInviaEmail.setVisible(false);
 		panel.add(bottoneInviaEmail);
 		
 		bottoneInviaSMS = new JButton("INVIA SMS");
 		bottoneInviaSMS.setBackground(Color.PINK);
-		bottoneInviaSMS.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5+20, panel.getWidth()/5, 20);
-		bottoneInviaSMS.setEnabled(false);
+		bottoneInviaSMS.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*4+20, panel.getWidth()/5, panel.getHeight()/14);
+		bottoneInviaSMS.setVisible(false);
 		panel.add(bottoneInviaSMS);
 		
 		
@@ -801,6 +801,9 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 		
 		public void actionPerformed(ActionEvent arg0) {
 		
+			//bottoneInviaEmail.setVisible(false);
+			//bottoneInviaSMS.setVisible(false);
+			
 			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
 			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
 			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
@@ -832,9 +835,25 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 				int conferma = JOptionPane.showConfirmDialog(null, "Erogare i biglietti per la prenotazione selezionata?", "Conferma Emissione Biglietti", JOptionPane.YES_NO_OPTION);
 				if (conferma == JOptionPane.YES_OPTION){
 					
+					controllore.erogaBiglietti(ambienteScelto,mezzoScelto,partenzaScelta,arrivoScelto,viaScelta,offertaScelta,prenotazioneScelta);
+					
+					tendinaAmbiente.setEnabled(false);
+					tendinaMezzi.setEnabled(false);
+					tendinaCittaPartenza.setEnabled(false);
+					tendinaCittaArrivo.setEnabled(false);
+					tendinaVia.setEnabled(false);
+					tendinaOfferta.setEnabled(false);
+					tendinaPrenotazione.setEnabled(false);
+					bottoneChiudi.setEnabled(false);
+					
+					bottoneEroga.setVisible(false);
+					bottoneSvuota.setVisible(false);
+					
+					bottoneInviaEmail.setVisible(true);
+					bottoneInviaSMS.setVisible(true);
+
 					JOptionPane.showMessageDialog(null, "L'emissione dei biglietti per la prenotazione selezionata è stata portata a termine.\nScegliere una modalità di notifica dell'avvenuto acquisto.", "Biglietti Erogati", JOptionPane.INFORMATION_MESSAGE);
-					bottoneInviaEmail.setEnabled(true);
-					bottoneInviaSMS.setEnabled(true);
+
 				}
 				
 			} else {
@@ -882,11 +901,26 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			bottoneInviaEmail.setEnabled(false);
-			bottoneInviaSMS.setEnabled(false);
 			
 			JOptionPane.showMessageDialog(null, "Una mail di notifica dell'avvenuto acquisto e' stata inoltrata ai clienti intestatari dei biglietti.", "Mail inviate", JOptionPane.INFORMATION_MESSAGE);
+			
+			tendinaAmbiente.setEnabled(true);
+			tendinaMezzi.setEnabled(true);
+			tendinaCittaPartenza.setEnabled(true);
+			tendinaCittaArrivo.setEnabled(true);
+			tendinaVia.setEnabled(true);
+			tendinaOfferta.setEnabled(true);
+			tendinaPrenotazione.setEnabled(true);
+			bottoneChiudi.setEnabled(true);
+			
+			bottoneEroga.setVisible(true);
+			bottoneSvuota.setVisible(true);
+			
+			bottoneInviaEmail.setVisible(false);
+			bottoneInviaSMS.setVisible(false);
+			
 			aggiornaPrenotazioni();	
+			
 		}
 		
 	}
@@ -896,11 +930,27 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			bottoneInviaEmail.setEnabled(false);
-			bottoneInviaSMS.setEnabled(false);
+
 			
-			JOptionPane.showMessageDialog(null, "Un SMS di notifica dell'avvenuto acquisto e' stata inoltrato ai clienti intestatari dei biglietti.", "SMS inviati", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Un SMS di notifica dell'avvenuto acquisto e' stato inoltrato ai clienti intestatari dei biglietti.", "SMS inviati", JOptionPane.INFORMATION_MESSAGE);
+
+			tendinaAmbiente.setEnabled(true);
+			tendinaMezzi.setEnabled(true);
+			tendinaCittaPartenza.setEnabled(true);
+			tendinaCittaArrivo.setEnabled(true);
+			tendinaVia.setEnabled(true);
+			tendinaOfferta.setEnabled(true);
+			tendinaPrenotazione.setEnabled(true);
+			bottoneChiudi.setEnabled(true);
+			
+			bottoneEroga.setVisible(true);
+			bottoneSvuota.setVisible(true);
+			
+			bottoneInviaEmail.setVisible(false);
+			bottoneInviaSMS.setVisible(false);
+
 			aggiornaPrenotazioni();
+			
 		}
 		
 	}

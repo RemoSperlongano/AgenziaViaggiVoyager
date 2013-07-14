@@ -95,6 +95,15 @@ public class Log {
 		salvaLog(log); 
 	}
 
+	public void aggiornaLogEmissioneBiglietti(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = "[" + Data.stampaDataAttuale() + "] EROGATI BIGLIETTI PER LA PRENOTAZIONE: \n";
+		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
+		log+= "Data di Partenza: " + dataPartenza +"\n";
+		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
+		System.out.println(log);
+		salvaLog(log); 
+		
+	}
 
 	
 
@@ -139,5 +148,7 @@ public class Log {
 			e.printStackTrace();
 		}
 	}
+
+
 
 }
