@@ -70,6 +70,25 @@ public abstract class Controllore {
 		return catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
 	}
 	
+	public Set<Data> mostraOfferteValidePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException{
+		
+		Set<Data> chiaviOfferte = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
+		
+		//filtro le offerte scadute
+		Data dataAttuale = new Data();
+	
+		Data[] dataArray = new Data[chiaviOfferte.size()];
+		chiaviOfferte.toArray(dataArray);
+		
+		for (int i=0; i<chiaviOfferte.size();i++){
+			Data dataOfferta = dataArray[i];
+			if (dataOfferta.before(dataAttuale)){
+				chiaviOfferte.remove(dataOfferta);
+			}
+		}
+		return chiaviOfferte;
+	}
+	
 	public Set<String> mostraPrenotazioniPerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException{
 		Data dp = Data.parseTimestamp(dataPartenza);
 		return catalogo.getChiaviPrenotazione(ambiente, mezzo, partenza, arrivo, via, dp);
@@ -77,25 +96,52 @@ public abstract class Controllore {
 	
 	
 	public String mostraListaOffertaInCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, TrattaInesistenteException, OfferteNonPresentiException, OffertaInesistenteException{
-		
-		String stringaOfferte = "";
-		
-		//prendo tutte le chiavi dalla mappa
-		Set<Data> s = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
-		Iterator<Data> it = s.iterator();
-		
-		while (it.hasNext()){
-			
-			Offerta o = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, it.next());
-			
-			//Inserisce gli elementi nella stringa da ritornare
-			stringaOfferte += o.getData().stampaData() + "\t" + o.getDataArrivo().stampaData() + "\t" + o.getPosti() + "\n";
+		  
+		  String stringaOfferte = "";
+		  
+		  //prendo tutte le chiavi dalla mappa
+		  Set<Data> s = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
+		  Iterator<Data> it = s.iterator();
+		  
+		  while (it.hasNext()){
+		   
+		   Offerta o = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, it.next());
+		   
+		   //Inserisce gli elementi nella stringa da ritornare
+		   stringaOfferte += o.getData().stampaData() + "\t" + o.getDataArrivo().stampaData() + "\t" + o.getPosti() + "\n";
 
-		}
-		
-		
-		return stringaOfferte;
-		
+		  }
+		  
+		  
+		  return stringaOfferte;
+		  
+		 }
+	
+	
+	public String mostraListaOfferteValideInCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException{
+		 
+		  String stringaOfferte = "";
+		  
+		  //prendo tutte le chiavi dalla mappa
+		  Set<Data> s = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
+		  Iterator<Data> it = s.iterator();
+		  
+			Data dataAttuale = new Data();
+			
+			while (it.hasNext()){
+				
+				Data dataOfferta = it.next();
+				
+				// filtro le offerte scadute
+				if (dataOfferta.after(dataAttuale)){
+					Offerta o = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta);
+					
+					//Inserisce gli elementi nella stringa da ritornare
+					stringaOfferte += o.getData().stampaData() + "\t" + o.getDataArrivo().stampaData() + "\t" + o.getPosti() + "\n";
+				}
+			}
+			
+			return stringaOfferte;	
 	}
 	
 	

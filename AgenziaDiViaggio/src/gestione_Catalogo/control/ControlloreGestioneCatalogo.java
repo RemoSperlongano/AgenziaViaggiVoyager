@@ -24,7 +24,7 @@ import java.util.Set;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class ControlloreGestioneCatalogo extends ControlloreGestioneOfferta {
+public class ControlloreGestioneCatalogo extends Controllore {
 	
 	//costruttore
 	public ControlloreGestioneCatalogo(){
@@ -36,7 +36,7 @@ public class ControlloreGestioneCatalogo extends ControlloreGestioneOfferta {
 	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException {	
 		if (via.equals("")) via = Via.DIRETTO;
 		
-		//Il mezzo è uguale a mezzo + tipo
+		//Il mezzo e' uguale a mezzo + tipo
 		String categoriaMezzo = mezzo;
 		if (!tipoMezzo.equals("")){
 			mezzo = mezzo + " " + tipoMezzo;

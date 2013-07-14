@@ -395,7 +395,7 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 					try {
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 					
-						Set<Data> set = controllore.mostraOffertePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						Set<Data> set = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 		
 						Iterator<Data> it = set.iterator();
 						

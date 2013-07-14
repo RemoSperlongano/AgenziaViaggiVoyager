@@ -8,6 +8,7 @@ package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreGestioneOfferta;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.exception.DataNonValidaException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
@@ -1283,7 +1284,7 @@ public class BoundaryProgettista_GestioneOfferta {
 				
 				GregorianCalendar data = new GregorianCalendar();
 				//aumento la data attuale di una settimana
-				data.add(Calendar.MINUTE, 10080);
+				data.add(Calendar.WEEK_OF_YEAR, 1);
 				int annoAttuale = data.get(Calendar.YEAR);
 				
 				if (anno == annoAttuale){
@@ -1319,7 +1320,7 @@ public class BoundaryProgettista_GestioneOfferta {
 			//prendo la data attuale e l'aumento di una settimana:
 			GregorianCalendar data = new GregorianCalendar();
 			//aumento la data attuale di una settimana
-			data.add(Calendar.MINUTE, 10080);
+			data.add(Calendar.WEEK_OF_YEAR, 1);
 			
 			int annoAttuale = data.get(Calendar.YEAR);
 			int meseAttuale = (data.get(Calendar.MONTH))+1;
@@ -1457,6 +1458,8 @@ public class BoundaryProgettista_GestioneOfferta {
 					} catch (OffertaException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
 					} catch (QuantitaException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+					} catch (DataNonValidaException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
 					}
 						

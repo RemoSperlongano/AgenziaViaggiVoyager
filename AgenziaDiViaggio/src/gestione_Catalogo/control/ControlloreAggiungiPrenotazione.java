@@ -39,7 +39,7 @@ public class ControlloreAggiungiPrenotazione extends Controllore{
 		Data dataOfferta = Data.parseTimestamp(dataPartenza);
 		
 		if (catalogo.verificaEsistenzaPrenotazione(ambiente,mezzo,partenza,arrivo,via,dataOfferta,nomeAcquirente)){
-			throw new PrenotazioneException("Prenotazione già esistente per questo viaggio.");
+			throw new PrenotazioneException("Prenotazione gia' esistente per questo viaggio.");
 		}
 		
 		//prendo la  Tratta

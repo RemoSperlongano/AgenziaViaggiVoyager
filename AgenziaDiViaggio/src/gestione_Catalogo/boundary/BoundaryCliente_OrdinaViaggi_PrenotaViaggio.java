@@ -4,6 +4,7 @@
 package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreAggiungiPrenotazione;
+import gestione_Catalogo.control.ControlloreOrdinaViaggi;
 import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.exception.DatiPersonaliErratiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
@@ -39,12 +40,11 @@ import javax.swing.JTextField;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
-	
+public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 	/*
 	 * Attributi di istanza
 	 */
-	private ControlloreAggiungiPrenotazione controllore;
+	private ControlloreOrdinaViaggi controllore;
 	private String ambienteScelto;
 	private String mezzoScelto;
 	private String partenzaScelta;
@@ -122,7 +122,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	 * Costruttore
 	 */
 	
-	public BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione(JPanel panelNext){
+	public BoundaryCliente_OrdinaViaggi_PrenotaViaggio(JPanel panelNext){
 		
 		ambienteScelto = null;
 		mezzoScelto = null;
@@ -141,7 +141,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		
 		
 		
-		controllore = new ControlloreAggiungiPrenotazione();
+		controllore = new ControlloreOrdinaViaggi();
 		
 		 // Il superPanel di questa Boundary prende le dimensioni del pannello Passato
 		panel = panelNext;
@@ -433,7 +433,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 						
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 						
-						Set<Data> set = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						Set<Data> set = controllore.mostraOffertePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 		
 						Iterator<Data> it = set.iterator();
 	
@@ -944,18 +944,18 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 				if(listaNomi.size()!=0){
 					
-					try {
+				//	try {
 						// chiedo conferma
 						int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere la Prenotazione per il viaggio?", "Conferma Aggiunta Prenotazione", JOptionPane.YES_NO_OPTION);
 						if (conferma == JOptionPane.YES_OPTION){
 						
 							//aggiungo la prenotazione all'offerta
-							controllore.aggiungiPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, listaNomi, listaCognomi, listaEmail);
+							controllore.prenotaViaggio(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, listaNomi, listaCognomi, listaEmail);
 							JOptionPane.showMessageDialog(null, "La Prenotazione e' stata aggiunta correttamente.", "Prenotazione Aggiunta", JOptionPane.INFORMATION_MESSAGE);
 							aggiornaPrenotazioni();
 							tendinaOfferta.setSelectedIndex(0);
 						}
-					} catch (ParseException e1) {
+	/*				} catch (ParseException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
@@ -970,7 +970,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 					} catch (PostiNonSufficientiException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
-					
+	*/				
 				} else {
 					JOptionPane.showMessageDialog(null, "Nessun biglietto aggiunto! Compilare almeno un biglietto.");
 				}
@@ -1057,5 +1057,6 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 
 		}
 	}
+
 
 }
