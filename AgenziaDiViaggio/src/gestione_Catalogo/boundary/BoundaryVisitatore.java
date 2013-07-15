@@ -112,7 +112,7 @@ public class BoundaryVisitatore {
 		superPanel.add(panelBottoni);
 		
 		
-		bottoneInfoViaggi = new JButton("GESTIONE CATALOGO");
+		bottoneInfoViaggi = new JButton("INFO VIAGGI");
 		bottoneInfoViaggi.setBackground(Color.ORANGE);
 		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/5*2, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
 		panelBottoni.add(bottoneInfoViaggi);
@@ -196,7 +196,7 @@ public class BoundaryVisitatore {
 				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
 				
 				
-				new BoundaryPromotore_GestioneCatalogo(panelNext);  //Passo il resto del Pannello
+				new BoundaryVisitatore_InfoViaggi(panelNext);  //Passo il resto del Pannello
 				
 				
 			}

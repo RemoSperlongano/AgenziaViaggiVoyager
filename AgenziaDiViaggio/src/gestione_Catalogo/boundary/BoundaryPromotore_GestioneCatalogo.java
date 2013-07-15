@@ -457,7 +457,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 		
 		labelAmbientePannello3 = new JLabel();        //Etichetta per i mezzi
 		labelAmbientePannello3.setFont(new Font("Arial", 0, 15));
-		labelAmbientePannello3.setBounds(panel2.getWidth()/11-35, panel3.getHeight()/6*4, panel3.getWidth()/6, 20);
+		labelAmbientePannello3.setBounds(panel3.getWidth()/11-35, panel3.getHeight()/6*4, panel3.getWidth()/6, 20);
 		labelAmbientePannello3.setText("Ambiente");
 		panel3.add(labelAmbientePannello3);
 		

@@ -1226,7 +1226,7 @@ public class BoundaryProgettista_GestioneOfferta {
 			arrivoScelto = (String)tendinaCittaArrivoPannello2.getSelectedItem();
 			viaScelta = (String) tendinaViaPannello2.getSelectedItem();
 			
-			//Modifico la stringa da immettere nella textArea (DA SISTEMARE!!!)	
+			//Modifico la stringa da immettere nella textArea 	
 			if (tendinaViaPannello2.getItemCount() != 0 && !viaScelta.equals("-----")){
 				
 				tendinaGiornoPannello2.setEnabled(true);
