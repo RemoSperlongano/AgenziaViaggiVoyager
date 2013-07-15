@@ -10,4 +10,9 @@ package gestione_Catalogo.control;
  */
 public class ControlloreMostraOfferta extends Controllore {
 
+	public ControlloreMostraOfferta(){
+		super();
+	}
+	
+	
 }

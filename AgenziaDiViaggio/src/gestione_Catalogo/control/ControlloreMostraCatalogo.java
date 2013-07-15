@@ -3,10 +3,15 @@
  */
 package gestione_Catalogo.control;
 
+import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
+import gestione_Catalogo.exception.OffertaInesistenteException;
+import gestione_Catalogo.exception.OfferteNonPresentiException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -18,7 +23,13 @@ import java.util.Set;
 public class ControlloreMostraCatalogo extends Controllore{
 	
 	
-public String mostraCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws MappaException, IDEsternoElementoException, TrattaInesistenteException {
+	
+	public ControlloreMostraCatalogo(){
+		super();
+	}
+	
+	
+	public String mostraCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws MappaException, IDEsternoElementoException, TrattaInesistenteException {
 		
 		/*
 		 * Ho ben 6 casi ...
@@ -108,6 +119,9 @@ public String mostraCatalogo(String ambiente, String mezzo, String partenza, Str
 			//ritorna con questa lista
 			return listaViaggi;
 		}
+		
+		
+		 
 		
 		
 		
@@ -272,6 +286,40 @@ public String mostraCatalogo(String ambiente, String mezzo, String partenza, Str
 		
 	}
 	
+	
+	
+	public String mostraListaOfferteRichieste(String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataRichiesta, Integer postiRichiesti) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException{
+		 
+		  String stringaOfferte = "";
+		  
+		  //prendo tutte le chiavi dalla mappa
+		  Set<Data> s = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
+		  Iterator<Data> it = s.iterator();
+		 
+			
+			while (it.hasNext()){
+				
+				Data dataOfferta = it.next();
+				
+				// cerco le offerte dalla data Richiesta
+				if (dataOfferta.get(Calendar.YEAR) == dataRichiesta.get(Calendar.YEAR) 	&&
+					dataOfferta.get(Calendar.MONTH) == dataRichiesta.get(Calendar.MONTH) &&
+					dataOfferta.get(Calendar.DAY_OF_MONTH) == dataRichiesta.get(Calendar.DAY_OF_MONTH)){
+					
+					
+					Offerta o = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta);
+					
+					//cerco le offerte solo se ci sono abbastanza posti disponibili
+					if(o.getPosti() >= postiRichiesti){
+						//Inserisce gli elementi nella stringa da ritornare
+						stringaOfferte += o.getData().stampaData() + "\t" + o.getDataArrivo().stampaData() + "\t" + o.getPosti() + "\n";
+					}
+				}
+			}
+			
+			return stringaOfferte;	
+	}
+	
 	private String componiCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via, String info){
 		
 		
@@ -303,5 +351,7 @@ public String mostraCatalogo(String ambiente, String mezzo, String partenza, Str
 		
 		return unViaggio;
 	}
+	
+	
 
 }

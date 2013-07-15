@@ -14,11 +14,12 @@ import java.util.Iterator;
 import java.util.Set;
 
 
-import gestione_Catalogo.control.ControlloreGestioneCatalogo;
 import gestione_Catalogo.control.ControlloreMostraCatalogo;
+import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
-import gestione_Catalogo.exception.OffertaException;
+import gestione_Catalogo.exception.OffertaInesistenteException;
+import gestione_Catalogo.exception.OfferteNonPresentiException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import javax.swing.JButton;
@@ -28,7 +29,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
+
 
 /**
  * @authors
@@ -50,6 +51,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 	private String viaScelta;
 	private String areaTestoCatalogo;
 	private String areaTestoImp;
+	private String areaTestoOffertaImp;
+	private String areaTestoOfferta;
 
 	//Pannelli
 	private JPanel panel;
@@ -117,10 +120,15 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 		arrivoScelto = null;
 		viaScelta = null;
 		areaTestoCatalogo = null;
+		areaTestoOfferta = null;
 		controllore = new ControlloreMostraCatalogo();
 		
 		areaTestoImp = "AMBIENTE" + "\t" + "MEZZO" + "\t\t" + "TRATTA" + "\t\t\t"  + "INFO\n" +
-		   "--------------" + "\t" + "----------" + "\t\t" + "------------" + "\t\t\t" + "---------" + "\n";
+				"--------------" + "\t" + "----------" + "\t\t" + "------------" + "\t\t\t" + "---------" + "\n";
+		
+		areaTestoOffertaImp = "\n\n" +
+				"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
+				"-----------\t\t----------\t\t----------\n";
 		
 		/*
 		 * 
@@ -910,34 +918,43 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			areaTestoOfferta = "";
 		
-//			if (tendinaVia.getItemCount() != 0 && !viaScelta.equals("-----")){
-//				
-//				String via = (String) tendinaVia.getSelectedItem();
-//				
-//				// chiedo conferma
-//				int conferma = JOptionPane.showConfirmDialog(null, "Rimuovere il viaggio dal catalogo?", "Conferma Rimozione Viaggio", JOptionPane.YES_NO_OPTION);
-//				if (conferma == JOptionPane.YES_OPTION){
-//					
-//					// rimuovo il viaggio
-//					try {
-//						controllore.rimuoviViaggio(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, via);
-//						JOptionPane.showMessageDialog(null, "Il viaggio e' stato rimosso correttamente dal catalogo.", "Viaggio Rimosso", JOptionPane.INFORMATION_MESSAGE);
-//						//aggiorno tutti i campi dopo aver rimosso il viaggio
-//						aggiornaTendine();
-//					} catch (IDEsternoElementoException e1) {
-//						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-//					} catch (TrattaInesistenteException e1) {
-//						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-//					} catch (OffertaException e1) {
-//						JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
-//					}
-//					
-//				}
-//					
-//			} else {
-//				JOptionPane.showMessageDialog(null, "Nessun viaggio selezionato!");
-//			}
+			if (tendinaVia.getItemCount() != 0 && !viaScelta.equals("-----")){
+				
+				String via = (String) tendinaVia.getSelectedItem();
+				
+				Integer anno = (Integer) tendinaAnno.getSelectedItem();
+				Integer mese = (Integer) tendinaMese.getSelectedItem();
+				Integer giorno = (Integer) tendinaGiorno.getSelectedItem();
+				Integer posti = (Integer) tendinaPosti.getSelectedItem();
+				
+				Data dataRichiesta = new Data(giorno, mese, anno);
+				try {
+					areaTestoOfferta = controllore.mostraListaOfferteRichieste(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, via, dataRichiesta, posti);
+					
+					if (areaTestoOfferta.equals("")){
+						areaTestoOfferta = "Non ci sono offerte disponibili in base ai criteri di scelta inseriti";
+					}
+					
+					
+					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOffertaImp + areaTestoOfferta);
+					
+				} catch (IDEsternoElementoException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (OfferteNonPresentiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (OffertaInesistenteException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				}
+					
+					
+					
+				
+					
+			} else {
+				JOptionPane.showMessageDialog(null, "Nessun viaggio selezionato!");
+			}
 			
 		}
 		
