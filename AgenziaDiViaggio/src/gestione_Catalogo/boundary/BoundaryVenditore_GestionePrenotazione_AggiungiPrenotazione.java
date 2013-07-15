@@ -433,16 +433,14 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 						
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 						
-						Set<Data> set = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 		
-						Iterator<Data> it = set.iterator();
 	
 						//inserisco l'elemento neutro
 						tendinaOfferta.addItem("-----");
 				
 					    
-						while(it.hasNext()){
-							Data d = it.next();
+						for(Data d : listaOfferte){
 							//inserisco l'elemento in tendina
 							tendinaOfferta.addItem(d.stampaData());
 						}
@@ -452,7 +450,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 					
 					
 						//ImpostoareaTestoOfferta
-						areaTestoOfferta = controllore.mostraListaOffertaInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						areaTestoOfferta = controllore.mostraListaOfferteValideInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					
 						//Imposto areatestoCatalogo
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n"  +
@@ -461,8 +459,6 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 					
 					} catch (IDEsternoElementoException e1) {
 						areaTesto.setText(e1.getMessage()+"\n");
-					} catch (TrattaInesistenteException e) {
-						areaTesto.setText(e.getMessage()+"\n");
 					} catch (OfferteNonPresentiException e) {
 						areaTestoOfferta = e.getMessage();
 					} catch (OffertaInesistenteException e) {

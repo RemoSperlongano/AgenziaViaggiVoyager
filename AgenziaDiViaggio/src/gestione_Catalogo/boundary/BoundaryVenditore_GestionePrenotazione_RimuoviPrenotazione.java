@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -372,16 +373,14 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 					try {
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 					
-						Set<Data> set = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
-		
-						Iterator<Data> it = set.iterator();
+						ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						
 						
 						//inserisco l'elemento neutro
 						tendinaOfferta.addItem("-----");
-						
+				
 					    
-						while(it.hasNext()){
-							Data d = it.next();
+						for(Data d : listaOfferte){
 							//inserisco l'elemento in tendina
 							tendinaOfferta.addItem(d.stampaData());
 						}
@@ -390,7 +389,7 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 						tendinaOfferta.setSelectedIndex(0);
 					
 						//ImpostoareaTestoOfferta
-						areaTestoOfferta = controllore.mostraListaOffertaInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						areaTestoOfferta = controllore.mostraListaOfferteValideInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					
 						//Imposto areatestoCatalogo
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n"  +
@@ -400,8 +399,6 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 					
 					} catch (IDEsternoElementoException e1) {
 						areaTesto.setText(e1.getMessage()+"\n");
-					} catch (TrattaInesistenteException e) {
-						areaTesto.setText(e.getMessage()+"\n");
 					} catch (OfferteNonPresentiException e) {
 						areaTestoOfferta = e.getMessage();
 					} catch (OffertaInesistenteException e) {

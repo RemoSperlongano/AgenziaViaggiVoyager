@@ -3,7 +3,7 @@
  */
 package gestione_Catalogo.boundary;
 
-import gestione_Catalogo.control.ControlloreAggiungiPrenotazione;
+
 import gestione_Catalogo.control.ControlloreOrdinaViaggi;
 import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.exception.DatiPersonaliErratiException;
@@ -15,7 +15,7 @@ import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 import gestione_Catalogo.exception.QuantitaException;
-import gestione_Catalogo.exception.TrattaInesistenteException;
+
 
 import java.awt.Color;
 import java.awt.Font;
@@ -433,26 +433,25 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 						
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 						
-						Set<Data> set = controllore.mostraOffertePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
-		
-						Iterator<Data> it = set.iterator();
-	
+						ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						
+						
 						//inserisco l'elemento neutro
 						tendinaOfferta.addItem("-----");
 				
 					    
-						while(it.hasNext()){
-							Data d = it.next();
+						for(Data d : listaOfferte){
 							//inserisco l'elemento in tendina
 							tendinaOfferta.addItem(d.stampaData());
 						}
+					    
 					    
 						tendinaOfferta.setEnabled(true);
 						tendinaOfferta.setSelectedIndex(0);
 					
 					
 						//ImpostoareaTestoOfferta
-						areaTestoOfferta = controllore.mostraListaOffertaInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						areaTestoOfferta = controllore.mostraListaOfferteValideInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					
 						//Imposto areatestoCatalogo
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n"  +
@@ -461,8 +460,6 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 					
 					} catch (IDEsternoElementoException e1) {
 						areaTesto.setText(e1.getMessage()+"\n");
-					} catch (TrattaInesistenteException e) {
-						areaTesto.setText(e.getMessage()+"\n");
 					} catch (OfferteNonPresentiException e) {
 						areaTestoOfferta = e.getMessage();
 					} catch (OffertaInesistenteException e) {

@@ -928,8 +928,6 @@ public class BoundaryProgettista_GestioneOfferta {
 						
 						} catch (IDEsternoElementoException e1) {
 							areaTestoPannello3.setText(e1.getMessage()+"\n");
-						} catch (TrattaInesistenteException e) {
-							areaTestoPannello3.setText(e.getMessage()+"\n");
 						} catch (OfferteNonPresentiException e) {
 							areaTestoOfferta = e.getMessage();
 						} catch (OffertaInesistenteException e) {
@@ -1255,8 +1253,6 @@ public class BoundaryProgettista_GestioneOfferta {
 					
 				} catch (IDEsternoElementoException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (TrattaInesistenteException e) {
-					JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (OfferteNonPresentiException e) {
 					areaTestoOfferta = e.getMessage();
 				} catch (OffertaInesistenteException e) {

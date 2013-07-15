@@ -26,7 +26,6 @@ import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
-import gestione_Catalogo.exception.TrattaInesistenteException;
 
 
 public abstract class Controllore {
@@ -67,27 +66,26 @@ public abstract class Controllore {
 		return catalogo.getChiaviVia(ambiente, mezzo, partenza, arrivo);
 	}
 		
-	public Set<Data> mostraOffertePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException{
+	public Set<Data> mostraOffertePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException {
 		return catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
 	}
 	
-	public Set<Data> mostraOfferteValidePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException{
+	public ArrayList<Data> mostraOfferteValidePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException{
+		
+		ArrayList<Data> dateValide = new ArrayList<Data>();
 		
 		Set<Data> chiaviOfferte = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
+		Iterator<Data> it = chiaviOfferte.iterator();
 		
 		//filtro le offerte scadute
 		Data dataAttuale = new Data();
-	
-		Data[] dataArray = new Data[chiaviOfferte.size()];
-		chiaviOfferte.toArray(dataArray);
-		
-		for (int i=0; i<chiaviOfferte.size();i++){
-			Data dataOfferta = dataArray[i];
-			if (dataOfferta.before(dataAttuale)){
-				chiaviOfferte.remove(dataOfferta);
+		while(it.hasNext()){
+			Data dataOfferta = it.next();
+			if (dataOfferta.after(dataAttuale)){
+				dateValide.add(dataOfferta);
 			}
 		}
-		return chiaviOfferte;
+		return dateValide;
 	}
 	
 	public Set<String> mostraPrenotazioniPerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException{
@@ -96,7 +94,7 @@ public abstract class Controllore {
 	}
 	
 	
-	public String mostraListaOffertaInCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, TrattaInesistenteException, OfferteNonPresentiException, OffertaInesistenteException{
+	public String mostraListaOffertaInCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException{
 		  
 		  String stringaOfferte = "";
 		  
