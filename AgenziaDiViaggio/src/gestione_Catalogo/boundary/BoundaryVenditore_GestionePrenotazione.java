@@ -262,7 +262,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 		public void actionPerformed(ActionEvent e) {
 			
 			superPanel.setVisible(false); 			    //chiude tutto questo pannello
-			BoundaryVenditore.riattivaBottoni();      	//riattiva i bottoni
+			BoundaryGestoreEccezioni.riattivaBottoni();      	//riattiva i bottoni
 						
 		}
 	}

@@ -64,11 +64,11 @@ public class DBTest {
 		insertQuery =
 				"INSERT INTO `utente` (`nome`, `cognome`, `mail`, `username`, `password`, `ruolo`) VALUES " + 
 				"('admin', 'voyager', 'admin@voyager.it', 'admin', 'pas', 'Amministratore'), " +
-				"('v', 'v', 'v@voyager.it', 'v', 'v', 'Venditore'), " +
-				"('p', 'p', 'p@voyager.it', 'p', 'p', 'Promotore'), " +
-				"('d', 'd', 'd@voyager.it', 'd', 'd', 'Progettista'), " +
-				"('c', 'c', 'c@voyager.it', 'c', 'c', 'Cliente'), " +
-				"('g', 'g', 'g@voyager.it', 'g', 'g', 'GestoreEccezioni') ";
+				"('Moto', 'Vendo', 'motovendo@voyager.it', 'v', 'v', 'Venditore'), " +
+				"('Vincenzo', 'Proferrari', 'proferrari@voyager.it', 'p', 'p', 'Promotore'), " +
+				"('Archimede', 'Pitagorico', 'archipit@voyager.it', 'd', 'd', 'Progettista'), " +
+				"('Mario', 'Rossi', 'mariorossi@libero.it', 'c', 'c', 'Cliente'), " +
+				"('Felice', 'Correggetti', 'correggetti@voyager.it', 'g', 'g', 'GestoreEccezioni') ";
 		
 		ps = conn.prepareStatement(insertQuery);
 		ps.executeUpdate();
