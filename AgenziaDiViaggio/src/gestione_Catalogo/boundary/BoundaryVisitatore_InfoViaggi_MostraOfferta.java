@@ -541,8 +541,6 @@ public class BoundaryVisitatore_InfoViaggi_MostraOfferta {
 						
 						} catch (IDEsternoElementoException e1) {
 							areaTesto.setText(e1.getMessage()+"\n");
-						} catch (TrattaInesistenteException e) {
-							areaTesto.setText(e.getMessage()+"\n");
 						} catch (OfferteNonPresentiException e) {
 							areaTestoOfferta = e.getMessage();
 						} catch (OffertaInesistenteException e) {
