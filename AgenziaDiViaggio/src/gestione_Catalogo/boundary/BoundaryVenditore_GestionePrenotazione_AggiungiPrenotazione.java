@@ -473,6 +473,8 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	
 	private void aggiornaPrenotazioni(){
 		
+		bottoneRimuoviUltimoBiglietto.setEnabled(false);
+		
 		offertaScelta = (String) tendinaOfferta.getSelectedItem();
 		
 		areaTesto.setText("");
@@ -523,7 +525,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		
 		areaTesto.setText("");
 		areaTestoOfferta="";
-		areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
+		
 		
 		if (tendinaOfferta.getItemCount() != 0) {
 			
@@ -534,15 +536,11 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 				//ImpostoareaTestoOfferta
 				areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
 				
-				if (!listaNomi.isEmpty()){
-					bottoneRimuoviUltimoBiglietto.setEnabled(true);
-					for (int i=0; i<listaNomi.size(); i++){
-						areaTestoBiglietti+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
-					}	
-				} else {
-					bottoneRimuoviUltimoBiglietto.setEnabled(false);
-					areaTestoBiglietti = "Non ci sono ancora biglietti per questa prenotazione.";
-				}
+				bottoneRimuoviUltimoBiglietto.setEnabled(true);
+				areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
+				for (int i=0; i<listaNomi.size(); i++){
+					areaTestoBiglietti+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
+				}	
 
 				areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoBiglietti);
 								
@@ -916,8 +914,11 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			listaNomi.remove(i);
 			listaCognomi.remove(i);
 			listaEmail.remove(i);
-			
-			aggiornaBiglietti();
+			if (!listaNomi.isEmpty()){
+				aggiornaBiglietti();
+			} else {
+				aggiornaPrenotazioni();
+			}
 		}
 		
 	}
