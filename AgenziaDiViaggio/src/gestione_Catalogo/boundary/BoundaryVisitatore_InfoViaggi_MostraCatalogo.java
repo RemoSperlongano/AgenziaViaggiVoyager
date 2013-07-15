@@ -238,7 +238,7 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 		
 		labelData = new JLabel();	//Etichetta per Data
 		labelData.setFont(new Font("Arial",0,15));
-		labelData.setBounds(panel.getWidth()/11*3-35, panel.getHeight()/24*19, panel.getWidth()/12, 20);
+		labelData.setBounds(panel.getWidth()/11*3-35, panel.getHeight()/24*20, panel.getWidth()/12, 20);
 		labelData.setText("Data");
 		panel.add(labelData);
 		
@@ -247,7 +247,7 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 		
 		tendinaGiorno = new JComboBox<Integer>(); //Tendina per giorno
 		tendinaGiorno.setBackground(Color.WHITE);
-		tendinaGiorno.setBounds(panel.getWidth()/11*3+15, panel.getHeight()/24*19, panel.getWidth()/24, 20);
+		tendinaGiorno.setBounds(panel.getWidth()/11*3+15, panel.getHeight()/24*20, panel.getWidth()/24, 20);
 		tendinaGiorno.setEnabled(false);
 		panel.add(tendinaGiorno);
 	    
@@ -255,7 +255,7 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 	    
 	    labelSlash1 = new JLabel();	//Etichetta elementi data
 	    labelSlash1.setFont(new Font("Arial",0,15));
-	    labelSlash1.setBounds(panel.getWidth()/11*3+60, panel.getHeight()/24*19, panel.getWidth()/36, 20);
+	    labelSlash1.setBounds(panel.getWidth()/11*3+60, panel.getHeight()/24*20, panel.getWidth()/36, 20);
 	    labelSlash1.setText("/");
 		panel.add(labelSlash1); 
 		
@@ -264,35 +264,35 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 		
 		tendinaMese = new JComboBox<Integer>(); //Tendina per mesi
 		tendinaMese.setBackground(Color.WHITE);
-		tendinaMese.setBounds(panel.getWidth()/11*3+70, panel.getHeight()/24*19, panel.getWidth()/24, 20);
+		tendinaMese.setBounds(panel.getWidth()/11*3+70, panel.getHeight()/24*20, panel.getWidth()/24, 20);
 		tendinaMese.setEnabled(false);
 		panel.add(tendinaMese);
 		
 		
 		labelSlash2 = new JLabel();	//Etichetta elementi data
 		labelSlash2.setFont(new Font("Arial",0,15));
-		labelSlash2.setBounds(panel.getWidth()/11*3+115, panel.getHeight()/24*19, panel.getWidth()/36, 20);
+		labelSlash2.setBounds(panel.getWidth()/11*3+115, panel.getHeight()/24*20, panel.getWidth()/36, 20);
 		labelSlash2.setText("/");
 		panel.add(labelSlash2); 
 		
 		
 		tendinaAnno = new JComboBox<Integer>(); //Tendina per anni
 		tendinaAnno.setBackground(Color.WHITE);
-		tendinaAnno.setBounds(panel.getWidth()/11*3+125, panel.getHeight()/24*19, panel.getWidth()/18, 20);
+		tendinaAnno.setBounds(panel.getWidth()/11*3+125, panel.getHeight()/24*20, panel.getWidth()/18, 20);
 		tendinaAnno.setEnabled(false);
 		panel.add(tendinaAnno);
 		
 		
 		labelPosti = new JLabel();	//Etichetta elementi ora
 	    labelPosti.setFont(new Font("Arial", 0, 15));
-	    labelPosti.setBounds(panel.getWidth()/22*12, panel.getHeight()/24*19, panel.getWidth()/12, 20);
+	    labelPosti.setBounds(panel.getWidth()/22*12, panel.getHeight()/24*20, panel.getWidth()/12, 20);
 	    labelPosti.setText("Posti");
 		panel.add(labelPosti);
 		
 		
 	    tendinaPosti = new JComboBox<Integer> (); 
 	    tendinaPosti.setBackground(Color.WHITE);
-	    tendinaPosti.setBounds(panel.getWidth()/22*12+50, panel.getHeight()/24*19, panel.getWidth()/24, 20);
+	    tendinaPosti.setBounds(panel.getWidth()/22*12+50, panel.getHeight()/24*20, panel.getWidth()/24, 20);
 	    for (int i=1; i<31; i++){
 	    	tendinaPosti.addItem(i);
 	    }

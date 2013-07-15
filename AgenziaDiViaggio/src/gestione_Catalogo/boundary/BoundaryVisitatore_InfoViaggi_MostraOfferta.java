@@ -531,7 +531,7 @@ public class BoundaryVisitatore_InfoViaggi_MostraOfferta {
 							areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 						
 							//ImpostoareaTestoOfferta
-							areaTestoOfferta = controllore.mostraListaOffertaInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+							areaTestoOfferta = controllore.mostraListaOfferteValideInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 						
 							//Imposto areatestoCatalogo
 							areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n"  +
