@@ -46,6 +46,17 @@ public abstract class Controllore {
 	
 	
 	//metodi in comune
+	public ArrayList<String> getDatiUtenteDaSessione(){
+		ArrayList<String> datiUtente = new ArrayList<String>();
+		datiUtente.add(Sessione.USERNAME, sessione.getUsername());
+		datiUtente.add(Sessione.RUOLO, sessione.getRuolo());
+		datiUtente.add(Sessione.NOME, sessione.getNome());
+		datiUtente.add(Sessione.COGNOME, sessione.getCognome());
+		datiUtente.add(Sessione.EMAIL, sessione.getEmail());
+		return datiUtente;
+	}
+	
+	
 	public Set<String> mostraAmbientiInCatalogo() throws MappaException {
 		return catalogo.getChiaviAmbienti();
 	}

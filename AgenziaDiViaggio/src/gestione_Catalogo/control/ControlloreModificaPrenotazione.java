@@ -8,12 +8,12 @@ import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Viaggiatore;
+import gestione_Catalogo.exception.BigliettoNonPresenteException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.ListaBigliettiNonModificataException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
-import gestione_Catalogo.exception.QuantitaException;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class ControlloreModificaPrenotazione extends Controllore {
 	}
 	
 	
-	public void modificaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta, ArrayList<String> listaNomi, ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, PostiNonSufficientiException, ListaBigliettiNonModificataException, QuantitaException{
+	public void modificaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta, ArrayList<String> listaNomi, ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, PostiNonSufficientiException, ListaBigliettiNonModificataException, BigliettoNonPresenteException{
 		
 
 		Data dataPartenza = Data.parseTimestamp(offertaScelta);
@@ -45,9 +45,12 @@ public class ControlloreModificaPrenotazione extends Controllore {
 		ArrayList<Biglietto> listaBiglietti = prenotazione.getListaBiglietti();
 		ArrayList<ArrayList<String>> datiViaggiatori = getDatiViaggiatori(listaBiglietti);
 		
-		// controllo che la lista dei biglietti non sia vuota
-		if (listaNomi.size() == 0 || !listaNomi.get(0).equals(datiViaggiatori.get(0).get(0))){
-			throw new QuantitaException("Errore. Il biglietto dell'acquirente non puo' essere rimosso.");
+		// controllo che la lista dei biglietti contenga il biglietto dell'acquirente
+		if (listaNomi.size() == 0 
+				|| !(listaNomi.get(0).equalsIgnoreCase(datiViaggiatori.get(0).get(0)) 
+						&& listaCognomi.get(0).equalsIgnoreCase(datiViaggiatori.get(1).get(0)) 
+						&& listaEmail.get(0).equalsIgnoreCase(datiViaggiatori.get(2).get(0)))){
+			throw new BigliettoNonPresenteException("Errore. Il biglietto dell'acquirente non puo' essere rimosso.");
 		}
 		
 		//verifico che la lista dei biglietti sia stata effettivamente modificata

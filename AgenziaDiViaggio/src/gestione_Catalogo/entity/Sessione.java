@@ -17,6 +17,12 @@ public class Sessione {
 	private String cognome;
 	private String eMail;
 	
+	public static final int USERNAME = 0;
+	public static final int RUOLO = 1;
+	public static final int NOME = 2;
+	public static final int COGNOME = 3;
+	public static final int EMAIL = 4;
+	
 	
 	public Sessione(String username, String ruolo, String nome, String cognome, String mail){
 		
@@ -49,3 +55,4 @@ public class Sessione {
 	
 
 }
+

@@ -502,7 +502,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 					
 				}
 				
-		} 
+			} 
 			
 		} catch (ParseException e) {
 			areaTestoPrenotazione = e.getMessage();
@@ -531,13 +531,15 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			if (!tendinaOfferta.equals("-----")){
 				
+				bottoneRimuoviUltimoBiglietto.setEnabled(true);
+				
 				areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 				
 				//ImpostoareaTestoOfferta
 				areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
 				
-				bottoneRimuoviUltimoBiglietto.setEnabled(true);
 				areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
+				
 				for (int i=0; i<listaNomi.size(); i++){
 					areaTestoBiglietti+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
 				}	
@@ -546,7 +548,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 								
 			}
 			
-	} 
+		} 
 		
 	}
 	
@@ -949,7 +951,6 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 							//aggiungo la prenotazione all'offerta
 							controllore.aggiungiPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, listaNomi, listaCognomi, listaEmail);
 							JOptionPane.showMessageDialog(null, "La Prenotazione e' stata aggiunta correttamente.", "Prenotazione Aggiunta", JOptionPane.INFORMATION_MESSAGE);
-							aggiornaPrenotazioni();
 							tendinaOfferta.setSelectedIndex(0);
 						}
 					} catch (ParseException e1) {

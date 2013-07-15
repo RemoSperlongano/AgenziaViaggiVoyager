@@ -6,6 +6,8 @@ package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreOrdinaViaggi;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.entity.Sessione;
+import gestione_Catalogo.exception.BigliettoNonPresenteException;
 import gestione_Catalogo.exception.DatiPersonaliErratiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
@@ -13,8 +15,7 @@ import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneException;
-import gestione_Catalogo.exception.PrenotazioneInesistenteException;
-import gestione_Catalogo.exception.QuantitaException;
+import gestione_Catalogo.exception.TrattaInesistenteException;
 
 
 import java.awt.Color;
@@ -54,7 +55,6 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 	private String areaTestoOfferta;
 	private String areaTestoCatalogo;
 	private String areaTestoImp;
-	private String areaTestoPrenotazione;
 	private String areaTestoBiglietti;
 	
 	private ArrayList<String> listaNomi;
@@ -100,7 +100,7 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 	private JButton bottoneAggiungiBiglietto;	
 	private JButton bottoneRimuoviUltimoBiglietto;
 
-	private JButton bottoneAggiungi;
+	private JButton bottonePrenota;
 	private JButton bottoneSvuota;
 	
 	private JButton bottoneChiudi;
@@ -114,7 +114,7 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 	private AggiungiBigliettoAA ascoltatoreBottoneAggiungiBiglietto;
 	private RimuoviUltimoBigliettoAA ascoltatoreBottoneRimuoviUltimoBiglietto;
 	private ChiudiAA ascoltatoreBottoneChiudi;
-	private AggiungiAA ascoltatoreBottoneAggiungi;
+	private PrenotaAA ascoltatoreBottonePrenota;
 	private SvuotaAA ascoltatoreBottoneSvuota;
 	
 	
@@ -131,7 +131,6 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 		viaScelta = null;
 		offertaScelta = null;
 		areaTestoOfferta = "";
-		areaTestoPrenotazione = "";
 		areaTestoBiglietti = "";
 		areaTestoImp = "Offerte per il viaggio:   ";
 		
@@ -162,7 +161,7 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 			labelTitolo.setBounds(panel.getWidth()/3, panel.getHeight()/200, panel.getWidth()/3, panel.getHeight()/7);
 			labelTitolo.setVerticalAlignment(JLabel.CENTER);
 			labelTitolo.setHorizontalAlignment(JLabel.CENTER);
-			labelTitolo.setText("AGGIUNGI PRENOTAZIONE");
+			labelTitolo.setText("PRENOTA VIAGGIO");
 			panel.add(labelTitolo);
 			    
 			    
@@ -325,10 +324,10 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 			bottoneSvuota.setBounds(panel.getWidth()/5*3-60, panel.getHeight()/6*5+20, panel.getWidth()/5, panel.getHeight()/14);
 			panel.add(bottoneSvuota);
 			
-			bottoneAggiungi = new JButton("AGGIUNGI PRENOTAZIONE");
-			bottoneAggiungi.setBackground(Color.ORANGE);
-			bottoneAggiungi.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5+20, panel.getWidth()/5, panel.getHeight()/14);
-			panel.add(bottoneAggiungi);
+			bottonePrenota = new JButton("PRENOTA");
+			bottonePrenota.setBackground(Color.ORANGE);
+			bottonePrenota.setBounds(panel.getWidth()/5*4-25, panel.getHeight()/6*5+20, panel.getWidth()/5, panel.getHeight()/14);
+			panel.add(bottonePrenota);
 			
 			bottoneChiudi = new JButton("X");
 			bottoneChiudi.setBackground(Color.RED);
@@ -366,8 +365,8 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 			ascoltatoreBottoneChiudi = new ChiudiAA();
 			bottoneChiudi.addActionListener(ascoltatoreBottoneChiudi);
 			
-			ascoltatoreBottoneAggiungi = new AggiungiAA();
-			bottoneAggiungi.addActionListener(ascoltatoreBottoneAggiungi);
+			ascoltatoreBottonePrenota = new PrenotaAA();
+			bottonePrenota.addActionListener(ascoltatoreBottonePrenota);
 			
 			ascoltatoreBottoneSvuota = new SvuotaAA();
 			bottoneSvuota.addActionListener(ascoltatoreBottoneSvuota);
@@ -378,9 +377,29 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 			aggiornaTendine();
 	}
 	
+	
 	/*
 	 * Metodi
 	 */
+	
+	private void svuotaParte() {
+		
+		areaTesto.setText("");
+		
+   		campoNome.setText("");
+		campoNome.setEditable(false);
+		
+   		campoCognome.setText("");
+		campoCognome.setEditable(false);
+		
+		campoEmail.setText("");
+		campoEmail.setEditable(false);
+		
+		bottoneAggiungiBiglietto.setEnabled(false);
+		bottoneRimuoviUltimoBiglietto.setEnabled(false);
+			
+	}
+	
 	
 	private void aggiornaTendine() { 
 		
@@ -472,51 +491,6 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 		} 
 	}
 	
-	private void aggiornaPrenotazioni(){
-		
-		offertaScelta = (String) tendinaOfferta.getSelectedItem();
-		
-		areaTesto.setText("");
-		areaTestoOfferta="";
-		areaTestoPrenotazione="PRENOTAZIONI EFFETTUATE:\n\n";
-		
-		try {
-			
-			if (tendinaOfferta.getItemCount() != 0) {
-				
-				
-				if (!tendinaOfferta.equals("-----")){
-					
-					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
-					
-					//ImpostoareaTestoOfferta
-					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
-					
-					Set<String> s = controllore.mostraPrenotazioniPerOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
-					Iterator<String> it = s.iterator();
-					
-					while(it.hasNext()){
-						areaTestoPrenotazione += it.next() + "\n";
-					}
-					
-				}
-				
-		} 
-			
-		} catch (ParseException e) {
-			areaTestoPrenotazione = e.getMessage();
-		} catch (OffertaInesistenteException e) {
-			areaTestoPrenotazione = e.getMessage();
-		} catch (IDEsternoElementoException e) {
-			areaTestoPrenotazione = e.getMessage();
-		} catch (PrenotazioneInesistenteException e) {
-			areaTestoPrenotazione = e.getMessage();
-		} finally{
-			areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione);
-		}
-		
-		
-	}
 	
 	private void aggiornaBiglietti(){
 				
@@ -524,32 +498,34 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 		
 		areaTesto.setText("");
 		areaTestoOfferta="";
-		areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
+		
 		
 		if (tendinaOfferta.getItemCount() != 0) {
 			
 			if (!tendinaOfferta.equals("-----")){
+				
+				if (listaNomi.size()<=1){
+					bottoneRimuoviUltimoBiglietto.setEnabled(false);
+				}	else {
+					bottoneRimuoviUltimoBiglietto.setEnabled(true);
+				}
 				
 				areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 				
 				//ImpostoareaTestoOfferta
 				areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
 				
-				if (!listaNomi.isEmpty()){
-					bottoneRimuoviUltimoBiglietto.setEnabled(true);
-					for (int i=0; i<listaNomi.size(); i++){
-						areaTestoBiglietti+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
-					}	
-				} else {
-					bottoneRimuoviUltimoBiglietto.setEnabled(false);
-					areaTestoBiglietti = "Non ci sono ancora biglietti per questa prenotazione.";
-				}
+				areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
+				
+				for (int i=0; i<listaNomi.size(); i++){
+					areaTestoBiglietti+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
+				}	
 
 				areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoBiglietti);
 								
 			}
 			
-	} 
+		} 
 		
 	}
 	
@@ -830,19 +806,7 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			
-	   		campoNome.setText("");
-			campoNome.setEditable(false);
-			
-	   		campoCognome.setText("");
-			campoCognome.setEditable(false);
-			
-			campoEmail.setText("");
-			campoEmail.setEditable(false);
-			
-			bottoneAggiungiBiglietto.setEnabled(false);
-			bottoneRimuoviUltimoBiglietto.setEnabled(false);
-			
+			svuotaParte();
 			
 			offertaScelta = (String) tendinaOfferta.getSelectedItem();
 			
@@ -861,8 +825,24 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 						listaEmail.remove(0);
 					}
 					
-					aggiornaPrenotazioni();
-					
+					try {
+						ArrayList<String> datiCliente = controllore.getDatiClientePerBiglietto(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
+						listaNomi.add(0, datiCliente.get(Sessione.NOME));
+						listaCognomi.add(0, datiCliente.get(Sessione.COGNOME));
+						listaEmail.add(0, datiCliente.get(Sessione.EMAIL));
+						aggiornaBiglietti();
+					} catch (ParseException e) {
+						JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (OffertaInesistenteException e) {
+						JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (IDEsternoElementoException e) {
+						JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (PrenotazioneException e) {
+						svuotaParte();
+						areaTesto.setText(areaTestoImp  + ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n" + "Prenotazione per il giorno: \t " + offertaScelta + "\n\n" + e.getMessage());
+						
+					}
+				
 				} else {
 					
 					aggiornaOfferte();
@@ -914,17 +894,20 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			int i = listaNomi.size()-1;
-			listaNomi.remove(i);
-			listaCognomi.remove(i);
-			listaEmail.remove(i);
 			
-			aggiornaBiglietti();
+			if (i>0){
+				listaNomi.remove(i);
+				listaCognomi.remove(i);
+				listaEmail.remove(i);
+				
+				aggiornaBiglietti();
+			}
 		}
 		
 	}
 		
 	
-	private class AggiungiAA implements ActionListener{
+	private class PrenotaAA implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -941,7 +924,7 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 			
 				if(listaNomi.size()!=0){
 					
-				//	try {
+					try {
 						// chiedo conferma
 						int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere la Prenotazione per il viaggio?", "Conferma Aggiunta Prenotazione", JOptionPane.YES_NO_OPTION);
 						if (conferma == JOptionPane.YES_OPTION){
@@ -949,16 +932,15 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 							//aggiungo la prenotazione all'offerta
 							controllore.prenotaViaggio(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, listaNomi, listaCognomi, listaEmail);
 							JOptionPane.showMessageDialog(null, "La Prenotazione e' stata aggiunta correttamente.", "Prenotazione Aggiunta", JOptionPane.INFORMATION_MESSAGE);
-							aggiornaPrenotazioni();
 							tendinaOfferta.setSelectedIndex(0);
 						}
-	/*				} catch (ParseException e1) {
+					} catch (ParseException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (OffertaInesistenteException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-					} catch (QuantitaException e1) {
+					} catch (BigliettoNonPresenteException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (PrenotazioneException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
@@ -967,7 +949,7 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 					} catch (PostiNonSufficientiException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
-	*/				
+					
 				} else {
 					JOptionPane.showMessageDialog(null, "Nessun biglietto aggiunto! Compilare almeno un biglietto.");
 				}
