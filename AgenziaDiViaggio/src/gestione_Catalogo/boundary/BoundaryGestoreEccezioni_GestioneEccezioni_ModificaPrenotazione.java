@@ -5,6 +5,7 @@ package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreModificaPrenotazione;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.exception.BigliettoNonPresenteException;
 import gestione_Catalogo.exception.DatiPersonaliErratiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.ListaBigliettiNonModificataException;
@@ -13,7 +14,6 @@ import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
-import gestione_Catalogo.exception.QuantitaException;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -1039,7 +1039,7 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni_ModificaPrenotazione {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (PrenotazioneInesistenteException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (QuantitaException e1) {
+				} catch (BigliettoNonPresenteException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (ListaBigliettiNonModificataException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);

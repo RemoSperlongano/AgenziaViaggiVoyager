@@ -494,39 +494,28 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 	
 	private void aggiornaBiglietti(){
 				
-		offertaScelta = (String) tendinaOfferta.getSelectedItem();
-		
 		areaTesto.setText("");
 		areaTestoOfferta="";
 		
-		
-		if (tendinaOfferta.getItemCount() != 0) {
-			
-			if (!tendinaOfferta.equals("-----")){
+		if (listaNomi.size()<=1){
+			bottoneRimuoviUltimoBiglietto.setEnabled(false);
+		}	else {
+			bottoneRimuoviUltimoBiglietto.setEnabled(true);
+		}
 				
-				if (listaNomi.size()<=1){
-					bottoneRimuoviUltimoBiglietto.setEnabled(false);
-				}	else {
-					bottoneRimuoviUltimoBiglietto.setEnabled(true);
-				}
+		areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 				
-				areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+		//ImpostoareaTestoOfferta
+		areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
 				
-				//ImpostoareaTestoOfferta
-				areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
+		areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
 				
-				areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
-				
-				for (int i=0; i<listaNomi.size(); i++){
-					areaTestoBiglietti+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
-				}	
+		for (int i=0; i<listaNomi.size(); i++){
+			areaTestoBiglietti+= i+1 + ".   " + listaNomi.get(i) + "\t" + listaCognomi.get(i) + "\t" + listaEmail.get(i) + "\n";
+		}	
 
-				areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoBiglietti);
+		areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoBiglietti);
 								
-			}
-			
-		} 
-		
 	}
 	
 	
@@ -769,13 +758,6 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 					
 					
 				}
-	
-			
-			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
-			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
-			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
-			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
-			
 				
 			}
 			
@@ -808,6 +790,11 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 		public void actionPerformed(ActionEvent arg0) {
 			svuotaParte();
 			
+			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
+			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
+			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
+			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
+			viaScelta = (String) tendinaVia.getSelectedItem();
 			offertaScelta = (String) tendinaOfferta.getSelectedItem();
 			
 			if (tendinaOfferta.getItemCount() != 0){
@@ -839,8 +826,7 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 						JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (PrenotazioneException e) {
 						svuotaParte();
-						areaTesto.setText(areaTestoImp  + ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n" + "Prenotazione per il giorno: \t " + offertaScelta + "\n\n" + e.getMessage());
-						
+						areaTesto.setText(areaTestoImp  + ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n" + "Prenotazione per il giorno: \t " + offertaScelta + "\n\n" + e.getMessage());	
 					}
 				
 				} else {

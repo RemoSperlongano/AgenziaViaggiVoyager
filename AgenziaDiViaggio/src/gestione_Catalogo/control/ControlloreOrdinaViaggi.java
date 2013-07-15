@@ -36,7 +36,7 @@ public class ControlloreOrdinaViaggi extends Controllore {
 		
 		//Controllo se esiste gia' la prenotazione
 		if (catalogo.verificaEsistenzaPrenotazione(ambiente, mezzo, cittaPartenza, cittaArrivo, via, dataOfferta, nomeAcquirente)){
-			throw new PrenotazioneException("Hai gia'prenotato questo viaggio!");
+			throw new PrenotazioneException("Hai gia' prenotato questo viaggio!");
 		}
 
 		return getDatiUtenteDaSessione();
@@ -57,7 +57,7 @@ public class ControlloreOrdinaViaggi extends Controllore {
 		Data dataOfferta = Data.parseTimestamp(dataPartenza);
 		
 		if (catalogo.verificaEsistenzaPrenotazione(ambiente,mezzo,partenza,arrivo,via,dataOfferta,nomeAcquirente)){
-			throw new PrenotazioneException("Hai gia'prenotato questo viaggio!");
+			throw new PrenotazioneException("Hai gia' prenotato questo viaggio!");
 		}
 		
 		//prendo la  Tratta
