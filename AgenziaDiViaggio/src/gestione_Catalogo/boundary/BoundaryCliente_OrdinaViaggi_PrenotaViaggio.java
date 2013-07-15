@@ -1025,7 +1025,7 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 		public void actionPerformed(ActionEvent e) {
 			
 			panel.setVisible(false); 					//chiude questo pannello
-			BoundaryVenditore_GestionePrenotazione.riattivaBottoni();
+			BoundaryCliente_OrdinaViaggi.riattivaBottoni();
 			
 			//svuoto comunque il pannello
 			if (tendinaAmbiente.getItemCount() != 0){

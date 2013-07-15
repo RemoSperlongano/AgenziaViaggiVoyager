@@ -303,12 +303,12 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 		
 		bottoneSvuota = new JButton("AZZERA CAMPI");
 		bottoneSvuota.setBackground(Color.YELLOW);
-		bottoneSvuota.setBounds(panel.getWidth()/5-30, panel.getHeight()/6*5+20, panel.getWidth()/5+10, panel.getHeight()/14);
+		bottoneSvuota.setBounds(panel.getWidth()/5-30, panel.getHeight()/6*5+30, panel.getWidth()/5+10, panel.getHeight()/14);
 		panel.add(bottoneSvuota);
 
 		bottoneCercaOfferta = new JButton("CERCA OFFERTA");
 		bottoneCercaOfferta.setBackground(Color.ORANGE);
-		bottoneCercaOfferta.setBounds(panel.getWidth()/5*3+16, panel.getHeight()/6*5+20, panel.getWidth()/5+10, panel.getHeight()/14);
+		bottoneCercaOfferta.setBounds(panel.getWidth()/5*3+16, panel.getHeight()/6*5+30, panel.getWidth()/5+10, panel.getHeight()/14);
 		panel.add(bottoneCercaOfferta);
 		
 		bottoneChiudi = new JButton("X");
