@@ -12,6 +12,7 @@ import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
 import gestione_Catalogo.exception.PrenotazioneException;
+import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.text.ParseException;
@@ -84,6 +85,28 @@ public class ControlloreOrdinaViaggi extends Controllore {
 		log.aggiornaLogAggiungiPrenotazione(ambiente, mezzo, partenza, arrivo, via, dataPartenza, nomeAcquirente);
 		
 		
+	}
+	
+	public String mostraPrenotazioneClientePerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException{
+		Data dp = Data.parseTimestamp(dataPartenza);
+		String nomeAcquirente = sessione.getNome() + " " + sessione.getCognome();
+		if (catalogo.verificaEsistenzaPrenotazione(ambiente, mezzo, partenza, arrivo, via, dp, nomeAcquirente)) {
+			return nomeAcquirente;
+		}
+		throw new PrenotazioneInesistenteException("Non hai prenotato questo viaggio!");
+	}
+	
+
+
+	public void annullaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta) throws TrattaInesistenteException, ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneInesistenteException {
+		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
+		Data dataOfferta = Data.parseTimestamp(offertaScelta);
+		Offerta offerta = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta);
+		Prenotazione prenotazione = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta, prenotazioneScelta);
+		
+		catalogo.rimuoviPrenotazioneDalCatalogo(prenotazione, offerta, tratta);
+		offerta.liberaPosti(prenotazione.getListaBiglietti().size());
+		log.aggiornaLogRimuoviPrenotazione(ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
 	}
 
 }
