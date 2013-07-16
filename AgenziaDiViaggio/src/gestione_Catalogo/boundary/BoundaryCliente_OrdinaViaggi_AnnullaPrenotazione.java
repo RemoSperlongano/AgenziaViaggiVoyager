@@ -339,59 +339,55 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 		tendinaOfferta.setEnabled(false);
 		
 		offertaScelta = "-----";
+		prenotazioneScelta = null;
 		
 		areaTesto.setText("");
 		areaTestoOfferta="";
 		
 		if (tendinaVia.getItemCount() != 0) {
-			
 				
-				if (!viaScelta.equals("-----")){
+			if (!viaScelta.equals("-----")){
 					
-					try {
-						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+				try {
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 					
-						ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+					ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 						
 						
-						//inserisco l'elemento neutro
-						tendinaOfferta.addItem("-----");
+					//inserisco l'elemento neutro
+					tendinaOfferta.addItem("-----");
 				
 					    
-						for(Data d : listaOfferte){
-							//inserisco l'elemento in tendina
-							tendinaOfferta.addItem(d.stampaData());
-						}
+					for(Data d : listaOfferte){
+						//inserisco l'elemento in tendina
+						tendinaOfferta.addItem(d.stampaData());
+					}
 					    
-						tendinaOfferta.setEnabled(true);
-						tendinaOfferta.setSelectedIndex(0);
+					tendinaOfferta.setEnabled(true);
+					tendinaOfferta.setSelectedIndex(0);
 					
-						//ImpostoareaTestoOfferta
-						areaTestoOfferta = controllore.mostraListaOfferteValideInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+					//ImpostoareaTestoOfferta
+					areaTestoOfferta = controllore.mostraListaOfferteValideInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					
-						//Imposto areatestoCatalogo
-						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n"  +
+					//Imposto areatestoCatalogo
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n"  +
 										"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 										"-----------\t\t----------\t\t----------\n";
 					
 					
-					} catch (IDEsternoElementoException e1) {
-						areaTesto.setText(e1.getMessage()+"\n");
-					} catch (OfferteNonPresentiException e) {
-						areaTestoOfferta = e.getMessage();
-					} catch (OffertaInesistenteException e) {
-						areaTestoOfferta = e.getMessage();
-					} finally{
-						areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);	
-					}
-				
-					
+				} catch (IDEsternoElementoException e1) {
+					areaTesto.setText(e1.getMessage()+"\n");
+				} catch (OfferteNonPresentiException e) {
+					areaTestoOfferta = e.getMessage();
+				} catch (OffertaInesistenteException e) {
+					areaTestoOfferta = e.getMessage();
+				} finally{
+					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);	
 				}
 				
-
-		} 
+			}
 				
-		
+		} 
 		
 	}
 	
@@ -404,38 +400,39 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 		areaTestoOfferta = "";
 		areaTestoBiglietto = "";
 			
-		areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+		try { 
+			
+			if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
 		
-		if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
-		
-			if(!offertaScelta.equals("-----")){
-				
-				try { //cerca nella mappa tutte le chiavi da aggiungere in tendina
+				if(!offertaScelta.equals("-----")){
+					
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+					
+					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
+					
+					//se il cliente ha effettuato una prenotazione per l'offerta selezionata, imposto prenotazioneScelta con il suo nomeAcquirente
 					String str = controllore.mostraPrenotazioneClientePerOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
 					prenotazioneScelta = str; 
 					
-					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
 					areaTestoPrenotazione = "A nome di " + prenotazioneScelta + "\n\n";
 					areaTestoBiglietto += controllore.mostraListaBigliettiPerPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, prenotazioneScelta);
-					
-								
-				} catch (IDEsternoElementoException e1) {
-					areaTestoCatalogo = e1.getMessage();
-				} catch (ParseException e1) {
-					areaTestoOfferta = e1.getMessage();
-				} catch (OffertaInesistenteException e1) {
-					areaTestoOfferta = e1.getMessage();
-				} catch (PrenotazioneInesistenteException e1) {
-					areaTestoPrenotazione = e1.getMessage();
-				}finally{
-					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione + areaTestoBiglietto);	
+				
 				}
 			}
-		
+			
+		} catch (IDEsternoElementoException e1) {
+			areaTestoCatalogo = e1.getMessage();
+		} catch (ParseException e1) {
+			areaTestoOfferta = e1.getMessage();
+		} catch (OffertaInesistenteException e1) {
+			areaTestoOfferta = e1.getMessage();
+		} catch (PrenotazioneInesistenteException e1) {
+			areaTestoPrenotazione = e1.getMessage();
+		} finally {
+			areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione + areaTestoBiglietto);	
 		}
+		
 	}
-	
-	
 	
 	
 	/*
@@ -631,15 +628,7 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
 					
-					
 				}
-	
-			
-			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
-			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
-			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
-			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
-			
 				
 			}
 			
@@ -686,10 +675,7 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 					aggiornaPrenotazioni();
 				}
 			}
-		
-			
-			
-			
+	
 		}
 		
 	}
@@ -756,6 +742,7 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 					arrivoScelto = null;
 					viaScelta = null;
 					offertaScelta = null;
+					prenotazioneScelta = null;
 
 				}
 			
@@ -790,7 +777,7 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 			arrivoScelto = null;
 			viaScelta = null;
 			offertaScelta = null;
-			
+			prenotazioneScelta = null;
 			areaTesto.setText("");
 
 		}

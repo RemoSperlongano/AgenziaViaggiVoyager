@@ -382,10 +382,8 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 	 * Metodi
 	 */
 	
-	private void svuotaParte() {
-		
-		areaTesto.setText("");
-		
+	private void svuotaPartePannello() {
+			
    		campoNome.setText("");
 		campoNome.setEditable(false);
 		
@@ -446,67 +444,55 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 		if (tendinaVia.getItemCount() != 0) {
 	
 				
-				if (!viaScelta.equals("-----")){
+			if (!viaScelta.equals("-----")){
 					
-					try {
+				try {
 						
-						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 						
-						ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
-						
-						
-						//inserisco l'elemento neutro
-						tendinaOfferta.addItem("-----");
-				
-					    
-						for(Data d : listaOfferte){
-							//inserisco l'elemento in tendina
-							tendinaOfferta.addItem(d.stampaData());
-						}
-					    
-					    
-						tendinaOfferta.setEnabled(true);
-						tendinaOfferta.setSelectedIndex(0);
+					ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+							
+					//inserisco l'elemento neutro
+					tendinaOfferta.addItem("-----");
+				  
+					for(Data d : listaOfferte){
+						//inserisco l'elemento in tendina
+						tendinaOfferta.addItem(d.stampaData());
+					}
+					        
+					tendinaOfferta.setEnabled(true);
+					tendinaOfferta.setSelectedIndex(0);
 					
+					//ImpostoareaTestoOfferta
+					areaTestoOfferta = controllore.mostraListaOfferteValideInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					
-						//ImpostoareaTestoOfferta
-						areaTestoOfferta = controllore.mostraListaOfferteValideInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
-					
-						//Imposto areatestoCatalogo
-						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n"  +
+					//Imposto areatestoCatalogo
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n"  +
 										"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 										"-----------\t\t----------\t\t----------\n";
 					
-					} catch (IDEsternoElementoException e1) {
-						areaTesto.setText(e1.getMessage()+"\n");
-					} catch (OfferteNonPresentiException e) {
-						areaTestoOfferta = e.getMessage();
-					} catch (OffertaInesistenteException e) {
-						areaTestoOfferta = e.getMessage();
-					} 
+				} catch (IDEsternoElementoException e1) {
+					areaTesto.setText(e1.getMessage()+"\n");
+				} catch (OfferteNonPresentiException e) {
+					areaTestoOfferta = e.getMessage();
+				} catch (OffertaInesistenteException e) {
+					areaTestoOfferta = e.getMessage();
+				} finally {
 					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);
-					
-				}
-				
+				}	
+			}	
 		} 
+		
 	}
 	
 	
 	private void aggiornaBiglietti(){
-				
-		areaTesto.setText("");
-		areaTestoOfferta="";
 		
 		if (listaNomi.size()<=1){
 			bottoneRimuoviUltimoBiglietto.setEnabled(false);
 		}	else {
 			bottoneRimuoviUltimoBiglietto.setEnabled(true);
 		}
-				
-		areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
-				
-		//ImpostoareaTestoOfferta
-		areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
 				
 		areaTestoBiglietti="BIGLIETTI PER LA PRENOTAZIONE:\n";
 				
@@ -788,7 +774,13 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			svuotaParte();
+			svuotaPartePannello();
+			
+			areaTesto.setText("");
+			areaTestoOfferta="";
+			
+			
+			
 			
 			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
 			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
@@ -801,10 +793,11 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 				
 				if (!offertaScelta.equals("-----")){
 					
-					campoNome.setEditable(true);
-					campoCognome.setEditable(true);
-					campoEmail.setEditable(true);
-				    bottoneAggiungiBiglietto.setEnabled(true);
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+					
+					//ImpostoareaTestoOfferta
+					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
+							
 					
 					while (!listaNomi.isEmpty()){
 						listaNomi.remove(0);
@@ -817,7 +810,14 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 						listaNomi.add(0, datiCliente.get(Sessione.NOME));
 						listaCognomi.add(0, datiCliente.get(Sessione.COGNOME));
 						listaEmail.add(0, datiCliente.get(Sessione.EMAIL));
+						
+						campoNome.setEditable(true);
+						campoCognome.setEditable(true);
+						campoEmail.setEditable(true);
+					    bottoneAggiungiBiglietto.setEnabled(true);
+					    
 						aggiornaBiglietti();
+						
 					} catch (ParseException e) {
 						JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (OffertaInesistenteException e) {
@@ -825,16 +825,13 @@ public class BoundaryCliente_OrdinaViaggi_PrenotaViaggio {
 					} catch (IDEsternoElementoException e) {
 						JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (PrenotazioneException e) {
-						svuotaParte();
-						areaTesto.setText(areaTestoImp  + ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n" + "Prenotazione per il giorno: \t " + offertaScelta + "\n\n" + e.getMessage());	
+						areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + e.getMessage());	
 					}
 				
 				} else {
 					
 					aggiornaOfferte();
-				}
-			
-					
+				}	
 			
 			}
 			

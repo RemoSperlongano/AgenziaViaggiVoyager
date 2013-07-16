@@ -14,7 +14,6 @@ import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Tratta;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
-import gestione_Catalogo.exception.PrenotazioneException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 

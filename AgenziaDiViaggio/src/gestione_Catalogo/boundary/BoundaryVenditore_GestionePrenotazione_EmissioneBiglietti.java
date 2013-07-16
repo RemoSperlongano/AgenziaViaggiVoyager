@@ -449,13 +449,18 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 		areaTestoOfferta = "";
 		areaTestoPrenotazione="PRENOTAZIONI EFFETTUATE:\n\n";
 		
+		try {
+			
+			if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
 		
-		
-		if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
-		
-			if(!offertaScelta.equals("-----")){
+				if(!offertaScelta.equals("-----")){
 				
-				try { //cerca nella mappa tutte le chiavi da aggiungere in tendina
+					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
+					
+					//ImpostoareaTestoOfferta
+					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 			
+					
+					//cerca nella mappa tutte le chiavi da aggiungere in tendina
 					Set<String> s = controllore.mostraPrenotazioniPerOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
 					Iterator<String> it = s.iterator();
 					
@@ -473,26 +478,19 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 					tendinaPrenotazione.setEnabled(true);
 					tendinaPrenotazione.setSelectedIndex(0);
 					
-					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
-					
-					//ImpostoareaTestoOfferta
-					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
-					
-						
-					
-				} catch (IDEsternoElementoException e1) {
-					areaTestoCatalogo = e1.getMessage();
-				} catch (ParseException e1) {
-					areaTestoOfferta = e1.getMessage();
-				} catch (OffertaInesistenteException e1) {
-					areaTestoOfferta = e1.getMessage();
-				} catch (PrenotazioneInesistenteException e1) {
-					areaTestoPrenotazione = e1.getMessage();
-				}finally{
-					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione);	
 				}
 			}
-		
+			
+		} catch (IDEsternoElementoException e1) {
+			areaTestoCatalogo = e1.getMessage();
+		} catch (ParseException e1) {
+			areaTestoOfferta = e1.getMessage();
+		} catch (OffertaInesistenteException e1) {
+			areaTestoOfferta = e1.getMessage();
+		} catch (PrenotazioneInesistenteException e1) {
+			areaTestoPrenotazione = e1.getMessage();
+		}finally{
+			areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione);	
 		}
 	}
 	
@@ -845,7 +843,7 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 					bottoneInviaEmail.setVisible(true);
 					bottoneInviaSMS.setVisible(true);
 
-					JOptionPane.showMessageDialog(null, "L'emissione dei biglietti per la prenotazione selezionata è stata portata a termine.\nScegliere una modalità di notifica dell'avvenuto acquisto.", "Biglietti Erogati", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "L'emissione dei biglietti per la prenotazione selezionata e' stata portata a termine.\nScegliere una modalita' di notifica dell'avvenuto acquisto.", "Biglietti Erogati", JOptionPane.INFORMATION_MESSAGE);
 
 				}
 				

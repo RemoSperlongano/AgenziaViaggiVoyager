@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class ControlloreAggiungiPrenotazione extends Controllore{
+public class ControlloreAggiungiPrenotazione extends Controllore {
 	
 	//costruttore
 	public ControlloreAggiungiPrenotazione(){

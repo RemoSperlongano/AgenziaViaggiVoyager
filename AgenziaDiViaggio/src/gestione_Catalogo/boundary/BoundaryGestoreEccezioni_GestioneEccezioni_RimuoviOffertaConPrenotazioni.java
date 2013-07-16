@@ -4,18 +4,14 @@
 package gestione_Catalogo.boundary;
 
 
-import gestione_Catalogo.control.ControlloreGestioneOfferta;
+
 import gestione_Catalogo.control.ControlloreRimuoviOffertaConPrenotazioni;
 import gestione_Catalogo.entity.Data;
-import gestione_Catalogo.exception.DataNonValidaException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
-import gestione_Catalogo.exception.OffertaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
-import gestione_Catalogo.exception.PrenotazioneException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
-import gestione_Catalogo.exception.QuantitaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.awt.Color;
@@ -23,8 +19,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -35,7 +29,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
 /**
  * @authors

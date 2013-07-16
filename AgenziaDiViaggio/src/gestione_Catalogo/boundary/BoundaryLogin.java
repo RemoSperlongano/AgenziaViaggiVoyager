@@ -21,7 +21,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
 
 /**
  * @authors
@@ -29,9 +28,6 @@ import javax.swing.WindowConstants;
  * Ivan Torre
  */
 public class BoundaryLogin {
-	
-	private static final long serialVersionUID = 1L;
-	
 	
 	private ControlloreLogin controllore;
 	

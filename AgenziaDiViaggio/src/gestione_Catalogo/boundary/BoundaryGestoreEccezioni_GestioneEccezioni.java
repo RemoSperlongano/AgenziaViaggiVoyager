@@ -73,13 +73,13 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni {
 		
 		bottoneModificaPrenotazione = new JButton("Modifica Prenotazione");
 		bottoneModificaPrenotazione.setBackground(Color.GREEN);
-		bottoneModificaPrenotazione.setBounds(panel1.getWidth()/5, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
+		bottoneModificaPrenotazione.setBounds(panel1.getWidth()/5-5, panel1.getHeight()/6, panel1.getWidth()/5+20, panel1.getHeight()/2);
 		panel1.add(bottoneModificaPrenotazione);
 		
 		
-		bottoneCancellaOfferta = new JButton("Rimuovi Offerta&Prenotazioni");
+		bottoneCancellaOfferta = new JButton("Rimuovi Offerta & Prenotazioni");
 		bottoneCancellaOfferta.setBackground(Color.YELLOW);
-		bottoneCancellaOfferta.setBounds(panel1.getWidth()/5*3, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
+		bottoneCancellaOfferta.setBounds(panel1.getWidth()/5*3-5, panel1.getHeight()/6, panel1.getWidth()/5+20, panel1.getHeight()/2);
 		panel1.add(bottoneCancellaOfferta);//aggiungo il bottone al secondo pannello
 		
 		

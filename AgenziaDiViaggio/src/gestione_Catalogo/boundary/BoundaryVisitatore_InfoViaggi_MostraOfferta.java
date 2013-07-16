@@ -17,7 +17,6 @@ import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
-import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;

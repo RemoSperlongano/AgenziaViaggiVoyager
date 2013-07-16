@@ -23,7 +23,7 @@ import java.util.ArrayList;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class ControlloreOrdinaViaggi extends Controllore {
+public class ControlloreOrdinaViaggi extends ControlloreEmissioneBiglietti {
 	
 	public ControlloreOrdinaViaggi(){
 		super();
@@ -87,6 +87,7 @@ public class ControlloreOrdinaViaggi extends Controllore {
 		
 	}
 	
+	// verifica se il cliente ha effettuato una prenotazione per l'offerta, ritorna il nomeAcquirente della prenotazione in caso positivo.
 	public String mostraPrenotazioneClientePerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException{
 		Data dp = Data.parseTimestamp(dataPartenza);
 		String nomeAcquirente = sessione.getNome() + " " + sessione.getCognome();
@@ -108,5 +109,6 @@ public class ControlloreOrdinaViaggi extends Controllore {
 		offerta.liberaPosti(prenotazione.getListaBiglietti().size());
 		log.aggiornaLogRimuoviPrenotazione(ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
 	}
+
 
 }
