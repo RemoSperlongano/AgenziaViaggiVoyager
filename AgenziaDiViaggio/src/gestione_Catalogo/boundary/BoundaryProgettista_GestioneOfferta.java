@@ -7,7 +7,6 @@ package gestione_Catalogo.boundary;
 
 
 import gestione_Catalogo.control.ControlloreGestioneOfferta;
-import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.exception.DataNonValidaException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
@@ -23,6 +22,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
@@ -900,18 +900,16 @@ public class BoundaryProgettista_GestioneOfferta {
 						try {
 							areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 						
-							Set<Data> set = controllore.mostraOffertePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
-			
-							Iterator<Data> it = set.iterator();
+							ArrayList<String> set = controllore.mostraOffertePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+
 							if(set.size() > 1){
 								//inserisco l'elemento neutro
 								tendinaOffertaPannello3.addItem("-----");
 							}
 						    
-							while(it.hasNext()){
-								Data d = it.next();
+							for (String d : set){
 								//inserisco l'elemento in tendina
-								tendinaOffertaPannello3.addItem(d.stampaData());
+								tendinaOffertaPannello3.addItem(d);
 							}
 						    
 							tendinaOffertaPannello3.setEnabled(true);

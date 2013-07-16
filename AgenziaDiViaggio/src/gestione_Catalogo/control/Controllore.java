@@ -77,13 +77,20 @@ public abstract class Controllore {
 		return catalogo.getChiaviVia(ambiente, mezzo, partenza, arrivo);
 	}
 		
-	public Set<Data> mostraOffertePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException {
-		return catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
+	public ArrayList<String> mostraOffertePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException {
+		ArrayList<String> date = new ArrayList<String>();
+		
+		Set<Data> chiaviOfferte = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
+		Iterator<Data> it = chiaviOfferte.iterator();
+		while (it.hasNext()){
+			date.add(it.next().stampaData());
+		}
+		return date;
 	}
 	
-	public ArrayList<Data> mostraOfferteValidePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException{
+	public ArrayList<String> mostraOfferteValidePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException{
 		
-		ArrayList<Data> dateValide = new ArrayList<Data>();
+		ArrayList<String> dateValide = new ArrayList<String>();
 		
 		Set<Data> chiaviOfferte = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
 		Iterator<Data> it = chiaviOfferte.iterator();
@@ -93,7 +100,7 @@ public abstract class Controllore {
 		while(it.hasNext()){
 			Data dataOfferta = it.next();
 			if (dataOfferta.after(dataAttuale)){
-				dateValide.add(dataOfferta);
+				dateValide.add(dataOfferta.stampaData());
 			}
 		}
 		return dateValide;

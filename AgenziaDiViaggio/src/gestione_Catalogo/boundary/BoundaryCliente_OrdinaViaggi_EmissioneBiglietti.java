@@ -4,7 +4,6 @@
 package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreOrdinaViaggi;
-import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -376,16 +375,16 @@ public class BoundaryCliente_OrdinaViaggi_EmissioneBiglietti {
 				try {
 					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 					
-					ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+					ArrayList<String> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 						
 						
 					//inserisco l'elemento neutro
 					tendinaOfferta.addItem("-----");
 				
 					    
-					for(Data d : listaOfferte){
+					for(String d : listaOfferte){
 						//inserisco l'elemento in tendina
-						tendinaOfferta.addItem(d.stampaData());
+						tendinaOfferta.addItem(d);
 					}
 					    
 					tendinaOfferta.setEnabled(true);
@@ -408,6 +407,7 @@ public class BoundaryCliente_OrdinaViaggi_EmissioneBiglietti {
 					areaTestoOfferta = e.getMessage();
 				} finally{
 					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);	
+					areaTesto.setCaretPosition(0);
 				}
 				
 			}
@@ -454,7 +454,8 @@ public class BoundaryCliente_OrdinaViaggi_EmissioneBiglietti {
 		} catch (PrenotazioneInesistenteException e1) {
 			areaTestoPrenotazione = e1.getMessage();
 		} finally {
-			areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione + areaTestoBiglietto);	
+			areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione + areaTestoBiglietto);
+			areaTesto.setCaretPosition(0);
 		}
 		
 	}

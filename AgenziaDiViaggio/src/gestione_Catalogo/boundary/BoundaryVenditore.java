@@ -26,10 +26,10 @@ public class BoundaryVenditore {
 	//Elementi pannelloTitolo
 	private JLabel labelTitolo;
 		
-	private JButton bottoneIndietro;  //Statici perchè devono essere riattivati da altra boundary
+	private JButton bottoneLogout;  //Statici perchè devono essere riattivati da altra boundary
 	private JButton bottoneEsci;
 		
-	private IndietroAA ascoltatoreBottoneIndietro;
+	private LogoutAA ascoltatoreBottoneLogout;
 	private EsciAA ascoltatoreBottoneEsci;
 		
 		
@@ -76,10 +76,10 @@ public class BoundaryVenditore {
 		panelTitolo.add(labelTitolo);			//aggiungo titolo al pannello1
 		
 		
-		bottoneIndietro = new JButton("INDIETRO");
-		bottoneIndietro.setBackground(Color.ORANGE);
-		bottoneIndietro.setBounds(panelTitolo.getWidth()/18, panelTitolo.getHeight()/4, panelTitolo.getWidth()/9, panelTitolo.getHeight()/2);
-		panelTitolo.add(bottoneIndietro);//aggiungo il bottone al primo pannello
+		bottoneLogout = new JButton("LOGOUT");
+		bottoneLogout.setBackground(Color.ORANGE);
+		bottoneLogout.setBounds(panelTitolo.getWidth()/18, panelTitolo.getHeight()/4, panelTitolo.getWidth()/9, panelTitolo.getHeight()/2);
+		panelTitolo.add(bottoneLogout);//aggiungo il bottone al primo pannello
 		
 		bottoneEsci = new JButton("ESCI");
 		bottoneEsci.setBackground(Color.RED);
@@ -88,8 +88,8 @@ public class BoundaryVenditore {
 		
 		//Ascoltatori per primo pannello
 		
-		ascoltatoreBottoneIndietro = new IndietroAA();
-		bottoneIndietro.addActionListener(ascoltatoreBottoneIndietro);
+		ascoltatoreBottoneLogout = new LogoutAA();
+		bottoneLogout.addActionListener(ascoltatoreBottoneLogout);
 		
 		ascoltatoreBottoneEsci = new EsciAA();
 		bottoneEsci.addActionListener(ascoltatoreBottoneEsci);
@@ -133,7 +133,7 @@ public class BoundaryVenditore {
 		 * Classi Ascoltatori per bottoni pannelloTitolo
 		 */
 		
-		private class IndietroAA implements ActionListener{
+		private class LogoutAA implements ActionListener{
 
 			@Override
 			/*

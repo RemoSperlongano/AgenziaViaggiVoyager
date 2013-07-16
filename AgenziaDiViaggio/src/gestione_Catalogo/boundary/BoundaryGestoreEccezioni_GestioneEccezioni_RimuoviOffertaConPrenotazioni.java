@@ -6,7 +6,6 @@ package gestione_Catalogo.boundary;
 
 
 import gestione_Catalogo.control.ControlloreRimuoviOffertaConPrenotazioni;
-import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -19,6 +18,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -352,18 +352,16 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni_RimuoviOffertaConPrenota
 						try {
 							areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 						
-							Set<Data> set = controllore.mostraOffertePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+							ArrayList<String> set = controllore.mostraOffertePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 			
-							Iterator<Data> it = set.iterator();
 							if(set.size() > 1){
 								//inserisco l'elemento neutro
 								tendinaOffertaPannello3.addItem("-----");
 							}
 						    
-							while(it.hasNext()){
-								Data d = it.next();
+							for(String d : set){
 								//inserisco l'elemento in tendina
-								tendinaOffertaPannello3.addItem(d.stampaData());
+								tendinaOffertaPannello3.addItem(d);
 							}
 						    
 							tendinaOffertaPannello3.setEnabled(true);

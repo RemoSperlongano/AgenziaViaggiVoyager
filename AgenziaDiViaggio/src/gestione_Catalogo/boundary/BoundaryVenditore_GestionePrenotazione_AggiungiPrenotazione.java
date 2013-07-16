@@ -4,7 +4,6 @@
 package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreAggiungiPrenotazione;
-import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.exception.DatiPersonaliErratiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
@@ -433,16 +432,16 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 						
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 						
-						ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						ArrayList<String> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 		
 	
 						//inserisco l'elemento neutro
 						tendinaOfferta.addItem("-----");
 				
 					    
-						for(Data d : listaOfferte){
+						for(String d : listaOfferte){
 							//inserisco l'elemento in tendina
-							tendinaOfferta.addItem(d.stampaData());
+							tendinaOfferta.addItem(d);
 						}
 					    
 						tendinaOfferta.setEnabled(true);
@@ -465,7 +464,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 						areaTestoOfferta = e.getMessage();
 					} 
 					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);
-					
+					areaTesto.setCaretPosition(0);
 				}
 				
 		} 
@@ -514,6 +513,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			areaTestoPrenotazione = e.getMessage();
 		} finally{
 			areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione);
+			areaTesto.setCaretPosition(0);
 		}
 		
 		
@@ -545,7 +545,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 				}	
 
 				areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoBiglietti);
-								
+				areaTesto.setCaretPosition(0);				
 			}
 			
 		} 

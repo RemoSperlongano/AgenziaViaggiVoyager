@@ -30,7 +30,7 @@ public class ControlloreLogin extends Controllore {
 		sessione = utente.login(username, password);
 		
 		if (sessione == null){
-			throw new LoginFallitoException("La password è errata o non esiste l'utente indicato");
+			throw new LoginFallitoException("La password e' errata o non esiste l'utente indicato");
 		} else {
 			inizializzaSessione(sessione);
 			return sessione.getRuolo();

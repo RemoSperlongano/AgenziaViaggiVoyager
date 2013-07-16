@@ -100,12 +100,17 @@ public class ControlloreOrdinaViaggi extends ControlloreEmissioneBiglietti {
 
 
 	public void annullaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta) throws TrattaInesistenteException, ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneInesistenteException {
+		//prendo la tratta
 		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
+		//prendo l'offerta
 		Data dataOfferta = Data.parseTimestamp(offertaScelta);
 		Offerta offerta = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta);
+		//prendo la prenotazione
 		Prenotazione prenotazione = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta, prenotazioneScelta);
 		
+		//rimuovo la prenotazione dal catalogo
 		catalogo.rimuoviPrenotazioneDalCatalogo(prenotazione, offerta, tratta);
+		//libero i posti nuovamente disponibili
 		offerta.liberaPosti(prenotazione.getListaBiglietti().size());
 		log.aggiornaLogRimuoviPrenotazione(ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
 	}

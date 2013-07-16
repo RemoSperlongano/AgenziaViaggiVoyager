@@ -21,7 +21,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import gestione_Catalogo.control.ControlloreRimuoviPrenotazione;
-import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -373,16 +372,16 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 					try {
 						areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 					
-						ArrayList<Data> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+						ArrayList<String> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 						
 						
 						//inserisco l'elemento neutro
 						tendinaOfferta.addItem("-----");
 				
 					    
-						for(Data d : listaOfferte){
+						for(String d : listaOfferte){
 							//inserisco l'elemento in tendina
-							tendinaOfferta.addItem(d.stampaData());
+							tendinaOfferta.addItem(d);
 						}
 					    
 						tendinaOfferta.setEnabled(true);
@@ -404,7 +403,8 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 					} catch (OffertaInesistenteException e) {
 						areaTestoOfferta = e.getMessage();
 					} finally{
-						areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);	
+						areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);
+						areaTesto.setCaretPosition(0);
 					}
 				
 					
@@ -468,6 +468,7 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 			areaTestoPrenotazione = e1.getMessage();
 		}finally{
 			areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione);	
+			areaTesto.setCaretPosition(0);
 		}
 		
 	}
@@ -500,6 +501,7 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 					e.printStackTrace();
 				} finally{
 					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta + areaTestoPrenotazione + areaTestoBiglietto); 
+					areaTesto.setCaretPosition(0);
 				}
 				
 				

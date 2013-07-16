@@ -51,13 +51,13 @@ public class BoundaryLogin {
 	
 	
 	//Elementi pannello 3
+	private JButton bottoneAnnulla;
 	private JButton bottoneLogin;
 
+	private AnnullaAA ascoltatoreAnnulla;
 	private LoginAA ascoltatoreLogin;
 	
 
-	
-	
 	
 	
 	
@@ -141,10 +141,19 @@ public class BoundaryLogin {
 		superPanel.add(panel3);				//aggiungo il terzo pannello al superPannello
 		
 		
-	
+		
+		bottoneAnnulla = new JButton("ANNULLA");
+		bottoneAnnulla.setBounds(panel3.getWidth()/10*3-20, panel3.getHeight()/2, panel3.getWidth()/5, panel3.getHeight()/4);
+		panel3.add(bottoneAnnulla);//aggiungo il bottone al quarto pannello
+		
 		bottoneLogin = new JButton("LOGIN");
-		bottoneLogin.setBounds(panel3.getWidth()/5*2, panel3.getHeight()/2, panel3.getWidth()/5, panel3.getHeight()/4);
+		bottoneLogin.setBounds(panel3.getWidth()/10*5+20, panel3.getHeight()/2, panel3.getWidth()/5, panel3.getHeight()/4);
 		panel3.add(bottoneLogin);//aggiungo il bottone al quarto pannello
+		
+		
+		
+		ascoltatoreAnnulla = new AnnullaAA();
+		bottoneAnnulla.addActionListener(ascoltatoreAnnulla);
 		
 		ascoltatoreLogin = new LoginAA();
 		bottoneLogin.addActionListener(ascoltatoreLogin);
@@ -153,10 +162,8 @@ public class BoundaryLogin {
 		
 	}
 	
-	@SuppressWarnings("deprecation")
-	private void controlloSintatticoDati() throws CredenzialiErrateException{
-		String username = campoUsername.getText();
-		String password = campoPassword.getText();
+
+	private void controlloSintatticoDati(String username, String password) throws CredenzialiErrateException{	
 		
 		if (username.equals("") || password.equals("")){
 			throw new CredenzialiErrateException("Tutti i campi devono esser compilati");
@@ -164,19 +171,28 @@ public class BoundaryLogin {
 	}
 	
 	
+	private class AnnullaAA implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			superPanel.setVisible(false);
+			BoundaryAAAprimaria.superPanel.setVisible(true);
+			
+		}
+		
+	}
+	
 	private class LoginAA implements ActionListener{
 
-		
-		@SuppressWarnings("deprecation")
 		public void actionPerformed(ActionEvent arg0) {
-
 
 			try {
 				
-				controlloSintatticoDati();
-				
 				String username = campoUsername.getText();
-				String password = campoPassword.getText();
+				String password = String.valueOf(campoPassword.getPassword());
+				
+				controlloSintatticoDati(username, password);
 				
 				String ruolo = controllore.controlloLogin(username, password);
 				superPanel.setVisible(false);
