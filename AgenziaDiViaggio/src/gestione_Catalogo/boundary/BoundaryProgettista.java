@@ -19,6 +19,8 @@ import javax.swing.JPanel;
  */
 public class BoundaryProgettista {
 	
+	private final String ruolo = "Progettista";
+	
 	
 	//campi istanza pannelli
 	private JPanel superPanel; //Pannello principale
@@ -252,7 +254,7 @@ public class BoundaryProgettista {
 				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
 				
 				
-				new BoundaryVisitatore_InfoViaggi(panelNext);  //Passo il resto del Pannello
+				new BoundaryVisitatore_InfoViaggi(panelNext, ruolo);  //Passo il resto del Pannello
 				
 				
 			}

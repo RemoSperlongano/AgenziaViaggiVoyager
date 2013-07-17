@@ -20,6 +20,8 @@ import javax.swing.JPanel;
  */
 public class BoundaryVisitatore {
 	
+	private final String ruolo = "Visitatore";
+	
 	//campi istanza pannelli
 	private JPanel superPanel; //Pannello principale
 	private JPanel panelTitolo;
@@ -196,7 +198,7 @@ public class BoundaryVisitatore {
 				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
 				
 				
-				new BoundaryVisitatore_InfoViaggi(panelNext);  //Passo il resto del Pannello
+				new BoundaryVisitatore_InfoViaggi(panelNext, ruolo);  //Passo il resto del Pannello
 				
 				
 			}

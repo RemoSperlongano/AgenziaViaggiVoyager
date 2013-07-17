@@ -23,6 +23,8 @@ import javax.swing.JPanel;
  */
 public class BoundaryPromotore {
 	
+	private final String ruolo = "Promotore";
+	
 	
 	//campi istanza pannelli
 	private JPanel superPanel; //Pannello principale
@@ -43,8 +45,12 @@ public class BoundaryPromotore {
 	//Elementi pannelloBottoni
 		
 	private static JButton bottoneGestioneCatalogo;
+	private static JButton bottoneGestioneOfferta;
+	private static JButton bottoneInfoViaggi;
 		
 	private GestioneCatalogoAA ascoltatoreGestioneCatalogo;
+	private GestioneOffertaAA ascoltatoreGestioneOfferta;
+	private InfoViaggiAA ascoltatoreInfoViaggi;
 	    
 	    
 	public BoundaryPromotore(){
@@ -116,15 +122,31 @@ public class BoundaryPromotore {
 		superPanel.add(panelBottoni);
 		
 		
-		bottoneGestioneCatalogo = new JButton("GESTIONE CATALOGO");
-		bottoneGestioneCatalogo.setBackground(Color.ORANGE);
-		bottoneGestioneCatalogo.setBounds(panelBottoni.getWidth()/5*2, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		bottoneGestioneCatalogo = new JButton("Gestione Catalogo");
+		bottoneGestioneCatalogo.setBackground(Color.YELLOW);
+		bottoneGestioneCatalogo.setBounds(panelBottoni.getWidth()/10, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
 		panelBottoni.add(bottoneGestioneCatalogo);
+		
+		bottoneGestioneOfferta = new JButton("Gestione Offerta");
+		bottoneGestioneOfferta.setBackground(Color.ORANGE);
+		bottoneGestioneOfferta.setBounds(panelBottoni.getWidth()/10*4, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		panelBottoni.add(bottoneGestioneOfferta);
+		
+		bottoneInfoViaggi = new JButton("Info Viaggi");
+		bottoneInfoViaggi.setBackground(Color.GREEN);
+		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/10*7, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		panelBottoni.add(bottoneInfoViaggi);
 		
 		
 		//Ascoltatori per secondo pannello
 		ascoltatoreGestioneCatalogo = new GestioneCatalogoAA();
 		bottoneGestioneCatalogo.addActionListener(ascoltatoreGestioneCatalogo);
+		
+		ascoltatoreGestioneOfferta = new GestioneOffertaAA();
+		bottoneGestioneOfferta.addActionListener(ascoltatoreGestioneOfferta);
+		
+		ascoltatoreInfoViaggi = new InfoViaggiAA();
+		bottoneInfoViaggi.addActionListener(ascoltatoreInfoViaggi);
 	    	
 	    	
 	    }
@@ -132,6 +154,8 @@ public class BoundaryPromotore {
 		public static void riattivaBottoni(){
 			//Riattivo tutti i bottoni di questo Pannello
 			bottoneGestioneCatalogo.setEnabled(true); 
+			bottoneGestioneOfferta.setEnabled(true);
+			bottoneInfoViaggi.setEnabled(true);
 		}
 	    
 	    
@@ -197,6 +221,8 @@ public class BoundaryPromotore {
 				
 				//Disattivo tutti i bottoni di questo Pannello
 				bottoneGestioneCatalogo.setEnabled(false); 
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneInfoViaggi.setEnabled(false);
 				
 				
 				//Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
@@ -214,6 +240,67 @@ public class BoundaryPromotore {
 				
 			}
 			
+		}
+		
+		private class GestioneOffertaAA implements ActionListener{
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false); 
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneInfoViaggi.setEnabled(false);
+				
+				
+				//Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
+				panelNext.setLocation(0, superPanel.getHeight()/10*2+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryProgettista_GestioneOfferta(panelNext);  //Passo il resto del Pannello
+				
+				
+			}
+		}
+		
+		private class InfoViaggiAA implements ActionListener{
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false); 
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneInfoViaggi.setEnabled(false);
+				
+				
+				//Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
+				panelNext.setLocation(0, superPanel.getHeight()/10*2+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryVisitatore_InfoViaggi(panelNext, ruolo);  //Passo il resto del Pannello
+				
+				
+			}
 		}
 
 }

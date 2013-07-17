@@ -19,7 +19,10 @@ import javax.swing.JPanel;
  */
 public class BoundaryVisitatore_InfoViaggi {
 	
-	//Pannelli
+	
+		private String ruolo;
+	
+		//Pannelli
 		private JPanel superPanel;
 		
 		private JPanel panel1;
@@ -36,7 +39,10 @@ public class BoundaryVisitatore_InfoViaggi {
 	    private ChiudiPannelloAA ascoltatoreBottoneChiudiPannello;
 	    
 	    
-	    public BoundaryVisitatore_InfoViaggi(JPanel panelNext){
+	    public BoundaryVisitatore_InfoViaggi(JPanel panelNext, String ruolo){
+	    	
+	    	
+	    	this.ruolo = ruolo;
 	    	
 	    	/*
 			 * 
@@ -102,6 +108,8 @@ public class BoundaryVisitatore_InfoViaggi {
    	}
 	    
 	    
+	    
+	    
 	    private class MostraCatalogoAA implements ActionListener{
 
 			@Override
@@ -157,7 +165,33 @@ public class BoundaryVisitatore_InfoViaggi {
 			public void actionPerformed(ActionEvent e) {
 				
 				superPanel.setVisible(false); 			    //chiude tutto questo pannello
-				BoundaryVisitatore.riattivaBottoni();      	//riattiva i bottoni
+				
+				
+				//riattiva i bottoni in base al ruolo.
+				if (ruolo.equals("Progettista")){
+					BoundaryProgettista.riattivaBottoni();
+				}
+				
+				if (ruolo.equals("Promotore")){
+					BoundaryPromotore.riattivaBottoni();
+				}
+				
+				if (ruolo.equals("GestoreEccezioni")){
+					BoundaryGestoreEccezioni.riattivaBottoni();
+				}
+				if (ruolo.equals("Venditore")){
+					BoundaryVenditore.riattivaBottoni();
+				}
+				if (ruolo.equals("Cliente")){
+					BoundaryCliente.riattivaBottoni();
+				}
+				if (ruolo.equals("Amministratore")){
+					BoundaryAmministratore.riattivaBottoni();
+				}
+				if (ruolo.equals("Visitatore")){
+					BoundaryVisitatore.riattivaBottoni();      
+				}
+				
 							
 			}
 		}
