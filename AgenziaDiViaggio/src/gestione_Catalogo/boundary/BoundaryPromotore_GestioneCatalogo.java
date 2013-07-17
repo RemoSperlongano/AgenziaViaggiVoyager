@@ -32,6 +32,7 @@ import gestione_Catalogo.exception.CittaCoincidentiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
+import gestione_Catalogo.exception.TipoMezzoException;
 import gestione_Catalogo.exception.TrattaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
@@ -1042,6 +1043,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 				} catch (InvocationTargetException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+				} catch (TipoMezzoException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
 				}
 				
 	

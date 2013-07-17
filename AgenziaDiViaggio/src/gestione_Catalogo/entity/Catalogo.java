@@ -112,6 +112,26 @@ public class Catalogo {
 	}
 	
 	
+	//Verifica se esiste un mezzo che è stato specificato con un tipo
+	public boolean verificaEsistenzaTipo(String mezzo){
+		for (int i=0; i<listaTratte.size(); i++){
+			
+			Tratta t = listaTratte.get(i);
+			
+			if (t.getCategoria().equals(mezzo) && !t.getMezzo().getIDEsternoElemento().equals(mezzo)){
+			return true;	
+		} 
+			
+		}
+			
+		//se non è ritornato con true e arriva qui, ritorna con false
+		return false;
+			
+	}
+	
+	
+	
+	
 	public void aggiungiViaggioAlCatalogo(Tratta tratta) throws IDEsternoElementoException{
 		
 		listaTratte.add(tratta);
@@ -363,6 +383,8 @@ public class Catalogo {
 		Data dataPartenza = offerta.getData();
 		mappaCatalogo.getElemento(ambiente).getElemento(mezzo).getElemento(partenza).getElemento(arrivo).getElemento(via).getOfferta(dataPartenza).rimuoviPrenotazione(prenotazione.getnomeAcquirente());
 	}
+	
+	
 	
 
 	

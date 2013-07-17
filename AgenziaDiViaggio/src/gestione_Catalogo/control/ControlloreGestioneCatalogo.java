@@ -11,6 +11,7 @@ import gestione_Catalogo.exception.CittaCoincidentiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
+import gestione_Catalogo.exception.TipoMezzoException;
 import gestione_Catalogo.exception.TrattaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
@@ -33,8 +34,29 @@ public class ControlloreGestioneCatalogo extends Controllore {
 	
 	
 	//metodi
-	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException {	
+	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException, TipoMezzoException {	
 		if (via.equals("")) via = Via.DIRETTO;
+		
+		//Nel caso in cui ho selezionato un tipoMezzo devo verificare se il mezzo specificato non sia già stato introdotto in catalogo
+		if (!tipoMezzo.equals("")){
+			
+			Set<String> s = catalogo.getChiaviMezzi(ambiente);
+			Iterator<String> it = s.iterator();
+			
+			while(it.hasNext()){
+				if (mezzo.equals(it.next())){
+					throw new TipoMezzoException("Impossibile specificare un mezzo, già inserito nel catalogo, con un tipo");
+				}
+			}
+			
+		} else {
+			//Nel caso in cui non ho selezionato un tipo di mezzo, devo verificare se il mezzo non sia già stato specificato in catalogo
+			if(catalogo.verificaEsistenzaTipo(mezzo)){
+				throw new TipoMezzoException("Impossibile inserire un mezzo senza un tipo se nel catalogo vi è già tale mezzo specificato con un tipo");
+			}
+		}
+		
+		
 		
 		//Il mezzo e' uguale a mezzo + tipo
 		String categoriaMezzo = mezzo;
