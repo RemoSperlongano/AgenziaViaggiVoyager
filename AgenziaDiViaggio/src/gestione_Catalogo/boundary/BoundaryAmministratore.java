@@ -124,52 +124,52 @@ public class BoundaryAmministratore {
 		
 		bottoneGestioneCatalogo = new JButton("Gestione Catalogo");
 		bottoneGestioneCatalogo.setBackground(Color.YELLOW);
-		bottoneGestioneCatalogo.setBounds(panelBottoni.getWidth()/13, panelBottoni.getHeight()/12*2, panelBottoni.getWidth()/13*2, panelBottoni.getHeight()/4);
+		bottoneGestioneCatalogo.setBounds(panelBottoni.getWidth()/30+15, panelBottoni.getHeight()/12*2, panelBottoni.getWidth()/5, panelBottoni.getHeight()/4);
 		panelBottoni.add(bottoneGestioneCatalogo);
 		
 		
 		
 		bottoneGestioneOfferta = new JButton("Gestione Offerta");
 		bottoneGestioneOfferta.setBackground(Color.ORANGE);
-		bottoneGestioneOfferta.setBounds(panelBottoni.getWidth()/13*4, panelBottoni.getHeight()/12*2, panelBottoni.getWidth()/13*2, panelBottoni.getHeight()/4);
+		bottoneGestioneOfferta.setBounds(panelBottoni.getWidth()/30*8+15, panelBottoni.getHeight()/12*2, panelBottoni.getWidth()/5, panelBottoni.getHeight()/4);
 		panelBottoni.add(bottoneGestioneOfferta);
 		
 		
 		bottoneGestionePrenotazione = new JButton("Gestione Prenotazione");
 		bottoneGestionePrenotazione.setBackground(Color.CYAN);
-		bottoneGestionePrenotazione.setBounds(panelBottoni.getWidth()/13*7, panelBottoni.getHeight()/12*2, panelBottoni.getWidth()/13*2, panelBottoni.getHeight()/4);
+		bottoneGestionePrenotazione.setBounds(panelBottoni.getWidth()/30*15+15, panelBottoni.getHeight()/12*2, panelBottoni.getWidth()/5, panelBottoni.getHeight()/4);
 		panelBottoni.add(bottoneGestionePrenotazione);
 		
 		
 		bottoneInfoViaggi = new JButton("Info Viaggi");
 		bottoneInfoViaggi.setBackground(Color.GREEN);
-		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/13*10, panelBottoni.getHeight()/12*2, panelBottoni.getWidth()/13*2, panelBottoni.getHeight()/4);
+		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/30*22+15, panelBottoni.getHeight()/12*2, panelBottoni.getWidth()/5, panelBottoni.getHeight()/4);
 		panelBottoni.add(bottoneInfoViaggi);
 		
 		
 		
 		bottoneGestioneEccezioni = new JButton("Gestione Eccezioni");
 		bottoneGestioneEccezioni.setBackground(Color.RED);
-		bottoneGestioneEccezioni.setBounds(panelBottoni.getWidth()/13, panelBottoni.getHeight()/12*7, panelBottoni.getWidth()/13*2, panelBottoni.getHeight()/4);
+		bottoneGestioneEccezioni.setBounds(panelBottoni.getWidth()/30+15, panelBottoni.getHeight()/12*7, panelBottoni.getWidth()/5, panelBottoni.getHeight()/4);
 		panelBottoni.add(bottoneGestioneEccezioni);
 		
 		
 		
 		bottoneVisualizzaLog = new JButton("Visualizza Log");
 		bottoneVisualizzaLog.setBackground(Color.GRAY);
-		bottoneVisualizzaLog.setBounds(panelBottoni.getWidth()/13*4, panelBottoni.getHeight()/12*7, panelBottoni.getWidth()/13*2, panelBottoni.getHeight()/4);
+		bottoneVisualizzaLog.setBounds(panelBottoni.getWidth()/30*8+15, panelBottoni.getHeight()/12*7, panelBottoni.getWidth()/5, panelBottoni.getHeight()/4);
 		panelBottoni.add(bottoneVisualizzaLog);
 		
 		
 		bottoneGestioneUtenti = new JButton("Gestione Utenti");
 		bottoneGestioneUtenti.setBackground(Color.PINK);
-		bottoneGestioneUtenti.setBounds(panelBottoni.getWidth()/13*7, panelBottoni.getHeight()/12*7, panelBottoni.getWidth()/13*2, panelBottoni.getHeight()/4);
+		bottoneGestioneUtenti.setBounds(panelBottoni.getWidth()/30*15+15, panelBottoni.getHeight()/12*7, panelBottoni.getWidth()/5, panelBottoni.getHeight()/4);
 		panelBottoni.add(bottoneGestioneUtenti);
 		
 		
 		bottoneGestioneIndici = new JButton("Gestione Indici");
 		bottoneGestioneIndici.setBackground(Color.WHITE);
-		bottoneGestioneIndici.setBounds(panelBottoni.getWidth()/13*10, panelBottoni.getHeight()/12*7, panelBottoni.getWidth()/13*2, panelBottoni.getHeight()/4);
+		bottoneGestioneIndici.setBounds(panelBottoni.getWidth()/30*22+15, panelBottoni.getHeight()/12*7, panelBottoni.getWidth()/5, panelBottoni.getHeight()/4);
 		panelBottoni.add(bottoneGestioneIndici);
 		
 		
@@ -184,6 +184,13 @@ public class BoundaryAmministratore {
 		public static void riattivaBottoni(){
 			//Riattivo tutti i bottoni di questo Pannello
 			bottoneGestionePrenotazione.setEnabled(true); 
+			bottoneGestioneCatalogo.setEnabled(true);
+			bottoneGestioneOfferta.setEnabled(true);
+			bottoneInfoViaggi.setEnabled(true);
+			bottoneGestioneEccezioni.setEnabled(true);
+			bottoneVisualizzaLog.setEnabled(true);
+			bottoneGestioneUtenti.setEnabled(true);
+			bottoneGestioneIndici.setEnabled(true);
 		}
 	    
 	    
