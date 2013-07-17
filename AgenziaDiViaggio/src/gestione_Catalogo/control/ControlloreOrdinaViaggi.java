@@ -82,7 +82,7 @@ public class ControlloreOrdinaViaggi extends ControlloreEmissioneBiglietti {
 		
 		//Aggiungo la prenotazione al catalogo
 		catalogo.aggiungiPrenotazioneAlCatalogo(prenotazione, offerta, tratta);
-		log.aggiornaLogAggiungiPrenotazione(ambiente, mezzo, partenza, arrivo, via, dataPartenza, nomeAcquirente);
+		log.aggiornaLogAggiungiPrenotazione(sessione.getUsername(), ambiente, mezzo, partenza, arrivo, via, dataPartenza, nomeAcquirente);
 		
 		
 	}
@@ -112,7 +112,7 @@ public class ControlloreOrdinaViaggi extends ControlloreEmissioneBiglietti {
 		catalogo.rimuoviPrenotazioneDalCatalogo(prenotazione, offerta, tratta);
 		//libero i posti nuovamente disponibili
 		offerta.liberaPosti(prenotazione.getListaBiglietti().size());
-		log.aggiornaLogRimuoviPrenotazione(ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
+		log.aggiornaLogRimuoviPrenotazione(sessione.getUsername(), ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
 	}
 
 

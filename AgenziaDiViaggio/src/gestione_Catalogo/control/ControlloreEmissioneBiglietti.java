@@ -16,7 +16,7 @@ public class ControlloreEmissioneBiglietti extends Controllore {
 
 	public void erogaBiglietti(String ambiente, String mezzo, String partenza, String arrivo, String via, String offerta, String prenotazione) {
 		
-		log.aggiornaLogEmissioneBiglietti(ambiente,mezzo,partenza,arrivo,via,offerta,prenotazione);
+		log.aggiornaLogEmissioneBiglietti(sessione.getUsername(), ambiente,mezzo,partenza,arrivo,via,offerta,prenotazione);
 		
 	}
 

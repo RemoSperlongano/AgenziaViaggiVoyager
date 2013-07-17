@@ -39,7 +39,7 @@ public class ControlloreRimuoviPrenotazione extends Controllore {
 		catalogo.rimuoviPrenotazioneDalCatalogo(prenotazione, offerta, tratta);
 		//libero i posti nuovamente disponibili
 		offerta.liberaPosti(prenotazione.getListaBiglietti().size());
-		log.aggiornaLogRimuoviPrenotazione(ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
+		log.aggiornaLogRimuoviPrenotazione(sessione.getUsername(),ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
 		
 	}
 

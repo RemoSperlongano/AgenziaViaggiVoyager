@@ -51,14 +51,14 @@ public class ControlloreRimuoviOffertaConPrenotazioni extends Controllore{
 				Prenotazione p = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta, lp.get(i));
 				catalogo.rimuoviPrenotazioneDalCatalogo(p, offerta, tratta);
 				offerta.liberaPosti(p.getListaBiglietti().size());
-				log.aggiornaLogRimuoviPrenotazione(ambiente,mezzo,partenza,arrivo,via,dataPartenza,lp.get(i));
+				log.aggiornaLogRimuoviPrenotazione(sessione.getUsername(),ambiente,mezzo,partenza,arrivo,via,dataPartenza,lp.get(i));
 			}
 			
 		}
 		
 		
 		catalogo.rimuoviOffertaDalCatalogo(offerta, tratta);
-		log.aggiornaLogRimuoviOfferta(ambiente, mezzo, partenza, arrivo, via, dataPartenza);
+		log.aggiornaLogRimuoviOfferta(sessione.getUsername(), ambiente, mezzo, partenza, arrivo, via, dataPartenza);
 		
 	}
 

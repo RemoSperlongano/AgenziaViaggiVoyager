@@ -28,24 +28,24 @@ public class Log {
 	
 	
 	//Metodi
-	public void aggiornaLogAggiungiViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via){
-		log = "[" + Data.stampaDataAttuale() + "] AGGIUNTO VIAGGIO Via " + ambiente + ":\n" ;									
+	public void aggiornaLogAggiungiViaggio(String user, String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via){
+		log = "[" + Data.stampaDataAttuale() + "]  UTENTE: "+ user +"  -  AGGIUNTO VIAGGIO Via " + ambiente + ":\n" ;									
 		log+= mezzo + "  ->  " + cittaPartenza + " : " + cittaArrivo + "  ->  " + via + "\n";
 		System.out.println(log);
 		salvaLog(log); 
 	}
 	
 
-	public void aggiornaLogRimuoviViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via){
-		log = "[" + Data.stampaDataAttuale() + "] RIMOSSO VIAGGIO Via " + ambiente + ":\n";
+	public void aggiornaLogRimuoviViaggio(String user, String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via){
+		log = "[" + Data.stampaDataAttuale() + "]  UTENTE: "+ user +"  -  RIMOSSO VIAGGIO Via " + ambiente + ":\n";
 		log+= mezzo + "  ->  " + cittaPartenza + " : " + cittaArrivo + "  ->  " + via + "\n";
 		System.out.println(log);
 		salvaLog(log); 
 	}
 	
 	
-	public void aggiornaLogAggiungiOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataPartenza, int durata, int posti) {
-		log = "[" + Data.stampaDataAttuale() + "] AGGIUNTA NUOVA OFFERTA: \n";
+	public void aggiornaLogAggiungiOfferta(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataPartenza, int durata, int posti) {
+		log = "[" + Data.stampaDataAttuale() + "]  UTENTE: "+ user +"  -  AGGIUNTA NUOVA OFFERTA: \n";
 		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
 		log+= "Data di Partenza: " + dataPartenza.stampaData()+"\n";
 		log+= "Data di Arrivo: " + dataPartenza.getNuovaData(durata).stampaData()+"\n";
@@ -54,8 +54,8 @@ public class Log {
 		salvaLog(log); 
 	}
 	
-	public void aggiornaLogRimuoviOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) {
-		log = "[" + Data.stampaDataAttuale() + "] RIMOSSA OFFERTA: \n";
+	public void aggiornaLogRimuoviOfferta(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) {
+		log = "[" + Data.stampaDataAttuale() + "]  UTENTE: "+ user +"  -  RIMOSSA OFFERTA: \n";
 		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
 		log+= "Data di Partenza: " + dataPartenza+"\n";
 		System.out.println(log);
@@ -63,8 +63,8 @@ public class Log {
 		
 	}
 	
-	public void aggiornaLogAggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
-		log = "[" + Data.stampaDataAttuale() + "] AGGIUNTA NUOVA PRENOTAZIONE: \n";
+	public void aggiornaLogAggiungiPrenotazione(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = "[" + Data.stampaDataAttuale() + "]  UTENTE: "+ user +"  -  AGGIUNTA NUOVA PRENOTAZIONE: \n";
 		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
 		log+= "Data di Partenza: " + dataPartenza +"\n";
 		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
@@ -75,8 +75,8 @@ public class Log {
 	}
 	
 
-	public void aggiornaLogRimuoviPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
-		log = "[" + Data.stampaDataAttuale() + "] RIMOSSA PRENOTAZIONE: \n";
+	public void aggiornaLogRimuoviPrenotazione(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = "[" + Data.stampaDataAttuale() + "]  UTENTE: "+ user +"  -  RIMOSSA PRENOTAZIONE: \n";
 		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
 		log+= "Data di Partenza: " + dataPartenza +"\n";
 		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
@@ -86,8 +86,8 @@ public class Log {
 	}
 	
 	
-	public void aggiornaLogModificaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
-		log = "[" + Data.stampaDataAttuale() + "] MODIFICATA PRENOTAZIONE: \n";
+	public void aggiornaLogModificaPrenotazione(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = "[" + Data.stampaDataAttuale() + "]  UTENTE: "+ user +"  -  MODIFICATA PRENOTAZIONE: \n";
 		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
 		log+= "Data di Partenza: " + dataPartenza +"\n";
 		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
@@ -95,8 +95,8 @@ public class Log {
 		salvaLog(log); 
 	}
 
-	public void aggiornaLogEmissioneBiglietti(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
-		log = "[" + Data.stampaDataAttuale() + "] EROGATI BIGLIETTI PER LA PRENOTAZIONE: \n";
+	public void aggiornaLogEmissioneBiglietti(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = "[" + Data.stampaDataAttuale() + "]  UTENTE: "+ user +"  -  EROGATI BIGLIETTI PER LA PRENOTAZIONE: \n";
 		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
 		log+= "Data di Partenza: " + dataPartenza +"\n";
 		log+= "Nome Acquirente: " + nomeAcquirente+"\n";

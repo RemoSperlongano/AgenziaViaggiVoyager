@@ -480,7 +480,7 @@ public class BoundaryAmministratore {
 				panelNext = new JPanel();
 				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*7);
 				panelNext.setLocation(0, superPanel.getHeight()/10*3+6);
-				panelNext.setBackground(Color.BLACK);
+				
 				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
 				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
 				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!

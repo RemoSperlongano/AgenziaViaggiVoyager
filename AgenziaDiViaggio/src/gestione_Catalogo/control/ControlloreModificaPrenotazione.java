@@ -89,7 +89,7 @@ public class ControlloreModificaPrenotazione extends Controllore {
 		//aggiungo la nuova lista dei biglietti alla prenotazione
 		prenotazione.setListaBiglietti(nuovaListaBiglietti);
 		
-		log.aggiornaLogModificaPrenotazione(ambiente, mezzo, partenza, arrivo, via, offertaScelta, prenotazioneScelta);
+		log.aggiornaLogModificaPrenotazione(sessione.getUsername(), ambiente, mezzo, partenza, arrivo, via, offertaScelta, prenotazioneScelta);
 		
 	}
 	

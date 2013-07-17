@@ -3,7 +3,6 @@
  */
 package gestione_Catalogo.control;
 
-import gestione_Catalogo.entity.Sessione;
 import gestione_Catalogo.entity.Utente;
 import gestione_Catalogo.exception.LoginFallitoException;
 
@@ -32,13 +31,9 @@ public class ControlloreLogin extends Controllore {
 		if (sessione == null){
 			throw new LoginFallitoException("La password e' errata o non esiste l'utente indicato");
 		} else {
-			inizializzaSessione(sessione);
 			return sessione.getRuolo();
 		}
 	}
 	
 	
-	private static void inizializzaSessione(Sessione s){
-		sessione = s;
-	}
 }

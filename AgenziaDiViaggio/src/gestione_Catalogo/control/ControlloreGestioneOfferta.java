@@ -59,7 +59,7 @@ public class ControlloreGestioneOfferta extends Controllore {
 		
 		Offerta nuovaOfferta = new Offerta(idTratta, dataPartenza, durata, posti);
 		catalogo.aggiungiOffertaAlCatalogo(nuovaOfferta, tratta);
-		log.aggiornaLogAggiungiOfferta(ambiente, mezzo, partenza, arrivo , via, dataPartenza, durata, posti);
+		log.aggiornaLogAggiungiOfferta(sessione.getUsername(), ambiente, mezzo, partenza, arrivo , via, dataPartenza, durata, posti);
 	}
 	
 	
@@ -75,7 +75,7 @@ public class ControlloreGestioneOfferta extends Controllore {
 		Offerta offerta = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta);
 		
 		catalogo.rimuoviOffertaDalCatalogo(offerta, tratta);
-		log.aggiornaLogRimuoviOfferta(ambiente, mezzo, partenza, arrivo, via, dataPartenza);
+		log.aggiornaLogRimuoviOfferta(sessione.getUsername(), ambiente, mezzo, partenza, arrivo, via, dataPartenza);
 	}
 
 
