@@ -40,19 +40,14 @@ public class ControlloreGestioneCatalogo extends Controllore {
 		//Nel caso in cui ho selezionato un tipoMezzo devo verificare se il mezzo specificato non sia già stato introdotto in catalogo
 		if (!tipoMezzo.equals("")){
 			
-			Set<String> s = catalogo.getChiaviMezzi(ambiente);
-			Iterator<String> it = s.iterator();
-			
-			while(it.hasNext()){
-				if (mezzo.equals(it.next())){
-					throw new TipoMezzoException("Impossibile specificare un mezzo, già inserito nel catalogo, con un tipo");
-				}
+			if (catalogo.esistenzaMezzo(ambiente, mezzo)){
+				throw new TipoMezzoException("Impossibile specificare un tipo se il mezzo e' gia' stato inserito in catalogo senza specificarne il tipo");
 			}
 			
 		} else {
 			//Nel caso in cui non ho selezionato un tipo di mezzo, devo verificare se il mezzo non sia già stato specificato in catalogo
 			if(catalogo.verificaEsistenzaTipo(mezzo)){
-				throw new TipoMezzoException("Impossibile inserire un mezzo senza un tipo se nel catalogo vi è già tale mezzo specificato con un tipo");
+				throw new TipoMezzoException("Impossibile inserire un mezzo senza specificarne il tipo se esso e' gia' stato inserito in catalogo specificando il tipo.");
 			}
 		}
 		

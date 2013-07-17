@@ -1,6 +1,7 @@
 package gestione_Catalogo.entity;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -137,10 +138,10 @@ public class Log {
 		String Dir = "Save";
 		new File(Dir).mkdir();
 		String path = Dir+"/log.txt";
-		FileWriter fw;
+		BufferedWriter fw;
 		try {
 			File file = new File(path);
-			fw = new FileWriter(file,true);
+			fw = new BufferedWriter(new FileWriter(file,true));
 			fw.write(input+"\r\n");
 			fw.flush();
 			fw.close();

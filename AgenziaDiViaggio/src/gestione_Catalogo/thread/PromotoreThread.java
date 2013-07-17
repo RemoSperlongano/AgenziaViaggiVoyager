@@ -12,6 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 import gestione_Catalogo.control.ControlloreGestioneCatalogo;
 import gestione_Catalogo.exception.CittaCoincidentiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
+import gestione_Catalogo.exception.TipoMezzoException;
 import gestione_Catalogo.exception.TrattaException;
 
 
@@ -71,6 +72,8 @@ public class PromotoreThread implements Runnable {
 		
 		} catch (IDEsternoElementoException e) {
 			System.out.println(e.getMessage()+"\n");
+		} catch (TipoMezzoException e) {
+			System.out.println("TipoMezzoException: " + e.getMessage()+"\n");
 		} catch (CittaCoincidentiException e) {
 			System.out.println(e.getMessage()+"\n");
 		} catch (TrattaException e) {

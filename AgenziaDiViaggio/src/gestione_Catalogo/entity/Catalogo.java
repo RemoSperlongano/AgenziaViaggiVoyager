@@ -73,7 +73,7 @@ public class Catalogo {
 		/*
 		 * Non va in exception: prima di prendere un elemento, verifica la sua esistenza...se c'è, lo prende, se non c'è, ritorna con false
 		 */
-		
+
 		if (!mappaCatalogo.esistenzaElemento(ambiente)) return false;	//Se non c'è l'elemento ambiente nella prima mappa torna subito con false, altrimenti continua
 		ElementoCatalogo amb = mappaCatalogo.getElemento(ambiente);
 		if (!amb.esistenzaElemento(mezzo)) return false;  //se nn c'è il mezzo ritorna con false, altrimenti continua
@@ -385,22 +385,17 @@ public class Catalogo {
 	}
 	
 	
+	public boolean esistenzaAmbiente(String ambiente){
+		return mappaCatalogo.esistenzaElemento(ambiente);
+	}
+
+	public boolean esistenzaMezzo(String ambiente, String mezzo) throws IDEsternoElementoException{
+		if (!esistenzaAmbiente(ambiente)){
+			return false;
+		}
+		return mappaCatalogo.getElemento(ambiente).esistenzaElemento(mezzo);
+	}
 	
-
-	
-	
-
-
-	
-
-
-
-
-
-
-	
-	
-
 
 
 }
