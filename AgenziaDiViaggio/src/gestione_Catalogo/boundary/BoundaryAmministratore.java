@@ -71,7 +71,7 @@ public class BoundaryAmministratore {
 		
 		
 		/*
-		 * primo pannello: per il titolo
+		 * primo pannello:  per il titolo
 		 */
 		
 		panelTitolo = new JPanel();
