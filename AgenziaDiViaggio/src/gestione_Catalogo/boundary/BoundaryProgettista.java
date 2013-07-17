@@ -223,7 +223,7 @@ public class BoundaryProgettista {
 				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
 				
 				
-				new BoundaryProgettista_GestioneOfferta(panelNext);  //Passo il resto del Pannello
+				new BoundaryProgettista_GestioneOfferta(panelNext, ruolo);  //Passo il resto del Pannello
 				
 				
 			}

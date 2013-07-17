@@ -17,7 +17,7 @@ public class BoundaryVenditore_GestionePrenotazione {
 	/*
 	 * Attributi di istanza
 	 */
-	
+	private String ruolo;
 
 	//Pannelli
 	private JPanel superPanel;
@@ -40,9 +40,10 @@ public class BoundaryVenditore_GestionePrenotazione {
     
     
     
-    public BoundaryVenditore_GestionePrenotazione(JPanel panelNext){
+    public BoundaryVenditore_GestionePrenotazione(JPanel panelNext, String ruolo){
     	
-		
+    	this.ruolo = ruolo;
+    	
 		/*
 		 * 
 		 * Il superPanel di questa Boundary prende le dimensioni del pannello Passato
@@ -262,7 +263,21 @@ public class BoundaryVenditore_GestionePrenotazione {
 		public void actionPerformed(ActionEvent e) {
 			
 			superPanel.setVisible(false); 			    //chiude tutto questo pannello
-			BoundaryVenditore.riattivaBottoni();      	//riattiva i bottoni
+			
+			
+			//riattiva i bottoni in base al ruolo.
+	
+			if (ruolo.equals("GestoreEccezioni")){
+				BoundaryGestoreEccezioni.riattivaBottoni();
+			}
+			if (ruolo.equals("Venditore")){
+				BoundaryVenditore.riattivaBottoni();
+			}
+
+			if (ruolo.equals("Amministratore")){
+				BoundaryAmministratore.riattivaBottoni();
+			}
+
 						
 		}
 	}

@@ -21,7 +21,7 @@ import javax.swing.JPanel;
  */
 public class BoundaryAmministratore {
 	
-
+	private final String ruolo = "Amministratore";
 	
 	//campi istanza pannelli
 	private JPanel superPanel; //Pannello principale
@@ -50,8 +50,15 @@ public class BoundaryAmministratore {
 	private static JButton bottoneVisualizzaLog;
 	private static JButton bottoneGestioneUtenti;
 	private static JButton bottoneGestioneIndici;
-		
+	
+	private GestioneCatalogoAA ascoltatoreGestioneCatalogo;
+	private GestioneOffertaAA ascoltatoreGestioneOfferta;
 	private GestionePrenotazioneAA ascoltatoreGestionePrenotazione;
+	private InfoViaggiAA ascoltatoreInfoViaggi;
+	private GestioneEccezioniAA ascoltatoreGestioneEccezioni;
+	private VisualizzaLogAA ascoltatoreVisualizzaLog;
+	private GestioneUtentiAA ascoltatoreGestioneUtenti;
+	private GestioneIndiciAA ascoltatoreGestioneIndici;
 	    
 	    
 	public BoundaryAmministratore(){
@@ -174,12 +181,32 @@ public class BoundaryAmministratore {
 		
 		
 		//Ascoltatori per secondo pannello
+		ascoltatoreGestioneCatalogo = new GestioneCatalogoAA();
+		bottoneGestioneCatalogo.addActionListener(ascoltatoreGestioneCatalogo);
+		
+		ascoltatoreGestioneOfferta = new GestioneOffertaAA();
+		bottoneGestioneOfferta.addActionListener(ascoltatoreGestioneOfferta);
+		
 		ascoltatoreGestionePrenotazione = new GestionePrenotazioneAA();
 		bottoneGestionePrenotazione.addActionListener(ascoltatoreGestionePrenotazione);
 		
+		ascoltatoreInfoViaggi = new InfoViaggiAA();
+		bottoneInfoViaggi.addActionListener(ascoltatoreInfoViaggi);
 	    	
-	    	
-	    }
+	    ascoltatoreGestioneEccezioni = new GestioneEccezioniAA();
+	    bottoneGestioneEccezioni.addActionListener(ascoltatoreGestioneEccezioni);
+	    
+	    ascoltatoreVisualizzaLog = new VisualizzaLogAA();
+	    bottoneVisualizzaLog.addActionListener(ascoltatoreVisualizzaLog);
+	    
+	    ascoltatoreGestioneUtenti = new GestioneUtentiAA();
+	    bottoneGestioneUtenti.addActionListener(ascoltatoreGestioneUtenti);
+	    
+	    ascoltatoreGestioneIndici = new GestioneIndiciAA();
+	    bottoneGestioneIndici.addActionListener(ascoltatoreGestioneIndici);
+	    
+	    
+	}
 	
 		public static void riattivaBottoni(){
 			//Riattivo tutti i bottoni di questo Pannello
@@ -245,7 +272,7 @@ public class BoundaryAmministratore {
 		 * Classi Ascoltatori per bottoni pannelloBottoni
 		 */
 		
-		private class GestionePrenotazioneAA implements ActionListener{
+		private class GestioneCatalogoAA implements ActionListener{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -255,7 +282,14 @@ public class BoundaryAmministratore {
 				panelBottoni.setVisible(true);
 				
 				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false);
+				bottoneGestioneOfferta.setEnabled(false);
 				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneEccezioni.setEnabled(false);
+				bottoneVisualizzaLog.setEnabled(false);
+				bottoneGestioneUtenti.setEnabled(false);
+				bottoneGestioneIndici.setEnabled(false);
 				
 				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
 				panelNext = new JPanel();
@@ -267,13 +301,271 @@ public class BoundaryAmministratore {
 				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
 				
 				
-				new BoundaryVenditore_GestionePrenotazione(panelNext);  //Passo il resto del Pannello
+				new BoundaryPromotore_GestioneCatalogo(panelNext, ruolo);  //Passo il resto del Pannello
 				
 			
 			}
 			
 		}
 
+
+		private class GestioneOffertaAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false);
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneEccezioni.setEnabled(false);
+				bottoneVisualizzaLog.setEnabled(false);
+				bottoneGestioneUtenti.setEnabled(false);
+				bottoneGestioneIndici.setEnabled(false);
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*7);
+				panelNext.setLocation(0, superPanel.getHeight()/10*3+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryProgettista_GestioneOfferta(panelNext, ruolo);  //Passo il resto del Pannello
+				
+			
+			}
+			
+		}
+
+		
+		private class GestionePrenotazioneAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false);
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneEccezioni.setEnabled(false);
+				bottoneVisualizzaLog.setEnabled(false);
+				bottoneGestioneUtenti.setEnabled(false);
+				bottoneGestioneIndici.setEnabled(false);
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*7);
+				panelNext.setLocation(0, superPanel.getHeight()/10*3+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryVenditore_GestionePrenotazione(panelNext, ruolo);  //Passo il resto del Pannello
+				
+			
+			}
+			
+		}
+		
+		
+		private class InfoViaggiAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false);
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneEccezioni.setEnabled(false);
+				bottoneVisualizzaLog.setEnabled(false);
+				bottoneGestioneUtenti.setEnabled(false);
+				bottoneGestioneIndici.setEnabled(false);
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*7);
+				panelNext.setLocation(0, superPanel.getHeight()/10*3+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryVisitatore_InfoViaggi(panelNext, ruolo);  //Passo il resto del Pannello
+				
+			
+			}
+			
+		}
+
+
+		private class GestioneEccezioniAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false);
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneEccezioni.setEnabled(false);
+				bottoneVisualizzaLog.setEnabled(false);
+				bottoneGestioneUtenti.setEnabled(false);
+				bottoneGestioneIndici.setEnabled(false);
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*7);
+				panelNext.setLocation(0, superPanel.getHeight()/10*3+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryGestoreEccezioni_GestioneEccezioni(panelNext, ruolo);  //Passo il resto del Pannello
+				
+			
+			}
+			
+		}
+
+		
+		private class VisualizzaLogAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false);
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneEccezioni.setEnabled(false);
+				bottoneVisualizzaLog.setEnabled(false);
+				bottoneGestioneUtenti.setEnabled(false);
+				bottoneGestioneIndici.setEnabled(false);
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*7);
+				panelNext.setLocation(0, superPanel.getHeight()/10*3+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryAmministratore_VisualizzaLog(panelNext);  //Passo il resto del Pannello
+				
+			
+			}
+			
+		}
+
+
+		private class GestioneUtentiAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false);
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneEccezioni.setEnabled(false);
+				bottoneVisualizzaLog.setEnabled(false);
+				bottoneGestioneUtenti.setEnabled(false);
+				bottoneGestioneIndici.setEnabled(false);
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*7);
+				panelNext.setLocation(0, superPanel.getHeight()/10*3+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryAmministratore_GestioneUtenti(panelNext);  //Passo il resto del Pannello
+				
+			
+			}
+			
+		}
+
+
+		private class GestioneIndiciAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneCatalogo.setEnabled(false);
+				bottoneGestioneOfferta.setEnabled(false);
+				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneEccezioni.setEnabled(false);
+				bottoneVisualizzaLog.setEnabled(false);
+				bottoneGestioneUtenti.setEnabled(false);
+				bottoneGestioneIndici.setEnabled(false);
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*7);
+				panelNext.setLocation(0, superPanel.getHeight()/10*3+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryAmministratore_GestioneIndici(panelNext);  //Passo il resto del Pannello
+				
+			
+			}
+			
+		}
 
 
 }

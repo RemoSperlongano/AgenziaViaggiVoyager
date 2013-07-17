@@ -45,6 +45,7 @@ import javax.swing.JTextField;
  */
 public class BoundaryProgettista_GestioneOfferta {
 	
+	private String ruolo;
 	
 	/*
 	 * Attributi di istanza
@@ -194,7 +195,9 @@ public class BoundaryProgettista_GestioneOfferta {
 
     
     
-    public BoundaryProgettista_GestioneOfferta(JPanel panelNext){
+    public BoundaryProgettista_GestioneOfferta(JPanel panelNext, String ruolo){
+    	
+    	this.ruolo = ruolo;
     	
     	ambienteScelto = null;
 		mezzoScelto = null;
@@ -231,13 +234,13 @@ public class BoundaryProgettista_GestioneOfferta {
 		superPanel.add(panel1);				//aggiungo il primo pannello al superPannello
 		panel1.setVisible(true);
 		
-		bottoneAggiungiOfferta = new JButton("AGGIUNGI OFFERTA");
+		bottoneAggiungiOfferta = new JButton("Aggiungi Offerta");
 		bottoneAggiungiOfferta.setBackground(Color.CYAN);
 		bottoneAggiungiOfferta.setBounds(panel1.getWidth()/5, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneAggiungiOfferta);//aggiungo il bottone al secondo pannello
 		
 		
-		bottoneRimuoviOfferta = new JButton("RIMUOVI OFFERTA");
+		bottoneRimuoviOfferta = new JButton("Rimuovi Offerta");
 		bottoneRimuoviOfferta.setBackground(Color.YELLOW);
 		bottoneRimuoviOfferta.setBounds(panel1.getWidth()/5*3, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneRimuoviOfferta);//aggiungo il bottone al secondo pannello
@@ -993,7 +996,20 @@ public class BoundaryProgettista_GestioneOfferta {
 		public void actionPerformed(ActionEvent e) {
 			
 			superPanel.setVisible(false); 			    //chiude tutto questo pannello
-			BoundaryProgettista.riattivaBottoni();      	//riattiva i bottoni
+			
+			
+			//riattiva i bottoni in base al ruolo.
+			if (ruolo.equals("Progettista")){
+				BoundaryProgettista.riattivaBottoni();
+			}
+			
+			if (ruolo.equals("Promotore")){
+				BoundaryPromotore.riattivaBottoni();
+			}
+			
+			if (ruolo.equals("Amministratore")){
+				BoundaryAmministratore.riattivaBottoni();
+			}
 						
 		}
 	}

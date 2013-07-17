@@ -38,6 +38,8 @@ import gestione_Catalogo.exception.TrattaInesistenteException;
 
 public class BoundaryPromotore_GestioneCatalogo {
 	
+	private String ruolo;
+	
 	/*
 	 * Attributi di istanza
 	 */
@@ -158,7 +160,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 	 * Costruttore
 	 */
 	
-	public BoundaryPromotore_GestioneCatalogo(JPanel panelNext){
+	public BoundaryPromotore_GestioneCatalogo(JPanel panelNext, String ruolo){
+		
+    	this.ruolo = ruolo;
 		
 		ambienteScelto = null;
 		mezzoScelto = null;
@@ -195,13 +199,13 @@ public class BoundaryPromotore_GestioneCatalogo {
 		superPanel.add(panel1);				//aggiungo il primo pannello al superPannello
 		panel1.setVisible(true);
 		
-		bottoneAggiungiViaggio = new JButton("AGGIUNGI VIAGGIO");
+		bottoneAggiungiViaggio = new JButton("Aggiungi Viaggio");
 		bottoneAggiungiViaggio.setBackground(Color.CYAN);
 		bottoneAggiungiViaggio.setBounds(panel1.getWidth()/5, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneAggiungiViaggio);//aggiungo il bottone al secondo pannello
 		
 		
-		bottoneRimuoviViaggio = new JButton("RIMUOVI VIAGGIO");
+		bottoneRimuoviViaggio = new JButton("Rimuovi Viaggio");
 		bottoneRimuoviViaggio.setBackground(Color.YELLOW);
 		bottoneRimuoviViaggio.setBounds(panel1.getWidth()/5*3, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneRimuoviViaggio);//aggiungo il bottone al secondo pannello
@@ -753,7 +757,17 @@ public class BoundaryPromotore_GestioneCatalogo {
 		public void actionPerformed(ActionEvent e) {
 			
 			superPanel.setVisible(false); 			    //chiude tutto questo pannello
-			BoundaryPromotore.riattivaBottoni();      	//riattiva i bottoni
+			
+			
+			//riattiva i bottoni in base al ruolo.
+
+			if (ruolo.equals("Promotore")){
+				BoundaryPromotore.riattivaBottoni();
+			}
+			
+			if (ruolo.equals("Amministratore")){
+				BoundaryAmministratore.riattivaBottoni();
+			}
 						
 		}
 	}

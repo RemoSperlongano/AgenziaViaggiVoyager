@@ -114,8 +114,8 @@ public class BoundaryVisitatore {
 		superPanel.add(panelBottoni);
 		
 		
-		bottoneInfoViaggi = new JButton("INFO VIAGGI");
-		bottoneInfoViaggi.setBackground(Color.ORANGE);
+		bottoneInfoViaggi = new JButton("Info Viaggi");
+		bottoneInfoViaggi.setBackground(Color.GREEN);
 		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/5*2, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
 		panelBottoni.add(bottoneInfoViaggi);
 		
