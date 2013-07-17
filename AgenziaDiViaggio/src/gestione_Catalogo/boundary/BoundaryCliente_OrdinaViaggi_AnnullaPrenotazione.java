@@ -392,7 +392,7 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 	}
 	
 	
-	private void aggiornaPrenotazioni(){
+	private void aggiornaBiglietti(){
 		
 		prenotazioneScelta = null;
 		
@@ -411,8 +411,7 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 					areaTestoOfferta = "Prenotazione per il giorno: \t " + offertaScelta + "\n\n"; 
 					
 					//se il cliente ha effettuato una prenotazione per l'offerta selezionata, imposto prenotazioneScelta con il suo nomeAcquirente
-					String str = controllore.mostraPrenotazioneClientePerOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
-					prenotazioneScelta = str; 
+					prenotazioneScelta = controllore.mostraPrenotazioneClientePerOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
 					
 					areaTestoPrenotazione = "A nome di " + prenotazioneScelta + "\n\n";
 					areaTestoBiglietto += controllore.mostraListaBigliettiPerPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, prenotazioneScelta);
@@ -673,7 +672,7 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 				if (offertaScelta.equals("-----")){
 					aggiornaOfferte();
 				} else {
-					aggiornaPrenotazioni();
+					aggiornaBiglietti();
 				}
 			}
 	

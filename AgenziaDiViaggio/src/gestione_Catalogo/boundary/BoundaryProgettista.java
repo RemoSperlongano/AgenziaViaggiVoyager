@@ -39,8 +39,10 @@ public class BoundaryProgettista {
 	//Elementi pannelloBottoni
 		
 	private static JButton bottoneGestioneOfferta;
+	private static JButton bottoneInfoViaggi;
 		
 	private GestioneOffertaAA ascoltatoreGestioneOfferta;
+	private InfoViaggiAA ascoltatoreInfoViaggi;
 	    
 	    
 	public BoundaryProgettista(){
@@ -112,15 +114,23 @@ public class BoundaryProgettista {
 		superPanel.add(panelBottoni);
 		
 		
-		bottoneGestioneOfferta = new JButton("GESTIONE OFFERTA");
+		bottoneGestioneOfferta = new JButton("Gestione Offerta");
 		bottoneGestioneOfferta.setBackground(Color.ORANGE);
-		bottoneGestioneOfferta.setBounds(panelBottoni.getWidth()/5*2, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		bottoneGestioneOfferta.setBounds(panelBottoni.getWidth()/5, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
 		panelBottoni.add(bottoneGestioneOfferta);
+		
+		bottoneInfoViaggi = new JButton("Info Viaggi");
+		bottoneInfoViaggi.setBackground(Color.GREEN);
+		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/5*3, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		panelBottoni.add(bottoneInfoViaggi);
 		
 		
 		//Ascoltatori per secondo pannello
 		ascoltatoreGestioneOfferta = new GestioneOffertaAA();
 		bottoneGestioneOfferta.addActionListener(ascoltatoreGestioneOfferta);
+		
+		ascoltatoreInfoViaggi = new InfoViaggiAA();
+		bottoneInfoViaggi.addActionListener(ascoltatoreInfoViaggi);
 		
 		
 		
@@ -131,7 +141,8 @@ public class BoundaryProgettista {
 	
 		public static void riattivaBottoni(){
 			//Riattivo tutti i bottoni di questo Pannello
-			bottoneGestioneOfferta.setEnabled(true); 
+			bottoneGestioneOfferta.setEnabled(true);
+			bottoneInfoViaggi.setEnabled(true);
 		}
 	    
 	    
@@ -197,6 +208,7 @@ public class BoundaryProgettista {
 				
 				//Disattivo tutti i bottoni di questo Pannello
 				bottoneGestioneOfferta.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
 				
 				
 				//Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
@@ -210,6 +222,37 @@ public class BoundaryProgettista {
 				
 				
 				new BoundaryProgettista_GestioneOfferta(panelNext);  //Passo il resto del Pannello
+				
+				
+			}
+			
+		}
+		
+		private class InfoViaggiAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestioneOfferta.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				
+				
+				//Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
+				panelNext.setLocation(0, superPanel.getHeight()/10*2+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryVisitatore_InfoViaggi(panelNext);  //Passo il resto del Pannello
 				
 				
 			}

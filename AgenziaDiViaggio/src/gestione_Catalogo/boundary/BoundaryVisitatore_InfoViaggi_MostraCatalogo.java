@@ -126,9 +126,6 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 		areaTestoImp = "AMBIENTE" + "\t" + "MEZZO" + "\t\t" + "TRATTA" + "\t\t\t"  + "INFO\n" +
 				"--------------" + "\t" + "----------" + "\t\t" + "------------" + "\t\t\t" + "---------" + "\n";
 		
-		areaTestoOffertaImp = "\n\n" +
-				"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
-				"-----------\t\t----------\t\t----------\n";
 		
 		/*
 		 * 
@@ -443,7 +440,6 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 			tendinaPosti.setSelectedIndex(0);
 			tendinaPosti.setEnabled(false);
 			
-			areaTesto.setText("");
 			areaTesto.setCaretPosition(0);
     	}
 	
@@ -931,26 +927,29 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 				
 				Data dataRichiesta = new Data(giorno, mese, anno);
 				try {
-					areaTestoOfferta = controllore.mostraListaOfferteRichieste(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, via, dataRichiesta, posti);
 					
+					areaTestoOffertaImp = "\n\n" +
+							"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
+							"-----------\t\t----------\t\t----------\n";
+					
+					areaTestoOfferta = controllore.mostraListaOfferteRichieste(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, via, dataRichiesta, posti);
+				
 					if (areaTestoOfferta.equals("")){
+						areaTestoOffertaImp = "\n\n";
 						areaTestoOfferta = "Non ci sono offerte disponibili in base ai criteri di scelta inseriti";
 					}
 					
-					
-					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOffertaImp + areaTestoOfferta);
-					
 				} catch (IDEsternoElementoException e1) {
-					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				} catch (OfferteNonPresentiException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (OffertaInesistenteException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-				}
-					
-					
-					
-				
+				} catch (OfferteNonPresentiException e1) {
+					areaTestoOffertaImp = "\n\n";
+					areaTestoOfferta = e1.getMessage();
+				} finally {
+					areaTesto.setText(areaTestoImp + areaTestoCatalogo + areaTestoOffertaImp + areaTestoOfferta);
+					areaTesto.setCaretPosition(0);
+				}	
 					
 			} else {
 				JOptionPane.showMessageDialog(null, "Nessun viaggio selezionato!");

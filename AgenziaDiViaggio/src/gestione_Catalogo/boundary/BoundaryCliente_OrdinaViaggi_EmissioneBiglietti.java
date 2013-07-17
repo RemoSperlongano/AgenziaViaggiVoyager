@@ -417,7 +417,7 @@ public class BoundaryCliente_OrdinaViaggi_EmissioneBiglietti {
 	}
 	
 	
-	private void aggiornaPrenotazioni(){
+	private void aggiornaBiglietti(){
 		
 		prenotazioneScelta = null;
 		
@@ -698,7 +698,7 @@ public class BoundaryCliente_OrdinaViaggi_EmissioneBiglietti {
 				if (offertaScelta.equals("-----")){
 					aggiornaOfferte();
 				} else {
-					aggiornaPrenotazioni();
+					aggiornaBiglietti();
 				}
 			}
 	
