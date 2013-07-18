@@ -39,7 +39,7 @@ public class Tratta {
 		this.info = info;
 		dataInserimento = new Data();
 		
-		this.info.updateInfo("--- Inserito il " + dataInserimento.stampaData());
+		this.info.updateInfo("--- Inserito il " + dataInserimento.stampaGiorno());
 		
 		
 		//salvo tratta su db

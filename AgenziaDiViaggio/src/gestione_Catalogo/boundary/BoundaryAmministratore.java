@@ -163,7 +163,7 @@ public class BoundaryAmministratore {
 		
 		
 		bottoneVisualizzaLog = new JButton("Visualizza Log");
-		bottoneVisualizzaLog.setBackground(Color.GRAY);
+		bottoneVisualizzaLog.setBackground(Color.LIGHT_GRAY);
 		bottoneVisualizzaLog.setBounds(panelBottoni.getWidth()/30*8+15, panelBottoni.getHeight()/12*7, panelBottoni.getWidth()/5, panelBottoni.getHeight()/4);
 		panelBottoni.add(bottoneVisualizzaLog);
 		

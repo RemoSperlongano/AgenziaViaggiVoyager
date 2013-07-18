@@ -86,6 +86,11 @@ public class Data extends GregorianCalendar {
 		return sdf.format(super.getTime());
 	}
 	
+	public String stampaGiorno(){
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		return sdf.format(super.getTime());
+	}
+	
 	public static String stampaDataAttuale(){ //Formato es. 10/01/2012 - 21:10:35
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy, HH:mm:ss");
 		return sdf.format(getInstance().getTime());

@@ -594,7 +594,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 		} catch (DirittiException e1) {
 			JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		} catch (IDEsternoElementoException e) {
-			JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+			System.out.println(e.getMessage()+"\n");
 		}
 		
 		tendinaMezziPannello2.addItem("new..."); //per mettercene uno nuovo!!!
