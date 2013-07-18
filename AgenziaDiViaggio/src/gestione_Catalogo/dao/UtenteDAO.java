@@ -41,9 +41,9 @@ public class UtenteDAO extends DAO{
 		"INSERT INTO utente(nome,cognome,mail,username,password,ruolo) " +
 		"VALUES(?, ?, ?, ?, ?, ?)";
 	
-	private static final String updatePasswordQuery = 
+	private static final String cambiaPasswordAmministratoreQuery = 
 			"UPDATE utente SET " +
-			"password=? " +
+			"username=?, password=? " +
 			"WHERE username=? LIMIT 1";
 	private static final String deleteQuery = 
 			"DELETE FROM utente " +
@@ -175,16 +175,17 @@ public class UtenteDAO extends DAO{
 	 * Da invocare nei metodo cambia Password di Utente
 	 */
 
-	public void cambiaPassword(String username, String password){
+	public void cambiaPasswordAmministratore(String username, String password){
 		// TODO Auto-generated method stub
 		try {
 			conn = Persistenza.getConnection();
 
-			ps = conn.prepareStatement(updatePasswordQuery);
+			ps = conn.prepareStatement(cambiaPasswordAmministratoreQuery);
 			
 			
 			ps.setString(1, password);
 			ps.setString(2, username);
+			ps.setString(3, "admin");
 
 			ps.executeUpdate();
 
