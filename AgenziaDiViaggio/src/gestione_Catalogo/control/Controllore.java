@@ -20,6 +20,7 @@ import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Sessione;
 import gestione_Catalogo.entity.Viaggiatore;
 
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -60,23 +61,23 @@ public abstract class Controllore {
 		return catalogo.getChiaviAmbienti();
 	}
 	
-	public Set<String> mostraMezziInCatalogo(String ambiente) throws IDEsternoElementoException {
+	public Set<String> mostraMezziInCatalogo(String ambiente) throws IDEsternoElementoException, DirittiException {
 		return catalogo.getChiaviMezzi(ambiente);
 	}
 
-	public Set<String> mostraCittaDiPartenzaInCatalogo(String ambiente, String mezzo) throws IDEsternoElementoException {
+	public Set<String> mostraCittaDiPartenzaInCatalogo(String ambiente, String mezzo) throws IDEsternoElementoException, DirittiException {
 		return catalogo.getChiaviCittaDiPartenza(ambiente, mezzo);		
 	}
 
-	public Set<String> mostraCittaDiArrivoInCatalogo(String ambiente, String mezzo, String partenza) throws IDEsternoElementoException {
+	public Set<String> mostraCittaDiArrivoInCatalogo(String ambiente, String mezzo, String partenza) throws IDEsternoElementoException, DirittiException {
 		return catalogo.getChiaviCittaDiArrivo(ambiente, mezzo, partenza);
 	}
 	
-	public Set<String> mostraViaInCatalogo(String ambiente, String mezzo, String partenza, String arrivo) throws IDEsternoElementoException{
+	public Set<String> mostraViaInCatalogo(String ambiente, String mezzo, String partenza, String arrivo) throws IDEsternoElementoException, DirittiException{
 		return catalogo.getChiaviVia(ambiente, mezzo, partenza, arrivo);
 	}
 		
-	public ArrayList<String> mostraOffertePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException {
+	public ArrayList<String> mostraOffertePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, DirittiException {
 		ArrayList<String> date = new ArrayList<String>();
 		
 		Set<Data> chiaviOfferte = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
@@ -87,7 +88,7 @@ public abstract class Controllore {
 		return date;
 	}
 	
-	public ArrayList<String> mostraOfferteValidePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException{
+	public ArrayList<String> mostraOfferteValidePerLaTratta(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, DirittiException{
 		
 		ArrayList<String> dateValide = new ArrayList<String>();
 		
@@ -105,13 +106,13 @@ public abstract class Controllore {
 		return dateValide;
 	}
 	
-	public Set<String> mostraPrenotazioniPerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException{
+	public Set<String> mostraPrenotazioniPerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException, DirittiException{
 		Data dp = Data.parseTimestamp(dataPartenza);
 		return catalogo.getChiaviPrenotazione(ambiente, mezzo, partenza, arrivo, via, dp);
 	}
 	
 	
-	public String mostraListaOffertaInCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException{
+	public String mostraListaOffertaInCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException, DirittiException{
 		  
 		  String stringaOfferte = "";
 		  
@@ -134,7 +135,7 @@ public abstract class Controllore {
 		 }
 	
 	
-	public String mostraListaOfferteValideInCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException{
+	public String mostraListaOfferteValideInCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException, DirittiException{
 		 
 		  String stringaOfferte = "";
 		  
@@ -161,7 +162,7 @@ public abstract class Controllore {
 	}
 	
 	
-	public String mostraListaBigliettiPerPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offerta, String prenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, ParseException {
+	public String mostraListaBigliettiPerPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offerta, String prenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, ParseException, DirittiException {
 			
 		String stringaBiglietti = "ELENCO BIGLIETTI:\n\n";
 		

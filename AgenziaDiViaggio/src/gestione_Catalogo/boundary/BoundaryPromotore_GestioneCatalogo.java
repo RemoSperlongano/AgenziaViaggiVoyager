@@ -29,6 +29,7 @@ import gestione_Catalogo.thread.PromotoreThread;
 
 import gestione_Catalogo.control.ControlloreGestioneCatalogo;
 import gestione_Catalogo.exception.CittaCoincidentiException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
@@ -590,8 +591,10 @@ public class BoundaryPromotore_GestioneCatalogo {
 			while(it.hasNext()) 					//itero l'insieme di chiavi
 				tendinaMezziPannello2.addItem(it.next());  //ne aggiungo uno alla volta
 			
+		} catch (DirittiException e1) {
+			JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		} catch (IDEsternoElementoException e) {
-			System.out.println(e.getMessage()+"\n");
+			JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		}
 		
 		tendinaMezziPannello2.addItem("new..."); //per mettercene uno nuovo!!!
@@ -633,7 +636,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 			areaTestoCatalogo = controllore.mostraCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 			areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 			areaTestoPannello3.setCaretPosition(0);
-					
+			
+		} catch (DirittiException e1) {
+			JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		} catch (MappaException e) {
 			areaTestoPannello3.setText(e.getMessage()+"\n");
 		} catch (IDEsternoElementoException e) {
@@ -870,6 +875,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 						while(it.hasNext()){ 					//itero l'insieme di chiavi
 							tendinaCittaPartenzaPannello2.addItem(it.next());
 						}
+						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} 
@@ -920,6 +928,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 								tendinaCittaeArrivoPannello2.addItem(it.next());
 						}
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -1016,6 +1026,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 						aggiornaTendinePannello2(); //aggiorno le tendine
 					}
 					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (IDEsternoElementoException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (CittaCoincidentiException e1) {
@@ -1173,6 +1185,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 							}
 							tendinaMezziPannello3.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -1185,6 +1199,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 						areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 						areaTestoPannello3.setCaretPosition(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (MappaException e1) {
 						areaTestoPannello3.setText(e1.getMessage()+"\n");
 					} catch (IDEsternoElementoException e1) {
@@ -1234,6 +1250,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 						
 						tendinaCittaPartenzaPannello3.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -1246,6 +1264,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);		
 					areaTestoPannello3.setCaretPosition(0);
 				
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -1295,6 +1315,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 						tendinaCittaArrivoPannello3.setEnabled(true);
 						tendinaCittaArrivoPannello3.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -1309,6 +1331,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 					areaTestoPannello3.setCaretPosition(0);
 					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -1358,6 +1382,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 						tendinaViaPannello3.setEnabled(true);
 						tendinaViaPannello3.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -1372,6 +1398,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 					areaTestoPannello3.setCaretPosition(0);
 					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");	
 				} catch (IDEsternoElementoException e1) {
@@ -1394,6 +1422,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoCatalogo = controllore.mostraCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 					areaTestoPannello3.setCaretPosition(0);
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -1428,6 +1459,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoCatalogo = controllore.mostraCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 					areaTestoPannello3.setCaretPosition(0);
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -1462,6 +1496,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 						JOptionPane.showMessageDialog(null, "Il viaggio e' stato rimosso correttamente dal catalogo.", "Viaggio Rimosso", JOptionPane.INFORMATION_MESSAGE);
 						//aggiorno tutti i campi dopo aver rimosso il viaggio
 						aggiornaTendinePannello3();
+						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (TrattaInesistenteException e1) {

@@ -8,6 +8,7 @@ package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreGestioneOfferta;
 import gestione_Catalogo.exception.DataNonValidaException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
@@ -926,7 +927,8 @@ public class BoundaryProgettista_GestioneOfferta {
 											"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 											"-----------\t\t----------\t\t----------\n";
 						
-						
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							areaTestoPannello3.setText(e1.getMessage()+"\n");
 						} catch (OfferteNonPresentiException e) {
@@ -1054,6 +1056,8 @@ public class BoundaryProgettista_GestioneOfferta {
 							}
 							tendinaMezziPannello2.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -1102,6 +1106,8 @@ public class BoundaryProgettista_GestioneOfferta {
 						
 						tendinaCittaPartenzaPannello2.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -1151,6 +1157,8 @@ public class BoundaryProgettista_GestioneOfferta {
 						tendinaCittaArrivoPannello2.setEnabled(true);
 						tendinaCittaArrivoPannello2.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -1202,6 +1210,8 @@ public class BoundaryProgettista_GestioneOfferta {
 						tendinaViaPannello2.setEnabled(true);
 						tendinaViaPannello2.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -1265,6 +1275,8 @@ public class BoundaryProgettista_GestioneOfferta {
 							"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 							"-----------\t\t----------\t\t----------\n";
 					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (IDEsternoElementoException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (OfferteNonPresentiException e) {
@@ -1459,6 +1471,8 @@ public class BoundaryProgettista_GestioneOfferta {
 							tendinaViaPannello2.setSelectedIndex(0);
 						}
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (NumberFormatException e1) {
 						JOptionPane.showMessageDialog(null, "Input non valido ("+e1.getMessage()+"). Digitare caratteri numerici.", "Attenzione!", JOptionPane.WARNING_MESSAGE);
 					} catch (TrattaInesistenteException e1) {
@@ -1658,6 +1672,8 @@ public class BoundaryProgettista_GestioneOfferta {
 							}
 							tendinaMezziPannello3.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -1709,6 +1725,8 @@ public class BoundaryProgettista_GestioneOfferta {
 						
 						tendinaCittaPartenzaPannello3.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -1759,6 +1777,8 @@ public class BoundaryProgettista_GestioneOfferta {
 						tendinaCittaArrivoPannello3.setEnabled(true);
 						tendinaCittaArrivoPannello3.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -1811,6 +1831,8 @@ public class BoundaryProgettista_GestioneOfferta {
 						tendinaViaPannello3.setEnabled(true);
 						tendinaViaPannello3.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -1875,6 +1897,8 @@ public class BoundaryProgettista_GestioneOfferta {
 						JOptionPane.showMessageDialog(null, "L'offerta e' stata rimossa correttamente.", "Offerta Rimossa", JOptionPane.INFORMATION_MESSAGE);
 						aggiornaOffertePannello3();
 							
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (TrattaInesistenteException e1) {

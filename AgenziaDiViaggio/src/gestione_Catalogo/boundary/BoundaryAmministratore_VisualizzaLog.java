@@ -14,6 +14,7 @@ import gestione_Catalogo.exception.FileInesistenteException;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -45,10 +46,12 @@ public class BoundaryAmministratore_VisualizzaLog {
 	private JScrollPane scrollAreaTesto;
 	
 	private JButton bottoneAggiorna;
+	private JButton bottoneCancellaLog;
 	
 	private JButton bottoneChiudi;
 	
 	private AggiornaAA ascoltatoreBottoneAggiorna;
+	private CancellaLogAA ascoltatoreCancellaLog;
 	private ChiudiAA ascoltatoreBottoneChiudi;
 
 
@@ -86,19 +89,24 @@ public class BoundaryAmministratore_VisualizzaLog {
 		
 		
 		areaTesto = new JTextArea();
-		areaTesto = new JTextArea(panel.getWidth()/40*39+10, panel.getHeight()/6*4+30);
+		areaTesto = new JTextArea(panel.getWidth()/40*39+10, panel.getHeight()/6*4+15);
 		areaTesto.setFont(new Font("Arial", 0, 15));
 		areaTesto.setEditable(false);
 		areaTesto.setLineWrap(false);
 		scrollAreaTesto = new JScrollPane(areaTesto);   //creo un piccolo scroll e lo aggiungo alla text area
-		scrollAreaTesto.setBounds(panel.getWidth()/40, panel.getHeight()/7, panel.getWidth()/40*39+10, panel.getHeight()/6*4+30);
+		scrollAreaTesto.setBounds(panel.getWidth()/40, panel.getHeight()/7, panel.getWidth()/40*39+10, panel.getHeight()/6*4+15);
 		panel.add(scrollAreaTesto);
 		
 		
 		bottoneAggiorna = new JButton("AGGIORNA");
 		bottoneAggiorna.setBackground(Color.ORANGE);
-		bottoneAggiorna.setBounds(panel.getWidth()/5*2, panel.getHeight()/6*5+30, panel.getWidth()/5, panel.getHeight()/14);
+		bottoneAggiorna.setBounds(panel.getWidth()/5, panel.getHeight()/6*5+25, panel.getWidth()/5, panel.getHeight()/14);
 		panel.add(bottoneAggiorna);
+		
+		bottoneCancellaLog = new JButton("CANCELLA LOG");
+		bottoneCancellaLog.setBackground(Color.YELLOW);
+		bottoneCancellaLog.setBounds(panel.getWidth()/5*3, panel.getHeight()/6*5+25, panel.getWidth()/5, panel.getHeight()/14);
+		panel.add(bottoneCancellaLog);
 		
 		bottoneChiudi = new JButton("X");
 		bottoneChiudi.setBackground(Color.RED);
@@ -110,11 +118,14 @@ public class BoundaryAmministratore_VisualizzaLog {
 		ascoltatoreBottoneAggiorna = new AggiornaAA();
 		bottoneAggiorna.addActionListener(ascoltatoreBottoneAggiorna);
 		
+		ascoltatoreCancellaLog = new CancellaLogAA();
+		bottoneCancellaLog.addActionListener(ascoltatoreCancellaLog);
+		
 		ascoltatoreBottoneChiudi = new ChiudiAA();
 		bottoneChiudi.addActionListener(ascoltatoreBottoneChiudi);
 		
-		aggiornaLog();
 		
+		aggiornaLog();
 	}
 	
 	
@@ -141,6 +152,26 @@ public class BoundaryAmministratore_VisualizzaLog {
 		public void actionPerformed(ActionEvent arg0) {
 
 			aggiornaLog();
+			
+		}
+		
+	}
+	
+	private class CancellaLogAA implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			int conferma = JOptionPane.showConfirmDialog(null, "Cancellare completamente il log delle operazioni?", "Conferma Cancellazione Log", JOptionPane.YES_NO_OPTION);
+			if (conferma == JOptionPane.YES_OPTION){
+				try {
+					controllore.cancellaLog();
+					aggiornaLog();
+					JOptionPane.showMessageDialog(null, "Il log e' stato cancellato.", "Log Cancellato", JOptionPane.INFORMATION_MESSAGE);
+				} catch (FileInesistenteException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage(), e.toString(), JOptionPane.INFORMATION_MESSAGE);
+				}
+			
+			}
 			
 		}
 		

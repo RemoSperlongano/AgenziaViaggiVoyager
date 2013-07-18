@@ -9,6 +9,7 @@ import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Viaggiatore;
 import gestione_Catalogo.exception.BigliettoNonPresenteException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.ListaBigliettiNonModificataException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -30,7 +31,7 @@ public class ControlloreModificaPrenotazione extends Controllore {
 	}
 	
 	
-	public void modificaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta, ArrayList<String> listaNomi, ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, PostiNonSufficientiException, ListaBigliettiNonModificataException, BigliettoNonPresenteException{
+	public void modificaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta, ArrayList<String> listaNomi, ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, PostiNonSufficientiException, ListaBigliettiNonModificataException, BigliettoNonPresenteException, DirittiException{
 		
 
 		Data dataPartenza = Data.parseTimestamp(offertaScelta);
@@ -94,7 +95,7 @@ public class ControlloreModificaPrenotazione extends Controllore {
 	}
 	
 	
-	public ArrayList<ArrayList<String>> getDatiViaggiatoriPerPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offerta, String prenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, ParseException{
+	public ArrayList<ArrayList<String>> getDatiViaggiatoriPerPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offerta, String prenotazione) throws OffertaInesistenteException, PrenotazioneInesistenteException, IDEsternoElementoException, ParseException, DirittiException{
 		Data dataPartenza = Data.parseTimestamp(offerta);
 		Prenotazione p = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataPartenza, prenotazione);
 		ArrayList<Biglietto> listaBiglietti = p.getListaBiglietti();

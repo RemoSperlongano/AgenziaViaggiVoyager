@@ -21,6 +21,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import gestione_Catalogo.control.ControlloreRimuoviPrenotazione;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -395,7 +396,8 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 										"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 										"-----------\t\t----------\t\t----------\n";
 					
-					
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						areaTesto.setText(e1.getMessage()+"\n");
 					} catch (OfferteNonPresentiException e) {
@@ -458,6 +460,8 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 				}
 			}
 			
+		} catch (DirittiException e1) {
+			JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		} catch (IDEsternoElementoException e1) {
 			areaTestoCatalogo = e1.getMessage();
 		} catch (ParseException e1) {
@@ -491,6 +495,9 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 					areaTestoPrenotazione = "A nome di " + prenotazioneScelta + "\n\n";
 					
 					areaTestoBiglietto += controllore.mostraListaBigliettiPerPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, prenotazioneScelta);
+				
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (OffertaInesistenteException e) {
 					areaTestoOfferta = e.getMessage();
 				} catch (PrenotazioneInesistenteException e) {
@@ -550,6 +557,8 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 							}
 							tendinaMezzi.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -600,6 +609,8 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 						
 						tendinaCittaPartenza.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -649,6 +660,8 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 						tendinaCittaArrivo.setEnabled(true);
 						tendinaCittaArrivo.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -700,6 +713,8 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 						tendinaVia.setEnabled(true);
 						tendinaVia.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -815,6 +830,8 @@ public class BoundaryVenditore_GestionePrenotazione_RimuoviPrenotazione {
 						JOptionPane.showMessageDialog(null, "La prenotazione e' stata rimossa correttamente.", "Prenotazione Rimossa", JOptionPane.INFORMATION_MESSAGE);
 						aggiornaPrenotazioni();
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
 					} catch (TrattaInesistenteException e1) {

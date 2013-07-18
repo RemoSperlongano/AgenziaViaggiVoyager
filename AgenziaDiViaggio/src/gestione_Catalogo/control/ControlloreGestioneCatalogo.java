@@ -8,6 +8,7 @@ import gestione_Catalogo.entity.Mezzo;
 import gestione_Catalogo.entity.Tratta;
 import gestione_Catalogo.entity.Via;
 import gestione_Catalogo.exception.CittaCoincidentiException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
@@ -34,7 +35,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 	
 	
 	//metodi
-	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException, TipoMezzoException {	
+	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException, TipoMezzoException, DirittiException {	
 		if (via.equals("")) via = Via.DIRETTO;
 		
 		//Nel caso in cui ho selezionato un tipoMezzo devo verificare se il mezzo specificato non sia già stato introdotto in catalogo
@@ -77,7 +78,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 	}
 
 	
-	public void rimuoviViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via) throws TrattaInesistenteException, OffertaException, IDEsternoElementoException {
+	public void rimuoviViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via) throws TrattaInesistenteException, OffertaException, IDEsternoElementoException, DirittiException {
 
 		// verifico l'esistenza di offerte per il viaggio
 		if (catalogo.verificaEsistenzaOfferte(ambiente,mezzo,cittaPartenza,cittaArrivo,via)){
@@ -93,7 +94,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 	
 
 	
-	public String mostraCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws MappaException, IDEsternoElementoException, TrattaInesistenteException {
+	public String mostraCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws MappaException, IDEsternoElementoException, TrattaInesistenteException, DirittiException {
 		
 		/*
 		 * Ho ben 6 casi ...

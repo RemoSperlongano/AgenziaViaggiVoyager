@@ -9,6 +9,7 @@ import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Tratta;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
@@ -26,7 +27,7 @@ public class ControlloreRimuoviPrenotazione extends Controllore {
 	}
 
 	
-	public void rimuoviPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta) throws TrattaInesistenteException, ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneInesistenteException {
+	public void rimuoviPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta) throws TrattaInesistenteException, ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneInesistenteException, DirittiException {
 		//prendo la tratta
 		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
 		//prendo l'offerta

@@ -4,6 +4,7 @@ import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Tratta;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
@@ -27,7 +28,7 @@ public class ControlloreAggiungiPrenotazione extends Controllore {
 	}
 
 	
-	public void aggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, ArrayList<String> listaNomi,ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneException, TrattaInesistenteException, PostiNonSufficientiException, QuantitaException {
+	public void aggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, ArrayList<String> listaNomi,ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneException, TrattaInesistenteException, PostiNonSufficientiException, QuantitaException, DirittiException {
 		
 		// controllo che la lista dei biglietti non sia vuota
 		if (listaNomi.size() == 0){

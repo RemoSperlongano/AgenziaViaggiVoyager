@@ -7,6 +7,7 @@ import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Tratta;
 import gestione_Catalogo.exception.DataNonValidaException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -32,7 +33,7 @@ public class ControlloreGestioneOfferta extends Controllore {
 	
 	
 	
-	public void aggiungiOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, Integer[] data, int durata, int posti) throws TrattaInesistenteException, IDEsternoElementoException, OffertaException, QuantitaException, DataNonValidaException{
+	public void aggiungiOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, Integer[] data, int durata, int posti) throws TrattaInesistenteException, IDEsternoElementoException, OffertaException, QuantitaException, DataNonValidaException, DirittiException{
 		
 		Data dataPartenza = new Data(data[0], data[1], data[2], data[3], data[4]);
 		
@@ -63,7 +64,7 @@ public class ControlloreGestioneOfferta extends Controllore {
 	}
 	
 	
-	public void rimuoviOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws TrattaInesistenteException, PrenotazioneException, OffertaInesistenteException, IDEsternoElementoException, ParseException{
+	public void rimuoviOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws TrattaInesistenteException, PrenotazioneException, OffertaInesistenteException, IDEsternoElementoException, ParseException, DirittiException{
 		
 		Data dataOfferta = Data.parseTimestamp(dataPartenza);
 		

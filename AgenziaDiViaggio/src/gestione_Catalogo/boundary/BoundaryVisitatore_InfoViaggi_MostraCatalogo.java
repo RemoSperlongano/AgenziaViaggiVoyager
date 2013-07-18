@@ -16,6 +16,7 @@ import java.util.Set;
 
 import gestione_Catalogo.control.ControlloreMostraCatalogo;
 import gestione_Catalogo.entity.Data;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -400,7 +401,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 					
 				}
 				
-						
+			} catch (DirittiException e1) {
+				JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);			
 			} catch (MappaException e) {
 				areaTesto.setText(e.getMessage()+"\n");
 			} catch (IDEsternoElementoException e) {
@@ -487,6 +489,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 							}
 							tendinaMezzi.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -499,6 +503,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 						areaTesto.setText(areaTestoImp + areaTestoCatalogo);
 						areaTesto.setCaretPosition(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (MappaException e1) {
 						areaTesto.setText(e1.getMessage()+"\n");
 					} catch (IDEsternoElementoException e1) {
@@ -550,6 +556,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 						
 						tendinaCittaPartenza.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -562,6 +570,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 					areaTesto.setText(areaTestoImp + areaTestoCatalogo);		
 					areaTesto.setCaretPosition(0);
 				
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTesto.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -613,6 +623,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 						tendinaCittaArrivo.setEnabled(true);
 						tendinaCittaArrivo.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -627,6 +639,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 					areaTesto.setText(areaTestoImp + areaTestoCatalogo);
 					areaTesto.setCaretPosition(0);
 					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTesto.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -678,6 +692,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 						tendinaVia.setEnabled(true);
 						tendinaVia.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -692,6 +708,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 					areaTesto.setText(areaTestoImp + areaTestoCatalogo);
 					areaTesto.setCaretPosition(0);
 					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTesto.setText(e1.getMessage()+"\n");	
 				} catch (IDEsternoElementoException e1) {
@@ -714,6 +732,9 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 					areaTestoCatalogo = controllore.mostraCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					areaTesto.setText(areaTestoImp + areaTestoCatalogo);
 					areaTesto.setCaretPosition(0);
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTesto.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -755,6 +776,9 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 					areaTestoCatalogo = controllore.mostraCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					areaTesto.setText(areaTestoImp + areaTestoCatalogo);
 					areaTesto.setCaretPosition(0);
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTesto.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -939,6 +963,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraCatalogo {
 						areaTestoOfferta = "Non ci sono offerte disponibili in base ai criteri di scelta inseriti";
 					}
 					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (IDEsternoElementoException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (OffertaInesistenteException e1) {
