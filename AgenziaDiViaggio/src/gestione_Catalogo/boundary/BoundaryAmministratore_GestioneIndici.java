@@ -7,8 +7,11 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
+
 
 
 
@@ -16,13 +19,18 @@ import gestione_Catalogo.control.ControlloreGestioneIndici;
 import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
+import gestione_Catalogo.exception.OffertaInesistenteException;
+import gestione_Catalogo.exception.OfferteNonPresentiException;
+import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 /**
  * @authors
@@ -39,7 +47,20 @@ public class BoundaryAmministratore_GestioneIndici {
 	private String partenzaScelta;
 	private String arrivoScelto;
 	private String viaScelta;
+	private String offertaScelta;
+	private String numeratore;
+	private String denominatore;
+	private String prenotazioneScelta;
 	private String metodoScelto;
+	
+	
+	private static final String TOTALE = "Totale";
+	private static final String AMBIENTE = "Ambiente";
+	private static final String MEZZO = "Mezzo";
+	private static final String TIPOMEZZO = "Tipo Mezzo";
+	private static final String TRATTA = "Tratta";
+	private static final String OFFERTA = "Offerta";
+	private static final String PRENOTAZIONE = "Prenotazione";
 	
 	
 	//Pannelli
@@ -72,10 +93,25 @@ public class BoundaryAmministratore_GestioneIndici {
 	private JLabel labelVia;
 	private JComboBox<String> tendinaVia;
 	
+	private JLabel labelOfferta;
+	private JComboBox<String> tendinaOfferta;
 	
+	private JLabel labelPrenotazione;
+	private JComboBox<String> tendinaPrenotazione;
 	
+	private JLabel labelIndiceGradimento;
 	
+	private JComboBox<String> tendinaNumeratore;
+	private JComboBox<String> tendinaDenominatore;
 	
+	private JLabel	labelPercentuale;
+	private JTextField campoIndiceGradimento;
+	
+	private JButton	bottoneCalcolaIndiceGradimento;
+	private JButton bottoneChiudi;
+	private JButton bottoneSvuota;
+	
+
 	
 	private RadioButtonTotaleAA ascoltatoreRadioButtonTotale;
 	private RadioButtonAnnualeAA ascoltatoreRadioButtonAnnuale;
@@ -86,6 +122,13 @@ public class BoundaryAmministratore_GestioneIndici {
 	private TendinaPartenzeAA ascoltatoreTendinaPartenze;
 	private TendinaArriviAA ascoltatoreTendinaArrivi;
 	private TendinaViaAA ascoltatoreTendinaVia;
+	private TendinaOfferteAA ascoltatoreTendinaOfferte;
+	private TendinaPrenotazioniAA ascoltatoreTendinaPrenotazioni;
+	private TendinaNumeratoreAA ascoltatoreTendinaNumeratore;
+	private TendinaDenominatoreAA ascoltatoreTendinaDenominatore;
+	
+	private ChiudiAA ascoltatoreBottoneChiudi;
+	private SvuotaAA ascoltatoreBottoneSvuota;
 		
 		
 	public BoundaryAmministratore_GestioneIndici(JPanel panelNext) {
@@ -97,6 +140,10 @@ public class BoundaryAmministratore_GestioneIndici {
 		arrivoScelto = null;
 		viaScelta = null;
 		metodoScelto = null;
+		offertaScelta = null;
+		prenotazioneScelta = null;
+		numeratore = null;
+		denominatore = null;
 		controllore = new ControlloreGestioneIndici();
 		
 		
@@ -220,6 +267,90 @@ public class BoundaryAmministratore_GestioneIndici {
 		
 		
 		
+		labelOfferta = new JLabel();	//Etichetta elementi data
+		labelOfferta.setFont(new Font("Arial",0,15));
+		labelOfferta.setBounds(panel.getWidth()/5, panel.getHeight()/6*2+60, panel.getWidth()/4, 20);
+		labelOfferta.setText("Offerta");
+		//panel.add(labelOfferta);           //Decommentare per aggiungere tendina in caso di ulteriori livelli calcolo indici
+		
+		
+		
+		tendinaOfferta = new JComboBox<String>(); //Tendina per stazioni intermedie
+		tendinaOfferta.setBackground(Color.WHITE);
+		tendinaOfferta.setBounds(panel.getWidth()/5, panel.getHeight()/6*2+80, panel.getWidth()/4, 20);
+		tendinaOfferta.setEnabled(false);
+		//panel.add(tendinaOfferta);         //Decommentare per aggiungere tendina in caso di ulteriori livelli calcolo indici
+		
+		
+		
+		labelPrenotazione = new JLabel();
+		labelPrenotazione.setFont(new Font("Arial",0,15));
+		labelPrenotazione.setBounds(panel.getWidth()/5*3, panel.getHeight()/6*2+60,panel.getWidth()/6, 20);
+		labelPrenotazione.setText("Prenotazione");
+		//panel.add(labelPrenotazione);      //Decommentare per aggiungere tendina in caso di ulteriori livelli calcolo indici
+		
+		
+		tendinaPrenotazione = new JComboBox<String>();
+		tendinaPrenotazione.setBackground(Color.WHITE);
+		tendinaPrenotazione.setBounds(panel.getWidth()/5*3, panel.getHeight()/6*2+80, panel.getWidth()/4, 20);
+		tendinaPrenotazione.setEnabled(false);
+		//panel.add(tendinaPrenotazione);    //Decommentare per aggiungere tendina in caso di ulteriori livelli calcolo indici
+		
+		
+		labelIndiceGradimento = new JLabel();        //Etichetta per Stazione di arrivo
+		labelIndiceGradimento.setFont(new Font("Arial", 0, 15));
+		labelIndiceGradimento.setBounds(panel.getWidth()/6-50, panel.getHeight()/6*4, panel.getWidth()/4, 20);
+		labelIndiceGradimento.setText("Indice   ------------------------------------");
+		panel.add(labelIndiceGradimento);
+		
+		
+		tendinaNumeratore = new JComboBox<String>();
+		tendinaNumeratore.setBackground(Color.WHITE);
+		tendinaNumeratore.setBounds(panel.getWidth()/6, panel.getHeight()/6*4-30, panel.getWidth()/6, 20);
+		tendinaNumeratore.setEnabled(false);
+		panel.add(tendinaNumeratore);
+		
+		tendinaDenominatore = new JComboBox<String>();
+		tendinaDenominatore.setBackground(Color.WHITE);
+		tendinaDenominatore.setBounds(panel.getWidth()/6, panel.getHeight()/6*4+30, panel.getWidth()/6, 20);
+		tendinaDenominatore.setEnabled(false);
+		panel.add(tendinaDenominatore);
+		
+		bottoneCalcolaIndiceGradimento = new JButton("Calcola Gradimento");
+		bottoneCalcolaIndiceGradimento.setBackground(Color.ORANGE);
+		bottoneCalcolaIndiceGradimento.setBounds(panel.getWidth()/6*3, panel.getHeight()/6*4-30, panel.getWidth()/6, panel.getHeight()/12);
+		panel.add(bottoneCalcolaIndiceGradimento);
+		
+		
+		campoIndiceGradimento = new JTextField(panel.getWidth()/5);	  //campo per aggiungere dei nuovi mezzi
+		campoIndiceGradimento.setFont(new Font("Arial", 0, 18));
+		campoIndiceGradimento.setBounds(panel.getWidth()/18*10, panel.getHeight()/6*4+30, panel.getWidth()/18, 20);
+		campoIndiceGradimento.setEditable(false);   				// all'inizio e' disattivato, si attiva solo con new...
+		panel.add(campoIndiceGradimento);
+		
+		labelPercentuale = new JLabel();
+		labelPercentuale.setFont(new Font("Arial",0,15));
+		labelPercentuale.setBounds(panel.getWidth()/18*11, panel.getHeight()/6*4+30,panel.getWidth()/18, 20);
+		labelPercentuale.setText("%");
+		panel.add(labelPercentuale);
+		
+		
+		
+		
+		bottoneSvuota = new JButton("AZZERA CAMPI");
+		bottoneSvuota.setBackground(Color.YELLOW);
+		bottoneSvuota.setBounds(panel.getWidth()/5*2, panel.getHeight()/6*5, panel.getWidth()/5, panel.getHeight()/12);
+		panel.add(bottoneSvuota);
+		
+		
+		
+		bottoneChiudi = new JButton("X");
+		bottoneChiudi.setBackground(Color.RED);
+		bottoneChiudi.setBounds(panel.getWidth()/20*19, 0, panel.getWidth()/20, panel.getHeight()/18);
+		panel.add(bottoneChiudi);
+		
+		
+		
 		
 		ascoltatoreRadioButtonTotale		  = new RadioButtonTotaleAA();
 		ascoltatoreRadioButtonAnnuale		  = new RadioButtonAnnualeAA();
@@ -229,6 +360,12 @@ public class BoundaryAmministratore_GestioneIndici {
 		ascoltatoreTendinaPartenze   = new TendinaPartenzeAA();
 		ascoltatoreTendinaArrivi     = new TendinaArriviAA();
 		ascoltatoreTendinaVia 		  = new TendinaViaAA();
+		ascoltatoreTendinaOfferte = new TendinaOfferteAA();
+		ascoltatoreTendinaPrenotazioni = new TendinaPrenotazioniAA();
+		ascoltatoreTendinaNumeratore = new TendinaNumeratoreAA();
+		ascoltatoreTendinaDenominatore = new TendinaDenominatoreAA();
+		ascoltatoreBottoneChiudi = new ChiudiAA();
+		ascoltatoreBottoneSvuota = new SvuotaAA();
 		
 		
 		
@@ -240,6 +377,13 @@ public class BoundaryAmministratore_GestioneIndici {
 		tendinaCittaPartenza.addActionListener(ascoltatoreTendinaPartenze);
 		tendinaCittaArrivo.addActionListener(ascoltatoreTendinaArrivi);
 		tendinaVia.addActionListener(ascoltatoreTendinaVia);
+		tendinaOfferta.addActionListener(ascoltatoreTendinaOfferte);
+		tendinaPrenotazione.addActionListener(ascoltatoreTendinaPrenotazioni);
+		tendinaNumeratore.addActionListener(ascoltatoreTendinaNumeratore);
+		tendinaDenominatore.addActionListener(ascoltatoreTendinaDenominatore);
+		bottoneChiudi.addActionListener(ascoltatoreBottoneChiudi);
+		bottoneSvuota.addActionListener(ascoltatoreBottoneSvuota);
+		
 		
 		
 		
@@ -335,6 +479,8 @@ public class BoundaryAmministratore_GestioneIndici {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
+			campoIndiceGradimento.setText("");
+			
 			//Svuotiamo tutte le tendine successive (non le precedenti) e le disattiviamo
 			tendinaMezzi.removeAllItems();
 			tendinaMezzi.setEnabled(false);
@@ -346,6 +492,14 @@ public class BoundaryAmministratore_GestioneIndici {
 			
 					
 					if(!ambienteScelto.equals("-----")){ //Solo se non e' l'elemento neutro
+						
+						//inserisco l'elemento interessato nella tendina numeratore
+						tendinaNumeratore.removeAllItems();
+						tendinaNumeratore.setEnabled(false);
+						tendinaNumeratore.addItem("-----");
+						tendinaNumeratore.addItem(AMBIENTE);
+						tendinaNumeratore.setSelectedItem(0);
+						tendinaNumeratore.setEnabled(true);
 							
 						try {  //cerca nella mappa tutte le chiavi da aggiungere in tendina
 							Set<String> s = controllore.mostraMezziInCatalogo(ambienteScelto);
@@ -361,11 +515,15 @@ public class BoundaryAmministratore_GestioneIndici {
 							}
 							tendinaMezzi.setEnabled(true);
 							
+							
 						} catch (DirittiException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
+					} else {
+						tendinaNumeratore.removeAllItems();
+						tendinaNumeratore.setEnabled(false);
 					}
 	
 			}
@@ -382,6 +540,8 @@ public class BoundaryAmministratore_GestioneIndici {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
+			campoIndiceGradimento.setText("");
+			
 			//Svuotiamo tutte le tendine successive (non le precedenti) e le disattiviamo
 			tendinaCittaPartenza.removeAllItems();
 			tendinaCittaPartenza.setEnabled(false);
@@ -393,6 +553,16 @@ public class BoundaryAmministratore_GestioneIndici {
 			if (tendinaMezzi.getItemCount() != 0) { //ci deve essere almeno un elemento, se ho la tendina vuota mi va in null pointer exception.
 	
 				if(!mezzoScelto.equals("-----")){ //Solo se non e' l'elemento neutro
+					
+					//inserisco l'elemento interessato nella tendina numeratore
+					tendinaNumeratore.removeAllItems();
+					tendinaNumeratore.setEnabled(false);
+					tendinaNumeratore.addItem("-----");
+					tendinaNumeratore.addItem(AMBIENTE);
+					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(MEZZO);
+					tendinaNumeratore.setSelectedItem(0);
+					tendinaNumeratore.setEnabled(true);
 					
 					try { //cerca nella mappa tutte le chiavi da aggiungere in tendina
 						Set<String> s = controllore.mostraCittaDiPartenzaInCatalogo(ambienteScelto, mezzoScelto);
@@ -409,11 +579,21 @@ public class BoundaryAmministratore_GestioneIndici {
 						
 						tendinaCittaPartenza.setEnabled(true);
 						
+						
+						
 					} catch (DirittiException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
+				} else {
+					
+					tendinaNumeratore.removeAllItems();
+					tendinaNumeratore.setEnabled(false);
+					tendinaNumeratore.addItem("-----");
+					tendinaNumeratore.addItem(AMBIENTE);
+					tendinaNumeratore.setSelectedItem(0);
+					tendinaNumeratore.setEnabled(true);
 				}
 						
 	
@@ -428,6 +608,8 @@ public class BoundaryAmministratore_GestioneIndici {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
+			campoIndiceGradimento.setText("");
+			
 			//Svuotiamo tutte le tendine successive (non le precedenti) e le disattiviamo
 			tendinaCittaArrivo.removeAllItems();
 			tendinaCittaArrivo.setEnabled(false);
@@ -440,6 +622,16 @@ public class BoundaryAmministratore_GestioneIndici {
 			if (tendinaCittaPartenza.getItemCount() != 0) { //ci deve essere almeno un elemento, se ho la tendina vuota mi va in null pointer exception.
 				
 				if(!partenzaScelta.equals("-----")){ //Solo se non e' l'elemento neutro
+					
+					//inserisco l'elemento interessato nella tendina numeratore
+					tendinaNumeratore.removeAllItems();
+					tendinaNumeratore.setEnabled(false);
+					tendinaNumeratore.addItem("-----");
+					tendinaNumeratore.addItem(AMBIENTE);
+					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(MEZZO);
+					tendinaNumeratore.setSelectedItem(0);
+					tendinaNumeratore.setEnabled(true);
 					
 					try { //cerca nella mappa tutte le chiavi da aggiungere in tendina
 						Set<String> s = controllore.mostraCittaDiArrivoInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta);
@@ -457,6 +649,9 @@ public class BoundaryAmministratore_GestioneIndici {
 						tendinaCittaArrivo.setEnabled(true);
 						tendinaCittaArrivo.setSelectedIndex(0);
 						
+						
+						
+						
 					} catch (DirittiException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
@@ -464,6 +659,16 @@ public class BoundaryAmministratore_GestioneIndici {
 					}
 					
 					
+				} else {
+					//inserisco l'elemento interessato nella tendina numeratore
+					tendinaNumeratore.removeAllItems();
+					tendinaNumeratore.setEnabled(false);
+					tendinaNumeratore.addItem("-----");
+					tendinaNumeratore.addItem(AMBIENTE);
+					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(MEZZO);
+					tendinaNumeratore.setSelectedItem(0);
+					tendinaNumeratore.setEnabled(true);
 				}
 			
 			}
@@ -476,6 +681,8 @@ public class BoundaryAmministratore_GestioneIndici {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			
+			campoIndiceGradimento.setText("");
 			
 			//Svuotiamo tutte le tendine successive (non le precedenti) e le disattiviamo
 			tendinaVia.removeAllItems();
@@ -490,6 +697,16 @@ public class BoundaryAmministratore_GestioneIndici {
 			if (tendinaCittaArrivo.getItemCount() != 0) { //ci deve essere almeno un elemento, se ho la tendina vuota mi va in null pointer exception.
 				
 				if(!arrivoScelto.equals("-----")){ //Solo se non e' l'elemento neutro
+					
+					//inserisco l'elemento interessato nella tendina numeratore
+					tendinaNumeratore.removeAllItems();
+					tendinaNumeratore.setEnabled(false);
+					tendinaNumeratore.addItem("-----");
+					tendinaNumeratore.addItem(AMBIENTE);
+					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(MEZZO);
+					tendinaNumeratore.setSelectedItem(0);
+					tendinaNumeratore.setEnabled(true);
 					
 					try { //cerca nella mappa tutte le chiavi da aggiungere in tendina
 						Set<String> s = controllore.mostraViaInCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto);
@@ -514,6 +731,16 @@ public class BoundaryAmministratore_GestioneIndici {
 					}
 					
 					
+				} else {
+					//inserisco l'elemento interessato nella tendina numeratore
+					tendinaNumeratore.removeAllItems();
+					tendinaNumeratore.setEnabled(false);
+					tendinaNumeratore.addItem("-----");
+					tendinaNumeratore.addItem(AMBIENTE);
+					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(MEZZO);
+					tendinaNumeratore.setSelectedItem(0);
+					tendinaNumeratore.setEnabled(true);
 				}
 	
 				
@@ -530,34 +757,395 @@ public class BoundaryAmministratore_GestioneIndici {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
+			campoIndiceGradimento.setText("");
+			
 			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
 			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
 			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
 			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
 			viaScelta = (String) tendinaVia.getSelectedItem();
 			
-//			if (tendinaVia.getItemCount() != 0) {
-//				//Aggiorno l'area testo che mostra il catalogo
-//				try {
+
+			//Svuoto tutte le tendine e l'area testo
+			tendinaOfferta.removeAllItems();
+			tendinaOfferta.setEnabled(false);
+			
+			offertaScelta = "-----";
+			
+			
+			if (tendinaVia.getItemCount() != 0) {
+				
+					
+					if (!viaScelta.equals("-----")){
+						
+						
+						//inserisco l'elemento interessato nella tendina numeratore
+						tendinaNumeratore.removeAllItems();
+						tendinaNumeratore.setEnabled(false);
+						tendinaNumeratore.addItem("-----");
+						tendinaNumeratore.addItem(AMBIENTE);
+						tendinaNumeratore.addItem(TIPOMEZZO);
+						tendinaNumeratore.addItem(MEZZO);
+						tendinaNumeratore.addItem(TRATTA);
+						tendinaNumeratore.setSelectedItem(0);
+						tendinaNumeratore.setEnabled(true);
+						
+//						try {   //Decommentare per aggiungere tendina in caso di ulteriori livelli calcolo indici
+//							
+//						
+//							ArrayList<String> listaOfferte = controllore.mostraOfferteValidePerLaTratta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
+//							
+//							
+//							//inserisco l'elemento neutro
+//							tendinaOfferta.addItem("-----");
 //					
-//					areaTestoCatalogo = controllore.mostraCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
-//					areaTesto.setText(areaTestoImp + areaTestoCatalogo);
-//					areaTesto.setCaretPosition(0);
-//					
-//				} catch (DirittiException e1) {
-//					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
-//				} catch (MappaException e1) {
-//					areaTesto.setText(e1.getMessage()+"\n");
-//				} catch (IDEsternoElementoException e1) {
-//					areaTesto.setText(e1.getMessage()+"\n");
-//				} catch (TrattaInesistenteException e1) {
-//					areaTesto.setText(e1.getMessage()+"\n");
-//				}
-//				
-//			}
+//						    
+//							for(String d : listaOfferte){
+//								//inserisco l'elemento in tendina
+//								tendinaOfferta.addItem(d);
+//							}
+//						    
+//							tendinaOfferta.setEnabled(true);
+//							tendinaOfferta.setSelectedIndex(0);
+//						
+//	
+//						
+//						} catch (DirittiException e1) {
+//							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+//						} catch (IDEsternoElementoException e1) {
+//							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+//						} catch (OfferteNonPresentiException e) {
+//							JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+//						}  
+					
+						
+					} else {
+						//inserisco l'elemento interessato nella tendina numeratore
+						tendinaNumeratore.removeAllItems();
+						tendinaNumeratore.setEnabled(false);
+						tendinaNumeratore.addItem("-----");
+						tendinaNumeratore.addItem(AMBIENTE);
+						tendinaNumeratore.addItem(TIPOMEZZO);
+						tendinaNumeratore.addItem(MEZZO);
+						tendinaNumeratore.setSelectedItem(0);
+						tendinaNumeratore.setEnabled(true);
+					}
+					
+
+			} 
+					
+			
+			
+		
+
+		}
+		
+	}
+	
+	
+	private class TendinaOfferteAA implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			campoIndiceGradimento.setText("");
+			
+			//Svuotiamo tutte le tendine successive (non le precedenti) e le disattiviamo
+			tendinaPrenotazione.removeAllItems();
+			tendinaPrenotazione.setEnabled(false);
+			
+			
+			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
+			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
+			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
+			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
+			offertaScelta = (String) tendinaOfferta.getSelectedItem();
+			
+		
+				
+				if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
+			
+					if(!offertaScelta.equals("-----")){	
+						
+						//inserisco l'elemento interessato nella tendina numeratore
+						tendinaNumeratore.removeAllItems();
+						tendinaNumeratore.setEnabled(false);
+						tendinaNumeratore.addItem("-----");
+						tendinaNumeratore.addItem(AMBIENTE);
+						tendinaNumeratore.addItem(TIPOMEZZO);
+						tendinaNumeratore.addItem(MEZZO);
+						tendinaNumeratore.addItem(TRATTA);
+						tendinaNumeratore.addItem(OFFERTA);
+						tendinaNumeratore.setSelectedItem(0);
+						tendinaNumeratore.setEnabled(true);
+						
+						
+						try {
+						
+						//cerca nella mappa tutte le chiavi da aggiungere in tendina
+						Set<String> s = controllore.mostraPrenotazioniPerOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta);
+						Iterator<String> it = s.iterator();
+						
+						
+						
+						//inserisco l'elemento neutro
+						tendinaPrenotazione.addItem("-----");
+						
+						
+						while(it.hasNext()){ 	//itero l'insieme di chiavi
+							String str = it.next();
+							tendinaPrenotazione.addItem(str);    //ne aggiungo uno alla volta
+						}
+						
+						tendinaPrenotazione.setEnabled(true);
+						tendinaPrenotazione.setSelectedIndex(0);
+					    } catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+						} catch (IDEsternoElementoException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+						} catch (ParseException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+						} catch (OffertaInesistenteException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+						} catch (PrenotazioneInesistenteException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+						} 
+				
+						
+			} else {
+				//inserisco l'elemento interessato nella tendina numeratore
+				tendinaNumeratore.removeAllItems();
+				tendinaNumeratore.setEnabled(false);
+				tendinaNumeratore.addItem("-----");
+				tendinaNumeratore.addItem(AMBIENTE);
+				tendinaNumeratore.addItem(TIPOMEZZO);
+				tendinaNumeratore.addItem(MEZZO);
+				tendinaNumeratore.addItem(TRATTA);
+				tendinaNumeratore.setSelectedItem(0);
+				tendinaNumeratore.setEnabled(true);
+			}
 			
 		}
 		
+	}
+		
+}
+	
+	private class TendinaPrenotazioniAA implements ActionListener{
+
+		
+		public void actionPerformed(ActionEvent arg0) {
+			
+			campoIndiceGradimento.setText("");
+			ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
+			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
+			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
+			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
+			offertaScelta = (String) tendinaOfferta.getSelectedItem();
+			prenotazioneScelta = (String) tendinaPrenotazione.getSelectedItem();
+		
+			if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
+				
+				if(!offertaScelta.equals("-----")){	
+					
+					//inserisco l'elemento interessato nella tendina numeratore
+					tendinaNumeratore.removeAllItems();
+					tendinaNumeratore.setEnabled(false);
+					tendinaNumeratore.addItem("-----");
+					tendinaNumeratore.addItem(AMBIENTE);
+					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(MEZZO);
+					tendinaNumeratore.addItem(TRATTA);
+					tendinaNumeratore.addItem(OFFERTA);
+					tendinaNumeratore.addItem(PRENOTAZIONE);
+					tendinaNumeratore.setSelectedItem(0);
+					tendinaNumeratore.setEnabled(true);
+					
+				} else {
+					
+					//inserisco l'elemento interessato nella tendina numeratore
+					tendinaNumeratore.removeAllItems();
+					tendinaNumeratore.setEnabled(false);
+					tendinaNumeratore.addItem("-----");
+					tendinaNumeratore.addItem(AMBIENTE);
+					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(MEZZO);
+					tendinaNumeratore.addItem(TRATTA);
+					tendinaNumeratore.addItem(OFFERTA);
+					tendinaNumeratore.setSelectedItem(0);
+					tendinaNumeratore.setEnabled(true);
+				}
+			}
+		}
+		
+	}
+	
+	
+	
+	private class TendinaNumeratoreAA implements ActionListener{
+
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			campoIndiceGradimento.setText("");
+			
+			numeratore = (String) tendinaNumeratore.getSelectedItem();
+			
+			tendinaDenominatore.setEnabled(false);
+			tendinaDenominatore.removeAllItems();
+			
+			
+			
+			
+			if (tendinaNumeratore.getItemCount() != 0 ){
+				
+				if(!tendinaNumeratore.equals("-----")){	
+					
+					
+					if (numeratore.equals(AMBIENTE)){
+						
+						tendinaDenominatore.addItem("-----");
+						tendinaDenominatore.addItem(TOTALE);
+						tendinaDenominatore.setSelectedIndex(0);
+						tendinaDenominatore.setEnabled(true);
+						
+					}
+					
+					if (numeratore.equals(TIPOMEZZO)){
+						
+						tendinaDenominatore.addItem("-----");
+						tendinaDenominatore.addItem(AMBIENTE);
+						tendinaDenominatore.setSelectedIndex(0);
+						tendinaDenominatore.setEnabled(true);
+						
+					}
+					
+					if (numeratore.equals(MEZZO)){
+						
+						tendinaDenominatore.addItem("-----");
+						tendinaDenominatore.addItem(TIPOMEZZO);
+						tendinaDenominatore.setSelectedIndex(0);
+						tendinaDenominatore.setEnabled(true);
+						
+					}
+
+					if (numeratore.equals(TRATTA)){
+						
+						tendinaDenominatore.addItem("-----");
+						tendinaDenominatore.addItem(MEZZO);
+						tendinaDenominatore.setSelectedIndex(0);
+						tendinaDenominatore.setEnabled(true);
+						
+					}
+					
+					if (numeratore.equals(OFFERTA)){
+						
+						tendinaDenominatore.addItem("-----");
+						tendinaDenominatore.addItem(TRATTA);
+						tendinaDenominatore.setSelectedIndex(0);
+						tendinaDenominatore.setEnabled(true);
+						
+					}
+					
+					if (numeratore.equals(PRENOTAZIONE)){
+						
+						tendinaDenominatore.addItem("-----");
+						tendinaDenominatore.addItem(OFFERTA);
+						tendinaDenominatore.setSelectedIndex(0);
+						tendinaDenominatore.setEnabled(true);
+						
+					}
+					
+					
+					
+				}
+			}
+			
+		}
+		
+	}
+	
+	
+	private class TendinaDenominatoreAA implements ActionListener{
+
+		
+		public void actionPerformed(ActionEvent e) {
+			campoIndiceGradimento.setText("");
+			denominatore = (String) tendinaDenominatore.getSelectedItem();
+
+			
+		}
+		
+	}
+	
+	
+	
+	private class SvuotaAA implements ActionListener{
+		/*
+		 * Svuota tutti i campi
+		 */
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			
+			//svuoto comunque il pannello
+			if (tendinaAmbiente.getItemCount() != 0){
+				
+				tendinaAmbiente.setSelectedIndex(0); //la tendina torna al primo valore.
+				tendinaMezzi.removeAllItems();  //svuota le tendine
+				tendinaMezzi.setEnabled(false);//disattiva tutte le tendine
+				
+				tendinaNumeratore.removeAllItems();
+				tendinaNumeratore.setEnabled(false);
+				
+				tendinaDenominatore.removeAllItems();
+				tendinaDenominatore.setEnabled(false);
+
+			}
+			
+			ambienteScelto = null;
+			mezzoScelto = null;
+			partenzaScelta = null;
+			arrivoScelto = null;
+			viaScelta = null;
+			offertaScelta = null;
+			prenotazioneScelta = null;
+			denominatore = null;
+			numeratore = null;
+			campoIndiceGradimento.setText("");
+			
+			
+
+		}
+		
+	}
+	
+	
+	private class ChiudiAA implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			panel.setVisible(false); 					//chiude questo pannello
+			BoundaryAmministratore.riattivaBottoni();
+			
+			
+			ambienteScelto = null;
+			mezzoScelto = null;
+			partenzaScelta = null;
+			arrivoScelto = null;
+			viaScelta = null;
+			offertaScelta = null;
+			prenotazioneScelta = null;
+			denominatore = null;
+			numeratore = null;
+			
+			
+
+		}
 	}
 
 }
