@@ -64,6 +64,9 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 	private JLabel labelCognomePannello2;
 	private JTextField campoCognomePannello2;
 	
+	private JLabel labelEmailPannello2;
+	private JTextField campoEmailPannello2;
+	
 	private JLabel labelUsernamePannello2;
 	private JTextField campoUsernamePannello2;
 	
@@ -175,7 +178,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 
 	    labelRuoliPannello2 = new JLabel();        
 	    labelRuoliPannello2.setFont(new Font("Arial", 0, 15));
-	    labelRuoliPannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5, panel2.getWidth()/4, 20);
+	    labelRuoliPannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5, panel2.getWidth()/4, 20);
 	    labelRuoliPannello2.setText("TIPO DI UTENTE");
 		panel2.add(labelRuoliPannello2);
 		
@@ -187,55 +190,69 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		
 	    labelNomePannello2 = new JLabel();        
 	    labelNomePannello2.setFont(new Font("Arial", 0, 15));
-	    labelNomePannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+30, panel2.getWidth()/4, 20);
+	    labelNomePannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+25, panel2.getWidth()/4, 20);
 	    labelNomePannello2.setText("NOME");
 		panel2.add(labelNomePannello2);
 		
 		campoNomePannello2 = new JTextField(panel2.getWidth()/5);	  //campo per aggiungere dei nuovi mezzi
 		campoNomePannello2.setFont(new Font("Arial", 0, 18));
-		campoNomePannello2.setBounds(panel2.getWidth()/4*2, panel2.getHeight()/5+30, panel2.getWidth()/4, 20);
+		campoNomePannello2.setBounds(panel2.getWidth()/4*2, panel2.getHeight()/5+25, panel2.getWidth()/4, 20);
 		panel2.add(campoNomePannello2);
 		
 		
 	    labelCognomePannello2 = new JLabel();        
 	    labelCognomePannello2.setFont(new Font("Arial", 0, 15));
-	    labelCognomePannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+60, panel2.getWidth()/4, 20);
+	    labelCognomePannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+50, panel2.getWidth()/4, 20);
 	    labelCognomePannello2.setText("COGNOME");
 		panel2.add(labelCognomePannello2);
 		
 		campoCognomePannello2 = new JTextField(panel2.getWidth()/5);	  //campo per aggiungere dei nuovi mezzi
 		campoCognomePannello2.setFont(new Font("Arial", 0, 18));
-		campoCognomePannello2.setBounds(panel2.getWidth()/4*2, panel2.getHeight()/5+60, panel2.getWidth()/4, 20);
+		campoCognomePannello2.setBounds(panel2.getWidth()/4*2, panel2.getHeight()/5+50, panel2.getWidth()/4, 20);
 		panel2.add(campoCognomePannello2);
+		
+		
+	    labelEmailPannello2 = new JLabel();        
+	    labelEmailPannello2.setFont(new Font("Arial", 0, 15));
+	    labelEmailPannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+75, panel2.getWidth()/4, 20);
+	    labelEmailPannello2.setText("EMAIL");
+		panel2.add(labelEmailPannello2);
+		
+		campoEmailPannello2 = new JTextField(panel2.getWidth()/5);	  //campo per aggiungere dei nuovi mezzi
+		campoEmailPannello2.setFont(new Font("Arial", 0, 18));
+		campoEmailPannello2.setBounds(panel2.getWidth()/4*2, panel2.getHeight()/5+75, panel2.getWidth()/4, 20);
+		panel2.add(campoEmailPannello2);
+		
+		
 		
 		
 	    labelUsernamePannello2 = new JLabel();        
 	    labelUsernamePannello2.setFont(new Font("Arial", 0, 15));
-	    labelUsernamePannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+90, panel2.getWidth()/4, 20);
+	    labelUsernamePannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+100, panel2.getWidth()/4, 20);
 	    labelUsernamePannello2.setText("USERNAME");
 		panel2.add(labelUsernamePannello2);
 		
 		campoUsernamePannello2 = new JTextField(panel2.getWidth()/5);	  //campo per aggiungere dei nuovi mezzi
 		campoUsernamePannello2.setFont(new Font("Arial", 0, 18));
-		campoUsernamePannello2.setBounds(panel2.getWidth()/4*2, panel2.getHeight()/5+90, panel2.getWidth()/4, 20);
+		campoUsernamePannello2.setBounds(panel2.getWidth()/4*2, panel2.getHeight()/5+100, panel2.getWidth()/4, 20);
 		panel2.add(campoUsernamePannello2);
 		
 	    
 	    labelPasswordPannello2 = new JLabel();        
 	    labelPasswordPannello2.setFont(new Font("Arial", 0, 15));
-	    labelPasswordPannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+120, panel2.getWidth()/4, 20);
+	    labelPasswordPannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+125, panel2.getWidth()/4, 20);
 	    labelPasswordPannello2.setText("PASSWORD");
 		panel2.add(labelPasswordPannello2);
 		
 		campoPasswordPannello2 = new JPasswordField(panel2.getWidth()/5*2);
 		campoPasswordPannello2.setFont(new Font("Arial", 0, 18));
-		campoPasswordPannello2.setBounds(panel2.getWidth()/4*2, panel2.getHeight()/5+120, panel2.getWidth()/4, 20);
+		campoPasswordPannello2.setBounds(panel2.getWidth()/4*2, panel2.getHeight()/5+125, panel2.getWidth()/4, 20);
 	    panel2.add(campoPasswordPannello2);
 	    
 	    
 	    labelRipetiPasswordPannello2 = new JLabel();        
 	    labelRipetiPasswordPannello2.setFont(new Font("Arial", 0, 15));
-	    labelRipetiPasswordPannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+150, panel2.getWidth()/4, 20);
+	    labelRipetiPasswordPannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+150, panel2.getWidth()/4, 20);
 	    labelRipetiPasswordPannello2.setText("RIPETI PASSWORD");
 		panel2.add(labelRipetiPasswordPannello2);
 		
