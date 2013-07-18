@@ -19,6 +19,19 @@ public class Utente {
 	private String username;
 	private String password;
 	private String ruolo;
+	
+	
+	public final static String RUOLO_AMMINISTRATORE = "Amministratore";
+	public final static String RUOLO_PROMOTORE = "Promotore";
+	public final static String RUOLO_PROGETTISTA = "Progettista";
+	public final static String RUOLO_GESTORE_ECCEZIONI = "GestoreEccezioni";
+	public final static String RUOLO_VENDITORE = "Venditore";
+	public final static String RUOLO_CLIENTE = "Cliente";
+	
+	public final static String[] RUOLI = {
+		RUOLO_AMMINISTRATORE, RUOLO_PROMOTORE, RUOLO_PROGETTISTA, RUOLO_GESTORE_ECCEZIONI, RUOLO_VENDITORE, RUOLO_CLIENTE
+	};
+	
 
 	
 	public Utente(String nome, String cognome, String eMail, String username, String password, String ruolo){
@@ -51,9 +64,9 @@ public class Utente {
 		return dao.login(username, password);
 	}
 	
-	public void cambiaPassword(String username, String password){
+	public void cambiaPasswordAmministratore(String username, String password){
 		UtenteDAO dao = UtenteDAO.getIstanza();
-		dao.cambiaPassword(username, password);
+		dao.cambiaPasswordAmministratore(username, password);
 	}
 	
 	public void eliminaUtente(String username){

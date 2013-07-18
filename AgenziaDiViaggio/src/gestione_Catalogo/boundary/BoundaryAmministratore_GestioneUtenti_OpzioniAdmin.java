@@ -76,7 +76,6 @@ public class BoundaryAmministratore_GestioneUtenti_OpzioniAdmin {
 		
 		controllore = new ControlloreGestioneUtenti();
 		
-		
 		/*
 		 * Il superPanel di questa Boundary prende le dimensioni del pannello Passato 
 		 */
@@ -114,7 +113,7 @@ public class BoundaryAmministratore_GestioneUtenti_OpzioniAdmin {
 		
 		
 		/*
-		 * secondo pannello: questo pannello si attiva premendo il bottone AGGIUNGI VIAGGIO del primo pannello
+		 * secondo pannello
 		 */
 		panel2 = new JPanel();
 		panel2.setSize(superPanel.getWidth(), superPanel.getHeight()/7*6);
