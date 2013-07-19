@@ -34,25 +34,34 @@ public class ControlloreGestioneIndici extends Controllore{
 		
 		if (numeratore.equals("Ambiente") && denominatore.equals("Totale")){
 			
+			risultato = indice.calcolaIndiceGradimentoAmbienteSuTotale(tratta, metodoScelto);
+			
 		}
 		
-		if (numeratore.equals("Tipo Mezzo") && denominatore.equals("Ambiente")){
+		if (numeratore.equals("Categoria Mezzo") && denominatore.equals("Ambiente")){
 			
+			System.out.println (tratta.getMezzo().getIDEsternoElemento() + " " + tratta.getCategoria());
 			if (tratta.getMezzo().getIDEsternoElemento().equals(tratta.getCategoria())){
-				throw new CalcoloIndiceException("Il mezzo selezionato non ha un tipo. Calcolare indice Mezzo/Ambiente");
-			}
+				
+				throw new CalcoloIndiceException("Categoria e Mezzo coincidono. Calcolare indice Mezzo/Ambiente");
+			} 
+			
+			risultato = indice.calcolaIndiceGradimentoCategoriaSuAmbiente(tratta, metodoScelto);
 			
 		}
 		
 		if (numeratore.equals("Mezzo") && denominatore.equals("Ambiente")){
 			
+			risultato = indice.calcolaIndiceGradimentoMezzoSuAmbiente(tratta, metodoScelto);
 		}
 		
-		if (numeratore.equals("Mezzo") && denominatore.equals("Tipo Mezzo")){
+		if (numeratore.equals("Mezzo") && denominatore.equals("Categoria Mezzo")){
 			
 			if (tratta.getMezzo().getIDEsternoElemento().equals(tratta.getCategoria())){
 				throw new CalcoloIndiceException("Il mezzo selezionato non ha un tipo. Impossibile calcolare questo tipo di indice");
 			}
+			
+			risultato = indice.calcolaIndiceGradimentoMezzoSuCategoria(tratta, metodoScelto);
 			
 		}
 		

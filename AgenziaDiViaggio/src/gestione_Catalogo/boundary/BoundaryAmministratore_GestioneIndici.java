@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -58,8 +59,8 @@ public class BoundaryAmministratore_GestioneIndici {
 	
 	private static final String TOTALE = "Totale";
 	private static final String AMBIENTE = "Ambiente";
+	private static final String CATEGORIAMEZZO = "Categoria Mezzo";
 	private static final String MEZZO = "Mezzo";
-	private static final String TIPOMEZZO = "Tipo Mezzo";
 	private static final String TRATTA = "Tratta";
 	private static final String OFFERTA = "Offerta";
 	private static final String PRENOTAZIONE = "Prenotazione";
@@ -564,7 +565,7 @@ public class BoundaryAmministratore_GestioneIndici {
 					tendinaNumeratore.setEnabled(false);
 					tendinaNumeratore.addItem("-----");
 					tendinaNumeratore.addItem(AMBIENTE);
-					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(CATEGORIAMEZZO);
 					tendinaNumeratore.addItem(MEZZO);
 					tendinaNumeratore.setSelectedItem(0);
 					tendinaNumeratore.setEnabled(true);
@@ -633,7 +634,7 @@ public class BoundaryAmministratore_GestioneIndici {
 					tendinaNumeratore.setEnabled(false);
 					tendinaNumeratore.addItem("-----");
 					tendinaNumeratore.addItem(AMBIENTE);
-					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(CATEGORIAMEZZO);
 					tendinaNumeratore.addItem(MEZZO);
 					tendinaNumeratore.setSelectedItem(0);
 					tendinaNumeratore.setEnabled(true);
@@ -670,7 +671,7 @@ public class BoundaryAmministratore_GestioneIndici {
 					tendinaNumeratore.setEnabled(false);
 					tendinaNumeratore.addItem("-----");
 					tendinaNumeratore.addItem(AMBIENTE);
-					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(CATEGORIAMEZZO);
 					tendinaNumeratore.addItem(MEZZO);
 					tendinaNumeratore.setSelectedItem(0);
 					tendinaNumeratore.setEnabled(true);
@@ -708,7 +709,7 @@ public class BoundaryAmministratore_GestioneIndici {
 					tendinaNumeratore.setEnabled(false);
 					tendinaNumeratore.addItem("-----");
 					tendinaNumeratore.addItem(AMBIENTE);
-					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(CATEGORIAMEZZO);
 					tendinaNumeratore.addItem(MEZZO);
 					tendinaNumeratore.setSelectedItem(0);
 					tendinaNumeratore.setEnabled(true);
@@ -742,7 +743,7 @@ public class BoundaryAmministratore_GestioneIndici {
 					tendinaNumeratore.setEnabled(false);
 					tendinaNumeratore.addItem("-----");
 					tendinaNumeratore.addItem(AMBIENTE);
-					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(CATEGORIAMEZZO);
 					tendinaNumeratore.addItem(MEZZO);
 					tendinaNumeratore.setSelectedItem(0);
 					tendinaNumeratore.setEnabled(true);
@@ -789,7 +790,7 @@ public class BoundaryAmministratore_GestioneIndici {
 						tendinaNumeratore.setEnabled(false);
 						tendinaNumeratore.addItem("-----");
 						tendinaNumeratore.addItem(AMBIENTE);
-						tendinaNumeratore.addItem(TIPOMEZZO);
+						tendinaNumeratore.addItem(CATEGORIAMEZZO);
 						tendinaNumeratore.addItem(MEZZO);
 						tendinaNumeratore.addItem(TRATTA);
 						tendinaNumeratore.setSelectedItem(0);
@@ -830,7 +831,7 @@ public class BoundaryAmministratore_GestioneIndici {
 						tendinaNumeratore.setEnabled(false);
 						tendinaNumeratore.addItem("-----");
 						tendinaNumeratore.addItem(AMBIENTE);
-						tendinaNumeratore.addItem(TIPOMEZZO);
+						tendinaNumeratore.addItem(CATEGORIAMEZZO);
 						tendinaNumeratore.addItem(MEZZO);
 						tendinaNumeratore.setSelectedItem(0);
 						tendinaNumeratore.setEnabled(true);
@@ -877,7 +878,7 @@ public class BoundaryAmministratore_GestioneIndici {
 						tendinaNumeratore.setEnabled(false);
 						tendinaNumeratore.addItem("-----");
 						tendinaNumeratore.addItem(AMBIENTE);
-						tendinaNumeratore.addItem(TIPOMEZZO);
+						tendinaNumeratore.addItem(CATEGORIAMEZZO);
 						tendinaNumeratore.addItem(MEZZO);
 						tendinaNumeratore.addItem(TRATTA);
 						tendinaNumeratore.addItem(OFFERTA);
@@ -923,7 +924,7 @@ public class BoundaryAmministratore_GestioneIndici {
 				tendinaNumeratore.setEnabled(false);
 				tendinaNumeratore.addItem("-----");
 				tendinaNumeratore.addItem(AMBIENTE);
-				tendinaNumeratore.addItem(TIPOMEZZO);
+				tendinaNumeratore.addItem(CATEGORIAMEZZO);
 				tendinaNumeratore.addItem(MEZZO);
 				tendinaNumeratore.addItem(TRATTA);
 				tendinaNumeratore.setSelectedItem(0);
@@ -959,7 +960,7 @@ public class BoundaryAmministratore_GestioneIndici {
 					tendinaNumeratore.setEnabled(false);
 					tendinaNumeratore.addItem("-----");
 					tendinaNumeratore.addItem(AMBIENTE);
-					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(CATEGORIAMEZZO);
 					tendinaNumeratore.addItem(MEZZO);
 					tendinaNumeratore.addItem(TRATTA);
 					tendinaNumeratore.addItem(OFFERTA);
@@ -974,7 +975,7 @@ public class BoundaryAmministratore_GestioneIndici {
 					tendinaNumeratore.setEnabled(false);
 					tendinaNumeratore.addItem("-----");
 					tendinaNumeratore.addItem(AMBIENTE);
-					tendinaNumeratore.addItem(TIPOMEZZO);
+					tendinaNumeratore.addItem(CATEGORIAMEZZO);
 					tendinaNumeratore.addItem(MEZZO);
 					tendinaNumeratore.addItem(TRATTA);
 					tendinaNumeratore.addItem(OFFERTA);
@@ -1020,7 +1021,7 @@ public class BoundaryAmministratore_GestioneIndici {
 						
 					}
 					
-					if (numeratore.equals(TIPOMEZZO)){
+					if (numeratore.equals(CATEGORIAMEZZO)){
 						
 						tendinaDenominatore.addItem("-----");
 						tendinaDenominatore.addItem(AMBIENTE);
@@ -1033,7 +1034,7 @@ public class BoundaryAmministratore_GestioneIndici {
 						
 						tendinaDenominatore.addItem("-----");
 						tendinaDenominatore.addItem(AMBIENTE);
-						tendinaDenominatore.addItem(TIPOMEZZO);
+						tendinaDenominatore.addItem(CATEGORIAMEZZO);
 						tendinaDenominatore.setSelectedIndex(0);
 						tendinaDenominatore.setEnabled(true);
 						
@@ -1110,12 +1111,14 @@ public class BoundaryAmministratore_GestioneIndici {
 				prenotazioneScelta = (String) tendinaPrenotazione.getSelectedItem();
 				
 				try {
+					
 					Double risultato = controllore.CalcolaIndiceGradimento(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, metodoScelto, numeratore, denominatore);
-					String s = risultato.toString();
-					if (s.equals("NaN")){
-						JOptionPane.showMessageDialog(null, "Non sono ancora stati venduti biglietti per questa tratta" , "Errore", JOptionPane.ERROR_MESSAGE);
+					DecimalFormat df = new DecimalFormat("#.##");
+					String s = df.format(risultato);
+					if (risultato.toString().equals("NaN")){
+						campoIndiceGradimento.setText("0.00");
 					} else {
-						campoIndiceGradimento.setText(risultato.toString());
+						campoIndiceGradimento.setText(s);
 					}
 					
 				} catch (TrattaInesistenteException e) {

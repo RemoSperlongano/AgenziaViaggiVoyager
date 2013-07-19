@@ -661,6 +661,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 			if (!Character.isLetter(s.charAt(i))&&!Character.isWhitespace(c))
 				throw new IDEsternoElementoException("Caratteri non validi. Controllare i dati inseriti...");
 		}
+		
 	
 	}
 	
@@ -975,45 +976,58 @@ public class BoundaryPromotore_GestioneCatalogo {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			if (ambienteScelto != null){
-				
-				String mezzoTrasporto;
-				String tipoMezzo = "";
-				String cittaPartenza;
-				String cittaArrivo;
-				String via;
-				String info;
 			
-				//le informazioni possono essere prese o da tendina o da campo testo...
-				if (tendinaMezziPannello2.getSelectedItem().toString().equals("new...")){
-					mezzoTrasporto = uppercaseFirstLetters(campoMezziPannello2.getText());
-				} else {
-					mezzoTrasporto = (String) tendinaMezziPannello2.getSelectedItem();
-				}
-				
-				if(!campoTipoPannello2.getText().equals("")){
-					tipoMezzo = uppercaseFirstLetters(campoTipoPannello2.getText());
-				}	
-			
-				if (!tendinaCittaPartenzaPannello2.isEnabled() || tendinaCittaPartenzaPannello2.getSelectedItem().toString().equals("new...")){
-					cittaPartenza = uppercaseFirstLetters(campoCittaPartenzaPannello2.getText());
-				} else {
-					cittaPartenza = (String) tendinaCittaPartenzaPannello2.getSelectedItem();
-				}
-				
-				if (!tendinaCittaeArrivoPannello2.isEnabled() || tendinaCittaeArrivoPannello2.getSelectedItem().toString().equals("new...")){
-					cittaArrivo = uppercaseFirstLetters(campoCittaArrivoPannello2.getText());
-				} else {
-					cittaArrivo = (String) tendinaCittaeArrivoPannello2.getSelectedItem();
-				}
-			
-				via = uppercaseFirstLetters(campoViaPannello2.getText());
-				
-				info = uppercaseFirstLetters(campoInfoPannello2.getText()); 
-				
-						
-				//aggiungo il viaggio
 				try {
+					
+					if (ambienteScelto != null){
+						
+						String mezzoTrasporto;
+						String tipoMezzo = "";
+						String cittaPartenza;
+						String cittaArrivo;
+						String via;
+						String info;
+					
+						//le informazioni possono essere prese o da tendina o da campo testo...
+						if (tendinaMezziPannello2.getSelectedItem().toString().equals("new...")){
+							
+							mezzoTrasporto = uppercaseFirstLetters(campoMezziPannello2.getText());
+							
+							
+							for (int i = 0; i<mezzoTrasporto.length(); i++){
+								char c = mezzoTrasporto.charAt(i);
+								if (Character.isWhitespace(c)){
+									throw new IDEsternoElementoException("Inserire il nome del mezzo senza spazi");
+								}
+							}
+							
+							
+						} else {
+							mezzoTrasporto = (String) tendinaMezziPannello2.getSelectedItem();
+						}
+						
+						if(!campoTipoPannello2.getText().equals("")){
+							tipoMezzo = uppercaseFirstLetters(campoTipoPannello2.getText());
+						}	
+					
+						if (!tendinaCittaPartenzaPannello2.isEnabled() || tendinaCittaPartenzaPannello2.getSelectedItem().toString().equals("new...")){
+							cittaPartenza = uppercaseFirstLetters(campoCittaPartenzaPannello2.getText());
+						} else {
+							cittaPartenza = (String) tendinaCittaPartenzaPannello2.getSelectedItem();
+						}
+						
+						if (!tendinaCittaeArrivoPannello2.isEnabled() || tendinaCittaeArrivoPannello2.getSelectedItem().toString().equals("new...")){
+							cittaArrivo = uppercaseFirstLetters(campoCittaArrivoPannello2.getText());
+						} else {
+							cittaArrivo = (String) tendinaCittaeArrivoPannello2.getSelectedItem();
+						}
+					
+						via = uppercaseFirstLetters(campoViaPannello2.getText());
+						
+						info = uppercaseFirstLetters(campoInfoPannello2.getText()); 
+						
+								
+						//aggiungo il viaggio
 					
 					controlloSintatticoDati(mezzoTrasporto, tipoMezzo, cittaPartenza, cittaArrivo, via);
 					
@@ -1024,6 +1038,10 @@ public class BoundaryPromotore_GestioneCatalogo {
 						controllore.aggiungiViaggio(ambienteScelto, mezzoTrasporto, tipoMezzo, cittaPartenza, cittaArrivo, via, info);
 						JOptionPane.showMessageDialog(null, "Il nuovo viaggio e' stato aggiunto correttamente nel catalogo.", "Viaggio Aggiunto", JOptionPane.INFORMATION_MESSAGE);
 						aggiornaTendinePannello2(); //aggiorno le tendine
+					}
+					
+					} else {
+						JOptionPane.showMessageDialog(null, "Selezionare un ambiente...");			
 					}
 					
 				} catch (DirittiException e1) {
@@ -1061,11 +1079,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 				
 	
 			
-			} else {
-				JOptionPane.showMessageDialog(null, "Selezionare un ambiente...");			
-			}
+			} 
 			
-		}
 		
 	}
 	

@@ -14,7 +14,6 @@
 package home.helper;
 
 import java.util.Calendar;
-
 import gestioneutenti.model.competenze.Competenza;
 import gestioneutenti.model.ruoli.Ruolo;
 

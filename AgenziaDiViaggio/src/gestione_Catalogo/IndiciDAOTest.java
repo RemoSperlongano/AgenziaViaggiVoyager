@@ -17,23 +17,23 @@ import gestione_Catalogo.exception.CalcoloIndiceException;
  */
 public class IndiciDAOTest {
 	
-	public static void main(String[] args) {
-		
-		IndiceDAO dao = IndiceDAO.getIstanza();
-		CatalogoDAO daocatalogo = CatalogoDAO.getIstanza();
-		
-		ArrayList<Tratta> listatratte = daocatalogo.getCatalogo();
-		
-		Tratta t = listatratte.get(15);
-		
-		
-		try {
-			System.out.println(dao.calcolaIndiceMezzoSuTipoMezzo(t));
-		} catch (CalcoloIndiceException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	public static void main(String[] args) {
+//		
+//		IndiceDAO dao = IndiceDAO.getIstanza();
+//		CatalogoDAO daocatalogo = CatalogoDAO.getIstanza();
+//		
+//		ArrayList<Tratta> listatratte = daocatalogo.getCatalogo();
+//		
+//		Tratta t = listatratte.get(15);
+//		
+//		
+//		try {
+//			System.out.println(dao.calcolaIndiceMezzoSuTipoMezzo(t));
+//		} catch (CalcoloIndiceException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 	
 	
 	
