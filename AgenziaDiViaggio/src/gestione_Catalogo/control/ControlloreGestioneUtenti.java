@@ -46,23 +46,21 @@ public class ControlloreGestioneUtenti extends Controllore {
 	
 	public void cambiaPassword(String vecchiaPsw, String nuovaPsw) throws UtenteInesistenteException, CredenzialiErrateException{
 		String username = sessione.getUsername();
-		Utente u = utenza.getUtenteByUsername(username);
-		if (!u.getPassword().equals(vecchiaPsw)){
+		Utente utente = utenza.getUtenteByUsername(username);
+		if (!utente.getPassword().equals(vecchiaPsw)){
 			throw new CredenzialiErrateException("La password inserita non e' corretta.");
 		}
-		u.cambiaPassword(nuovaPsw);
-
-			 
+		utente.cambiaPassword(nuovaPsw);	 
 	}
 	
 	
 	public void cambiaEmail(String nuovaEmail, String password) throws UtenteInesistenteException, CredenzialiErrateException {
 		String username = sessione.getUsername();
-		Utente u = utenza.getUtenteByUsername(username);
-		if (!u.getPassword().equals(password)){
+		Utente utente = utenza.getUtenteByUsername(username);
+		if (!utente.getPassword().equals(password)){
 			throw new CredenzialiErrateException("La password inserita non e' corretta.");
 		}
-		
+		utente.cambiaEmail(nuovaEmail);
 	}
 	
 	public ArrayList<String> mostraRuoliUtenza(){

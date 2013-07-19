@@ -71,11 +71,13 @@ public class Utente {
 	
 	
 	public void cambiaPassword(String password){
+		this.password = password;
 		UtenteDAO dao = UtenteDAO.getIstanza();
 		dao.cambiaPassword(username, password);
 	}
 	
 	public void cambiaEmail(String email){
+		this.eMail = email;
 		UtenteDAO dao = UtenteDAO.getIstanza();
 		dao.cambiaMail(username, email);
 	}
