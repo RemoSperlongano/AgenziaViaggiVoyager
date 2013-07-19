@@ -94,7 +94,7 @@ public class BoundaryAmministratore_GestioneUtenti_OpzioniAdmin {
 		panel1.setVisible(true);
 
 		bottoneCambiaPassword = new JButton("Cambia Password");
-		bottoneCambiaPassword.setBackground(Color.ORANGE);
+		bottoneCambiaPassword.setBackground(Color.GREEN);
 		bottoneCambiaPassword.setBounds(panel1.getWidth()/5*2, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneCambiaPassword);
 		

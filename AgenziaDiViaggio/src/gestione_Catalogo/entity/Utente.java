@@ -54,9 +54,9 @@ public class Utente {
 	}
 	
 	
-	public void registraUtente(String nome, String cognome, String mail, String username, String password, String ruolo) throws UtenteEsistenteException{
+	public void registraUtente() throws UtenteEsistenteException{
 		UtenteDAO dao = UtenteDAO.getIstanza();
-		dao.insert(nome, cognome, mail, username, password, ruolo);
+		dao.insert(nome, cognome, eMail, username, password, ruolo);
 	}
 	
 	public Sessione login(String username, String password){

@@ -99,12 +99,12 @@ public class BoundaryAmministratore_VisualizzaLog {
 		
 		
 		bottoneAggiorna = new JButton("AGGIORNA");
-		bottoneAggiorna.setBackground(Color.ORANGE);
+		bottoneAggiorna.setBackground(Color.YELLOW);
 		bottoneAggiorna.setBounds(panel.getWidth()/5, panel.getHeight()/6*5+25, panel.getWidth()/5, panel.getHeight()/14);
 		panel.add(bottoneAggiorna);
 		
 		bottoneCancellaLog = new JButton("CANCELLA LOG");
-		bottoneCancellaLog.setBackground(Color.YELLOW);
+		bottoneCancellaLog.setBackground(Color.ORANGE);
 		bottoneCancellaLog.setBounds(panel.getWidth()/5*3, panel.getHeight()/6*5+25, panel.getWidth()/5, panel.getHeight()/14);
 		panel.add(bottoneCancellaLog);
 		

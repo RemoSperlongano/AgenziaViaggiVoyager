@@ -5,6 +5,8 @@ package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreGestioneUtenti;
 import gestione_Catalogo.entity.Utente;
+import gestione_Catalogo.exception.DatiPersonaliErratiException;
+import gestione_Catalogo.exception.UtenteEsistenteException;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -14,6 +16,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -131,13 +134,13 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		panel1.setVisible(true);
 
 		bottoneAggiungiUtente = new JButton("Aggiungi Utente");
-		bottoneAggiungiUtente.setBackground(Color.GREEN);
+		bottoneAggiungiUtente.setBackground(Color.CYAN);
 		bottoneAggiungiUtente.setBounds(panel1.getWidth()/5, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneAggiungiUtente);
 		
 		
 		bottoneRimuoviUtente = new JButton("Rimuovi Utente");
-		bottoneRimuoviUtente.setBackground(Color.ORANGE);
+		bottoneRimuoviUtente.setBackground(Color.YELLOW);
 		bottoneRimuoviUtente.setBounds(panel1.getWidth()/5*3, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneRimuoviUtente);
 		
@@ -178,7 +181,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 
 	    labelRuoliPannello2 = new JLabel();        
 	    labelRuoliPannello2.setFont(new Font("Arial", 0, 15));
-	    labelRuoliPannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5, panel2.getWidth()/4, 20);
+	    labelRuoliPannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5, panel2.getWidth()/4, 20);
 	    labelRuoliPannello2.setText("TIPO DI UTENTE");
 		panel2.add(labelRuoliPannello2);
 		
@@ -190,7 +193,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		
 	    labelNomePannello2 = new JLabel();        
 	    labelNomePannello2.setFont(new Font("Arial", 0, 15));
-	    labelNomePannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+25, panel2.getWidth()/4, 20);
+	    labelNomePannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+25, panel2.getWidth()/4, 20);
 	    labelNomePannello2.setText("NOME");
 		panel2.add(labelNomePannello2);
 		
@@ -202,7 +205,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		
 	    labelCognomePannello2 = new JLabel();        
 	    labelCognomePannello2.setFont(new Font("Arial", 0, 15));
-	    labelCognomePannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+50, panel2.getWidth()/4, 20);
+	    labelCognomePannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+50, panel2.getWidth()/4, 20);
 	    labelCognomePannello2.setText("COGNOME");
 		panel2.add(labelCognomePannello2);
 		
@@ -214,7 +217,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		
 	    labelEmailPannello2 = new JLabel();        
 	    labelEmailPannello2.setFont(new Font("Arial", 0, 15));
-	    labelEmailPannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+75, panel2.getWidth()/4, 20);
+	    labelEmailPannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+75, panel2.getWidth()/4, 20);
 	    labelEmailPannello2.setText("EMAIL");
 		panel2.add(labelEmailPannello2);
 		
@@ -228,7 +231,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		
 	    labelUsernamePannello2 = new JLabel();        
 	    labelUsernamePannello2.setFont(new Font("Arial", 0, 15));
-	    labelUsernamePannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+100, panel2.getWidth()/4, 20);
+	    labelUsernamePannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+100, panel2.getWidth()/4, 20);
 	    labelUsernamePannello2.setText("USERNAME");
 		panel2.add(labelUsernamePannello2);
 		
@@ -240,7 +243,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 	    
 	    labelPasswordPannello2 = new JLabel();        
 	    labelPasswordPannello2.setFont(new Font("Arial", 0, 15));
-	    labelPasswordPannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+125, panel2.getWidth()/4, 20);
+	    labelPasswordPannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+125, panel2.getWidth()/4, 20);
 	    labelPasswordPannello2.setText("PASSWORD");
 		panel2.add(labelPasswordPannello2);
 		
@@ -252,7 +255,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 	    
 	    labelRipetiPasswordPannello2 = new JLabel();        
 	    labelRipetiPasswordPannello2.setFont(new Font("Arial", 0, 15));
-	    labelRipetiPasswordPannello2.setBounds(panel2.getWidth()/4*2-180, panel2.getHeight()/5+150, panel2.getWidth()/4, 20);
+	    labelRipetiPasswordPannello2.setBounds(panel2.getWidth()/4*2-200, panel2.getHeight()/5+150, panel2.getWidth()/4, 20);
 	    labelRipetiPasswordPannello2.setText("RIPETI PASSWORD");
 		panel2.add(labelRipetiPasswordPannello2);
 		
@@ -317,6 +320,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		tendinaRuoliPannello3 = new JComboBox<String>();
 		tendinaRuoliPannello3.setBackground(Color.WHITE);
 		tendinaRuoliPannello3.setBounds(panel3.getWidth()/8*3, panel3.getHeight()/4+20, panel3.getWidth()/4, 20);
+		tendinaRuoliPannello3.setEnabled(false);
 		panel3.add(tendinaRuoliPannello3);
 		
 		
@@ -329,6 +333,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		tendinaUtentiPannello3 = new JComboBox<String>();
 		tendinaUtentiPannello3.setBackground(Color.WHITE);
 		tendinaUtentiPannello3.setBounds(panel3.getWidth()/8*3, panel3.getHeight()/4*2+20, panel3.getWidth()/4, 20);
+		tendinaUtentiPannello3.setEnabled(false);
 		panel3.add(tendinaUtentiPannello3);
 		
 		
@@ -357,9 +362,54 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		ascoltatoreBottoneChiudiPannello3 = new ChiudiPannello3AA();
 		bottoneChiudiPannello3.addActionListener(ascoltatoreBottoneChiudiPannello3);
 		
-		
+	}
+
+	
+
+	private void controlloSintatticoDati(String nome, String cognome, String email, String username, String password, String ripetiPsw) throws DatiPersonaliErratiException {
+		if (nome.equals("")||cognome.equals("")||email.equals("")||username.equals("")||password.equals("")||ripetiPsw.equals("")){
+			throw new DatiPersonaliErratiException("Tutti i campi devono essere compilati.");
+		}
+		if (!password.equals(ripetiPsw)){
+			throw new DatiPersonaliErratiException("I campi Password sono differenti. Controllare la password inserita...");
+		}
+		if (!email.contains("@")){
+			throw new DatiPersonaliErratiException("Indirizzo email non valido. Controllare i dati inseriti...");
+		}
 		
 	}
+	
+	
+	//rende maiuscola la prima lettera di ogni parola della stringa passata come parametro, sostituisce spazi multipli con spazio singolo
+	private String uppercaseFirstLetters(String str) {
+	    boolean prevWasWhiteSp = true;
+	    char[] chars = str.trim().replaceAll("\\s+"," ").toLowerCase().toCharArray();
+	    for (int i = 0; i < chars.length; i++) {
+	        if (Character.isLetter(chars[i])){
+	            if (prevWasWhiteSp) {
+	                chars[i] = Character.toUpperCase(chars[i]);    
+	            } 
+	            prevWasWhiteSp = false;
+	        } else {
+	            prevWasWhiteSp = Character.isWhitespace(chars[i]);
+	        }
+	    }
+	    return new String(chars);
+	}
+	
+
+	private void svuotaPannello2() {
+		tendinaRuoliPannello2.setSelectedIndex(0);
+		campoNomePannello2.setText(null);
+		campoCognomePannello2.setText(null);
+		campoEmailPannello2.setText(null);
+		campoUsernamePannello2.setText(null);
+		campoPasswordPannello2.setText(null);
+		campoRipetiPasswordPannello2.setText(null);
+	}
+
+	
+
 	
 	/*
 	 * Classi Ascoltatori per bottoni pannello 1
@@ -421,12 +471,36 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			/*
-			 * DA IMPLEMENTARE
-			 */
+			String nome = uppercaseFirstLetters(campoNomePannello2.getText());
+			String cognome = uppercaseFirstLetters(campoCognomePannello2.getText());
+			String email = campoEmailPannello2.getText().toLowerCase();
+			
+			String username = campoUsernamePannello2.getText();
+			String password = String.valueOf(campoPasswordPannello2.getPassword());
+			String ripetiPsw = String.valueOf(campoRipetiPasswordPannello2.getPassword());
+			String ruolo = (String) tendinaRuoliPannello2.getSelectedItem();
+			
+			try {
+				
+				controlloSintatticoDati(nome, cognome, email, username, password, ripetiPsw);
+				
+				int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere il nuovo utente?", "Conferma Nuovo Utente", JOptionPane.YES_NO_OPTION);				
+			
+				if (conferma == JOptionPane.YES_OPTION){	
+					controllore.aggiungiUtente(nome, cognome, email, username, password, ruolo);
+					JOptionPane.showMessageDialog(null, "Il nuovo utente e' stato aggiunto correttamente ed e' abilitato all'uso del sistema.", "Nuovo Utente Aggiunto", JOptionPane.INFORMATION_MESSAGE);
+					svuotaPannello2();
+				}
+	
+			} catch (DatiPersonaliErratiException e1) {
+				JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+			} catch (UtenteEsistenteException e1) {
+				JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+			}
 			
 		}
-		
+
+
 	}
 	
 	
@@ -438,13 +512,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
-			//tendinaRuoliPannello2.setSelectedIndex(0);
-			campoNomePannello2.setText(null);
-			campoCognomePannello2.setText(null);
-			campoUsernamePannello2.setText(null);
-			campoPasswordPannello2.setText(null);
-			campoRipetiPasswordPannello2.setText(null);
-
+			svuotaPannello2();
 		}
 		
 	}
@@ -460,14 +528,8 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 			bottoneChiudiPannello1.setEnabled(true);
 						
 			//svuoto cmq il pannello
-			//tendinaRuoliPannello2.setSelectedIndex(0);
-			campoNomePannello2.setText(null);
-			campoCognomePannello2.setText(null);
-			campoUsernamePannello2.setText(null);
-			campoPasswordPannello2.setText(null);
-			campoRipetiPasswordPannello2.setText(null);
+			svuotaPannello2();
 
-			
 		}
 	}
 

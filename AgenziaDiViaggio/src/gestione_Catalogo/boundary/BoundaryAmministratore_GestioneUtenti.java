@@ -70,7 +70,7 @@ public class BoundaryAmministratore_GestioneUtenti {
 		panel1.setVisible(true);
 		
 		bottoneOpzioniAdmin = new JButton("Opzioni Amministratore");
-		bottoneOpzioniAdmin.setBackground(Color.LIGHT_GRAY);
+		bottoneOpzioniAdmin.setBackground(Color.ORANGE);
 		bottoneOpzioniAdmin.setBounds(panel1.getWidth()/5, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneOpzioniAdmin);//aggiungo il bottone al secondo pannello
 		
