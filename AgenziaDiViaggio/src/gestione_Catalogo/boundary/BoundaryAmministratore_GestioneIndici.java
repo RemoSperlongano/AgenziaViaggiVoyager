@@ -16,12 +16,14 @@ import java.util.Set;
 
 
 import gestione_Catalogo.control.ControlloreGestioneIndici;
+import gestione_Catalogo.exception.CalcoloIndiceException;
 import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.OfferteNonPresentiException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
+import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -129,6 +131,7 @@ public class BoundaryAmministratore_GestioneIndici {
 	
 	private ChiudiAA ascoltatoreBottoneChiudi;
 	private SvuotaAA ascoltatoreBottoneSvuota;
+	private CalcolaIndiceGradimentoAA ascoltatoreBottoneCalcolaIndiceGradimento;
 		
 		
 	public BoundaryAmministratore_GestioneIndici(JPanel panelNext) {
@@ -366,6 +369,7 @@ public class BoundaryAmministratore_GestioneIndici {
 		ascoltatoreTendinaDenominatore = new TendinaDenominatoreAA();
 		ascoltatoreBottoneChiudi = new ChiudiAA();
 		ascoltatoreBottoneSvuota = new SvuotaAA();
+		ascoltatoreBottoneCalcolaIndiceGradimento = new CalcolaIndiceGradimentoAA();
 		
 		
 		
@@ -383,6 +387,7 @@ public class BoundaryAmministratore_GestioneIndici {
 		tendinaDenominatore.addActionListener(ascoltatoreTendinaDenominatore);
 		bottoneChiudi.addActionListener(ascoltatoreBottoneChiudi);
 		bottoneSvuota.addActionListener(ascoltatoreBottoneSvuota);
+		bottoneCalcolaIndiceGradimento.addActionListener(ascoltatoreBottoneCalcolaIndiceGradimento);
 		
 		
 		
@@ -941,6 +946,7 @@ public class BoundaryAmministratore_GestioneIndici {
 			mezzoScelto = (String) tendinaMezzi.getSelectedItem();
 			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
 			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
+			viaScelta = (String) tendinaVia.getSelectedItem();
 			offertaScelta = (String) tendinaOfferta.getSelectedItem();
 			prenotazioneScelta = (String) tendinaPrenotazione.getSelectedItem();
 		
@@ -1026,6 +1032,7 @@ public class BoundaryAmministratore_GestioneIndici {
 					if (numeratore.equals(MEZZO)){
 						
 						tendinaDenominatore.addItem("-----");
+						tendinaDenominatore.addItem(AMBIENTE);
 						tendinaDenominatore.addItem(TIPOMEZZO);
 						tendinaDenominatore.setSelectedIndex(0);
 						tendinaDenominatore.setEnabled(true);
@@ -1076,6 +1083,49 @@ public class BoundaryAmministratore_GestioneIndici {
 			campoIndiceGradimento.setText("");
 			denominatore = (String) tendinaDenominatore.getSelectedItem();
 
+			
+		}
+		
+	}
+	
+	
+	private class CalcolaIndiceGradimentoAA implements ActionListener{
+
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+
+
+			if ( denominatore == null || numeratore == null || denominatore.equals("-----") || numeratore.equals("-----") ){
+				JOptionPane.showMessageDialog(null, "Selezionare gli elementi di confronto indici" , "Errore", JOptionPane.ERROR_MESSAGE);
+			} else {
+				
+				
+				ambienteScelto = (String) tendinaAmbiente.getSelectedItem();
+				mezzoScelto = (String) tendinaMezzi.getSelectedItem();
+				partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
+				arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
+				viaScelta = (String) tendinaVia.getSelectedItem();
+				offertaScelta = (String) tendinaOfferta.getSelectedItem();
+				prenotazioneScelta = (String) tendinaPrenotazione.getSelectedItem();
+				
+				try {
+					Double risultato = controllore.CalcolaIndiceGradimento(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, metodoScelto, numeratore, denominatore);
+					String s = risultato.toString();
+					if (s.equals("NaN")){
+						JOptionPane.showMessageDialog(null, "Non sono ancora stati venduti biglietti per questa tratta" , "Errore", JOptionPane.ERROR_MESSAGE);
+					} else {
+						campoIndiceGradimento.setText(risultato.toString());
+					}
+					
+				} catch (TrattaInesistenteException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage() , "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (CalcoloIndiceException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage() , "Errore", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+			
+			
 			
 		}
 		

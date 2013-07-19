@@ -45,7 +45,7 @@ public class IndiceDAO extends DAO{
 	 */
 	
 	
-	public Double calcolaIndiceTrattaSuMezzo (Tratta tratta){
+	public Double calcolaGradimentoTrattaSuMezzo (Tratta tratta , Tratta trattaInversa, String metodoScelto){
 		
 	
 		try {
@@ -55,46 +55,78 @@ public class IndiceDAO extends DAO{
 			Double numeratore = null ;
 			Double denominatore = null;
 			
-			// CALCOLO NUMERATORE
-			
 			conn = Persistenza.getConnection();
-			// tutti i biglietti venduti per una tratta
-			selectQuery = 
-					"SELECT COUNT(*) FROM offerta AS o, prenotazione AS p, biglietto AS b " + 
-					"WHERE o.idtratta=? " +
-					"AND p.idofferta = o.ID "  +
-					"AND b.idprenotazione = p.ID";
 			
-			
-			ps = conn.prepareStatement(selectQuery);
-			ps.setInt(1, tratta.getID());   //per calcolo di indici su tutta la tratta mi basta il semplice id della tratta
-			
-			rs = ps.executeQuery();
-			
-			if (rs.next()){
-				numeratore = rs.getDouble(1);
+			if (metodoScelto.equals("Totale")){
+				
+				// CALCOLO NUMERATORE
+				
+				// tutti i biglietti venduti per una tratta
+				selectQuery = 
+						"SELECT COUNT(*) FROM offerta AS o, prenotazione AS p, biglietto AS b " + 
+						"WHERE o.idtratta=? " +
+						"AND p.idofferta = o.ID "  +
+						"AND b.idprenotazione = p.ID";
+				
+				
+				ps = conn.prepareStatement(selectQuery);
+				ps.setInt(1, tratta.getID());   //per calcolo di indici su tutta la tratta mi basta il semplice id della tratta
+				
+				rs = ps.executeQuery();
+				
+				if (rs.next()){
+					numeratore = rs.getDouble(1);
+				}
+				
+				
+				//se esiste una tratta inversa, calcolo di tutti i biglietti venduti per la tratta inversa
+				if (trattaInversa != null ){
+					
+					ps = conn.prepareStatement(selectQuery);
+					ps.setInt(1, trattaInversa.getID());   //per calcolo di indici su tutta la tratta mi basta il semplice id della tratta
+					
+					rs = ps.executeQuery();
+					
+					if (rs.next()){
+						numeratore += rs.getDouble(1);
+					}
+					
+				}
+				
+				
+				// CALCOLO DENOMINATORE
+				
+				Mezzo m = tratta.getMezzo();
+				
+				selectQuery = 
+						"SELECT COUNT(*) FROM catalogo AS c, offerta AS o, prenotazione AS p, biglietto AS b " + 
+						"WHERE c.mezzo=? " +
+						"AND o.idtratta = c.ID " +
+						"AND p.idofferta = o.ID "  +
+						"AND b.idprenotazione = p.ID";
+				
+				
+				ps = conn.prepareStatement(selectQuery);
+				ps.setInt(1,  m.getID());    //per il calcolo di indici su mezzo mi serve l'id del mezzo
+				
+				rs = ps.executeQuery();
+				
+				if (rs.next()){
+					denominatore = rs.getDouble(1);
+				}
+				
+				
+				
 			}
 			
+			if (metodoScelto.equals("Annuale")){
+				
+				
+			}
 			
-			// CALCOLO DENOMINATORE
-			
-			Mezzo m = tratta.getMezzo();
-			
-			selectQuery = 
-					"SELECT COUNT(*) FROM catalogo AS c, offerta AS o, prenotazione AS p, biglietto AS b " + 
-					"WHERE c.mezzo=? " +
-					"AND o.idtratta = c.ID " +
-					"AND p.idofferta = o.ID "  +
-					"AND b.idprenotazione = p.ID";
-			
-			
-			ps = conn.prepareStatement(selectQuery);
-			ps.setInt(1,  m.getID());    //per il calcolo di indici su mezzo mi serve l'id del mezzo
-			
-			rs = ps.executeQuery();
-			
-			if (rs.next()){
-				denominatore = rs.getDouble(1);
+			if (metodoScelto.equals("UltimaOfferta")){
+				
+				
 			}
 			
 			System.out.println(numeratore + " / " + denominatore + " = " + numeratore/denominatore);
@@ -119,7 +151,7 @@ public class IndiceDAO extends DAO{
 		
 	}
 	
-	public Double calcolaIndiceMezzoSuTipoMezzo(Tratta tratta) throws CalcoloIndiceException{
+	public Double calcolaGradimentoMezzoSuTipoMezzo(Tratta tratta) throws CalcoloIndiceException{
 		
 
 		
@@ -129,61 +161,58 @@ public class IndiceDAO extends DAO{
 			Mezzo m = tratta.getMezzo();
 			String categoria = tratta.getCategoria();
 			
-			if (categoria.equals(m.getIDEsternoElemento())){  //DA SPOSTARE IN CONTROLLORE GESTIONE INDICI
-				throw new CalcoloIndiceException("Il mezzo selezionato non ha un tipo");
-			} else {
 				
-				ResultSet rs;
-				String selectQuery;
-				Double numeratore = null ;
-				Double denominatore = null;
+			ResultSet rs;
+			String selectQuery;
+			Double numeratore = null ;
+			Double denominatore = null;
 				
-				// CALCOLO NUMERATORE
+			// CALCOLO NUMERATORE
 				
-				conn = Persistenza.getConnection();
-				// tutti i biglietti venduti per una tratta
-				selectQuery = 
-						"SELECT COUNT(*) FROM catalogo AS c, offerta AS o, prenotazione AS p, biglietto AS b " + 
-						"WHERE c.mezzo=? " +
-						"AND o.idtratta = c.ID " +
-						"AND p.idofferta = o.ID "  +
-						"AND b.idprenotazione = p.ID";
+			conn = Persistenza.getConnection();
+			// tutti i biglietti venduti per una tratta
+			selectQuery = 
+					"SELECT COUNT(*) FROM catalogo AS c, offerta AS o, prenotazione AS p, biglietto AS b " + 
+					"WHERE c.mezzo=? " +
+					"AND o.idtratta = c.ID " +
+					"AND p.idofferta = o.ID "  +
+					"AND b.idprenotazione = p.ID";
 				
 				
-				ps = conn.prepareStatement(selectQuery);
-				ps.setInt(1, m.getID());   //per calcolo di indici su tutta la tratta mi basta il semplice id della tratta
+			ps = conn.prepareStatement(selectQuery);
+			ps.setInt(1, m.getID());   //per calcolo di indici su tutta la tratta mi basta il semplice id della tratta
 				
-				rs = ps.executeQuery();
+			rs = ps.executeQuery();
 				
-				if (rs.next()){
-					numeratore = rs.getDouble(1);
-				}
-				
-				
-				// CALCOLO DENOMINATORE
-				
-				
-				selectQuery = 
-						"SELECT COUNT(*) FROM catalogo AS c, offerta AS o, prenotazione AS p, biglietto AS b " + 
-						"WHERE c.categoria=? " +
-						"AND o.idtratta = c.ID " +
-						"AND p.idofferta = o.ID "  +
-						"AND b.idprenotazione = p.ID";
-				
-				
-				ps = conn.prepareStatement(selectQuery);
-				ps.setString(1,  tratta.getCategoria());    //per il calcolo di indici su mezzo mi serve l'id del mezzo
-				
-				rs = ps.executeQuery();
-				
-				if (rs.next()){
-					denominatore = rs.getDouble(1);
-				}
-				
-				System.out.println(numeratore + " / " + denominatore + " = " + numeratore/denominatore);
-				return (numeratore/denominatore) * 100;
-				
+			if (rs.next()){
+				numeratore = rs.getDouble(1);
 			}
+				
+				
+			// CALCOLO DENOMINATORE
+				
+				
+			selectQuery = 
+					"SELECT COUNT(*) FROM catalogo AS c, offerta AS o, prenotazione AS p, biglietto AS b " + 
+					"WHERE c.categoria=? " +
+					"AND o.idtratta = c.ID " +
+					"AND p.idofferta = o.ID "  +
+					"AND b.idprenotazione = p.ID";
+				
+				
+			ps = conn.prepareStatement(selectQuery);
+			ps.setString(1,  tratta.getCategoria());    //per il calcolo di indici su mezzo mi serve l'id del mezzo
+				
+			rs = ps.executeQuery();
+				
+			if (rs.next()){
+				denominatore = rs.getDouble(1);
+			}
+				
+			System.out.println(numeratore + " / " + denominatore + " = " + numeratore/denominatore);
+			return (numeratore/denominatore) * 100;
+				
+			
 			
 			
 			
