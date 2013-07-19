@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 /**
@@ -41,10 +42,23 @@ public class UtenteDAO extends DAO{
 		"INSERT INTO utente(nome,cognome,mail,username,password,ruolo) " +
 		"VALUES(?, ?, ?, ?, ?, ?)";
 	
+	
+	private static final String cambiaPasswordQuery = 
+			"UPDATE utente SET " +
+			"password=? " +
+			"WHERE username=? LIMIT 1";
+	
+	
 	private static final String cambiaPasswordAmministratoreQuery = 
 			"UPDATE utente SET " +
 			"username=?, password=? " +
 			"WHERE username=? LIMIT 1";
+	
+	private static final String cambiaMailQuery = 
+			"UPDATE utente SET " +
+			"mail=? " +
+			"WHERE username=? LIMIT 1";
+	
 	private static final String deleteQuery = 
 			"DELETE FROM utente " +
 			"WHERE username=? LIMIT 1";
@@ -198,6 +212,56 @@ public class UtenteDAO extends DAO{
 		}
 
 	}
+	
+	
+	public void cambiaPassword(String username, String password){
+		// TODO Auto-generated method stub
+		try {
+			conn = Persistenza.getConnection();
+
+			ps = conn.prepareStatement(cambiaPasswordQuery);
+			
+			
+			ps.setString(1, password);
+			ps.setString(2, username);
+
+			ps.executeUpdate();
+
+		} catch (ClassCastException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeResource();
+		}
+
+	}
+	
+	
+	
+	public void cambiaMail(String username, String mail){
+		// TODO Auto-generated method stub
+		try {
+			conn = Persistenza.getConnection();
+
+			ps = conn.prepareStatement(cambiaMailQuery);
+			
+			
+			ps.setString(1, mail);
+			ps.setString(2, username);
+
+			ps.executeUpdate();
+
+		} catch (ClassCastException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeResource();
+		}
+
+	}
+
 
 	/*
 	 * CRUD -  Delete
@@ -222,6 +286,39 @@ public class UtenteDAO extends DAO{
 		}finally {
 			closeResource();
 		}
+	}
+	
+	
+	public ArrayList<Utente> getUtenza(){
+		ArrayList<Utente> listaUtenti = new ArrayList<Utente>();
+			try {
+				conn = Persistenza.getConnection();
+				ps = conn.prepareStatement(getListaUtentiQuery);
+				rs = ps.executeQuery();
+				
+				while (rs.next()) {
+					String nome = rs.getString(2);
+					String cognome = rs.getString(3);
+					String email = rs.getString(4);
+					String username = rs.getString(5);
+					String password = rs.getString(6);
+					String ruolo = rs.getString(7);
+					
+					Utente utente = new Utente(nome, cognome, email, username, password, ruolo);
+					listaUtenti.add(utente);
+				}
+				
+				closeResource();
+				return listaUtenti;
+					
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				closeResource();
+			}
+	
+		return listaUtenti;
 	}
 
 }

@@ -6,12 +6,15 @@ package gestione_Catalogo.boundary;
 import gestione_Catalogo.control.ControlloreGestioneUtenti;
 import gestione_Catalogo.entity.Utente;
 import gestione_Catalogo.exception.DatiPersonaliErratiException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.UtenteEsistenteException;
+import gestione_Catalogo.exception.UtenteInesistenteException;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -34,6 +37,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 	
 	//Entita'
 	private ControlloreGestioneUtenti controllore;
+	private String ruoloScelto;
 
 	//Pannelli
 	private JPanel superPanel;
@@ -104,6 +108,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 	
 	private JButton bottoneChiudiPannello3;
 
+	private TendinaRuoliPannello3AA ascoltatoreTendinaRuoliPannello3;
 	private ChiudiPannello3AA ascoltatoreBottoneChiudiPannello3;
 	private RimuoviAA ascoltatoreBottoneRimuovi;
 	private SvuotaPannello3AA ascoltatoreBottoneSvuotaPannello3;
@@ -114,7 +119,7 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 	public BoundaryAmministratore_GestioneUtenti_GestioneUtenti(JPanel nextPanel) {
 		
 		controllore = new ControlloreGestioneUtenti();
-		
+		ruoloScelto = null;
 		
 		/*
 		 * Il superPanel di questa Boundary prende le dimensioni del pannello Passato 
@@ -353,6 +358,9 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		panel3.add(bottoneChiudiPannello3);
 		
 		//Ascoltatori pannello 3
+		ascoltatoreTendinaRuoliPannello3 = new TendinaRuoliPannello3AA();
+		tendinaRuoliPannello3.addActionListener(ascoltatoreTendinaRuoliPannello3);
+		
 		ascoltatoreBottoneSvuotaPannello3 = new SvuotaPannello3AA();
 		bottoneSvuotaPannello3.addActionListener(ascoltatoreBottoneSvuotaPannello3);
 		
@@ -407,6 +415,20 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		campoPasswordPannello2.setText(null);
 		campoRipetiPasswordPannello2.setText(null);
 	}
+	
+	private void aggiornaTendinePannello3(){
+		ruoloScelto = null;
+		tendinaRuoliPannello3.removeAllItems();
+		tendinaRuoliPannello3.setEnabled(false);
+			
+		ArrayList<String> ruoli = controllore.mostraRuoliUtenza();
+		for(String s : ruoli){ 					
+			tendinaRuoliPannello3.addItem(s);  
+		}
+			
+		tendinaRuoliPannello3.setEnabled(true);
+		
+	}
 
 	
 
@@ -442,6 +464,8 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 			bottoneAggiungiUtente.setEnabled(false); //disattiva i bottoni
 			bottoneRimuoviUtente.setEnabled(false);
 			bottoneChiudiPannello1.setEnabled(false);
+			
+			aggiornaTendinePannello3();
 		
 		}
 		
@@ -539,14 +563,54 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 	 * Classi Ascoltatori per bottoni pannello 3
 	 */
 	
+	private class TendinaRuoliPannello3AA implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			
+			//Svuotiamo tutte le tendine successive (non le precedenti) e le disattiviamo
+			tendinaUtentiPannello3.removeAllItems();
+			tendinaUtentiPannello3.setEnabled(false);
+			
+			//prendo il valore di questa tendina
+			ruoloScelto	= (String)tendinaRuoliPannello3.getSelectedItem();
+			
+			if (tendinaRuoliPannello3.getItemCount() != 0) { 
+				ArrayList<String> utenti = controllore.mostraUtentiPerRuolo(ruoloScelto);
+				for (String s : utenti){
+					tendinaUtentiPannello3.addItem(s);
+				}
+			}
+			
+			tendinaUtentiPannello3.setEnabled(true);		
+		}
+		
+	}
+	
+	
 	private class RimuoviAA implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			/*
-			 * DA IMPLEMENTARE
-			 */
+			if (tendinaUtentiPannello3.getItemCount() != 0){
+				String utente = (String) tendinaUtentiPannello3.getSelectedItem();
+				// chiedo conferma
+				int conferma = JOptionPane.showConfirmDialog(null, "Rimuovere l'utente selezionato?", "Conferma Rimozione Utente", JOptionPane.YES_NO_OPTION);
+				if (conferma == JOptionPane.YES_OPTION){
+					try {
+						controllore.rimuoviUtente(utente,ruoloScelto);
+						JOptionPane.showMessageDialog(null, "L'utente e' stato rimosso dal sistema.", "Utente Rimosso", JOptionPane.INFORMATION_MESSAGE);
+						aggiornaTendinePannello3();
+					} catch (UtenteInesistenteException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.ERROR_MESSAGE);
+					}
+
+				}
+				
+			}
 			
 		}
 		
@@ -561,8 +625,9 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			
+			aggiornaTendinePannello3();
 			//tendinaRuoliPannello3.setSelectedIndex(0);
-			
+
 
 		}
 		
@@ -579,7 +644,10 @@ public class BoundaryAmministratore_GestioneUtenti_GestioneUtenti {
 			bottoneChiudiPannello1.setEnabled(true);
 						
 			//svuoto cmq il pannello
-			//tendinaRuoliPannello3.setSelectedIndex(0);
+			ruoloScelto=null;
+			tendinaRuoliPannello3.removeAllItems();
+			tendinaRuoliPannello3.setEnabled(false);
+			
 
 			
 		}

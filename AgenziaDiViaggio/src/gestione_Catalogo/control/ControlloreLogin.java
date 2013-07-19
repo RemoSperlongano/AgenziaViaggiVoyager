@@ -26,7 +26,7 @@ public class ControlloreLogin extends Controllore {
 		
 		//creo un nuovo utente e controllo il login
 		Utente utente = new Utente(username, password);
-		sessione = utente.login(username, password);
+		sessione = utente.login();
 		
 		if (sessione == null){
 			throw new LoginFallitoException("La password e' errata o non esiste l'utente indicato");

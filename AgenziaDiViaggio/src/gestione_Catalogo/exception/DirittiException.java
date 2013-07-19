@@ -21,7 +21,7 @@ public class DirittiException extends Exception {
 	}
 	
 	public String toString(){
-		return "Operazione non ammessa.";
+		return "Operazione non ammessa";
 	}
 	
 }

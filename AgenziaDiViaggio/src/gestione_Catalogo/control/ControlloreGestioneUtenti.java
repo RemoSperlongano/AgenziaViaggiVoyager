@@ -3,8 +3,14 @@
  */
 package gestione_Catalogo.control;
 
+import java.util.ArrayList;
+
 import gestione_Catalogo.entity.Utente;
+import gestione_Catalogo.entity.Utenza;
+import gestione_Catalogo.exception.CredenzialiErrateException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.UtenteEsistenteException;
+import gestione_Catalogo.exception.UtenteInesistenteException;
 
 /**
  * @authors
@@ -12,23 +18,77 @@ import gestione_Catalogo.exception.UtenteEsistenteException;
  * Ivan Torre
  */
 public class ControlloreGestioneUtenti extends Controllore {
+	
+	private static Utenza utenza;
 
 	public ControlloreGestioneUtenti(){
 		super();
+		utenza = Utenza.getIstanza();
 	}
 	
-	
-	public void cambiaPassword(String vecchiaPsw, String nuovaPsw){
-		/*
-		 * IN SOSPESO
-		 */
-		String username = sessione.getUsername();
-			 
-	}
 	
 	public void aggiungiUtente(String nome, String cognome, String email, String username, String password, String ruolo) throws UtenteEsistenteException{
 		Utente nuovoUtente = new Utente(nome, cognome, email, username, password, ruolo);
-		nuovoUtente.registraUtente();
+		utenza.aggiungiUtente(nuovoUtente);
 		log.aggiornaLogAggiungiUtente(sessione.getUsername(), nome, cognome, username, ruolo);
 	}
+	
+
+	public void rimuoviUtente(String username, String ruolo) throws UtenteInesistenteException, DirittiException {
+		if (sessione.getUsername().equals(username)){
+			throw new DirittiException("Non e' possibile rimuovere l'utente della sessione corrente.");
+		}
+		Utente utente = utenza.getUtenteByUsername(username);
+		utenza.rimuoviUtente(utente);
+		log.aggiornaLogRimuoviUtente(sessione.getUsername(), username, ruolo);	
+	}
+	
+	
+	public void cambiaPassword(String vecchiaPsw, String nuovaPsw) throws UtenteInesistenteException, CredenzialiErrateException{
+		String username = sessione.getUsername();
+		Utente u = utenza.getUtenteByUsername(username);
+		if (!u.getPassword().equals(vecchiaPsw)){
+			throw new CredenzialiErrateException("La password inserita non e' corretta.");
+		}
+		u.cambiaPassword(nuovaPsw);
+
+			 
+	}
+	
+	
+	public void cambiaEmail(String nuovaEmail, String password) throws UtenteInesistenteException, CredenzialiErrateException {
+		String username = sessione.getUsername();
+		Utente u = utenza.getUtenteByUsername(username);
+		if (!u.getPassword().equals(password)){
+			throw new CredenzialiErrateException("La password inserita non e' corretta.");
+		}
+		
+	}
+	
+	public ArrayList<String> mostraRuoliUtenza(){
+		ArrayList<String> listaRuoliUtenza = new ArrayList<String>();
+		ArrayList<Utente> listaUtenti = utenza.getListaUtenti();
+		for (Utente u : listaUtenti){
+			if (!listaRuoliUtenza.contains(u.getRuolo())){
+				listaRuoliUtenza.add(u.getRuolo());
+			}
+		}
+		return listaRuoliUtenza;
+	}
+	
+	public ArrayList<String> mostraUtentiPerRuolo(String ruolo){
+		ArrayList<String> listaUsername = new ArrayList<String>();
+		ArrayList<Utente> listaUtenti = utenza.getListaUtenti();
+		for (Utente u : listaUtenti){
+			if (u.getRuolo().equals(ruolo)){ 
+				listaUsername.add(u.getUsername());
+			}
+		}
+		return listaUsername;
+	}
+
+
+
+
+
 }

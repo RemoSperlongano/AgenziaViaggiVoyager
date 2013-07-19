@@ -59,7 +59,7 @@ public class Utente {
 		dao.insert(nome, cognome, eMail, username, password, ruolo);
 	}
 	
-	public Sessione login(String username, String password){
+	public Sessione login(){
 		UtenteDAO dao = UtenteDAO.getIstanza();
 		return dao.login(username, password);
 	}
@@ -69,7 +69,18 @@ public class Utente {
 		dao.cambiaPasswordAmministratore(username, password);
 	}
 	
-	public void eliminaUtente(String username){
+	
+	public void cambiaPassword(String password){
+		UtenteDAO dao = UtenteDAO.getIstanza();
+		dao.cambiaPassword(username, password);
+	}
+	
+	public void cambiaEmail(String email){
+		UtenteDAO dao = UtenteDAO.getIstanza();
+		dao.cambiaMail(username, email);
+	}
+	
+	public void eliminaUtente(){
 		UtenteDAO dao = UtenteDAO.getIstanza();
 		dao.delete(username);
 	}
