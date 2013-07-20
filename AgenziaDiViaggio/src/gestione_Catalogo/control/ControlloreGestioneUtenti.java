@@ -19,7 +19,7 @@ import gestione_Catalogo.exception.UtenteInesistenteException;
  */
 public class ControlloreGestioneUtenti extends Controllore {
 	
-	private static Utenza utenza;
+	protected static Utenza utenza;
 
 	public ControlloreGestioneUtenti(){
 		super();
