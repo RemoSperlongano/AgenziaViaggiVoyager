@@ -1037,6 +1037,13 @@ public class BoundaryPromotore_GestioneCatalogo {
 						
 						controllore.aggiungiViaggio(ambienteScelto, mezzoTrasporto, tipoMezzo, cittaPartenza, cittaArrivo, via, info);
 						JOptionPane.showMessageDialog(null, "Il nuovo viaggio e' stato aggiunto correttamente nel catalogo.", "Viaggio Aggiunto", JOptionPane.INFORMATION_MESSAGE);
+						
+						int conferma2 = JOptionPane.showConfirmDialog(null, "Aggiungere il viaggio di ritorno nel catalogo?", "Conferma Viaggio di ritorno in Catalogo", JOptionPane.YES_NO_OPTION);
+						if (conferma2 == JOptionPane.YES_OPTION){
+							controllore.aggiungiViaggio(ambienteScelto, mezzoTrasporto, tipoMezzo, cittaArrivo, cittaPartenza, via, info);
+							JOptionPane.showMessageDialog(null, "Il viaggio di ritorno e' stato aggiunto correttamente nel catalogo.", "Viaggio Ritorno Aggiunto", JOptionPane.INFORMATION_MESSAGE);
+						}
+						
 						aggiornaTendinePannello2(); //aggiorno le tendine
 					}
 					
