@@ -49,7 +49,7 @@ public class RawDataDAO {
 		return istanza;
 	}
 	
-	public Integer insertAndReturnId(IDEsternoElemento valore) {
+	public synchronized Integer insertAndReturnId(IDEsternoElemento valore) {
 		ResultSet rs;
 		Integer id ;
 		try {

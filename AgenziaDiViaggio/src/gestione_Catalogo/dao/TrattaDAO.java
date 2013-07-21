@@ -39,7 +39,14 @@ public class TrattaDAO extends DAO {
 				"FOREIGN KEY (cittaarrivo) REFERENCES citta (ID), " +
 				"FOREIGN KEY (via) REFERENCES via (ID) " +
 				")";
+	
+	private static final String insertByValueQuery = 
+			"INSERT INTO catalogo(ambiente,mezzo,categoria,cittapartenza,cittaarrivo,via,info,data) " +
+			"VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
+	private static final String findByValueQuery =
+			"SELECT * FROM catalogo " + 
+			"WHERE AMBIENTE=? AND MEZZO=? AND CATEGORIA=? AND CITTAPARTENZA=? AND CITTAARRIVO=? AND VIA=? LIMIT 1";
 
 	private static final String insertQuery = 
 			"INSERT INTO catalogo " +
@@ -93,36 +100,100 @@ public class TrattaDAO extends DAO {
 	 * La Insert viene invocata dal costruttore di Tratta, collegata alla creazione dell'oggetto
 	 */
 	
-	public void insert(Tratta tratta) {
-		// TODO Auto-generated method stub
+//	public synchronized void insert(Tratta tratta) {
+//		// TODO Auto-generated method stub
+//		try {
+//
+//			conn = Persistenza.getConnection();
+//
+//			ps = conn.prepareStatement(insertQuery);
+//
+//			System.out.println("Inserimento della tratta nel db.");
+//
+//			ps.setInt(1, tratta.getID());
+//			ps.setInt(2, tratta.getAmbiente().getID());
+//			ps.setInt(3, tratta.getMezzo().getID());
+//			ps.setString(4, tratta.getCategoria());
+//			ps.setInt(5, tratta.getPartenza().getID());
+//			ps.setInt(6, tratta.getArrivo().getID());
+//			ps.setInt(7, tratta.getVia().getID());
+//			ps.setString(8, tratta.getInfo());
+//			ps.setTimestamp(9, tratta.getDataInserimento().getDataForDB());
+//			System.out.println(ps.toString());
+//			ps.executeUpdate();
+//
+//		} catch (ClassCastException e) {
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}finally {
+//			closeResource();
+//		}
+//
+//	}
+	
+	
+	public synchronized Integer insertAndReturnId(Ambiente ambiente, Mezzo mezzo, String categoria, Citta partenza, Citta arrivo, Via via, Info info, Data data) {
+		ResultSet rs;
 		try {
-
 			conn = Persistenza.getConnection();
-
-			ps = conn.prepareStatement(insertQuery);
-
-			System.out.println("Inserimento della tratta nel db.");
-
-			ps.setInt(1, tratta.getID());
-			ps.setInt(2, tratta.getAmbiente().getID());
-			ps.setInt(3, tratta.getMezzo().getID());
-			ps.setString(4, tratta.getCategoria());
-			ps.setInt(5, tratta.getPartenza().getID());
-			ps.setInt(6, tratta.getArrivo().getID());
-			ps.setInt(7, tratta.getVia().getID());
-			ps.setString(8, tratta.getInfo());
-			ps.setTimestamp(9, tratta.getDataInserimento().getDataForDB());
+			ps = conn.prepareStatement(findByValueQuery);
+			ps.setInt(1, ambiente.getID());
+			ps.setInt(2, mezzo.getID());
+			ps.setString(3, categoria);
+			ps.setInt(4, partenza.getID());
+			ps.setInt(5, arrivo.getID());
+			ps.setInt(6, via.getID());
+			
 			System.out.println(ps.toString());
-			ps.executeUpdate();
-
+			
+			rs = ps.executeQuery();
+			if(rs.next()) { // elemento gia'  presente, ritorno direttamente l'ID. 
+				Integer a = rs.getInt(1);
+				closeResource();
+				return a;
+			} else { // elemento non presente: inserisco, inizialmente, solo il valore associato
+				ps = conn.prepareStatement(insertByValueQuery);
+				ps.setInt(1, ambiente.getID());
+				ps.setInt(2, mezzo.getID());
+				ps.setString(3, categoria);
+				ps.setInt(4, partenza.getID());
+				ps.setInt(5, arrivo.getID());
+				ps.setInt(6, via.getID());
+				ps.setString(7, info.toString());
+				ps.setTimestamp(8, data.getDataForDB());
+				ps.executeUpdate();
+				
+				// ora che l'elemento e' inserito, richiedo l'ID associato e lo ritorno.
+				ps = conn.prepareStatement(findByValueQuery);
+				ps.setInt(1, ambiente.getID());
+				ps.setInt(2, mezzo.getID());
+				ps.setString(3, categoria);
+				ps.setInt(4, partenza.getID());
+				ps.setInt(5, arrivo.getID());
+				ps.setInt(6, via.getID());
+				rs = ps.executeQuery();
+				
+				if(rs.next()) { // elemento gia'  presente, ritorno direttamente l'ID. 
+					Integer a = rs.getInt(1);
+					closeResource();
+					return a;
+				} else {
+					closeResource();
+					System.out.println("prova null");
+					return null;
+				}
+			}
 		} catch (ClassCastException e) {
 			e.printStackTrace();
+			closeResource();
+			return null;
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
 			closeResource();
+			return null;
 		}
-
 	}
 	
 	/*
@@ -282,20 +353,22 @@ public class TrattaDAO extends DAO {
 
 	}
 	
-	public Integer getNextId(){
+	public synchronized Integer getNextId(){
 		try {
 			// Situazione 1. Tabella Vuota. Id da ritornare 1.
 			conn = Persistenza.getConnection();
 			ps = conn.prepareStatement(getCatalogoQuery);
 			rs = ps.executeQuery();
-			if (!rs.next())
+			if (!rs.next()){
+				System.out.println("ID RITORNATO : 1");
 				return 1;
-
+			}
 			// Situazione 2. Almeno un Elemento presente.
 			rs.last();
 			
 			Integer a = (rs.getInt(1)) + 1;
 			closeResource();
+			System.out.println("ID RITORNATO : 1");
 			return a;
 		} catch (ClassCastException e) {
 			e.printStackTrace();

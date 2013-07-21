@@ -88,7 +88,8 @@ public class ControlloreGestioneCatalogo extends Controllore {
 			Tratta nuovaTratta = creaTratta(ambiente, mezzo, categoriaMezzo, cittaPartenza, cittaArrivo, via, info);
 			//aggiungo il viaggio
 			catalogo.aggiungiViaggioAlCatalogo(nuovaTratta);
-			log.aggiornaLogAggiungiViaggio(sessione.getUsername(),ambiente,mezzo,cittaPartenza,cittaArrivo,via);
+			//log.aggiornaLogAggiungiViaggio(sessione.getUsername(),ambiente,mezzo,cittaPartenza,cittaArrivo,via);
+			log.aggiornaLogAggiungiViaggio("Thread",ambiente,mezzo,cittaPartenza,cittaArrivo,via);
 		}
 	}
 
