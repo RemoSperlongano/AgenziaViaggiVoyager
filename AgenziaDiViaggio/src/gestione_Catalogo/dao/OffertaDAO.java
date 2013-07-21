@@ -95,7 +95,7 @@ public class OffertaDAO extends DAO {
 	 * La Insert viene invocata dal costruttore di Offerta, collegata alla creazione dell'oggetto
 	 * Questa particolare insert mi deve ritornare l'id da associare all'oggetto appena creato
 	 */
-	public Integer insertAndReturnId(Integer idTratta, Data dataPartenza, Data dataArrivo, Integer posti, Data dataInserimento) {
+	public synchronized Integer insertAndReturnId(Integer idTratta, Data dataPartenza, Data dataArrivo, Integer posti, Data dataInserimento) {
 		ResultSet rs;
 		try {
 			conn = Persistenza.getConnection();

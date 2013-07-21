@@ -33,7 +33,7 @@ public class ControlloreGestioneOfferta extends Controllore {
 	
 	
 	
-	public void aggiungiOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, Integer[] data, int durata, int posti) throws TrattaInesistenteException, IDEsternoElementoException, OffertaException, QuantitaException, DataNonValidaException, DirittiException{
+	public void aggiungiOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, Integer[] data, Integer durata, Integer posti) throws TrattaInesistenteException, IDEsternoElementoException, OffertaException, QuantitaException, DataNonValidaException, DirittiException{
 		
 		Data dataPartenza = new Data(data[0], data[1], data[2], data[3], data[4]);
 		
@@ -78,6 +78,46 @@ public class ControlloreGestioneOfferta extends Controllore {
 		catalogo.rimuoviOffertaDalCatalogo(offerta, tratta);
 		log.aggiornaLogRimuoviOfferta(sessione.getUsername(), ambiente, mezzo, partenza, arrivo, via, dataPartenza);
 	}
+	
+	
+	
+	
+	
+	/*
+	 * 
+	 * Metodi per i Thread
+	 * 
+	 */
+	
+	public void aggiungiOffertaThread(String ambiente, String mezzo, String partenza, String arrivo, String via, Integer[] data, Integer durata, Integer posti) throws TrattaInesistenteException, IDEsternoElementoException, OffertaException, QuantitaException, DataNonValidaException, DirittiException, InterruptedException{
+		
+		Data dataPartenza = new Data(data[0], data[1], data[2], data[3], data[4]);
+		
+		//controllo che la data di partenza non sia inferiore alla data odierna + 1 settimana. Il sistema non accetta offerte con date antecedenti a tale data.
+		Data dataAttuale = new Data();
+		
+		
+		if (durata <= 0){
+			throw new QuantitaException("La durata del viaggio non puo' essere nulla. Inserire una durata maggiore di 0 minuti.");
+		}
+		if (posti <= 0){
+			throw new QuantitaException("I posti disponibili non possono essere nulli. Inserire una quantita' di posti maggiore di 0.");
+		}
+		
+		if (catalogo.verificaEsistenzaOffertaThread(ambiente,mezzo,partenza,arrivo,via,dataPartenza)){
+			throw new OffertaException("Offerta gia' esistente per il viaggio!");
+		}
+		
+		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
+		Integer idTratta = tratta.getID();
+		
+		
+		Offerta nuovaOfferta = new Offerta(idTratta, dataPartenza, durata, posti);
+		catalogo.aggiungiOffertaAlCatalogo(nuovaOfferta, tratta); // questo lo lascio con i metodi normale, tanto la verifica degli elementi in mappa l'ha fatta da verificaEsistenzaOfferta
+		log.aggiornaLogAggiungiOfferta("Thread", ambiente, mezzo, partenza, arrivo , via, dataPartenza, durata, posti);
+	}
+	
+	
 
 
 }

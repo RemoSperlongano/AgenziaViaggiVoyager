@@ -34,9 +34,9 @@ public class PromotoreThread3 implements Runnable {
 		try {
 			
 			System.out.println("Promotore3 In azione");
-			controllore.aggiungiViaggio("Mare", "Traghetto", "", "Roma", "Milano", "", "");
-			controllore.aggiungiViaggio("Mare", "Panfilo", "", "Roma", "Parigi", "","");
-			controllore.aggiungiViaggio("Mare", "Traghetto", "", "Roma", "Ginevra", "", "");
+			controllore.aggiungiViaggio("Mare", "Traghetto", "", "Cagliari", "Roma", "", "");
+			controllore.aggiungiViaggio("Mare", "Panfilo", "", "Formia", "Napoli", "","");
+			controllore.aggiungiViaggio("Mare", "Traghetto", "", "Cagliari", "Napoli", "", "");
 			System.out.println("Promotore3 saluta e muore...");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -60,8 +60,7 @@ public class PromotoreThread3 implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (TrattaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Il viaggio già esiste, il Promotore3 ucciso!");
 		} catch (IDEsternoElementoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

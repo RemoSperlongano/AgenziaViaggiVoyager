@@ -15,7 +15,7 @@ import gestione_Catalogo.thread.PromotoreThread5;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class ThreadTest {
+public class ThreadPromotoreTest {
 
 	/**
 	 * @param args

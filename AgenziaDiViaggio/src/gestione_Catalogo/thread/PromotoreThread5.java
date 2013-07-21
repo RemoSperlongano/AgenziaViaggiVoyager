@@ -63,8 +63,7 @@ public class PromotoreThread5 implements Runnable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (TrattaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Il viaggio già esiste, il Promotore5 ucciso!");
 		} catch (IDEsternoElementoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

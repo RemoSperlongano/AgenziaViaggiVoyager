@@ -94,6 +94,18 @@ public abstract class ElementoCatalogo {
 	
 	public boolean mapIsEmpty() throws DirittiException{
 		throw new DirittiException("Errore: mapIsEmpty in ElementoCatalogo. Operazione non ammessa.");
+	}
+	
+	
+	/*
+	 * 
+	 * Metodi per Thread
+	 * 
+	 * 
+	 */
+	
+	public ElementoCatalogo getElementoThread(String k) throws IDEsternoElementoException, DirittiException, InterruptedException{
+		throw new DirittiException("Errore: getElementoThread in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
 }	

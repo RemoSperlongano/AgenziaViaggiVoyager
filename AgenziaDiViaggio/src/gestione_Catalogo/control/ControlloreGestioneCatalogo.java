@@ -58,7 +58,6 @@ public class ControlloreGestioneCatalogo extends Controllore {
 		//questo ciclo for mi serve per controllare se il mezzo passato da parametro ha già il tipo inserito (quindi se c'è uno spazio in mezzo)
 		for (int i = 0; i < mezzo.length(); i++){
 			char c = mezzo.charAt(i);
-			System.out.println(c);
 			if (Character.isWhitespace(c)){
 				//ho trovato lo spazio, divido le substringhe e li rimetto nei loro posti di competenza
 				String nuovoMezzo = mezzo.substring(0, i);

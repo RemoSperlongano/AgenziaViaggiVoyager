@@ -402,6 +402,18 @@ public class Catalogo {
 		return mappaCatalogo.getElemento(ambiente).esistenzaElemento(mezzo);
 	}
 	
+	
+	/*
+	 * 
+	 * Metodi per i Thread
+	 * 
+	 */
+	
+	// Verifica se esista o meno una determinata offerta.
+		public boolean verificaEsistenzaOffertaThread(String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataPartenza) throws IDEsternoElementoException, DirittiException, InterruptedException {
+			return mappaCatalogo.getElementoThread(ambiente).getElementoThread(mezzo).getElementoThread(partenza).getElementoThread(arrivo).getElementoThread(via).esistenzaOfferta(dataPartenza);
+		}
+	
 
 
 }
