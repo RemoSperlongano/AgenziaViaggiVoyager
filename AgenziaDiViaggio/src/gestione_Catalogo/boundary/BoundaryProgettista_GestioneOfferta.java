@@ -136,6 +136,7 @@ public class BoundaryProgettista_GestioneOfferta {
 	private JTextField campoPostiPannello2;
 
 	private JButton bottoneAggiungi;
+	private JButton bottoneAggiungiRitorno;
 	private JButton bottoneSvuotaPannello2;
 	
 	private JButton bottoneChiudiPannello2;
@@ -149,6 +150,7 @@ public class BoundaryProgettista_GestioneOfferta {
 	private TendinaMesePannello2AA ascoltatoreTendinaMesePannello2;
 	private ChiudiPannello2AA ascoltatoreBottoneChiudiPannello2;
 	private AggiungiAA ascoltatoreBottoneAggiungi;
+	private AggiungiRitornoAA ascoltatoreBottoneAggiungiRitorno;
 	private SvuotaPannello2AA ascoltatoreBottoneSvuotaPannello2;
 	
 	//Elementi Pannello3
@@ -543,6 +545,12 @@ public class BoundaryProgettista_GestioneOfferta {
 		bottoneAggiungi.setBounds(panel2.getWidth()/5*4-25, panel2.getHeight()/6*4+20, panel2.getWidth()/5, panel2.getHeight()/14);
 		panel2.add(bottoneAggiungi);
 		
+		bottoneAggiungiRitorno = new JButton("AGGIUNGI OFFERTA R.");
+		bottoneAggiungiRitorno.setBackground(Color.CYAN);
+		bottoneAggiungiRitorno.setBounds(panel2.getWidth()/5*4-25, panel2.getHeight()/6*4+20, panel2.getWidth()/5, panel2.getHeight()/14);
+		bottoneAggiungiRitorno.setVisible(false);
+		panel2.add(bottoneAggiungiRitorno);
+		
 		bottoneChiudiPannello2 = new JButton("X");
 		bottoneChiudiPannello2.setBackground(Color.RED);
 		bottoneChiudiPannello2.setBounds(panel2.getWidth()/20*19, 0, panel2.getWidth()/20, panel2.getHeight()/18);
@@ -578,6 +586,9 @@ public class BoundaryProgettista_GestioneOfferta {
 		
 		ascoltatoreBottoneAggiungi = new AggiungiAA();
 		bottoneAggiungi.addActionListener(ascoltatoreBottoneAggiungi);
+		
+		ascoltatoreBottoneAggiungiRitorno = new AggiungiRitornoAA();
+		bottoneAggiungiRitorno.addActionListener(ascoltatoreBottoneAggiungiRitorno);
 		
 		ascoltatoreBottoneSvuotaPannello2 = new SvuotaPannello2AA();
 		bottoneSvuotaPannello2.addActionListener(ascoltatoreBottoneSvuotaPannello2);
@@ -1467,8 +1478,67 @@ public class BoundaryProgettista_GestioneOfferta {
 							//aggiungo l'offerta
 							controllore.aggiungiOfferta(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, via, data, durata, posti);
 							JOptionPane.showMessageDialog(null, "L'offerta e' stata aggiunta correttamente.", "Offerta Aggiunta", JOptionPane.INFORMATION_MESSAGE);
-							svuotaPartePannello2();
-							tendinaViaPannello2.setSelectedIndex(0);
+							//Inserimento offerte per il ritorno
+							int conferma2 = JOptionPane.showConfirmDialog(null, "Aggiungere offerte per il viaggio di ritorno?", "Offerte Ritorno", JOptionPane.YES_NO_OPTION);
+							if (conferma2 == JOptionPane.YES_OPTION){
+								
+								String a = ambienteScelto;
+								String m = mezzoScelto;
+								String as = arrivoScelto;
+								String ps = partenzaScelta;
+								String v = via;
+								
+							
+								tendinaAmbientePannello2.setEnabled(false);
+								tendinaMezziPannello2.setEnabled(false);
+								tendinaCittaArrivoPannello2.setEnabled(false);
+								tendinaCittaPartenzaPannello2.setEnabled(false);
+								tendinaViaPannello2.setEnabled(false);
+								bottoneAggiungi.setVisible(false);
+								bottoneAggiungiRitorno.setVisible(true);
+								bottoneSvuotaPannello2.setEnabled(false);
+								
+								
+								try {
+									areaTestoCatalogo = a + " " + m + " " + as + " : " + ps + " -> " + v + "\n\n"  +
+											"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
+											"-----------\t\t----------\t\t----------\n";
+								
+									areaTestoOfferta = controllore.mostraListaOffertaInCatalogo(a, m, as, ps, v);
+									
+									
+									
+								} catch (DirittiException e1) {
+									JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+								} catch (IDEsternoElementoException e1) {
+									
+									bottoneAggiungiRitorno.setVisible(false);
+									bottoneAggiungi.setVisible(true);
+									bottoneSvuotaPannello2.setEnabled(true);
+									tendinaAmbientePannello2.setEnabled(true);
+									tendinaMezziPannello2.setEnabled(true);
+									tendinaCittaArrivoPannello2.setEnabled(true);
+									tendinaCittaPartenzaPannello2.setEnabled(true);
+									tendinaViaPannello2.setEnabled(true);
+									
+									areaTestoPannello2.setText("");
+									
+									
+									aggiornaTendinePannello2();
+									JOptionPane.showMessageDialog(null, "Non esiste ancora un viaggio di ritorno" , "Errore", JOptionPane.ERROR_MESSAGE);
+								} catch (OfferteNonPresentiException e1) {
+									areaTestoOfferta = e1.getMessage();
+								} catch (OffertaInesistenteException e1) {
+									areaTestoOfferta = e1.getMessage();
+								}
+								
+								areaTestoPannello2.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);
+								areaTestoPannello2.setCaretPosition(0);
+							} else {
+								svuotaPartePannello2();
+								tendinaViaPannello2.setSelectedIndex(0);
+							}
+							
 						}
 						
 					} catch (DirittiException e1) {
@@ -1495,6 +1565,107 @@ public class BoundaryProgettista_GestioneOfferta {
 
 
 		}
+		
+		
+	private class AggiungiRitornoAA implements ActionListener{
+
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+				
+				try {
+					
+					int giorno = (Integer) tendinaGiornoPannello2.getSelectedItem();
+					int mese = (Integer) tendinaMesePannello2.getSelectedItem();
+					int anno = (Integer) tendinaAnnoPannello2.getSelectedItem();
+					int ora = (Integer) tendinaOrePannello2.getSelectedItem();
+					int minuto = Integer.parseInt((String) tendinaMinutoPannello2.getSelectedItem());
+					int durata = Integer.parseInt(campoDurataPannello2.getText());
+					int posti = Integer.parseInt(campoPostiPannello2.getText());
+				
+					Integer[] data = {giorno, mese, anno, ora, minuto};
+				
+					// chiedo conferma
+					int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere l'offerta per il viaggio?", "Conferma Aggiunta Offerta", JOptionPane.YES_NO_OPTION);
+					if (conferma == JOptionPane.YES_OPTION){
+					
+						//aggiungo l'offerta
+						controllore.aggiungiOfferta(ambienteScelto, mezzoScelto, arrivoScelto, partenzaScelta, viaScelta, data, durata, posti);
+						JOptionPane.showMessageDialog(null, "L'offerta e' stata aggiunta correttamente.", "Offerta Aggiunta", JOptionPane.INFORMATION_MESSAGE);
+						//Inserimento offerte per il ritorno
+						int conferma2 = JOptionPane.showConfirmDialog(null, "Continuare?", "Continuare", JOptionPane.YES_NO_OPTION);
+						
+						if (conferma2 == JOptionPane.NO_OPTION){
+							bottoneAggiungiRitorno.setVisible(false);
+							bottoneAggiungi.setVisible(true);
+							bottoneSvuotaPannello2.setEnabled(true);
+							tendinaAmbientePannello2.setEnabled(true);
+							tendinaMezziPannello2.setEnabled(true);
+							tendinaCittaArrivoPannello2.setEnabled(true);
+							tendinaCittaPartenzaPannello2.setEnabled(true);
+							tendinaViaPannello2.setEnabled(true);
+							areaTestoPannello2.setText("");
+							
+							
+							aggiornaTendinePannello2();
+							
+							
+							
+						} else {
+							tendinaAnnoPannello2.setSelectedIndex(0);
+							campoPostiPannello2.setText("");
+							campoDurataPannello2.setText("");
+							try {
+								areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + arrivoScelto + " : " + partenzaScelta + " -> " + viaScelta + "\n\n"  +
+										"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
+										"-----------\t\t----------\t\t----------\n";
+							
+								areaTestoOfferta = controllore.mostraListaOffertaInCatalogo(ambienteScelto, mezzoScelto, arrivoScelto, partenzaScelta, viaScelta);
+								
+								
+								
+							} catch (DirittiException e1) {
+								JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+							} catch (IDEsternoElementoException e1) {
+								JOptionPane.showMessageDialog(null, "Non esiste ancora un viaggio di ritorno" , "Errore", JOptionPane.ERROR_MESSAGE);
+							} catch (OfferteNonPresentiException e1) {
+								areaTestoOfferta = e1.getMessage();
+							} catch (OffertaInesistenteException e1) {
+								areaTestoOfferta = e1.getMessage();
+							}
+							
+							areaTestoPannello2.setText(areaTestoImp + areaTestoCatalogo + areaTestoOfferta);
+							areaTestoPannello2.setCaretPosition(0);
+						}
+						
+					}
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (NumberFormatException e1) {
+					JOptionPane.showMessageDialog(null, "Input non valido ("+e1.getMessage()+"). Digitare caratteri numerici.", "Attenzione!", JOptionPane.WARNING_MESSAGE);
+				} catch (TrattaInesistenteException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (IDEsternoElementoException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (OffertaException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+				} catch (QuantitaException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+				} catch (DataNonValidaException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+				}
+				
+				
+				
+			
+		}
+		
+	}
 	
 	private class SvuotaPannello2AA implements ActionListener{
 		/*
@@ -1502,6 +1673,7 @@ public class BoundaryProgettista_GestioneOfferta {
 		 */
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
+			
 			
 			if (tendinaAmbientePannello2.isEnabled()){
 								
@@ -1628,6 +1800,10 @@ public class BoundaryProgettista_GestioneOfferta {
 			
 			areaTestoPannello2.setText("");
 			areaTestoPannello2.setCaretPosition(0);
+			
+			bottoneAggiungi.setVisible(true);
+			bottoneAggiungiRitorno.setVisible(false);
+			bottoneSvuotaPannello2.setEnabled(true);
 
 		}
 	}
