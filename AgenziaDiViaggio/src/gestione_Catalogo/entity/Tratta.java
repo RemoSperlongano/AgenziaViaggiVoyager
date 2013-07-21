@@ -43,7 +43,7 @@ public class Tratta {
 		
 		
 		//salvo tratta su db
-		dao.insertAndReturnId(ambiente, mezzo, categoria, partenza, arrivo, via, info, dataInserimento);
+		this.ID = dao.insertAndReturnId(ambiente, mezzo, categoria, partenza, arrivo, via, info, dataInserimento);
 		
 	}
 
