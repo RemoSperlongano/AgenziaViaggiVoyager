@@ -17,6 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @authors 
@@ -174,8 +175,8 @@ public class OffertaDAO extends DAO {
 //		return null;
 //	}
 	
-	public ArrayList<Offerta> getListaOfferte(){
-		ArrayList<Offerta> listaOfferte = new ArrayList<Offerta>();
+	public List<Offerta> getListaOfferte(){
+		List<Offerta> listaOfferte = new ArrayList<Offerta>();
 		try {
 			conn = Persistenza.getConnection();
 			ps = conn.prepareStatement(getListaOfferteQuery);

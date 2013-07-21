@@ -91,8 +91,8 @@ public class CatalogoDAO extends DAO {
 	 * Terminato il resultSet, ritorna l'Arraylist
 	 */
 
-	public ArrayList<Tratta> getCatalogo(){
-		ArrayList<Tratta> tratte = new ArrayList<Tratta>();
+	public List<Tratta> getCatalogo(){
+		List<Tratta> tratte = new ArrayList<Tratta>();
 		try {
 			conn = Persistenza.getConnection();
 			ps = conn.prepareStatement(getCatalogoQuery);

@@ -13,6 +13,8 @@ import gestione_Catalogo.exception.PrenotazioneInesistenteException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -26,27 +28,27 @@ public class Catalogo {
 	private static Catalogo istanza;
 	
 	//attributi di istanza
-	private ArrayList<Tratta> listaTratte;
-	private ArrayList<Offerta> listaOfferte;
-	private ArrayList<Prenotazione> listaPrenotazioni;
+	private List<Tratta> listaTratte;
+	private List<Offerta> listaOfferte;
+	private List<Prenotazione> listaPrenotazioni;
 	
 	private MappaCatalogo mappaCatalogo;
 	
 	//costruttore
 	private Catalogo() {
-		listaTratte = new ArrayList<Tratta>();
-		listaOfferte = new ArrayList<Offerta>();
-		listaPrenotazioni = new ArrayList<Prenotazione>();
+//		listaTratte = new ArrayList<Tratta>();
+//		listaOfferte = new ArrayList<Offerta>();
+//		listaPrenotazioni = new ArrayList<Prenotazione>();
 		mappaCatalogo = new MappaCatalogo(); //istanziato il catalogo, creo subito una mappa per gli ambienti
 		
 		CatalogoDAO dao = CatalogoDAO.getIstanza();
-		listaTratte = dao.getCatalogo();
+		listaTratte = Collections.synchronizedList(dao.getCatalogo());
 		
 		OffertaDAO offertaDao = OffertaDAO.getIstanza();
-		listaOfferte = offertaDao.getListaOfferte();
+		listaOfferte = Collections.synchronizedList(offertaDao.getListaOfferte());
 		
 		PrenotazioneDAO prenotazioneDao = PrenotazioneDAO.getIstanza();
-		listaPrenotazioni = prenotazioneDao.getListaPrenotazioni();
+		listaPrenotazioni = Collections.synchronizedList(prenotazioneDao.getListaPrenotazioni());
 		
 		try {
 			caricaCatalogo();

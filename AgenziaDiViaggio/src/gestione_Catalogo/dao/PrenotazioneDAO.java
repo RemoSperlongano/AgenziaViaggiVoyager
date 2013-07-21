@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @authors 
@@ -143,8 +144,8 @@ public class PrenotazioneDAO extends DAO{
 	 */
 
 	
-	public ArrayList<Prenotazione> getListaPrenotazioni(){
-		ArrayList<Prenotazione> listaPrenotazioni = new ArrayList<Prenotazione>();
+	public List<Prenotazione> getListaPrenotazioni(){
+		List<Prenotazione> listaPrenotazioni = new ArrayList<Prenotazione>();
 		try {
 			conn = Persistenza.getConnection();
 			ps = conn.prepareStatement(getListaPrenotazioneQuery);
