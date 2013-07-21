@@ -1536,7 +1536,7 @@ public class BoundaryProgettista_GestioneOfferta {
 								areaTestoPannello2.setCaretPosition(0);
 							} else {
 								svuotaPartePannello2();
-								tendinaViaPannello2.setSelectedIndex(0);
+								tendinaViaPannello2.setSelectedItem(via);
 							}
 							
 						}

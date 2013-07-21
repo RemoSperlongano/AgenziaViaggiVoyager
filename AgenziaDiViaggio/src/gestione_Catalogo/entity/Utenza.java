@@ -22,8 +22,6 @@ public class Utenza {
 	
 	private Utenza(){
 		
-		listaUtenti = new ArrayList<Utente>();
-		
 		UtenteDAO dao = UtenteDAO.getIstanza();
 		listaUtenti = dao.getUtenza();
 	}
