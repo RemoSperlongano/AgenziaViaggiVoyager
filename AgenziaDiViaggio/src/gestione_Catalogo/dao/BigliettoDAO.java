@@ -96,7 +96,7 @@ public class BigliettoDAO extends DAO{
 	
 	
 	/*
-	 * CRUD - Create
+	 ** CRUD - Create
 	 * La Insert viene invocata dal costruttore di Biglietto, collegata alla creazione dell'oggetto
 	 * Questa particolare insert mi deve ritornare l'id da associare all'oggetto appena creato
 	 */
