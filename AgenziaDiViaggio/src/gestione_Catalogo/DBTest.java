@@ -41,7 +41,7 @@ public class DBTest {
 		
 		
 		System.out.println("Piallo il db!!!");
-		dropQuery = "DROP TABLE `utente`, `biglietto`, `viaggiatore`, `prenotazione`, `offerta`, `catalogo`, `ambiente`, `citta`, `mezzo`, `via`";
+		dropQuery = "DROP TABLE IF EXISTS `utente`, `biglietto`, `viaggiatore`, `prenotazione`, `offerta`, `catalogo`, `ambiente`, `citta`, `mezzo`, `via`";
 		
 		ps = conn.prepareStatement(dropQuery);
 		ps.executeUpdate();
