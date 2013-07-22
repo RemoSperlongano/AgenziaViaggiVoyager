@@ -6,6 +6,7 @@ package gestione_Catalogo.boundary;
 
 
 import gestione_Catalogo.control.ControlloreRimuoviOffertaConPrenotazioni;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -375,7 +376,8 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni_RimuoviOffertaConPrenota
 											"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 											"-----------\t\t----------\t\t----------\n";
 						
-						
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							areaTestoPannello3.setText(e1.getMessage()+"\n");
 						} catch (OfferteNonPresentiException e) {
@@ -438,6 +440,8 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni_RimuoviOffertaConPrenota
 							}
 							tendinaMezziPannello3.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -489,6 +493,8 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni_RimuoviOffertaConPrenota
 						
 						tendinaCittaPartenzaPannello3.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -539,6 +545,8 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni_RimuoviOffertaConPrenota
 						tendinaCittaArrivoPannello3.setEnabled(true);
 						tendinaCittaArrivoPannello3.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -591,6 +599,8 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni_RimuoviOffertaConPrenota
 						tendinaViaPannello3.setEnabled(true);
 						tendinaViaPannello3.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -655,6 +665,8 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni_RimuoviOffertaConPrenota
 						JOptionPane.showMessageDialog(null, "L'offerta e' stata rimossa correttamente.", "Offerta Rimossa", JOptionPane.INFORMATION_MESSAGE);
 						aggiornaOffertePannello3();
 							
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (TrattaInesistenteException e1) {

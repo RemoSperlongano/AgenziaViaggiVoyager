@@ -63,7 +63,7 @@ public class DBTest {
 		System.out.println("Inserisco utenti di base");
 		insertQuery =
 				"INSERT INTO `utente` (`nome`, `cognome`, `mail`, `username`, `password`, `ruolo`) VALUES " + 
-				"('admin', 'voyager', 'admin@voyager.it', 'admin', 'pas', 'Amministratore'), " +
+				"('admin', 'voyager', 'admin@voyager.it', 'admin', 'pas', 'PrimoAccesso'), " +
 				"('Moto', 'Vendo', 'motovendo@voyager.it', 'v', 'v', 'Venditore'), " +
 				"('Vincenzo', 'Proferrari', 'proferrari@voyager.it', 'p', 'p', 'Promotore'), " +
 				"('Archimede', 'Pitagorico', 'archipit@voyager.it', 'd', 'd', 'Progettista'), " +

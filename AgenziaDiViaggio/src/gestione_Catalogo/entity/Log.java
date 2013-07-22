@@ -1,6 +1,7 @@
 package gestione_Catalogo.entity;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -16,6 +17,9 @@ import gestione_Catalogo.exception.FileInesistenteException;
  */
 public class Log {
 	
+	private static final String directory = "log";
+	private static final String nomeFile ="log.txt";
+	private static final String path = directory+"/"+nomeFile;
 	
 	//attributi d'istanza
 	private String log;
@@ -28,127 +32,140 @@ public class Log {
 	
 	
 	//Metodi
-	public void aggiornaLogAggiungiViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via){
-		log = "[" + Data.stampaDataAttuale() + "] AGGIUNTO VIAGGIO Via " + ambiente + ":\n" ;									
-		log+= mezzo + "  ->  " + cittaPartenza + " : " + cittaArrivo + "  ->  " + via + "\n";
+	public void aggiornaLogAggiungiViaggio(String user, String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via){
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  AGGIUNTO NUOVO VIAGGIO: \n     ";
+		log+= "Viaggio Via " + ambiente + ":  " + mezzo + "  ->  " + cittaPartenza + " : " + cittaArrivo + "  ->  " + via + "\n";
 		System.out.println(log);
 		salvaLog(log); 
 	}
 	
 
-	public void aggiornaLogRimuoviViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via){
-		log = "[" + Data.stampaDataAttuale() + "] RIMOSSO VIAGGIO Via " + ambiente + ":\n";
-		log+= mezzo + "  ->  " + cittaPartenza + " : " + cittaArrivo + "  ->  " + via + "\n";
+	public void aggiornaLogRimuoviViaggio(String user, String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via){
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  RIMOSSO VIAGGIO: \n     ";
+		log+= "Viaggio Via " + ambiente + ":  " + mezzo + "  ->  " + cittaPartenza + " : " + cittaArrivo + "  ->  " + via + "\n";
 		System.out.println(log);
 		salvaLog(log); 
 	}
 	
 	
-	public void aggiornaLogAggiungiOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataPartenza, int durata, int posti) {
-		log = "[" + Data.stampaDataAttuale() + "] AGGIUNTA NUOVA OFFERTA: \n";
-		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
-		log+= "Data di Partenza: " + dataPartenza.stampaData()+"\n";
-		log+= "Data di Arrivo: " + dataPartenza.getNuovaData(durata).stampaData()+"\n";
-		log+= "Posti disponibili: " + posti+"\n";
+	public void aggiornaLogAggiungiOfferta(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataPartenza, int durata, int posti) {
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  AGGIUNTA NUOVA OFFERTA: \n     ";
+		log+= "Viaggio Via " + ambiente + ":  " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n     ";
+		log+= "Data di Partenza:  " + dataPartenza.stampaData()+"\n     ";
+		log+= "Data di Arrivo:  " + dataPartenza.getNuovaData(durata).stampaData()+"\n     ";
+		log+= "Posti disponibili:  " + posti+"\n";
 		System.out.println(log);
 		salvaLog(log); 
 	}
 	
-	public void aggiornaLogRimuoviOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) {
-		log = "[" + Data.stampaDataAttuale() + "] RIMOSSA OFFERTA: \n";
-		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
-		log+= "Data di Partenza: " + dataPartenza+"\n";
+	public void aggiornaLogRimuoviOfferta(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) {
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  RIMOSSA OFFERTA: \n     ";
+		log+= "Viaggio Via " + ambiente + ":  " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n     ";
+		log+= "Data di Partenza:  " + dataPartenza+"\n";
 		System.out.println(log);
 		salvaLog(log); 
-		
 	}
 	
-	public void aggiornaLogAggiungiPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
-		log = "[" + Data.stampaDataAttuale() + "] AGGIUNTA NUOVA PRENOTAZIONE: \n";
-		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
-		log+= "Data di Partenza: " + dataPartenza +"\n";
-		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
+	public void aggiornaLogAggiungiPrenotazione(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  AGGIUNTA NUOVA PRENOTAZIONE: \n     ";
+		log+= "Viaggio Via " + ambiente + ":  " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n     ";
+		log+= "Data di Partenza:  " + dataPartenza +"\n     ";
+		log+= "Nome Acquirente:  " + nomeAcquirente+"\n";
 		System.out.println(log);
 		salvaLog(log); 
-
-		
 	}
 	
 
-	public void aggiornaLogRimuoviPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
-		log = "[" + Data.stampaDataAttuale() + "] RIMOSSA PRENOTAZIONE: \n";
-		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
-		log+= "Data di Partenza: " + dataPartenza +"\n";
-		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
+	public void aggiornaLogRimuoviPrenotazione(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  RIMOSSA PRENOTAZIONE: \n     ";
+		log+= "Viaggio Via " + ambiente + ":  " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n     ";
+		log+= "Data di Partenza:  " + dataPartenza +"\n     ";
+		log+= "Nome Acquirente:  " + nomeAcquirente+"\n";
 		System.out.println(log);
 		salvaLog(log); 
-
 	}
 	
 	
-	public void aggiornaLogModificaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
-		log = "[" + Data.stampaDataAttuale() + "] MODIFICATA PRENOTAZIONE: \n";
-		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
-		log+= "Data di Partenza: " + dataPartenza +"\n";
-		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
+	public void aggiornaLogModificaPrenotazione(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  MODIFICATA PRENOTAZIONE: \n     ";
+		log+= "Viaggio Via " + ambiente + ":  " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n     ";
+		log+= "Data di Partenza:  " + dataPartenza +"\n     ";
+		log+= "Nome Acquirente:  " + nomeAcquirente+"\n";
 		System.out.println(log);
 		salvaLog(log); 
 	}
 
-	public void aggiornaLogEmissioneBiglietti(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
-		log = "[" + Data.stampaDataAttuale() + "] EROGATI BIGLIETTI PER LA PRENOTAZIONE: \n";
-		log+= "Viaggio Via " + ambiente + ": " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n";
-		log+= "Data di Partenza: " + dataPartenza +"\n";
-		log+= "Nome Acquirente: " + nomeAcquirente+"\n";
+	public void aggiornaLogEmissioneBiglietti(String user, String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, String nomeAcquirente) {
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  EROGATI BIGLIETTI PER LA PRENOTAZIONE: \n     ";
+		log+= "Viaggio Via " + ambiente + ":  " + mezzo + "  ->  " + partenza + " : " + arrivo + "  ->  " + via + "\n     ";
+		log+= "Data di Partenza:  " + dataPartenza +"\n     ";
+		log+= "Nome Acquirente:  " + nomeAcquirente+"\n";
 		System.out.println(log);
 		salvaLog(log); 
-		
 	}
+	
+	
+	public void aggiornaLogAggiungiUtente(String user, String nome, String cognome, String username, String ruolo) {
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  AGGIUNTO NUOVO UTENTE: \n     ";
+		log+= "Nome Utente:  " + nome + " " + cognome + "\n     ";
+		log+= "Username:  " + username + "\n     ";
+		log+= "Ruolo:  " + ruolo + "\n";
+		System.out.println(log);
+		salvaLog(log); 
+	}
+	
+	
+	public void aggiornaLogRimuoviUtente(String user, String username, String ruolo) {
+		log = " * [" + Data.stampaDataAttuale() + "]  "+ user +"  ---  RIMOSSO UTENTE: \n     ";
+		log+= "Username:  " + username + "\n     ";
+		log+= "Ruolo:  " + ruolo + "\n";
+		System.out.println(log);
+		salvaLog(log); 
+	}
+
 
 	
 
 	public String caricaLog() throws FileInesistenteException {
-		String contenutoFile = "";
-		String Dir = "Save";
-		new File(Dir).mkdir();
-		String path = Dir+"/log.txt";
-		FileReader fr;
-		
+		StringBuilder contenutoFile = new StringBuilder();
 		File file = new File(path);
 		try {			
-			fr = new FileReader(file);
-			BufferedReader br = new BufferedReader(fr); 
+			BufferedReader br = new BufferedReader(new FileReader(file)); 
 			String s;
 			while((s = br.readLine()) != null) {
-				contenutoFile = contenutoFile + s+"\n";
+				contenutoFile.append(s+"\n");
 			} 
-			fr.close();
+			br.close();
 		} catch (FileNotFoundException e) {
-			throw new FileInesistenteException("Attenzione! File Inesistente!");
+			throw new FileInesistenteException("Log non presente.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 			
-		return contenutoFile;
+		return contenutoFile.toString();
+	}
+	
+	
+	public static void cancellaLog() throws FileInesistenteException{
+		File file = new File(path);
+		if(!file.exists())
+			throw new FileInesistenteException("Il file di log non e' stato trovato.");
+		file.delete();
 	}
 	
 
 	private void salvaLog(String input) { //salva su file la stringa di input
-		String Dir = "Save";
-		new File(Dir).mkdir();
-		String path = Dir+"/log.txt";
-		FileWriter fw;
+		new File(directory).mkdir();
+		BufferedWriter bw;
 		try {
 			File file = new File(path);
-			fw = new FileWriter(file,true);
-			fw.write(input+"\r\n");
-			fw.flush();
-			fw.close();
+			bw = new BufferedWriter(new FileWriter(file,true));
+			bw.write(input+"\r\n");
+			bw.flush();
+			bw.close();
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
-
-
 
 }

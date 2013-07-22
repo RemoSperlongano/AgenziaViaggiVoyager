@@ -4,6 +4,7 @@
 package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreOrdinaViaggi;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -373,7 +374,8 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 										"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 										"-----------\t\t----------\t\t----------\n";
 					
-					
+				} catch (DirittiException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (IDEsternoElementoException e1) {
 					areaTesto.setText(e1.getMessage()+"\n");
 				} catch (OfferteNonPresentiException e) {
@@ -419,6 +421,8 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 				}
 			}
 			
+		} catch (DirittiException e) {
+			JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		} catch (IDEsternoElementoException e1) {
 			areaTestoCatalogo = e1.getMessage();
 		} catch (ParseException e1) {
@@ -474,6 +478,8 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 							}
 							tendinaMezzi.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -524,6 +530,8 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 						
 						tendinaCittaPartenza.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -573,6 +581,8 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 						tendinaCittaArrivo.setEnabled(true);
 						tendinaCittaArrivo.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -624,6 +634,8 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 						tendinaVia.setEnabled(true);
 						tendinaVia.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -699,8 +711,10 @@ public class BoundaryCliente_OrdinaViaggi_AnnullaPrenotazione {
 						JOptionPane.showMessageDialog(null, "La prenotazione e' stata rimossa correttamente.", "Prenotazione Rimossa", JOptionPane.INFORMATION_MESSAGE);
 						aggiornaOfferte();
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
-						JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.INFORMATION_MESSAGE);
 					} catch (TrattaInesistenteException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (OffertaInesistenteException e1) {

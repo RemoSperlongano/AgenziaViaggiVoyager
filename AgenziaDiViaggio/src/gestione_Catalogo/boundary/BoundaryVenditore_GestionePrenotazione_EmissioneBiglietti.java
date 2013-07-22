@@ -4,6 +4,7 @@
 package gestione_Catalogo.boundary;
 
 import gestione_Catalogo.control.ControlloreEmissioneBiglietti;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -417,7 +418,8 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 										"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 										"-----------\t\t----------\t\t----------\n";
 					
-					
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						areaTesto.setText(e1.getMessage()+"\n");
 					} catch (OfferteNonPresentiException e) {
@@ -481,6 +483,8 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 				}
 			}
 			
+		} catch (DirittiException e1) {
+			JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		} catch (IDEsternoElementoException e1) {
 			areaTestoCatalogo = e1.getMessage();
 		} catch (ParseException e1) {
@@ -512,6 +516,9 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 					areaTestoPrenotazione = "A nome di " + prenotazioneScelta + "\n\n";
 					
 					areaTestoBiglietto += controllore.mostraListaBigliettiPerPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, prenotazioneScelta);
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (OffertaInesistenteException e) {
 					areaTestoOfferta = e.getMessage();
 				} catch (PrenotazioneInesistenteException e) {
@@ -571,6 +578,8 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 							}
 							tendinaMezzi.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -621,6 +630,8 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 						
 						tendinaCittaPartenza.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -670,6 +681,8 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 						tendinaCittaArrivo.setEnabled(true);
 						tendinaCittaArrivo.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -721,6 +734,8 @@ public class BoundaryVenditore_GestionePrenotazione_EmissioneBiglietti {
 						tendinaVia.setEnabled(true);
 						tendinaVia.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}

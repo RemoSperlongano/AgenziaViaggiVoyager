@@ -1,5 +1,6 @@
 package gestione_Catalogo.entity;
 
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 
 import java.util.Set;
@@ -57,6 +58,19 @@ public abstract class ElementoIntermedio extends ElementoCatalogo {
 	
 	public boolean mapIsEmpty(){
 		return mappaCatalogo.isEmpty();
+	}
+	
+	
+	/*
+	 * 
+	 * Metodi per Thread
+	 * 
+	 * 
+	 */
+	
+	
+	public ElementoCatalogo getElementoThread(String k) throws IDEsternoElementoException, DirittiException, InterruptedException{
+		return mappaCatalogo.getElementoThread(k);
 	}
 	
 

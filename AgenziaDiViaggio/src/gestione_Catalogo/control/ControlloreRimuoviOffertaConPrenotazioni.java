@@ -12,6 +12,7 @@ import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Tratta;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.PrenotazioneInesistenteException;
@@ -25,7 +26,7 @@ import gestione_Catalogo.exception.TrattaInesistenteException;
 public class ControlloreRimuoviOffertaConPrenotazioni extends Controllore{
 	
 	
-	public void rimuoviOffertaConPrenotazioni(String ambiente, String mezzo,String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, TrattaInesistenteException, PrenotazioneInesistenteException {
+	public void rimuoviOffertaConPrenotazioni(String ambiente, String mezzo,String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, TrattaInesistenteException, PrenotazioneInesistenteException, DirittiException {
 		
 		Data dataOfferta = Data.parseTimestamp(dataPartenza);
 		
@@ -51,14 +52,14 @@ public class ControlloreRimuoviOffertaConPrenotazioni extends Controllore{
 				Prenotazione p = catalogo.getPrenotazioneFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta, lp.get(i));
 				catalogo.rimuoviPrenotazioneDalCatalogo(p, offerta, tratta);
 				offerta.liberaPosti(p.getListaBiglietti().size());
-				log.aggiornaLogRimuoviPrenotazione(ambiente,mezzo,partenza,arrivo,via,dataPartenza,lp.get(i));
+				log.aggiornaLogRimuoviPrenotazione(sessione.getUsername(),ambiente,mezzo,partenza,arrivo,via,dataPartenza,lp.get(i));
 			}
 			
 		}
 		
 		
 		catalogo.rimuoviOffertaDalCatalogo(offerta, tratta);
-		log.aggiornaLogRimuoviOfferta(ambiente, mezzo, partenza, arrivo, via, dataPartenza);
+		log.aggiornaLogRimuoviOfferta(sessione.getUsername(), ambiente, mezzo, partenza, arrivo, via, dataPartenza);
 		
 	}
 

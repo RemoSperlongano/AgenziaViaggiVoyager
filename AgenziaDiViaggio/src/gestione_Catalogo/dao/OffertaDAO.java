@@ -17,6 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @authors 
@@ -94,7 +95,7 @@ public class OffertaDAO extends DAO {
 	 * La Insert viene invocata dal costruttore di Offerta, collegata alla creazione dell'oggetto
 	 * Questa particolare insert mi deve ritornare l'id da associare all'oggetto appena creato
 	 */
-	public Integer insertAndReturnId(Integer idTratta, Data dataPartenza, Data dataArrivo, Integer posti, Data dataInserimento) {
+	public synchronized Integer insertAndReturnId(Integer idTratta, Data dataPartenza, Data dataArrivo, Integer posti, Data dataInserimento) {
 		ResultSet rs;
 		try {
 			conn = Persistenza.getConnection();
@@ -174,8 +175,8 @@ public class OffertaDAO extends DAO {
 //		return null;
 //	}
 	
-	public ArrayList<Offerta> getListaOfferte(){
-		ArrayList<Offerta> listaOfferte = new ArrayList<Offerta>();
+	public List<Offerta> getListaOfferte(){
+		List<Offerta> listaOfferte = new ArrayList<Offerta>();
 		try {
 			conn = Persistenza.getConnection();
 			ps = conn.prepareStatement(getListaOfferteQuery);

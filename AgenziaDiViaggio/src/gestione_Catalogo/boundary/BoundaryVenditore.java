@@ -1,6 +1,5 @@
 package gestione_Catalogo.boundary;
 
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -16,6 +15,8 @@ import javax.swing.JPanel;
  * Ivan Torre
  */
 public class BoundaryVenditore {
+	
+	private final String ruolo = "Venditore";
 	
 	//campi istanza pannelli
 	private JPanel superPanel; //Pannello principale
@@ -36,8 +37,10 @@ public class BoundaryVenditore {
 	//Elementi pannelloBottoni
 		
 	private static JButton bottoneGestionePrenotazione;
+	private static JButton bottoneInfoViaggi;
 		
 	private GestionePrenotazioneAA ascoltatoreGestionePrenotazione;
+	private InfoViaggiAA ascoltatoreInfoViaggi;
 	    
 	    
 	public BoundaryVenditore(){
@@ -109,23 +112,30 @@ public class BoundaryVenditore {
 		superPanel.add(panelBottoni);
 		
 		
-		bottoneGestionePrenotazione = new JButton("GESTIONE PRENOTAZIONE");
-		bottoneGestionePrenotazione.setBackground(Color.ORANGE);
-		bottoneGestionePrenotazione.setBounds(panelBottoni.getWidth()/5*2, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		bottoneGestionePrenotazione = new JButton("Gestione Prenotazione");
+		bottoneGestionePrenotazione.setBackground(Color.CYAN);
+		bottoneGestionePrenotazione.setBounds(panelBottoni.getWidth()/5, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
 		panelBottoni.add(bottoneGestionePrenotazione);
+		
+		bottoneInfoViaggi = new JButton("Info Viaggi");
+		bottoneInfoViaggi.setBackground(Color.GREEN);
+		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/5*3, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		panelBottoni.add(bottoneInfoViaggi);
 		
 		
 		//Ascoltatori per secondo pannello
 		ascoltatoreGestionePrenotazione = new GestionePrenotazioneAA();
 		bottoneGestionePrenotazione.addActionListener(ascoltatoreGestionePrenotazione);
 		
-	    	
+		ascoltatoreInfoViaggi = new InfoViaggiAA();
+		bottoneInfoViaggi.addActionListener(ascoltatoreInfoViaggi);
 	    	
 	    }
 	
 		public static void riattivaBottoni(){
 			//Riattivo tutti i bottoni di questo Pannello
 			bottoneGestionePrenotazione.setEnabled(true); 
+			bottoneInfoViaggi.setEnabled(true);
 		}
 	    
 	    
@@ -191,6 +201,7 @@ public class BoundaryVenditore {
 				
 				//Disattivo tutti i bottoni di questo Pannello
 				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
 				
 				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
 				panelNext = new JPanel();
@@ -202,11 +213,40 @@ public class BoundaryVenditore {
 				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
 				
 				
-				new BoundaryVenditore_GestionePrenotazione(panelNext);  //Passo il resto del Pannello
+				new BoundaryVenditore_GestionePrenotazione(panelNext, ruolo);  //Passo il resto del Pannello
 				
 			
 			}
 			
+		}
+		
+		private class InfoViaggiAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneGestionePrenotazione.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
+				panelNext.setLocation(0, superPanel.getHeight()/10*2+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryVisitatore_InfoViaggi(panelNext, ruolo);  //Passo il resto del Pannello
+				
+				
+			}
 		}
 
 }

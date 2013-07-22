@@ -29,7 +29,7 @@ public class Tratta {
 		
 		//necessito di un ID disponibile dal db
 		TrattaDAO dao = TrattaDAO.getIstanza();
-		ID = dao.getNextId();
+		
 		this.ambiente = ambiente;
 		this.mezzo = mezzo;
 		this.categoria = categoria;
@@ -39,11 +39,11 @@ public class Tratta {
 		this.info = info;
 		dataInserimento = new Data();
 		
-		this.info.updateInfo("--- Inserito il " + dataInserimento.stampaData());
+		this.info.updateInfo("--- Inserito il " + dataInserimento.stampaGiorno());
 		
 		
 		//salvo tratta su db
-		dao.insert(this);
+		this.ID = dao.insertAndReturnId(ambiente, mezzo, categoria, partenza, arrivo, via, info, dataInserimento);
 		
 	}
 

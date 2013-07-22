@@ -29,14 +29,18 @@ import gestione_Catalogo.thread.PromotoreThread;
 
 import gestione_Catalogo.control.ControlloreGestioneCatalogo;
 import gestione_Catalogo.exception.CittaCoincidentiException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
+import gestione_Catalogo.exception.TipoMezzoException;
 import gestione_Catalogo.exception.TrattaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
 
 public class BoundaryPromotore_GestioneCatalogo {
+	
+	private String ruolo;
 	
 	/*
 	 * Attributi di istanza
@@ -158,7 +162,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 	 * Costruttore
 	 */
 	
-	public BoundaryPromotore_GestioneCatalogo(JPanel panelNext){
+	public BoundaryPromotore_GestioneCatalogo(JPanel panelNext, String ruolo){
+		
+    	this.ruolo = ruolo;
 		
 		ambienteScelto = null;
 		mezzoScelto = null;
@@ -195,13 +201,13 @@ public class BoundaryPromotore_GestioneCatalogo {
 		superPanel.add(panel1);				//aggiungo il primo pannello al superPannello
 		panel1.setVisible(true);
 		
-		bottoneAggiungiViaggio = new JButton("AGGIUNGI VIAGGIO");
+		bottoneAggiungiViaggio = new JButton("Aggiungi Viaggio");
 		bottoneAggiungiViaggio.setBackground(Color.CYAN);
 		bottoneAggiungiViaggio.setBounds(panel1.getWidth()/5, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneAggiungiViaggio);//aggiungo il bottone al secondo pannello
 		
 		
-		bottoneRimuoviViaggio = new JButton("RIMUOVI VIAGGIO");
+		bottoneRimuoviViaggio = new JButton("Rimuovi Viaggio");
 		bottoneRimuoviViaggio.setBackground(Color.YELLOW);
 		bottoneRimuoviViaggio.setBounds(panel1.getWidth()/5*3, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 		panel1.add(bottoneRimuoviViaggio);//aggiungo il bottone al secondo pannello
@@ -585,6 +591,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 			while(it.hasNext()) 					//itero l'insieme di chiavi
 				tendinaMezziPannello2.addItem(it.next());  //ne aggiungo uno alla volta
 			
+		} catch (DirittiException e1) {
+			JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		} catch (IDEsternoElementoException e) {
 			System.out.println(e.getMessage()+"\n");
 		}
@@ -628,7 +636,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 			areaTestoCatalogo = controllore.mostraCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 			areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 			areaTestoPannello3.setCaretPosition(0);
-					
+			
+		} catch (DirittiException e1) {
+			JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		} catch (MappaException e) {
 			areaTestoPannello3.setText(e.getMessage()+"\n");
 		} catch (IDEsternoElementoException e) {
@@ -651,6 +661,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 			if (!Character.isLetter(s.charAt(i))&&!Character.isWhitespace(c))
 				throw new IDEsternoElementoException("Caratteri non validi. Controllare i dati inseriti...");
 		}
+		
 	
 	}
 	
@@ -753,7 +764,17 @@ public class BoundaryPromotore_GestioneCatalogo {
 		public void actionPerformed(ActionEvent e) {
 			
 			superPanel.setVisible(false); 			    //chiude tutto questo pannello
-			BoundaryPromotore.riattivaBottoni();      	//riattiva i bottoni
+			
+			
+			//riattiva i bottoni in base al ruolo.
+
+			if (ruolo.equals("Promotore")){
+				BoundaryPromotore.riattivaBottoni();
+			}
+			
+			if (ruolo.equals("Amministratore")){
+				BoundaryAmministratore.riattivaBottoni();
+			}
 						
 		}
 	}
@@ -855,6 +876,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 						while(it.hasNext()){ 					//itero l'insieme di chiavi
 							tendinaCittaPartenzaPannello2.addItem(it.next());
 						}
+						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} 
@@ -905,6 +929,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 								tendinaCittaeArrivoPannello2.addItem(it.next());
 						}
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -950,45 +976,58 @@ public class BoundaryPromotore_GestioneCatalogo {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
-			if (ambienteScelto != null){
-				
-				String mezzoTrasporto;
-				String tipoMezzo = "";
-				String cittaPartenza;
-				String cittaArrivo;
-				String via;
-				String info;
 			
-				//le informazioni possono essere prese o da tendina o da campo testo...
-				if (tendinaMezziPannello2.getSelectedItem().toString().equals("new...")){
-					mezzoTrasporto = uppercaseFirstLetters(campoMezziPannello2.getText());
-				} else {
-					mezzoTrasporto = (String) tendinaMezziPannello2.getSelectedItem();
-				}
-				
-				if(!campoTipoPannello2.getText().equals("")){
-					tipoMezzo = uppercaseFirstLetters(campoTipoPannello2.getText());
-				}	
-			
-				if (!tendinaCittaPartenzaPannello2.isEnabled() || tendinaCittaPartenzaPannello2.getSelectedItem().toString().equals("new...")){
-					cittaPartenza = uppercaseFirstLetters(campoCittaPartenzaPannello2.getText());
-				} else {
-					cittaPartenza = (String) tendinaCittaPartenzaPannello2.getSelectedItem();
-				}
-				
-				if (!tendinaCittaeArrivoPannello2.isEnabled() || tendinaCittaeArrivoPannello2.getSelectedItem().toString().equals("new...")){
-					cittaArrivo = uppercaseFirstLetters(campoCittaArrivoPannello2.getText());
-				} else {
-					cittaArrivo = (String) tendinaCittaeArrivoPannello2.getSelectedItem();
-				}
-			
-				via = uppercaseFirstLetters(campoViaPannello2.getText());
-				
-				info = uppercaseFirstLetters(campoInfoPannello2.getText()); 
-				
-						
-				//aggiungo il viaggio
 				try {
+					
+					if (ambienteScelto != null){
+						
+						String mezzoTrasporto;
+						String tipoMezzo = "";
+						String cittaPartenza;
+						String cittaArrivo;
+						String via;
+						String info;
+					
+						//le informazioni possono essere prese o da tendina o da campo testo...
+						if (tendinaMezziPannello2.getSelectedItem().toString().equals("new...")){
+							
+							mezzoTrasporto = uppercaseFirstLetters(campoMezziPannello2.getText());
+							
+							
+							for (int i = 0; i<mezzoTrasporto.length(); i++){
+								char c = mezzoTrasporto.charAt(i);
+								if (Character.isWhitespace(c)){
+									throw new IDEsternoElementoException("Inserire il nome del mezzo senza spazi");
+								}
+							}
+							
+							
+						} else {
+							mezzoTrasporto = (String) tendinaMezziPannello2.getSelectedItem();
+						}
+						
+						if(!campoTipoPannello2.getText().equals("")){
+							tipoMezzo = uppercaseFirstLetters(campoTipoPannello2.getText());
+						}	
+					
+						if (!tendinaCittaPartenzaPannello2.isEnabled() || tendinaCittaPartenzaPannello2.getSelectedItem().toString().equals("new...")){
+							cittaPartenza = uppercaseFirstLetters(campoCittaPartenzaPannello2.getText());
+						} else {
+							cittaPartenza = (String) tendinaCittaPartenzaPannello2.getSelectedItem();
+						}
+						
+						if (!tendinaCittaeArrivoPannello2.isEnabled() || tendinaCittaeArrivoPannello2.getSelectedItem().toString().equals("new...")){
+							cittaArrivo = uppercaseFirstLetters(campoCittaArrivoPannello2.getText());
+						} else {
+							cittaArrivo = (String) tendinaCittaeArrivoPannello2.getSelectedItem();
+						}
+					
+						via = uppercaseFirstLetters(campoViaPannello2.getText());
+						
+						info = uppercaseFirstLetters(campoInfoPannello2.getText()); 
+						
+								
+						//aggiungo il viaggio
 					
 					controlloSintatticoDati(mezzoTrasporto, tipoMezzo, cittaPartenza, cittaArrivo, via);
 					
@@ -998,9 +1037,22 @@ public class BoundaryPromotore_GestioneCatalogo {
 						
 						controllore.aggiungiViaggio(ambienteScelto, mezzoTrasporto, tipoMezzo, cittaPartenza, cittaArrivo, via, info);
 						JOptionPane.showMessageDialog(null, "Il nuovo viaggio e' stato aggiunto correttamente nel catalogo.", "Viaggio Aggiunto", JOptionPane.INFORMATION_MESSAGE);
+						
+						int conferma2 = JOptionPane.showConfirmDialog(null, "Aggiungere il viaggio di ritorno nel catalogo?", "Conferma Viaggio di ritorno in Catalogo", JOptionPane.YES_NO_OPTION);
+						if (conferma2 == JOptionPane.YES_OPTION){
+							controllore.aggiungiViaggio(ambienteScelto, mezzoTrasporto, tipoMezzo, cittaArrivo, cittaPartenza, via, info);
+							JOptionPane.showMessageDialog(null, "Il viaggio di ritorno e' stato aggiunto correttamente nel catalogo.", "Viaggio Ritorno Aggiunto", JOptionPane.INFORMATION_MESSAGE);
+						}
+						
 						aggiornaTendinePannello2(); //aggiorno le tendine
 					}
 					
+					} else {
+						JOptionPane.showMessageDialog(null, "Selezionare un ambiente...");			
+					}
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (IDEsternoElementoException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (CittaCoincidentiException e1) {
@@ -1028,15 +1080,14 @@ public class BoundaryPromotore_GestioneCatalogo {
 				} catch (InvocationTargetException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+				} catch (TipoMezzoException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
 				}
 				
 	
 			
-			} else {
-				JOptionPane.showMessageDialog(null, "Selezionare un ambiente...");			
-			}
+			} 
 			
-		}
 		
 	}
 	
@@ -1156,6 +1207,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 							}
 							tendinaMezziPannello3.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -1168,6 +1221,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 						areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 						areaTestoPannello3.setCaretPosition(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (MappaException e1) {
 						areaTestoPannello3.setText(e1.getMessage()+"\n");
 					} catch (IDEsternoElementoException e1) {
@@ -1217,6 +1272,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 						
 						tendinaCittaPartenzaPannello3.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -1229,6 +1286,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);		
 					areaTestoPannello3.setCaretPosition(0);
 				
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -1278,6 +1337,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 						tendinaCittaArrivoPannello3.setEnabled(true);
 						tendinaCittaArrivoPannello3.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -1292,6 +1353,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 					areaTestoPannello3.setCaretPosition(0);
 					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -1341,6 +1404,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 						tendinaViaPannello3.setEnabled(true);
 						tendinaViaPannello3.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -1355,6 +1420,8 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 					areaTestoPannello3.setCaretPosition(0);
 					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");	
 				} catch (IDEsternoElementoException e1) {
@@ -1377,6 +1444,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoCatalogo = controllore.mostraCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 					areaTestoPannello3.setCaretPosition(0);
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -1411,6 +1481,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 					areaTestoCatalogo = controllore.mostraCatalogo(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta);
 					areaTestoPannello3.setText(areaTestoImp + areaTestoCatalogo);
 					areaTestoPannello3.setCaretPosition(0);
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (MappaException e1) {
 					areaTestoPannello3.setText(e1.getMessage()+"\n");
 				} catch (IDEsternoElementoException e1) {
@@ -1445,6 +1518,9 @@ public class BoundaryPromotore_GestioneCatalogo {
 						JOptionPane.showMessageDialog(null, "Il viaggio e' stato rimosso correttamente dal catalogo.", "Viaggio Rimosso", JOptionPane.INFORMATION_MESSAGE);
 						//aggiorno tutti i campi dopo aver rimosso il viaggio
 						aggiornaTendinePannello3();
+						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (TrattaInesistenteException e1) {

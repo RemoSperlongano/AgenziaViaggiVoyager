@@ -66,13 +66,13 @@ public class BoundaryVisitatore_InfoViaggi {
 			superPanel.add(panel1);				//aggiungo il primo pannello al superPannello
 			panel1.setVisible(true);
 			
-			bottoneMostraCatalogo = new JButton("MOSTRA CATALOGO");
+			bottoneMostraCatalogo = new JButton("Mostra Catalogo");
 			bottoneMostraCatalogo.setBackground(Color.CYAN);
 			bottoneMostraCatalogo.setBounds(panel1.getWidth()/5, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 			panel1.add(bottoneMostraCatalogo);//aggiungo il bottone al secondo pannello
 			
 			
-			bottoneMostraOfferta = new JButton("MOSTRA OFFERTA");
+			bottoneMostraOfferta = new JButton("Mostra Offerta");
 			bottoneMostraOfferta.setBackground(Color.YELLOW);
 			bottoneMostraOfferta.setBounds(panel1.getWidth()/5*3, panel1.getHeight()/6, panel1.getWidth()/5, panel1.getHeight()/2);
 			panel1.add(bottoneMostraOfferta);//aggiungo il bottone al secondo pannello

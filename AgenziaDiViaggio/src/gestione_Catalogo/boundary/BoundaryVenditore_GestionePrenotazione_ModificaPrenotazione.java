@@ -6,6 +6,7 @@ package gestione_Catalogo.boundary;
 import gestione_Catalogo.control.ControlloreModificaPrenotazione;
 import gestione_Catalogo.exception.BigliettoNonPresenteException;
 import gestione_Catalogo.exception.DatiPersonaliErratiException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.ListaBigliettiNonModificataException;
 import gestione_Catalogo.exception.MappaException;
@@ -481,7 +482,8 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 										"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 										"-----------\t\t----------\t\t----------\n";
 					
-					
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						areaTesto.setText(e1.getMessage()+"\n");
 					} catch (OfferteNonPresentiException e) {
@@ -545,6 +547,8 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 				}
 			}
 			
+		} catch (DirittiException e1) {
+			JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 		} catch (IDEsternoElementoException e1) {
 			areaTestoCatalogo = e1.getMessage();
 		} catch (ParseException e1) {
@@ -673,6 +677,8 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 							}
 							tendinaMezzi.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -723,6 +729,8 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 						
 						tendinaCittaPartenza.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -772,6 +780,8 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 						tendinaCittaArrivo.setEnabled(true);
 						tendinaCittaArrivo.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -823,6 +833,8 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 						tendinaVia.setEnabled(true);
 						tendinaVia.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -935,7 +947,9 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 						listaNomi = listaDatiViaggiatori.get(0);
 						listaCognomi = listaDatiViaggiatori.get(1);
 						listaEmail = listaDatiViaggiatori.get(2);
-							
+						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (OffertaInesistenteException e) {
 						areaTestoOfferta = e.getMessage();
 					} catch (PrenotazioneInesistenteException e) {
@@ -1030,6 +1044,8 @@ public class BoundaryVenditore_GestionePrenotazione_ModificaPrenotazione {
 						aggiornaPrenotazioni();
 					}
 						
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 				} catch (IDEsternoElementoException e1) {
 					JOptionPane.showMessageDialog(null, e1.getMessage(), e1.toString(), JOptionPane.INFORMATION_MESSAGE);
 				} catch (OffertaInesistenteException e1) {

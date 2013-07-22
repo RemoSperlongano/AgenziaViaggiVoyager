@@ -13,6 +13,7 @@ import java.util.Set;
 
 
 import gestione_Catalogo.control.ControlloreMostraOfferta;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -328,6 +329,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraOfferta {
 							}
 							tendinaMezzi.setEnabled(true);
 							
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						}
@@ -379,6 +382,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraOfferta {
 						
 						tendinaCittaPartenza.setEnabled(true);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}   
@@ -429,6 +434,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraOfferta {
 						tendinaCittaArrivo.setEnabled(true);
 						tendinaCittaArrivo.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -481,6 +488,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraOfferta {
 						tendinaVia.setEnabled(true);
 						tendinaVia.setSelectedIndex(0);
 						
+					} catch (DirittiException e1) {
+						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					} catch (IDEsternoElementoException e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 					}
@@ -537,7 +546,8 @@ public class BoundaryVisitatore_InfoViaggi_MostraOfferta {
 											"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
 											"-----------\t\t----------\t\t----------\n";
 						
-						
+						} catch (DirittiException e1) {
+							JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
 						} catch (IDEsternoElementoException e1) {
 							areaTesto.setText(e1.getMessage()+"\n");
 						} catch (OfferteNonPresentiException e) {

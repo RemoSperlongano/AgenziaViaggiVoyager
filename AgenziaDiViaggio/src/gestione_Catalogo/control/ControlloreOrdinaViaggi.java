@@ -8,6 +8,7 @@ import gestione_Catalogo.entity.Offerta;
 import gestione_Catalogo.entity.Prenotazione;
 import gestione_Catalogo.entity.Tratta;
 import gestione_Catalogo.exception.BigliettoNonPresenteException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 import gestione_Catalogo.exception.PostiNonSufficientiException;
@@ -30,7 +31,7 @@ public class ControlloreOrdinaViaggi extends ControlloreEmissioneBiglietti {
 	}
 
 	
-	public ArrayList<String> getDatiClientePerBiglietto(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via, String dataPartenza) throws OffertaInesistenteException, IDEsternoElementoException, PrenotazioneException, ParseException{
+	public ArrayList<String> getDatiClientePerBiglietto(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via, String dataPartenza) throws OffertaInesistenteException, IDEsternoElementoException, PrenotazioneException, ParseException, DirittiException{
 		
 		String nomeAcquirente = sessione.getNome() + " " + sessione.getCognome();
 		Data dataOfferta = Data.parseTimestamp(dataPartenza);
@@ -43,7 +44,7 @@ public class ControlloreOrdinaViaggi extends ControlloreEmissioneBiglietti {
 		return getDatiUtenteDaSessione();
 	}
 
-	public void prenotaViaggio(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, ArrayList<String> listaNomi,ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneException, TrattaInesistenteException, PostiNonSufficientiException, BigliettoNonPresenteException {
+	public void prenotaViaggio(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, ArrayList<String> listaNomi,ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneException, TrattaInesistenteException, PostiNonSufficientiException, BigliettoNonPresenteException, DirittiException {
 		
 		// controllo che la lista dei biglietti contenga il biglietto del cliente prenotante
 		if (listaNomi.size() == 0 
@@ -82,13 +83,13 @@ public class ControlloreOrdinaViaggi extends ControlloreEmissioneBiglietti {
 		
 		//Aggiungo la prenotazione al catalogo
 		catalogo.aggiungiPrenotazioneAlCatalogo(prenotazione, offerta, tratta);
-		log.aggiornaLogAggiungiPrenotazione(ambiente, mezzo, partenza, arrivo, via, dataPartenza, nomeAcquirente);
+		log.aggiornaLogAggiungiPrenotazione(sessione.getUsername(), ambiente, mezzo, partenza, arrivo, via, dataPartenza, nomeAcquirente);
 		
 		
 	}
 	
 	// verifica se il cliente ha effettuato una prenotazione per l'offerta, ritorna il nomeAcquirente della prenotazione in caso positivo.
-	public String mostraPrenotazioneClientePerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException{
+	public String mostraPrenotazioneClientePerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException, DirittiException{
 		Data dp = Data.parseTimestamp(dataPartenza);
 		String nomeAcquirente = sessione.getNome() + " " + sessione.getCognome();
 		if (catalogo.verificaEsistenzaPrenotazione(ambiente, mezzo, partenza, arrivo, via, dp, nomeAcquirente)) {
@@ -99,7 +100,7 @@ public class ControlloreOrdinaViaggi extends ControlloreEmissioneBiglietti {
 	
 
 
-	public void annullaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta) throws TrattaInesistenteException, ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneInesistenteException {
+	public void annullaPrenotazione(String ambiente, String mezzo, String partenza, String arrivo, String via, String offertaScelta, String prenotazioneScelta) throws TrattaInesistenteException, ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneInesistenteException, DirittiException {
 		//prendo la tratta
 		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
 		//prendo l'offerta
@@ -112,7 +113,7 @@ public class ControlloreOrdinaViaggi extends ControlloreEmissioneBiglietti {
 		catalogo.rimuoviPrenotazioneDalCatalogo(prenotazione, offerta, tratta);
 		//libero i posti nuovamente disponibili
 		offerta.liberaPosti(prenotazione.getListaBiglietti().size());
-		log.aggiornaLogRimuoviPrenotazione(ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
+		log.aggiornaLogRimuoviPrenotazione(sessione.getUsername(), ambiente,mezzo,partenza,arrivo,via,offertaScelta,prenotazioneScelta);	
 	}
 
 

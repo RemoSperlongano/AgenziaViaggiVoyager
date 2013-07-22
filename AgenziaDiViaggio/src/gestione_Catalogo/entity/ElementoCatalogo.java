@@ -2,6 +2,7 @@ package gestione_Catalogo.entity;
 
 import java.util.Set;
 
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
 
@@ -50,49 +51,65 @@ public abstract class ElementoCatalogo {
 	
 
 
-	public void aggiungiElemento(String key, ElementoCatalogo value){
-		
+	public void aggiungiElemento(String key, ElementoCatalogo value) throws DirittiException{
+		throw new DirittiException("Errore: aggiungiElemento in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
-	public void rimuoviElemento(String key) throws IDEsternoElementoException {
-		
+	public void rimuoviElemento(String key) throws IDEsternoElementoException, DirittiException {
+		throw new DirittiException("Errore: rimuoviElemento in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
-	public ElementoCatalogo getElemento(String k) throws IDEsternoElementoException{
-		return null;
+	public ElementoCatalogo getElemento(String k) throws IDEsternoElementoException, DirittiException{
+		throw new DirittiException("Errore: getElemento in ElementoCatalogo. Operazione non ammessa.");
 	}
 		
-	public Set<String> listaChiaviElementi(){
-		return null;
+	public Set<String> listaChiaviElementi() throws DirittiException{
+		throw new DirittiException("Errore: listaChiaviElementi in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
-	public boolean esistenzaElemento(String k){
-		return false;	
+	public boolean esistenzaElemento(String k) throws DirittiException{
+		throw new DirittiException("Errore: esistenzaElemento in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
 	
-	public void aggiungiOfferta(Data key, Offerta value){
+	public void aggiungiOfferta(Data key, Offerta value) throws DirittiException{
+		throw new DirittiException("Errore: aggiungiOfferta in ElementoCatalogo. Operazione non ammessa.");
+	}
 		
-	}
-		
-	public void rimuoviOfferta(Data key) throws OffertaInesistenteException{
-		
+	public void rimuoviOfferta(Data key) throws OffertaInesistenteException, DirittiException{
+		throw new DirittiException("Errore: rimuoviOfferta in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
-	public Offerta getOfferta(Data k) throws OffertaInesistenteException{
-		return null;
+	public Offerta getOfferta(Data k) throws OffertaInesistenteException, DirittiException{
+		throw new DirittiException("Errore: getOfferta in ElementoCatalogo. Operazione non ammessa.");
 	}
 
-	public Set<Data> listaChiaviOfferte(){
-		return null;
+	public Set<Data> listaChiaviOfferte() throws DirittiException{
+		throw new DirittiException("Errore: listaChiaviOfferte in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
-	public boolean esistenzaOfferta(Data k){
-		return false;
+	public boolean esistenzaOfferta(Data k) throws DirittiException{
+		throw new DirittiException("Errore: esistenzaOfferta in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
-	public boolean mapIsEmpty(){
-		return false;
+	public boolean mapIsEmpty() throws DirittiException{
+		throw new DirittiException("Errore: mapIsEmpty in ElementoCatalogo. Operazione non ammessa.");
+	}
+	
+	
+	/*
+	 * 
+	 * Metodi per Thread
+	 * 
+	 * 
+	 */
+	
+	public ElementoCatalogo getElementoThread(String k) throws IDEsternoElementoException, DirittiException, InterruptedException{
+		throw new DirittiException("Errore: getElementoThread in ElementoCatalogo. Operazione non ammessa.");
+	}
+	
+	public Offerta getOffertaThread(Data k) throws OffertaInesistenteException, DirittiException, InterruptedException{
+		throw new DirittiException("Errore: getOffertaThread in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
 }	

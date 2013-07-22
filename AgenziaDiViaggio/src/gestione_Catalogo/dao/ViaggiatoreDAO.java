@@ -92,7 +92,7 @@ public class ViaggiatoreDAO extends DAO{
 	 * La Insert viene invocata dal costruttore di Viaggiatore, collegata alla creazione dell'oggetto
 	 * Questa particolare insert mi deve ritornare l'id da associare all'oggetto appena creato
 	 */
-	public Integer insertAndReturnId(String nome, String cognome, String mail) {
+	public synchronized Integer insertAndReturnId(String nome, String cognome, String mail) {
 		ResultSet rs;
 		try {
 			conn = Persistenza.getConnection();

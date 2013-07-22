@@ -5,6 +5,7 @@ package gestione_Catalogo.control;
 
 import gestione_Catalogo.entity.Data;
 import gestione_Catalogo.entity.Offerta;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaInesistenteException;
@@ -29,7 +30,7 @@ public class ControlloreMostraCatalogo extends Controllore{
 	}
 	
 	
-	public String mostraCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws MappaException, IDEsternoElementoException, TrattaInesistenteException {
+	public String mostraCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws MappaException, IDEsternoElementoException, TrattaInesistenteException, DirittiException {
 		
 		/*
 		 * Ho ben 6 casi ...
@@ -288,7 +289,7 @@ public class ControlloreMostraCatalogo extends Controllore{
 	
 	
 	
-	public String mostraListaOfferteRichieste(String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataRichiesta, Integer postiRichiesti) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException{
+	public String mostraListaOfferteRichieste(String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataRichiesta, Integer postiRichiesti) throws IDEsternoElementoException, OfferteNonPresentiException, OffertaInesistenteException, DirittiException{
 		 
 		  String stringaOfferte = "";
 		  

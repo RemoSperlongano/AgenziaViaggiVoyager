@@ -54,5 +54,18 @@ public abstract class ElementoFinale extends ElementoCatalogo {
 	public boolean mapIsEmpty(){
 		return mappaOfferte.isEmpty();
 	}
+	
+	
+	
+	/*
+	 * 
+	 * Metodi per i Thread
+	 * 
+	 * 
+	 */
+	
+	public Offerta getOffertaThread(Data k) throws OffertaInesistenteException, InterruptedException{
+		return mappaOfferte.getOffertaThread(k);
+	}
 
 }

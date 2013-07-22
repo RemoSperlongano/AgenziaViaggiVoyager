@@ -8,9 +8,11 @@ import gestione_Catalogo.entity.Mezzo;
 import gestione_Catalogo.entity.Tratta;
 import gestione_Catalogo.entity.Via;
 import gestione_Catalogo.exception.CittaCoincidentiException;
+import gestione_Catalogo.exception.DirittiException;
 import gestione_Catalogo.exception.IDEsternoElementoException;
 import gestione_Catalogo.exception.MappaException;
 import gestione_Catalogo.exception.OffertaException;
+import gestione_Catalogo.exception.TipoMezzoException;
 import gestione_Catalogo.exception.TrattaException;
 import gestione_Catalogo.exception.TrattaInesistenteException;
 
@@ -33,10 +35,40 @@ public class ControlloreGestioneCatalogo extends Controllore {
 	
 	
 	//metodi
-	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException {	
+	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException, TipoMezzoException, DirittiException {	
 		if (via.equals("")) via = Via.DIRETTO;
 		
-		//Il mezzo e' uguale a mezzo + tipo
+		//Nel caso in cui ho selezionato un tipoMezzo devo verificare se il mezzo specificato non sia già stato introdotto in catalogo
+		if (!tipoMezzo.equals("")){
+			
+			if (catalogo.esistenzaMezzo(ambiente, mezzo)){
+				throw new TipoMezzoException("Impossibile specificare un tipo se il mezzo e' gia' stato inserito in catalogo senza specificarne il tipo");
+			}
+			
+		} else {
+			//Nel caso in cui non ho selezionato un tipo di mezzo, devo verificare se il mezzo non sia già stato specificato in catalogo
+			if(catalogo.verificaEsistenzaTipo(mezzo)){
+				throw new TipoMezzoException("Impossibile inserire un mezzo senza specificarne il tipo se esso e' gia' stato inserito in catalogo specificando il tipo.");
+			}
+		}
+		
+		
+		
+		
+		//questo ciclo for mi serve per controllare se il mezzo passato da parametro ha già il tipo inserito (quindi se c'è uno spazio in mezzo)
+		for (int i = 0; i < mezzo.length(); i++){
+			char c = mezzo.charAt(i);
+			if (Character.isWhitespace(c)){
+				//ho trovato lo spazio, divido le substringhe e li rimetto nei loro posti di competenza
+				String nuovoMezzo = mezzo.substring(0, i);
+				tipoMezzo = mezzo.substring(i+1, mezzo.length());
+				mezzo = nuovoMezzo;
+			}
+				
+		}
+		
+		
+		//Il mezzo e' uguale a mezzo + tipo	
 		String categoriaMezzo = mezzo;
 		if (!tipoMezzo.equals("")){
 			mezzo = mezzo + " " + tipoMezzo;
@@ -55,12 +87,13 @@ public class ControlloreGestioneCatalogo extends Controllore {
 			Tratta nuovaTratta = creaTratta(ambiente, mezzo, categoriaMezzo, cittaPartenza, cittaArrivo, via, info);
 			//aggiungo il viaggio
 			catalogo.aggiungiViaggioAlCatalogo(nuovaTratta);
-			log.aggiornaLogAggiungiViaggio(ambiente,mezzo,cittaPartenza,cittaArrivo,via);
+			//log.aggiornaLogAggiungiViaggio(sessione.getUsername(),ambiente,mezzo,cittaPartenza,cittaArrivo,via);
+			log.aggiornaLogAggiungiViaggio(sessione.getUsername(),ambiente,mezzo,cittaPartenza,cittaArrivo,via);
 		}
 	}
 
 	
-	public void rimuoviViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via) throws TrattaInesistenteException, OffertaException, IDEsternoElementoException {
+	public void rimuoviViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via) throws TrattaInesistenteException, OffertaException, IDEsternoElementoException, DirittiException {
 
 		// verifico l'esistenza di offerte per il viaggio
 		if (catalogo.verificaEsistenzaOfferte(ambiente,mezzo,cittaPartenza,cittaArrivo,via)){
@@ -69,14 +102,14 @@ public class ControlloreGestioneCatalogo extends Controllore {
 			Tratta tratta = catalogo.getTrattaByValue(ambiente,mezzo,cittaPartenza,cittaArrivo,via);
 			//rimuovo il viaggio
 			catalogo.rimuoviViaggioDalCatalogo(tratta);
-			log.aggiornaLogRimuoviViaggio(ambiente,mezzo,cittaPartenza,cittaArrivo,via);
+			log.aggiornaLogRimuoviViaggio(sessione.getUsername(),ambiente,mezzo,cittaPartenza,cittaArrivo,via);
 		}
 		
 	}
 	
 
 	
-	public String mostraCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws MappaException, IDEsternoElementoException, TrattaInesistenteException {
+	public String mostraCatalogo(String ambiente, String mezzo, String partenza, String arrivo, String via) throws MappaException, IDEsternoElementoException, TrattaInesistenteException, DirittiException {
 		
 		/*
 		 * Ho ben 6 casi ...
@@ -399,6 +432,70 @@ public class ControlloreGestioneCatalogo extends Controllore {
 		
 		return new Tratta (a,mt,categoria,cp,ca,v,i);
 		
+	}
+	
+	
+	/*
+	 * 
+	 * Metodi per i Thread
+	 * 
+	 */
+	
+	public void aggiungiViaggioThread(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException, TipoMezzoException, DirittiException {	
+		if (via.equals("")) via = Via.DIRETTO;
+		
+		//Nel caso in cui ho selezionato un tipoMezzo devo verificare se il mezzo specificato non sia già stato introdotto in catalogo
+		if (!tipoMezzo.equals("")){
+			
+			if (catalogo.esistenzaMezzo(ambiente, mezzo)){
+				throw new TipoMezzoException("Impossibile specificare un tipo se il mezzo e' gia' stato inserito in catalogo senza specificarne il tipo");
+			}
+			
+		} else {
+			//Nel caso in cui non ho selezionato un tipo di mezzo, devo verificare se il mezzo non sia già stato specificato in catalogo
+			if(catalogo.verificaEsistenzaTipo(mezzo)){
+				throw new TipoMezzoException("Impossibile inserire un mezzo senza specificarne il tipo se esso e' gia' stato inserito in catalogo specificando il tipo.");
+			}
+		}
+		
+		
+		
+		
+		//questo ciclo for mi serve per controllare se il mezzo passato da parametro ha già il tipo inserito (quindi se c'è uno spazio in mezzo)
+		for (int i = 0; i < mezzo.length(); i++){
+			char c = mezzo.charAt(i);
+			if (Character.isWhitespace(c)){
+				//ho trovato lo spazio, divido le substringhe e li rimetto nei loro posti di competenza
+				String nuovoMezzo = mezzo.substring(0, i);
+				tipoMezzo = mezzo.substring(i+1, mezzo.length());
+				mezzo = nuovoMezzo;
+			}
+				
+		}
+		
+		
+		//Il mezzo e' uguale a mezzo + tipo	
+		String categoriaMezzo = mezzo;
+		if (!tipoMezzo.equals("")){
+			mezzo = mezzo + " " + tipoMezzo;
+		}
+		
+		//verifico che non ci siano coincidenze tra partenza, arrivo o via.
+		if (cittaPartenza.equals(cittaArrivo)||cittaPartenza.equals(via)||cittaArrivo.equals(via)){
+			throw new CittaCoincidentiException("La citta' di partenza, la citta' di arrivo o la via non possono essere coincidenti!");
+		}
+		
+		//verifico l'esistenza del viaggio nel catalogo
+		if (catalogo.verificaEsistenzaViaggio(ambiente, mezzo, cittaPartenza, cittaArrivo, via)){
+			//System.out.println("Viaggio gia' presente");
+			throw new TrattaException("Il viaggio e' gia' presente nel catalogo!");
+		} else {
+			Tratta nuovaTratta = creaTratta(ambiente, mezzo, categoriaMezzo, cittaPartenza, cittaArrivo, via, info);
+			//aggiungo il viaggio
+			catalogo.aggiungiViaggioAlCatalogo(nuovaTratta);
+			//log.aggiornaLogAggiungiViaggio(sessione.getUsername(),ambiente,mezzo,cittaPartenza,cittaArrivo,via);
+			log.aggiornaLogAggiungiViaggio(Thread.currentThread().getName(),ambiente,mezzo,cittaPartenza,cittaArrivo,via);
+		}
 	}
 	
 

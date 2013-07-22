@@ -19,6 +19,8 @@ import javax.swing.JPanel;
  */
 public class BoundaryGestoreEccezioni_GestioneEccezioni {
 	
+	private String ruolo;
+	
 	/*
 	 * Attributi di istanza
 	 */
@@ -41,8 +43,9 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni {
     
     
     
-    public BoundaryGestoreEccezioni_GestioneEccezioni(JPanel panelNext){
+    public BoundaryGestoreEccezioni_GestioneEccezioni(JPanel panelNext, String ruolo){
     	
+    	this.ruolo = ruolo;
 		
 		/*
 		 * 
@@ -187,7 +190,17 @@ public class BoundaryGestoreEccezioni_GestioneEccezioni {
 		public void actionPerformed(ActionEvent e) {
 			
 			superPanel.setVisible(false); 			    //chiude tutto questo pannello
-			BoundaryGestoreEccezioni.riattivaBottoni();      	//riattiva i bottoni
+			
+			//riattiva i bottoni in base al ruolo.
+
+			if (ruolo.equals("GestoreEccezioni")){
+				BoundaryGestoreEccezioni.riattivaBottoni();
+			}
+			
+			if (ruolo.equals("Amministratore")){
+				BoundaryAmministratore.riattivaBottoni();
+			}
+						
 						
 		}
 	}
