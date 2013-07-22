@@ -28,7 +28,7 @@ public class MappaOfferte extends TreeMap<Data,Offerta>{
 			lucchetto.lock();
 			if(!containsKey(k)){
 				super.put(k, o);
-				System.out.println("Ho aggiunto l'offerta " + k.stampaData() + "ora libero tutti gli altri Thread! ");
+				System.out.println("Ho aggiunto l'offerta " + k.stampaData() + " ora libero tutti gli altri Thread! ");
 				codaCondizione.signalAll();
 			}
 		} finally {

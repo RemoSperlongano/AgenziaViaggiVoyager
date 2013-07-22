@@ -494,7 +494,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 			//aggiungo il viaggio
 			catalogo.aggiungiViaggioAlCatalogo(nuovaTratta);
 			//log.aggiornaLogAggiungiViaggio(sessione.getUsername(),ambiente,mezzo,cittaPartenza,cittaArrivo,via);
-			log.aggiornaLogAggiungiViaggio("ThreadPromotore",ambiente,mezzo,cittaPartenza,cittaArrivo,via);
+			log.aggiornaLogAggiungiViaggio(Thread.currentThread().getName(),ambiente,mezzo,cittaPartenza,cittaArrivo,via);
 		}
 	}
 	

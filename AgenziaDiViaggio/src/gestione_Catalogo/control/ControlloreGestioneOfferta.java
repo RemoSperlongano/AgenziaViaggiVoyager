@@ -51,13 +51,13 @@ public class ControlloreGestioneOfferta extends Controllore {
 			throw new QuantitaException("I posti disponibili non possono essere nulli. Inserire una quantita' di posti maggiore di 0.");
 		}
 		
-		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
-		Integer idTratta = tratta.getID();
-		
 		if (catalogo.verificaEsistenzaOfferta(ambiente,mezzo,partenza,arrivo,via,dataPartenza)){
 			throw new OffertaException("Offerta gia' esistente per il viaggio!");
 		}
 		
+		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
+		Integer idTratta = tratta.getID();
+
 		Offerta nuovaOfferta = new Offerta(idTratta, dataPartenza, durata, posti);
 		catalogo.aggiungiOffertaAlCatalogo(nuovaOfferta, tratta);
 		log.aggiornaLogAggiungiOfferta(sessione.getUsername(), ambiente, mezzo, partenza, arrivo , via, dataPartenza, durata, posti);
@@ -114,7 +114,7 @@ public class ControlloreGestioneOfferta extends Controllore {
 		
 		Offerta nuovaOfferta = new Offerta(idTratta, dataPartenza, durata, posti);
 		catalogo.aggiungiOffertaAlCatalogo(nuovaOfferta, tratta); // questo lo lascio con i metodi normale, tanto la verifica degli elementi in mappa l'ha fatta da verificaEsistenzaOfferta
-		log.aggiornaLogAggiungiOfferta("ThreadProgettista", ambiente, mezzo, partenza, arrivo , via, dataPartenza, durata, posti);
+		log.aggiornaLogAggiungiOfferta(Thread.currentThread().getName(), ambiente, mezzo, partenza, arrivo , via, dataPartenza, durata, posti);
 	}
 	
 	

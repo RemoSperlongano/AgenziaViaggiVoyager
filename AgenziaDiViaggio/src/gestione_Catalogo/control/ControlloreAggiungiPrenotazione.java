@@ -111,7 +111,7 @@ public class ControlloreAggiungiPrenotazione extends Controllore {
 		
 		//Aggiungo la prenotazione al catalogo
 		catalogo.aggiungiPrenotazioneAlCatalogo(prenotazione, offerta, tratta); // questo lo lascio con i metodi normale, tanto la verifica degli elementi in mappa l'ha fatta da verificaEsistenzaPrenotazione
-		log.aggiornaLogAggiungiPrenotazione("ThreadVenditore",ambiente, mezzo, partenza, arrivo, via, dataPartenza, nomeAcquirente);
+		log.aggiornaLogAggiungiPrenotazione(Thread.currentThread().getName(),ambiente, mezzo, partenza, arrivo, via, dataPartenza, nomeAcquirente);
 		
 		
 	}

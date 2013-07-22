@@ -78,6 +78,23 @@ public class ThreadConcorrentiTest {
 		Thread t15 = new Thread(vt5);
 		
 		
+		t1.setName("T1_ProgettistaThread");
+		t2.setName("T2_ProgettistaThread");
+		t3.setName("T3_ProgettistaThread");
+		t4.setName("T4_ProgettistaThread");
+		t5.setName("T5_ProgettistaThread");
+		t6.setName("T6_PromotoreThread");
+		t7.setName("T7_PromotoreThread");
+		t8.setName("T8_PromotoreThread");
+		t9.setName("T9_PromotoreThread");
+		t10.setName("T10_PromotoreThread");
+		t11.setName("T11_VenditoreThread");
+		t12.setName("T12_VenditoreThread");
+		t13.setName("T13_VenditoreThread");
+		t14.setName("T14_VenditoreThread");
+		t15.setName("T15_VenditoreThread");
+		
+
 		t13.start();
 		t5.start();
 		t14.start();

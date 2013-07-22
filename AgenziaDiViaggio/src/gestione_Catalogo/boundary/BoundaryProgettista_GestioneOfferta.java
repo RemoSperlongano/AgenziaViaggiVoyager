@@ -1497,15 +1497,16 @@ public class BoundaryProgettista_GestioneOfferta {
 								bottoneAggiungi.setVisible(false);
 								bottoneAggiungiRitorno.setVisible(true);
 								bottoneSvuotaPannello2.setEnabled(false);
-								
+								campoDurataPannello2.setText("");
+								campoPostiPannello2.setText("");
 								
 								try {
-									areaTestoCatalogo = a + " " + m + " " + as + " : " + ps + " -> " + v + "\n\n"  +
-											"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
-											"-----------\t\t----------\t\t----------\n";
-								
+									areaTestoCatalogo = a + " " + m + " " + as + " : " + ps + " -> " + v + "\n\n";
+									
 									areaTestoOfferta = controllore.mostraListaOffertaInCatalogo(a, m, as, ps, v);
 									
+									areaTestoCatalogo += "ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
+											"-----------\t\t----------\t\t----------\n";
 									
 									
 								} catch (DirittiException e1) {
@@ -1620,13 +1621,12 @@ public class BoundaryProgettista_GestioneOfferta {
 							campoPostiPannello2.setText("");
 							campoDurataPannello2.setText("");
 							try {
-								areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + arrivoScelto + " : " + partenzaScelta + " -> " + viaScelta + "\n\n"  +
-										"ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
-										"-----------\t\t----------\t\t----------\n";
-							
+								areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + arrivoScelto + " : " + partenzaScelta + " -> " + viaScelta + "\n\n";
+								
 								areaTestoOfferta = controllore.mostraListaOffertaInCatalogo(ambienteScelto, mezzoScelto, arrivoScelto, partenzaScelta, viaScelta);
 								
-								
+								areaTestoCatalogo += "ORA PARTENZA\tORA ARRIVO\t\tPOSTI\n" +
+										"-----------\t\t----------\t\t----------\n";
 								
 							} catch (DirittiException e1) {
 								JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
