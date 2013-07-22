@@ -97,7 +97,7 @@ public class PrenotazioneDAO extends DAO{
 			System.out.println(ps.toString());
 			
 			rs = ps.executeQuery();
-			if(rs.next()) { // elemento gia'  presente, ritorno direttamente l'ID. 
+			if(rs.next()) { // elemento gia'ï¿½ presente, ritorno direttamente l'ID. 
 				Integer a = rs.getInt(1);
 				closeResource();
 				return a;
@@ -114,7 +114,7 @@ public class PrenotazioneDAO extends DAO{
 				ps.setString(2, acquirente);
 				rs = ps.executeQuery();
 				
-				if(rs.next()) { // elemento gia'  presente, ritorno direttamente l'ID. 
+				if(rs.next()) { // elemento gia'ï¿½ presente, ritorno direttamente l'ID. 
 					Integer a = rs.getInt(1);
 					closeResource();
 					return a;
@@ -144,7 +144,7 @@ public class PrenotazioneDAO extends DAO{
 	 */
 
 	
-	public List<Prenotazione> getListaPrenotazioni(){
+	public synchronized List<Prenotazione> getListaPrenotazioni(){
 		List<Prenotazione> listaPrenotazioni = new ArrayList<Prenotazione>();
 		try {
 			conn = Persistenza.getConnection();
@@ -188,7 +188,7 @@ public class PrenotazioneDAO extends DAO{
 	 * CRUD - Delete
 	 * Da invocare nell'eliminazione di una Prenotazione dall'Offerta
 	 */
-	public void delete(Prenotazione prenotazione){
+	public synchronized void delete(Prenotazione prenotazione){
 		// TODO Auto-generated method stub
 		try {
 
