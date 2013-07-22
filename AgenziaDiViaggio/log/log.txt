@@ -1,0 +1,3234 @@
+ * [22/07/2013, 12:17:49]  admin  ---  AGGIUNTO NUOVO UTENTE: 
+     Nome Utente:  Maledetto Xvi Sua Santità
+     Username:  suasantita
+     Ruolo:  Amministratore
+
+ * [22/07/2013, 12:18:04]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:18:05]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:18:05]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:18:05]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Napoli : Cagliari  ->  (Diretto)
+
+ * [22/07/2013, 12:18:05]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Napoli : Isernia  ->  (Diretto)
+
+ * [22/07/2013, 12:18:05]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Napoli : Torino  ->  (Diretto)
+
+ * [22/07/2013, 12:18:05]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:18:05]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:18:05]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:18:05]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Napoli : Cagliari  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Napoli : Isernia  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Napoli : Torino  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Base  ->  Napoli : Cagliari  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Base  ->  Napoli : Isernia  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Base  ->  Napoli : Torino  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Napoli : Cagliari  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Napoli : Isernia  ->  (Diretto)
+
+ * [22/07/2013, 12:18:06]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Napoli : Torino  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Napoli : Cagliari  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Napoli : Isernia  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Napoli : Torino  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Napoli : Cagliari  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Napoli : Isernia  ->  (Diretto)
+
+ * [22/07/2013, 12:18:07]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Napoli : Torino  ->  (Diretto)
+
+ * [22/07/2013, 12:18:58]  suasantita  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Mongolfiera  ->  Roma : Milano  ->  Palermo
+
+ * [22/07/2013, 12:19:04]  suasantita  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Mongolfiera  ->  Milano : Roma  ->  Palermo
+
+ * [22/07/2013, 12:21:30]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:21:30]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:21:30]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:21:30]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 12:21:30]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:21:30]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:30]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:31]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:31]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:31]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:31]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:31]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:31]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:31]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:31]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:31]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:21:31]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:31]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:31]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:32]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:32]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:21:32]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:32]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:32]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:32]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:32]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:32]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:32]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:32]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:21:32]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:31]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:24:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:24:31]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 12:24:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:24:31]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:31]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:31]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:31]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:31]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:31]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:31]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:24:32]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:29]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:26:29]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:29]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:30]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:30]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:26:30]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:30]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:26:31]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:26:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 12:26:31]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:31]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:26:31]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:31]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:31]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:32]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:32]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:26:32]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:00]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:31:00]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:31:00]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:00]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:00]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:31:00]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:31:00]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:00]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:31:00]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:00]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:01]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:01]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:01]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:01]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:01]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:31:01]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:01]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:02]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:02]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:02]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:02]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:31:02]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:02]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:02]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:02]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:02]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:31:03]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:43]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:43:43]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:43]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 12:43:43]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:43:43]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:43:43]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:43]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:43:43]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:43]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:43]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:43:44]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:43:44]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:43:44]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:43:44]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:43:44]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:43:44]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:44]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:44]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:44]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:43:44]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 12:43:44]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:44]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:45]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 12:43:45]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:43:45]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:45]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:45]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:45]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:43:45]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:45]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:45]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:45]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:43:45]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:10]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:46:10]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:46:10]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:46:10]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 12:46:10]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:46:10]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:10]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:10]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:10]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:46:10]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:46:10]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:46:11]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:46:11]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:46:11]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:11]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:11]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:11]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 12:46:11]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:46:11]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:46:11]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 12:46:11]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:46:11]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:11]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:11]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:11]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:46:12]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:12]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:13]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:46:13]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:47:27]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:47:27]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 12:47:27]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:47:27]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:47:27]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:47:28]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:53:39]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:53:39]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:53:39]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:53:39]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 12:53:40]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 12:54:13]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 12:54:13]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 12:54:13]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:13]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:13]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:13]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:13]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:14]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:14]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:14]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:14]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:14]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:14]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:14]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 12:54:14]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:14]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:14]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:14]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:14]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:14]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:14]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 12:54:14]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:02:56]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:02:56]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 13:04:59]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 13:12:13]  Thread-1  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:15:49]  Thread-2  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 13:15:49]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:15:49]  Thread-3  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:15:49]  Thread-0  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:15:49]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:15:49]  Thread-4  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:26]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:26]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:26]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:26]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:26]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:18:26]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:18:27]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 13:18:27]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:18:27]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 13:18:27]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:18:27]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:18:27]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:18:27]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:18:27]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:58]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:21:58]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:21:58]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:21:58]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:58]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:21:58]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 13:21:58]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:58]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:58]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:21:58]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:21:58]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:58]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:21:58]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:21:58]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:58]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:58]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:21:59]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 13:21:59]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:21:59]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:21:59]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 13:21:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:21:59]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:21:59]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:21:59]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:22:59]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:22:59]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:22:59]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T14_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:23:00]  T13_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:22]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:33:22]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:33:22]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:33:22]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:22]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:33:22]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:22]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:22]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+
+ * [22/07/2013, 13:33:22]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:22]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:33:22]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:33:22]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:22]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:33:23]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+
+ * [22/07/2013, 13:33:23]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+
+ * [22/07/2013, 13:33:23]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:33:23]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T8_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+
+ * [22/07/2013, 13:33:23]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+
+ * [22/07/2013, 13:33:23]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T7_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+
+ * [22/07/2013, 13:33:23]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Roma  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T9_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+
+ * [22/07/2013, 13:33:23]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Formia : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T3_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Napoli  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Firenze : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T2_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Mare:  Panfilo  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T4_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Londra : Brasilia  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:33:23]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Mare:  Traghetto  ->  Cagliari : Ajaccio  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Inter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Chicago : Buenos Aires  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:33:23]  T12_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Treno Tav  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:37:25]  T10_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+
+ * [22/07/2013, 13:37:25]  T6_PromotoreThread  ---  AGGIUNTO NUOVO VIAGGIO: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+
+ * [22/07/2013, 13:37:25]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:37:25]  T5_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:37:25]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:37:26]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Data di Arrivo:  15/05/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:37:26]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:37:26]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:37:26]  T1_ProgettistaThread  ---  AGGIUNTA NUOVA OFFERTA: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Data di Arrivo:  15/06/2014, 12:10
+     Posti disponibili:  100
+
+ * [22/07/2013, 13:37:26]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:37:26]  T15_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Terra:  Bus  ->  Roma : Bologna  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:37:26]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:37:26]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/05/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:37:26]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Milano  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:37:26]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Charter  ->  Roma : Parigi  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 13:37:26]  T11_VenditoreThread  ---  AGGIUNTA NUOVA PRENOTAZIONE: 
+     Viaggio Via Aria:  Boing  ->  Roma : Ginevra  ->  (Diretto)
+     Data di Partenza:  15/06/2014, 10:30
+     Nome Acquirente:  Mario Rossi
+
+ * [22/07/2013, 15:30:34]  admin  ---  AGGIUNTO NUOVO UTENTE: 
+     Nome Utente:  A A
+     Username:  a
+     Ruolo:  Amministratore
+
