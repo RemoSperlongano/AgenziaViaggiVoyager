@@ -572,7 +572,7 @@ public class BoundaryPromotore_GestioneCatalogo {
 		
 
 		//Per finire carico il catalogo
-		caricaCatalogo();
+//		caricaCatalogo();
 	}//FINE COSTRUTTORE
 	
 	
