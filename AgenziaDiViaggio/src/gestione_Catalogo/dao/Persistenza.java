@@ -21,8 +21,9 @@ public final class Persistenza {
 	public static Connection getConnection() {
 		    Connection conn = null;
 		    try {
+		    	Class.forName(driverName);
 		     conn = DriverManager.getConnection(dbName, Persistenza.usr, Persistenza.pass);
-		   } catch (SQLException sqle) {
+		   } catch (SQLException | ClassNotFoundException sqle) {
 		      sqle.printStackTrace();
 		}
 		return conn;
