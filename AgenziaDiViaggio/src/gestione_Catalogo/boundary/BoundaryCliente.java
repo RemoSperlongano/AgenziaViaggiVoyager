@@ -120,18 +120,18 @@ public class BoundaryCliente {
 		
 		bottoneOrdinaViaggi = new JButton("Ordina Viaggi");
 		bottoneOrdinaViaggi.setBackground(Color.ORANGE);
-		bottoneOrdinaViaggi.setBounds(panelBottoni.getWidth()/5, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		bottoneOrdinaViaggi.setBounds(panelBottoni.getWidth()/10, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
 		panelBottoni.add(bottoneOrdinaViaggi);
 		
 		
 		bottoneInfoViaggi = new JButton("Info Viaggi");
 		bottoneInfoViaggi.setBackground(Color.GREEN);
-		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/5*3, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/10*4, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
 		panelBottoni.add(bottoneInfoViaggi);
 		
 		bottoneGestioneProfiloPersonale = new JButton("Gestione Profilo Personale");
 		bottoneGestioneProfiloPersonale.setBackground(Color.LIGHT_GRAY);
-		bottoneGestioneProfiloPersonale.setBounds(panelBottoni.getWidth()/5*3, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		bottoneGestioneProfiloPersonale.setBounds(panelBottoni.getWidth()/10*7, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
 		panelBottoni.add(bottoneGestioneProfiloPersonale);
 		
 		//Ascoltatori per secondo pannello

@@ -514,7 +514,7 @@ public class BoundaryCliente_GestioneProfiloPersonale {
 				
 				if (conferma == JOptionPane.YES_OPTION){	
 					controllore.cambiaEmail(nuovaEmail, password);
-					JOptionPane.showMessageDialog(null, "L'indirizzo email e' stata modificato correttamente.", "Email Modificata", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "L'indirizzo email e' stata modificato correttamente. Per rendere effettive le modifiche occorre rieffettuare il login.", "Email Modificata", JOptionPane.INFORMATION_MESSAGE);
 					svuotaPannello3();
 				}
 				
