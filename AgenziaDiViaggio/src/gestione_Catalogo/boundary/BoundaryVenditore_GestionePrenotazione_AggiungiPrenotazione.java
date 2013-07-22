@@ -26,6 +26,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -51,6 +52,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	private String arrivoScelto;
 	private String viaScelta;
 	private String offertaScelta;
+	private String offertaRitornoScelta;
 	private String areaTestoOfferta;
 	private String areaTestoCatalogo;
 	private String areaTestoImp;
@@ -73,6 +75,8 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	private JTextArea areaTesto;
 	private JScrollPane scrollAreaTesto;
 	
+	private JCheckBox checkRitorno;
+	
 	private JLabel labelMezzi;
 	private JComboBox<String> tendinaMezzi;
 
@@ -87,6 +91,9 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	
 	private JLabel labelOfferta;
 	private JComboBox<String> tendinaOfferta;
+	
+	private JLabel labelOffertaRitorno;
+	private JComboBox<String> tendinaOffertaRitorno;
 	
 	private JLabel labelNome;
 	private JTextField campoNome;
@@ -110,6 +117,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 	private TendinaPartenzeAA ascoltatoreTendinaPartenze;
 	private TendinaArriviAA ascoltatoreTendinaArrivi;
 	private TendinaViaAA ascoltatoreTendinaVia;
+	private CheckRitornoAA ascoltatoreCheckRitorno;
 	private TendinaOfferteAA ascoltatoreTendinaOfferte;
 	private AggiungiBigliettoAA ascoltatoreBottoneAggiungiBiglietto;
 	private RimuoviUltimoBigliettoAA ascoltatoreBottoneRimuoviUltimoBiglietto;
@@ -130,10 +138,12 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		arrivoScelto = null;
 		viaScelta = null;
 		offertaScelta = null;
+		offertaRitornoScelta = null;
 		areaTestoOfferta = "";
 		areaTestoPrenotazione = "";
 		areaTestoBiglietti = "";
 		areaTestoImp = "Offerte per il viaggio:   ";
+
 		
 		listaNomi = new ArrayList<String>();
 		listaCognomi = new ArrayList<String>();
@@ -251,6 +261,27 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			panel.add(scrollAreaTesto);
 			
 			
+			checkRitorno = new JCheckBox("Prenotazione Ritorno");
+			checkRitorno.setFont(new Font("Arial", 0, 15));
+			checkRitorno.setBounds(panel.getWidth()/11-35, panel.getHeight()/6*5+20,  panel.getWidth()/6+5, 20);
+			checkRitorno.setEnabled(false);
+			panel.add(checkRitorno);
+			
+			labelOffertaRitorno = new JLabel();
+			labelOffertaRitorno.setFont(new Font("Arial",0,15));
+			labelOffertaRitorno.setBounds(panel.getWidth()/11+150, panel.getHeight()/6*5,panel.getWidth()/5, 20);
+			labelOffertaRitorno.setText("Offerta Ritorno");
+			panel.add(labelOffertaRitorno);
+			
+			
+			tendinaOffertaRitorno = new JComboBox<String>();
+			tendinaOffertaRitorno.setBackground(Color.WHITE);
+			tendinaOffertaRitorno.setBounds(panel.getWidth()/11+150, panel.getHeight()/6*5+20, panel.getWidth()/4, 20);
+			tendinaOffertaRitorno.setEnabled(false);
+			panel.add(tendinaOffertaRitorno);
+			
+			
+			
 			labelOfferta = new JLabel();	//Etichetta elementi data
 			labelOfferta.setFont(new Font("Arial",0,15));
 			labelOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2-10, panel.getWidth()/4, 20);
@@ -264,7 +295,6 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			tendinaOfferta.setBounds(panel.getWidth()/4*2+100, panel.getHeight()/6*2+10, panel.getWidth()/4, 20);
 			tendinaOfferta.setEnabled(false);
 			panel.add(tendinaOfferta);
-			
 			
 			
 			labelNome = new JLabel();
@@ -354,6 +384,9 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			ascoltatoreTendinaVia = new TendinaViaAA();
 			tendinaVia.addActionListener(ascoltatoreTendinaVia);
 			
+			ascoltatoreCheckRitorno = new CheckRitornoAA();
+			checkRitorno.addActionListener(ascoltatoreCheckRitorno);
+			
 			ascoltatoreTendinaOfferte = new TendinaOfferteAA();
 			tendinaOfferta.addActionListener(ascoltatoreTendinaOfferte);
 			
@@ -418,6 +451,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		//Svuoto tutte le tendine e l'area testo
 		tendinaOfferta.removeAllItems();
 		tendinaOfferta.setEnabled(false);
+		checkRitorno.setEnabled(false);
 		
 		offertaScelta = "-----";
 		
@@ -473,7 +507,57 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		} 
 	}
 	
+	
+	private void aggiornaOfferteRitorno() {
+		//Svuoto tutte le tendine e l'area testo
+		tendinaOffertaRitorno.removeAllItems();
+		tendinaOffertaRitorno.setEnabled(false);
+		
+		offertaRitornoScelta = "-----";
+		
+		
+		if (tendinaOfferta.getItemCount() != 0) {
+	
+				
+			if (!offertaScelta.equals("-----")){
+					
+				try {
+						
+						
+					ArrayList<String> listaOfferte = controllore.mostraOfferteRitornoValidePerLaTratta(ambienteScelto, mezzoScelto, arrivoScelto, partenzaScelta, viaScelta, offertaScelta);
+		
+					
+					//inserisco l'elemento neutro
+					tendinaOffertaRitorno.addItem("-----");
+				
+					    
+					for(String d : listaOfferte){
+						//inserisco l'elemento in tendina
+						tendinaOffertaRitorno.addItem(d);
+					}
+					    
+					tendinaOffertaRitorno.setEnabled(true);
+					tendinaOffertaRitorno.setSelectedIndex(0);
+					
+					
+				} catch (DirittiException e1) {
+					JOptionPane.showMessageDialog(null, e1.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (ParseException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+				} catch (IDEsternoElementoException e1) {
+					JOptionPane.showMessageDialog(null,  "Viaggio di ritorno non presente in catalogo.", "Attenzione!", JOptionPane.WARNING_MESSAGE);
+					checkRitorno.setSelected(false);
+				} catch (OfferteNonPresentiException e) {
+					JOptionPane.showMessageDialog(null,  e.getMessage(), "Attenzione!", JOptionPane.WARNING_MESSAGE);
+					checkRitorno.setSelected(false);
+				}
+				
+			}
+		}
+	}
+	
 	private void aggiornaPrenotazioni(){
+		
 		
 		bottoneRimuoviUltimoBiglietto.setEnabled(false);
 		
@@ -489,6 +573,8 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 				
 				
 				if (!tendinaOfferta.equals("-----")){
+					
+					checkRitorno.setEnabled(true);
 					
 					areaTestoCatalogo = ambienteScelto + " " + mezzoScelto + " " + partenzaScelta + " : " + arrivoScelto + " -> " + viaScelta + "\n\n";
 					
@@ -830,12 +916,13 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			partenzaScelta = (String) tendinaCittaPartenza.getSelectedItem();
 			arrivoScelto = (String)tendinaCittaArrivo.getSelectedItem();
 			viaScelta = (String) tendinaVia.getSelectedItem();
-			
 			aggiornaOfferte();
 			
 		}
 		
 	}
+	
+	
 	
 	
 	private class TendinaOfferteAA implements ActionListener{
@@ -854,6 +941,11 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			
 			bottoneAggiungiBiglietto.setEnabled(false);
 			bottoneRimuoviUltimoBiglietto.setEnabled(false);
+			
+			checkRitorno.setSelected(false);
+			checkRitorno.setEnabled(false);
+			tendinaOffertaRitorno.removeAllItems();
+			tendinaOffertaRitorno.setEnabled(false);
 			
 			
 			offertaScelta = (String) tendinaOfferta.getSelectedItem();
@@ -888,6 +980,24 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 		
 	}
 	
+	
+	private class CheckRitornoAA implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			if (checkRitorno.isSelected()){
+				aggiornaOfferteRitorno();
+			} else {
+				tendinaOffertaRitorno.removeAllItems();
+				tendinaOffertaRitorno.setEnabled(false);
+
+			}
+
+			
+		}
+		
+	}
+
 	
 	private class AggiungiBigliettoAA implements ActionListener{
 
@@ -947,22 +1057,36 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			if (tendinaOfferta.getItemCount() != 0 && !offertaScelta.equals("-----")){
 			
 				//Prendo la data dalla tendina offerte
-				ambienteScelto 	= 	(String) tendinaAmbiente.getSelectedItem();
-				mezzoScelto		= 	(String) tendinaMezzi.getSelectedItem();
-				partenzaScelta 	=	(String) tendinaCittaPartenza.getSelectedItem();
-				arrivoScelto 	= 	(String) tendinaCittaArrivo.getSelectedItem();
-				viaScelta		= 	(String) tendinaVia.getSelectedItem();
-				offertaScelta 	= 	(String) tendinaOfferta.getSelectedItem();
-			
+				ambienteScelto 		 = 	(String) tendinaAmbiente.getSelectedItem();
+				mezzoScelto			 = 	(String) tendinaMezzi.getSelectedItem();
+				partenzaScelta 		 =	(String) tendinaCittaPartenza.getSelectedItem();
+				arrivoScelto 		 = 	(String) tendinaCittaArrivo.getSelectedItem();
+				viaScelta			 = 	(String) tendinaVia.getSelectedItem();
+				offertaScelta 		 = 	(String) tendinaOfferta.getSelectedItem();
+				offertaRitornoScelta = 	(String) tendinaOffertaRitorno.getSelectedItem();
+				
 				if(listaNomi.size()!=0){
 					
 					try {
 						// chiedo conferma
 						int conferma = JOptionPane.showConfirmDialog(null, "Aggiungere la Prenotazione per il viaggio?", "Conferma Aggiunta Prenotazione", JOptionPane.YES_NO_OPTION);
 						if (conferma == JOptionPane.YES_OPTION){
-						
+							
+							ArrayList<String> listaNomi2 = new ArrayList<String>();
+							ArrayList<String> listaCognomi2 = new ArrayList<String>();
+							ArrayList<String> listaEmail2 = new ArrayList<String>();
+							
+							if (checkRitorno.isSelected() && !offertaRitornoScelta.equals("-----")){
+								for (int i=0; i<listaNomi.size(); i++){
+									listaNomi2.add(listaNomi.get(i));
+									listaCognomi2.add(listaCognomi.get(i));
+									listaEmail2.add(listaEmail.get(i));
+								}
+								controllore.aggiungiPrenotazione(ambienteScelto, mezzoScelto, arrivoScelto, partenzaScelta, viaScelta, offertaRitornoScelta, listaNomi2, listaCognomi2, listaEmail2);
+							}
 							//aggiungo la prenotazione all'offerta
 							controllore.aggiungiPrenotazione(ambienteScelto, mezzoScelto, partenzaScelta, arrivoScelto, viaScelta, offertaScelta, listaNomi, listaCognomi, listaEmail);
+	
 							JOptionPane.showMessageDialog(null, "La Prenotazione e' stata aggiunta correttamente.", "Prenotazione Aggiunta", JOptionPane.INFORMATION_MESSAGE);
 							tendinaOfferta.setSelectedIndex(0);
 						}
@@ -1019,6 +1143,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 					arrivoScelto = null;
 					viaScelta = null;
 					offertaScelta = null;
+					offertaRitornoScelta = null;
 
 				}
 			
@@ -1059,6 +1184,7 @@ public class BoundaryVenditore_GestionePrenotazione_AggiungiPrenotazione {
 			arrivoScelto = null;
 			viaScelta = null;
 			offertaScelta = null;
+			offertaRitornoScelta = null;
 			
 			areaTesto.setText("");
 			

@@ -106,6 +106,27 @@ public abstract class Controllore {
 		return dateValide;
 	}
 	
+	
+
+	public ArrayList<String> mostraOfferteRitornoValidePerLaTratta(String ambiente, String mezzo, String partenza ,String arrivo, String via, String offertaScelta) throws IDEsternoElementoException, OfferteNonPresentiException, DirittiException, ParseException {
+		ArrayList<String> dateValide = new ArrayList<String>();
+		
+		Set<Data> chiaviOfferte = catalogo.getChiaviOfferte(ambiente, mezzo, partenza, arrivo, via);
+		Iterator<Data> it = chiaviOfferte.iterator();
+		
+		//filtro le offerte scadute
+		Data dataOfferta = Data.parseTimestamp(offertaScelta);
+		while(it.hasNext()){
+			Data dataOffertaRitorno = it.next();
+			if (dataOffertaRitorno.after(dataOfferta)){
+				dateValide.add(dataOffertaRitorno.stampaData());
+			}
+		}
+		return dateValide;
+	}
+	
+
+	
 	public Set<String> mostraPrenotazioniPerOfferta(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza) throws ParseException, OffertaInesistenteException, IDEsternoElementoException, PrenotazioneInesistenteException, DirittiException{
 		Data dp = Data.parseTimestamp(dataPartenza);
 		return catalogo.getChiaviPrenotazione(ambiente, mezzo, partenza, arrivo, via, dp);
