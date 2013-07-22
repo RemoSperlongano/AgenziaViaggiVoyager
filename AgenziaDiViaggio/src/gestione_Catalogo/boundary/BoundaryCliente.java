@@ -42,9 +42,11 @@ public class BoundaryCliente {
 		
 	private static JButton bottoneOrdinaViaggi;
 	private static JButton bottoneInfoViaggi;
+	private static JButton bottoneGestioneProfiloPersonale;
 		
 	private OrdinaViaggiAA ascoltatoreOrdinaViaggi;
 	private InfoViaggiAA ascoltatoreInfoViaggi;
+	private GestioneProfiloPersonaleAA ascoltatoreGestioneProfiloPersonale;
 	    
 	    
 	public BoundaryCliente(){
@@ -127,12 +129,20 @@ public class BoundaryCliente {
 		bottoneInfoViaggi.setBounds(panelBottoni.getWidth()/5*3, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
 		panelBottoni.add(bottoneInfoViaggi);
 		
+		bottoneGestioneProfiloPersonale = new JButton("Gestione Profilo Personale");
+		bottoneGestioneProfiloPersonale.setBackground(Color.LIGHT_GRAY);
+		bottoneGestioneProfiloPersonale.setBounds(panelBottoni.getWidth()/5*3, panelBottoni.getHeight()/4, panelBottoni.getWidth()/5, panelBottoni.getHeight()/2);
+		panelBottoni.add(bottoneGestioneProfiloPersonale);
+		
 		//Ascoltatori per secondo pannello
 		ascoltatoreOrdinaViaggi = new OrdinaViaggiAA();
 		bottoneOrdinaViaggi.addActionListener(ascoltatoreOrdinaViaggi);
 		
 		ascoltatoreInfoViaggi = new InfoViaggiAA();
 		bottoneInfoViaggi.addActionListener(ascoltatoreInfoViaggi);
+		
+		ascoltatoreGestioneProfiloPersonale = new GestioneProfiloPersonaleAA();
+		bottoneGestioneProfiloPersonale.addActionListener(ascoltatoreGestioneProfiloPersonale);
 	    	
 	    	
 	    }
@@ -141,6 +151,7 @@ public class BoundaryCliente {
 			//Riattivo tutti i bottoni di questo Pannello
 			bottoneOrdinaViaggi.setEnabled(true); 
 			bottoneInfoViaggi.setEnabled(true);
+			bottoneGestioneProfiloPersonale.setEnabled(true);
 		}
 	    
 	    
@@ -207,6 +218,7 @@ public class BoundaryCliente {
 				//Disattivo tutti i bottoni di questo Pannello
 				bottoneOrdinaViaggi.setEnabled(false); 
 				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneProfiloPersonale.setEnabled(false);
 				
 				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
 				panelNext = new JPanel();
@@ -238,6 +250,7 @@ public class BoundaryCliente {
 				//Disattivo tutti i bottoni di questo Pannello
 				bottoneOrdinaViaggi.setEnabled(false); 
 				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneProfiloPersonale.setEnabled(false);
 				
 				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
 				panelNext = new JPanel();
@@ -250,6 +263,38 @@ public class BoundaryCliente {
 				
 				
 				new BoundaryVisitatore_InfoViaggi(panelNext, ruolo);  //Passo il resto del Pannello
+				
+				
+			}
+			
+		}
+		
+		
+		private class GestioneProfiloPersonaleAA implements ActionListener{
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				panelTitolo.setVisible(false);
+				panelTitolo.setVisible(true);
+				panelBottoni.setVisible(false);
+				panelBottoni.setVisible(true);
+				
+				//Disattivo tutti i bottoni di questo Pannello
+				bottoneOrdinaViaggi.setEnabled(false); 
+				bottoneInfoViaggi.setEnabled(false);
+				bottoneGestioneProfiloPersonale.setEnabled(false);
+				
+				// Pannello next: definisco le dimensioni del pannello da passare alla boundary del caso d'uso di competenza
+				panelNext = new JPanel();
+				panelNext.setSize(superPanel.getWidth(), superPanel.getHeight()/10*8);
+				panelNext.setLocation(0, superPanel.getHeight()/10*2+6);
+				panelNext.setBackground(Color.BLACK);
+				panelNext.setLayout(null); 			//ora il pannello puo' contenere oggetti
+				panelNext.setVisible(false);        //Si vede solo quando premo un bottone del pannello Bottone
+				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
+				
+				
+				new BoundaryCliente_GestioneProfiloPersonale(panelNext, ruolo);  //Passo il resto del Pannello
 				
 				
 			}

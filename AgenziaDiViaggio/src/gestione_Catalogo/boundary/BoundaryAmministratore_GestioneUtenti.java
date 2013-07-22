@@ -16,12 +16,12 @@ import javax.swing.JPanel;
  * Ivan Torre
  */
 public class BoundaryAmministratore_GestioneUtenti {
-
+	
 	
 	/*
 	 * Attributi di istanza
 	 */
-	
+	private String ruolo;
 
 	//Pannelli
 	private JPanel superPanel;
@@ -40,9 +40,9 @@ public class BoundaryAmministratore_GestioneUtenti {
     
     
     
-    public BoundaryAmministratore_GestioneUtenti(JPanel panelNext){
+    public BoundaryAmministratore_GestioneUtenti(JPanel panelNext, String ruolo){
     	
-		
+		this.ruolo = ruolo;
 		/*
 		 * 
 		 * Il superPanel di questa Boundary prende le dimensioni del pannello Passato
@@ -142,7 +142,7 @@ public class BoundaryAmministratore_GestioneUtenti {
 			superPanel.add(nextPanel);
 			nextPanel.setVisible(false);
 			
-			new BoundaryAmministratore_GestioneUtenti_OpzioniAdmin(nextPanel);
+			new BoundaryCliente_GestioneProfiloPersonale(nextPanel, ruolo);
 		
 		}
 		

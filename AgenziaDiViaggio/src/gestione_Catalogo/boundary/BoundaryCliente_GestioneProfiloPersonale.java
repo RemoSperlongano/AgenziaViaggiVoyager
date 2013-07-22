@@ -26,8 +26,9 @@ import javax.swing.JTextField;
  * Remo Sperlongano
  * Ivan Torre
  */
-public class BoundaryAmministratore_GestioneUtenti_OpzioniAdmin {
+public class BoundaryCliente_GestioneProfiloPersonale {
 
+	private String ruolo;
 	
 	/*
 	 * Attributi di istanza
@@ -103,8 +104,9 @@ public class BoundaryAmministratore_GestioneUtenti_OpzioniAdmin {
 
 	
 
-	public BoundaryAmministratore_GestioneUtenti_OpzioniAdmin(JPanel nextPanel) {
+	public BoundaryCliente_GestioneProfiloPersonale(JPanel nextPanel, String ruolo) {
 		
+		this.ruolo = ruolo;
 		controllore = new ControlloreGestioneUtenti();
 		
 		/*
@@ -402,8 +404,30 @@ public class BoundaryAmministratore_GestioneUtenti_OpzioniAdmin {
 			
 			superPanel.setVisible(false); 			    //chiude tutto questo pannello
 			
-			//riattiva i bottoni.
-			BoundaryAmministratore_GestioneUtenti.riattivaBottoni();
+			
+			//riattiva i bottoni in base al ruolo.
+			if (ruolo.equals("Progettista")){
+				BoundaryProgettista.riattivaBottoni();
+			}
+			
+			if (ruolo.equals("Promotore")){
+				BoundaryPromotore.riattivaBottoni();
+			}
+			
+			if (ruolo.equals("GestoreEccezioni")){
+				BoundaryGestoreEccezioni.riattivaBottoni();
+			}
+			if (ruolo.equals("Venditore")){
+				BoundaryVenditore.riattivaBottoni();
+			}
+			if (ruolo.equals("Cliente")){
+				BoundaryCliente.riattivaBottoni();
+			}
+			
+			if (ruolo.equals("Amministratore")){
+				BoundaryAmministratore_GestioneUtenti.riattivaBottoni();
+			}
+	
 						
 		}
 	}

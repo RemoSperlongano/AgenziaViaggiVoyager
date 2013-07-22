@@ -523,7 +523,7 @@ public class BoundaryAmministratore {
 				superPanel.add(panelNext);			//Anche se non si vede, va aggiunto lo stesso!!!
 				
 				
-				new BoundaryAmministratore_GestioneUtenti(panelNext);  //Passo il resto del Pannello
+				new BoundaryAmministratore_GestioneUtenti(panelNext, ruolo);  //Passo il resto del Pannello
 				
 			
 			}
