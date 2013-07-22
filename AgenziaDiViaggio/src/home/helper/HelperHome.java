@@ -14,7 +14,6 @@
 package home.helper;
 
 import java.util.Calendar;
-
 import gestioneutenti.model.competenze.Competenza;
 import gestioneutenti.model.ruoli.Ruolo;
 
@@ -22,7 +21,7 @@ public class HelperHome {
 	
 	private static HelperHome singletonHelperHome = null;
 	
-	private static String PATH_LOGO = "common/img/Voyager.png";
+	private static String PATH_LOGO = "common/img/voyager.png";
 
 	private HelperHome() {}
 	

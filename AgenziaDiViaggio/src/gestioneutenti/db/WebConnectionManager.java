@@ -31,10 +31,12 @@ public class WebConnectionManager implements ConnectionManager {
     private Connection connection;
 
 	private WebConnectionManager() {
+		System.out.println("sono nel connection manager");
 		try {
             Context initContext  = new InitialContext();
-            Context envContext  = (Context) initContext.lookup("java:/comp/env");
-            dataSource = (DataSource) envContext.lookup("jdbc/VoyagerDB");             
+            Context envContext  = (Context) initContext.lookup("java:/comp");
+            System.out.println("sono nel connection manager");
+            dataSource = (DataSource) envContext.lookup("jdbc/voyager");
         } catch (NamingException e) {
             e.printStackTrace();
         }
@@ -44,7 +46,7 @@ public class WebConnectionManager implements ConnectionManager {
 		if (singletonConnectionManager == null) {
 			singletonConnectionManager = new WebConnectionManager();
 		}
-		
+		System.out.println("sono nel connection manager");
 		return singletonConnectionManager;
 	}
 	

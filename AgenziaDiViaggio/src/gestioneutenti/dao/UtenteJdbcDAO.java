@@ -54,8 +54,8 @@ public class UtenteJdbcDAO implements UtenteDAO{
 			singletonUtenteDAO = new UtenteJdbcDAO();
 		}
 		
-		connectionManager = WebConnectionManager.getInstance();
-		
+		//connectionManager = WebConnectionManager.getInstance();
+		connectionManager = StandaloneConnectionManager.getInstance();	
 		return singletonUtenteDAO;
 	}
 

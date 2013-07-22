@@ -17,9 +17,9 @@
 
 .panelLogo {
 	margin-top: 150px;
+	align:center !important;
 }
 		
 .panelMain {
-	margin-left: 500px;
-	margin-right: 500px;		
+	align: center !important;
 }
