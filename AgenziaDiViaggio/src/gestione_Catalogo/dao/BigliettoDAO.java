@@ -100,7 +100,7 @@ public class BigliettoDAO extends DAO{
 	 * La Insert viene invocata dal costruttore di Biglietto, collegata alla creazione dell'oggetto
 	 * Questa particolare insert mi deve ritornare l'id da associare all'oggetto appena creato
 	 */
-	public Integer insertAndReturnId(Integer idPrenotazione, Integer idViaggiatore){
+	public synchronized Integer insertAndReturnId(Integer idPrenotazione, Integer idViaggiatore){
 		ResultSet rs;
 		try {
 			conn = Persistenza.getConnection();

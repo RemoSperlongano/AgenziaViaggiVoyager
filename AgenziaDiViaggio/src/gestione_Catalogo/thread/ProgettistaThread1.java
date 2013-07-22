@@ -55,7 +55,7 @@ public class ProgettistaThread1 implements Runnable{
 		controllore.aggiungiOffertaThread("Aria", "Charter", "Roma", "Milano", "(Diretto)", data, new Integer(100), new Integer(100));
 		controllore.aggiungiOffertaThread("Aria", "Charter", "Roma", "Parigi", "(Diretto)", data, new Integer(100), new Integer(100));
 		controllore.aggiungiOffertaThread("Aria", "Boing", "Roma", "Ginevra", "(Diretto)", data, new Integer(100), new Integer(100));
-		System.out.println("L'offerta saluta e muore...");
+		System.out.println("Progettista1 saluta e muore...");
 		
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -67,7 +67,7 @@ public class ProgettistaThread1 implements Runnable{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (OffertaException e) {
-			System.out.println("Il viaggio già esiste, il Progettista1 ucciso!");
+			System.out.println("L'offerta già esiste, il Progettista1 ucciso!");
 		} catch (QuantitaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

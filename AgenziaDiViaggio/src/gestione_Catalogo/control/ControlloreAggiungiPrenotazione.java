@@ -68,6 +68,53 @@ public class ControlloreAggiungiPrenotazione extends Controllore {
 		
 		
 	}
+	/*
+	 * 
+	 * Metodi per i Thread
+	 * 
+	 */
+	
+	
+	public void aggiungiPrenotazioneThread(String ambiente, String mezzo, String partenza, String arrivo, String via, String dataPartenza, ArrayList<String> listaNomi,ArrayList<String> listaCognomi, ArrayList<String> listaEmail) throws ParseException, IDEsternoElementoException, OffertaInesistenteException, PrenotazioneException, TrattaInesistenteException, PostiNonSufficientiException, QuantitaException, DirittiException, InterruptedException {
+		
+		// controllo che la lista dei biglietti non sia vuota
+		if (listaNomi.size() == 0){
+			throw new QuantitaException("Occorre compilare almeno un biglietto per inserire una Prenotazione.");
+		}
+		
+		//Controllo se esiste gia' una prenotazione
+		String nomeAcquirente = listaNomi.get(0) + " " + listaCognomi.get(0);
+		Data dataOfferta = Data.parseTimestamp(dataPartenza);
+		
+		if (catalogo.verificaEsistenzaPrenotazioneThread(ambiente,mezzo,partenza,arrivo,via,dataOfferta,nomeAcquirente)){
+			throw new PrenotazioneException("Prenotazione gia' esistente per questo viaggio.");
+		}
+		
+		//prendo la  Tratta
+		Tratta tratta = catalogo.getTrattaByValue(ambiente, mezzo, partenza, arrivo, via);
+		
+		//prendo l'offerta dalla Mappa
+		Offerta offerta = catalogo.getOffertaFromMappa(ambiente, mezzo, partenza, arrivo, via, dataOfferta);
+		Integer idOfferta = offerta.getIdOfferta();
+		
+		//controllo disponibilita' biglietti
+		if (offerta.getPosti() < listaNomi.size()){
+			throw new PostiNonSufficientiException("Non ci sono abbastanza Posti disponibili per soddisfare tale prenotazione.");
+		}
+		
+
+		offerta.assegnaPosti(listaNomi.size());
+		
+		
+		//creo una nuova Prenotazione
+		Prenotazione prenotazione = new Prenotazione(idOfferta, listaNomi, listaCognomi, listaEmail);
+		
+		//Aggiungo la prenotazione al catalogo
+		catalogo.aggiungiPrenotazioneAlCatalogo(prenotazione, offerta, tratta); // questo lo lascio con i metodi normale, tanto la verifica degli elementi in mappa l'ha fatta da verificaEsistenzaPrenotazione
+		log.aggiornaLogAggiungiPrenotazione("ThreadVenditore",ambiente, mezzo, partenza, arrivo, via, dataPartenza, nomeAcquirente);
+		
+		
+	}
 
 
 	

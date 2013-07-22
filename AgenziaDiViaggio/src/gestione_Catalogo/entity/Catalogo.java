@@ -413,6 +413,12 @@ public class Catalogo {
 		public boolean verificaEsistenzaOffertaThread(String ambiente, String mezzo, String partenza, String arrivo, String via, Data dataPartenza) throws IDEsternoElementoException, DirittiException, InterruptedException {
 			return mappaCatalogo.getElementoThread(ambiente).getElementoThread(mezzo).getElementoThread(partenza).getElementoThread(arrivo).getElementoThread(via).esistenzaOfferta(dataPartenza);
 		}
+		
+		
+		// Verifica se esista o meno una determinata prenotazione.
+		public boolean verificaEsistenzaPrenotazioneThread(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via, Data dataPartenza, String nomeAcquirente) throws OffertaInesistenteException, IDEsternoElementoException, DirittiException, InterruptedException{
+			return mappaCatalogo.getElementoThread(ambiente).getElementoThread(mezzo).getElementoThread(cittaPartenza).getElementoThread(cittaArrivo).getElementoThread(via).getOffertaThread(dataPartenza).esistenzaPrenotazione(nomeAcquirente);
+		}
 	
 
 

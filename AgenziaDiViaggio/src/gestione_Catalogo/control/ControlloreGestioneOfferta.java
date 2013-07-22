@@ -114,7 +114,7 @@ public class ControlloreGestioneOfferta extends Controllore {
 		
 		Offerta nuovaOfferta = new Offerta(idTratta, dataPartenza, durata, posti);
 		catalogo.aggiungiOffertaAlCatalogo(nuovaOfferta, tratta); // questo lo lascio con i metodi normale, tanto la verifica degli elementi in mappa l'ha fatta da verificaEsistenzaOfferta
-		log.aggiornaLogAggiungiOfferta("Thread", ambiente, mezzo, partenza, arrivo , via, dataPartenza, durata, posti);
+		log.aggiornaLogAggiungiOfferta("ThreadProgettista", ambiente, mezzo, partenza, arrivo , via, dataPartenza, durata, posti);
 	}
 	
 	

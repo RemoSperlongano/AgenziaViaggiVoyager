@@ -35,9 +35,9 @@ public class PromotoreThread4 implements Runnable {
 		try {
 			
 			System.out.println("Promotore4 In azione");
-			controllore.aggiungiViaggio("Terra", "Treno", "Tav", "Firenze", "Bologna", "", "");
-			controllore.aggiungiViaggio("Mare", "Panfilo", "", "Cagliari", "Ajaccio", "","");
-			controllore.aggiungiViaggio("Aria", "Boing", "", "Londra", "Brasilia", "", "");
+			controllore.aggiungiViaggioThread("Terra", "Treno", "Tav", "Firenze", "Bologna", "", "");
+			controllore.aggiungiViaggioThread("Mare", "Panfilo", "", "Cagliari", "Ajaccio", "","");
+			controllore.aggiungiViaggioThread("Aria", "Boing", "", "Londra", "Brasilia", "", "");
 			System.out.println("Promotore4 saluta e muore...");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

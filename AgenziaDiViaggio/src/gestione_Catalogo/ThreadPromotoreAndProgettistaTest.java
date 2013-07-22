@@ -3,7 +3,6 @@
  */
 package gestione_Catalogo;
 
-import gestione_Catalogo.control.ControlloreAggiungiPrenotazione;
 import gestione_Catalogo.control.ControlloreGestioneCatalogo;
 import gestione_Catalogo.control.ControlloreGestioneOfferta;
 import gestione_Catalogo.thread.ProgettistaThread1;
@@ -16,18 +15,13 @@ import gestione_Catalogo.thread.PromotoreThread2;
 import gestione_Catalogo.thread.PromotoreThread3;
 import gestione_Catalogo.thread.PromotoreThread4;
 import gestione_Catalogo.thread.PromotoreThread5;
-import gestione_Catalogo.thread.VenditoreThread1;
-import gestione_Catalogo.thread.VenditoreThread2;
-import gestione_Catalogo.thread.VenditoreThread3;
-import gestione_Catalogo.thread.VenditoreThread4;
-import gestione_Catalogo.thread.VenditoreThread5;
 
 /**
  * @authors
  * Remo Sperlongano
  * Ivan Torre
  */
-public class ThreadConcorrentiTest {
+public class ThreadPromotoreAndProgettistaTest {
 
 	/**
 	 * @param args
@@ -35,7 +29,6 @@ public class ThreadConcorrentiTest {
 	public static void main(String[] args) {
 		ControlloreGestioneOfferta controlloreProgettista = new ControlloreGestioneOfferta();
 		ControlloreGestioneCatalogo controllorePromotore = new ControlloreGestioneCatalogo();
-		ControlloreAggiungiPrenotazione controlloreVenditore = new ControlloreAggiungiPrenotazione();
 
 
 		ProgettistaThread1 dt1 = new ProgettistaThread1(controlloreProgettista);
@@ -51,13 +44,6 @@ public class ThreadConcorrentiTest {
 		PromotoreThread5 pt5 = new PromotoreThread5(controllorePromotore);
 		
 		
-		VenditoreThread1 vt1 = new VenditoreThread1(controlloreVenditore);
-		VenditoreThread2 vt2 = new VenditoreThread2(controlloreVenditore);
-		VenditoreThread3 vt3 = new VenditoreThread3(controlloreVenditore);
-		VenditoreThread4 vt4 = new VenditoreThread4(controlloreVenditore);
-		VenditoreThread5 vt5 = new VenditoreThread5(controlloreVenditore);
-		
-		
 		
 		
 		
@@ -71,26 +57,17 @@ public class ThreadConcorrentiTest {
 		Thread t8 = new Thread(pt3);
 		Thread t9 = new Thread(pt4);
 		Thread t10 = new Thread(pt5);
-		Thread t11 = new Thread(vt1);
-		Thread t12 = new Thread(vt2);
-		Thread t13 = new Thread(vt3);
-		Thread t14 = new Thread(vt4);
-		Thread t15 = new Thread(vt5);
 		
 		
-		t13.start();
+		
 		t5.start();
-		t14.start();
 		t1.start();
 		t3.start();
-		t15.start();
 		t7.start();
 		t9.start();
 		t6.start();
 		t10.start();
 		t4.start();
-		t12.start();
-		t11.start();
 		t8.start();
 		t2.start();
 		
@@ -104,5 +81,7 @@ public class ThreadConcorrentiTest {
 		
 
 	}
+
+
 
 }

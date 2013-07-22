@@ -87,7 +87,7 @@ public class PrenotazioneDAO extends DAO{
 	 * La Insert viene invocata dal costruttore di Prenotazione, collegata alla creazione dell'oggetto
 	 * Questa particolare insert mi deve ritornare l'id da associare all'oggetto appena creato
 	 */
-	public Integer insertAndReturnId(Integer idOfferta, String acquirente, Data dataInserimento) {
+	public synchronized Integer insertAndReturnId(Integer idOfferta, String acquirente, Data dataInserimento) {
 		ResultSet rs;
 		try {
 			conn = Persistenza.getConnection();

@@ -25,20 +25,20 @@ public class ThreadProgettistaTest {
 	public static void main(String[] args) {
 		ControlloreGestioneOfferta controllore = new ControlloreGestioneOfferta();
 		
-		ProgettistaThread1 pt1 = new ProgettistaThread1(controllore);
-		ProgettistaThread2 pt2 = new ProgettistaThread2(controllore);
-		ProgettistaThread3 pt3 = new ProgettistaThread3(controllore);
-		ProgettistaThread4 pt4 = new ProgettistaThread4(controllore);
-		ProgettistaThread5 pt5 = new ProgettistaThread5(controllore);
+		ProgettistaThread1 dt1 = new ProgettistaThread1(controllore);
+		ProgettistaThread2 dt2 = new ProgettistaThread2(controllore);
+		ProgettistaThread3 dt3 = new ProgettistaThread3(controllore);
+		ProgettistaThread4 dt4 = new ProgettistaThread4(controllore);
+		ProgettistaThread5 dt5 = new ProgettistaThread5(controllore);
 		
 		
 		
 		
-		Thread t1 = new Thread(pt1);
-		Thread t2 = new Thread(pt2);
-		Thread t3 = new Thread(pt3);
-		Thread t4 = new Thread(pt4);
-		Thread t5 = new Thread(pt5);
+		Thread t1 = new Thread(dt1);
+		Thread t2 = new Thread(dt2);
+		Thread t3 = new Thread(dt3);
+		Thread t4 = new Thread(dt4);
+		Thread t5 = new Thread(dt5);
 		
 		
 		

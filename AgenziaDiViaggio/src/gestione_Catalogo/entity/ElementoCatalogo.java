@@ -106,6 +106,10 @@ public abstract class ElementoCatalogo {
 	
 	public ElementoCatalogo getElementoThread(String k) throws IDEsternoElementoException, DirittiException, InterruptedException{
 		throw new DirittiException("Errore: getElementoThread in ElementoCatalogo. Operazione non ammessa.");
+	}
+	
+	public Offerta getOffertaThread(Data k) throws OffertaInesistenteException, DirittiException, InterruptedException{
+		throw new DirittiException("Errore: getOffertaThread in ElementoCatalogo. Operazione non ammessa.");
 	}
 	
 }	
