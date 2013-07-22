@@ -17,15 +17,13 @@ public final class Persistenza {
 	private static final String usr = "voyager";
 	private static final String pass = "voyager";
 	
-	private static Connection conn;
 	
 	public static Connection getConnection() {
-		if (Persistenza.conn == null) { 
-			try {
-				Persistenza.conn = DriverManager.getConnection(dbName, Persistenza.usr, Persistenza.pass);
-			} catch (SQLException sqle) {
-				sqle.printStackTrace();
-			}
+		    Connection conn = null;
+		    try {
+		     conn = DriverManager.getConnection(dbName, Persistenza.usr, Persistenza.pass);
+		   } catch (SQLException sqle) {
+		      sqle.printStackTrace();
 		}
 		return conn;
 	}

@@ -153,6 +153,7 @@ public class TrattaDAO extends DAO {
 				closeResource();
 				return a;
 			} else { // elemento non presente: inserisco, inizialmente, solo il valore associato
+				ps.close();
 				ps = conn.prepareStatement(insertByValueQuery);
 				ps.setInt(1, ambiente.getID());
 				ps.setInt(2, mezzo.getID());

@@ -61,22 +61,13 @@ public class VenditoreThread1 implements Runnable {
 		System.out.println("Venditore1 In azione");
 		riempiListe();
 		controllore.aggiungiPrenotazioneThread("Aria", "Charter", "Roma", "Milano", "(Diretto)", dataPartenza.stampaData(), listaNomi, listaCognomi, listaMail);
+		Thread.sleep(100);
 		riempiListe();
 		controllore.aggiungiPrenotazioneThread("Aria", "Charter", "Roma", "Parigi", "(Diretto)", dataPartenza.stampaData(), listaNomi, listaCognomi, listaMail);
+		Thread.sleep(100);
 		riempiListe();
 		controllore.aggiungiPrenotazioneThread("Aria", "Boing", "Roma", "Ginevra", "(Diretto)", dataPartenza.stampaData(), listaNomi, listaCognomi, listaMail);
 		
-		
-		data[1] = 6;
-		
-		dataPartenza = new Data(data[0], data[1], data[2], data[3], data[4]);
-		
-		riempiListe();
-		controllore.aggiungiPrenotazioneThread("Aria", "Charter", "Roma", "Milano", "(Diretto)", dataPartenza.stampaData(), listaNomi, listaCognomi, listaMail);
-		riempiListe();
-		controllore.aggiungiPrenotazioneThread("Aria", "Charter", "Roma", "Parigi", "(Diretto)", dataPartenza.stampaData(), listaNomi, listaCognomi, listaMail);
-		riempiListe();
-		controllore.aggiungiPrenotazioneThread("Aria", "Boing", "Roma", "Ginevra", "(Diretto)", dataPartenza.stampaData(), listaNomi, listaCognomi, listaMail);
 		System.out.println("Venditore1 saluta e muore...");
 		
 		} catch (InterruptedException e) {

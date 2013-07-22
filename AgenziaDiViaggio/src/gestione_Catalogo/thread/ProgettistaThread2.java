@@ -41,14 +41,19 @@ public void run() {
 	
 	System.out.println("Progettista2 In azione");
 	controllore.aggiungiOffertaThread("Terra", "Treno Tav", "Roma", "Milano", "(Diretto)", data, new Integer(100), new Integer(100));
+	Thread.sleep(100);
 	controllore.aggiungiOffertaThread("Terra", "Treno Inter", "Roma", "Parigi", "(Diretto)", data, new Integer(100), new Integer(100));
+	Thread.sleep(100);
 	controllore.aggiungiOffertaThread("Terra", "Treno Tav", "Roma", "Ginevra", "(Diretto)", data, new Integer(100), new Integer(100));
+	Thread.sleep(100);
 	
 	
 	data[1] = 6;
 	
 	controllore.aggiungiOffertaThread("Terra", "Treno Tav", "Roma", "Milano", "(Diretto)", data, new Integer(100), new Integer(100));
+	Thread.sleep(100);
 	controllore.aggiungiOffertaThread("Terra", "Treno Inter", "Roma", "Parigi", "(Diretto)", data, new Integer(100), new Integer(100));
+	Thread.sleep(100);
 	controllore.aggiungiOffertaThread("Terra", "Treno Tav", "Roma", "Ginevra", "(Diretto)", data, new Integer(100), new Integer(100));
 	System.out.println("Progettista2 saluta e muore...");
 	

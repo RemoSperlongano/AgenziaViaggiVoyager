@@ -100,6 +100,7 @@ public class OffertaDAO extends DAO {
 		try {
 			conn = Persistenza.getConnection();
 			ps = conn.prepareStatement(findByValueQuery);
+			System.out.println("L'id della tratta è: " + idTratta);
 			ps.setInt(1, idTratta);
 			ps.setTimestamp(2, dataPartenza.getDataForDB());
 			System.out.println(ps.toString());
@@ -216,7 +217,7 @@ public class OffertaDAO extends DAO {
 	 * Da invocare nei metodo set di Mezzo
 	 */
 
-	public void update(Offerta offerta){
+	public synchronized void update(Offerta offerta){
 		// TODO Auto-generated method stub
 		try {
 			conn = Persistenza.getConnection();

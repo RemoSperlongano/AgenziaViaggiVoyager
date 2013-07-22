@@ -44,14 +44,19 @@ public class ProgettistaThread4 implements Runnable{
 		
 		System.out.println("Progettista4 In azione");
 		controllore.aggiungiOffertaThread("Terra", "Treno Tav", "Firenze", "Bologna", "(Diretto)", data, new Integer(100), new Integer(100));
+		Thread.sleep(100);
 		controllore.aggiungiOffertaThread("Mare", "Panfilo", "Cagliari", "Ajaccio", "(Diretto)", data, new Integer(100), new Integer(100));
+		Thread.sleep(100);
 		controllore.aggiungiOffertaThread("Aria", "Boing", "Londra", "Brasilia", "(Diretto)", data, new Integer(100), new Integer(100));
+		Thread.sleep(100);
 		
 		
 		data[1] = 6;
 		
 		controllore.aggiungiOffertaThread("Terra", "Treno Tav", "Firenze", "Bologna", "(Diretto)", data, new Integer(100), new Integer(100));
+		Thread.sleep(100);
 		controllore.aggiungiOffertaThread("Mare", "Panfilo", "Cagliari", "Ajaccio", "(Diretto)", data, new Integer(100), new Integer(100));
+		Thread.sleep(100);
 		controllore.aggiungiOffertaThread("Aria", "Boing", "Londra", "Brasilia", "(Diretto)", data, new Integer(100), new Integer(100));
 		System.out.println("Progettista4 saluta e muore...");
 		

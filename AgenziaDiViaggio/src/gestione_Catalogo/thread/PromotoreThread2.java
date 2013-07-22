@@ -38,7 +38,9 @@ public class PromotoreThread2 implements Runnable {
 			
 			System.out.println("Promotore2 In azione");
 			controllore.aggiungiViaggioThread("Terra", "Treno", "Tav", "Roma", "Milano", "", "");
+			Thread.sleep(100);
 			controllore.aggiungiViaggioThread("Terra", "Treno", "Inter", "Roma", "Parigi", "","");
+			Thread.sleep(100);
 			controllore.aggiungiViaggioThread("Terra", "Treno", "Tav", "Roma", "Ginevra", "", "");
 			System.out.println("Promotore2 saluta e muore...");
 		} catch (ClassNotFoundException e) {
@@ -74,6 +76,9 @@ public class PromotoreThread2 implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (DirittiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
