@@ -103,6 +103,9 @@ public abstract class Controllore {
 				dateValide.add(dataOfferta.stampaData());
 			}
 		}
+		if (dateValide.isEmpty()){
+			throw new OfferteNonPresentiException("Non ci sono offerte valide per il viaggio.");
+		}
 		return dateValide;
 	}
 	
@@ -121,6 +124,9 @@ public abstract class Controllore {
 			if (dataOffertaRitorno.after(dataOfferta)){
 				dateValide.add(dataOffertaRitorno.stampaData());
 			}
+		}
+		if (dateValide.isEmpty()){
+			throw new OfferteNonPresentiException("Non ci sono offerte valide per il viaggio di ritorno.");
 		}
 		return dateValide;
 	}
