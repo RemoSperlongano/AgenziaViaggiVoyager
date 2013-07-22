@@ -113,11 +113,11 @@ public class CatalogoDAO extends DAO {
 				
 				//prendo l'id
 				Integer idTratta = rs.getInt(1);
-				System.out.println("idTratta" + idTratta.toString());
+				//System.out.println("idTratta" + idTratta.toString());
 				//creo oggetto ambiente
 				AmbienteDAO daoAmbiente = AmbienteDAO.getIstanza();
 				id = rs.getInt(2);
-				System.out.println("id " + id.toString());
+				//System.out.println("id " + id.toString());
 				valore = daoAmbiente.readOnlyValue(id);
 				System.out.println(valore.toString());
 				Class<?> c = Class.forName("gestione_Catalogo.entity."+valore);   // per classi in un package, va messo il nome del package!!!"

@@ -45,7 +45,7 @@ public class OffertaDAO extends DAO {
 			"VALUES(?, ?, ?, ?, ?, ?)";
 	
 	private static final String insertByValueQuery = 
-		"INSERT INTO offerta(idtratta,datapartenza,dataarrivo,posti, dataInserimento) " +
+		"INSERT INTO offerta(idtratta,datapartenza,dataarrivo,posti, datainserimento) " +
 		"VALUES(?, ?, ?, ?, ?)";
 	
 	private static final String updateQuery = 
@@ -105,7 +105,7 @@ public class OffertaDAO extends DAO {
 			System.out.println(ps.toString());
 			
 			rs = ps.executeQuery();
-			if(rs.next()) { // elemento gia'  presente, ritorno direttamente l'ID. 
+			if(rs.next()) { // elemento gia'ï¿½ presente, ritorno direttamente l'ID. 
 				Integer a = rs.getInt(1);
 				closeResource();
 				return a;
@@ -125,7 +125,7 @@ public class OffertaDAO extends DAO {
 				ps.setTimestamp(2, dataPartenza.getDataForDB());
 				rs = ps.executeQuery();
 				
-				if(rs.next()) { // elemento gia'  presente, ritorno direttamente l'ID. 
+				if(rs.next()) { // elemento gia'ï¿½ presente, ritorno direttamente l'ID. 
 					Integer a = rs.getInt(1);
 					closeResource();
 					return a;
