@@ -31,7 +31,6 @@ public class MappaCatalogo extends TreeMap<String,ElementoCatalogo> {
 			lucchetto.lock();
 			if(!containsKey(k)){
 				super.put(k, e);
-				System.out.println("Ho aggiunto l'elemento " + k + " ora libero tutti i thread!");
 				codaCondizione.signalAll();
 			}
 				
@@ -86,7 +85,7 @@ public class MappaCatalogo extends TreeMap<String,ElementoCatalogo> {
 		try {
 			lucchetto.lock();
 			while(!containsKey(k)){
-				System.out.println("Ho cercato di prendere l'elemento " + k + " ma non è in mappa per cui mi sono bloccato");
+				System.out.println("Ho cercato di prendere l'elemento " + k + " ma non ï¿½ in mappa per cui mi sono bloccato");
 				codaCondizione.await();
 			}
 			

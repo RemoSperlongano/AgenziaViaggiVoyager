@@ -28,7 +28,6 @@ public class MappaOfferte extends TreeMap<Data,Offerta>{
 			lucchetto.lock();
 			if(!containsKey(k)){
 				super.put(k, o);
-				System.out.println("Ho aggiunto l'offerta " + k.stampaData() + " ora libero tutti gli altri Thread! ");
 				codaCondizione.signalAll();
 			}
 		} finally {
@@ -68,7 +67,7 @@ public class MappaOfferte extends TreeMap<Data,Offerta>{
 		try {
 			lucchetto.lock();
 			while (!containsKey(k)){
-				System.out.println("Ho provato a prendere l'offerta " + k.stampaData() + " ma non è in mappa per cui mi sono bloccato.");
+				System.out.println("Ho provato a prendere l'offerta " + k.stampaData() + " ma non ï¿½ in mappa per cui mi sono bloccato.");
 				codaCondizione.await();
 			}
 		} finally{

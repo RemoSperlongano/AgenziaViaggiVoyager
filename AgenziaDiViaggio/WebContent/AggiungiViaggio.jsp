@@ -2,21 +2,25 @@
     pageEncoding="UTF-8"%>
 	
 	<!-- Si dichiara la variabile trattaBean e istanzia un oggetto TrattaBean -->
-	<jsp:useBean id="AggiungiTrattaBean" scope="request"
+	<jsp:useBean id="aggiungiTrattaBean" scope="request"
 	class="gestione_Catalogo.bean.AggiungiTrattaBean" />
     
-    <jsp:setProperty name="AggiungiTrattaBean" property="*" />
+    <jsp:setProperty name="aggiungiTrattaBean" property="*" />
 	<!-- Imposta automaticamente tutti gli attributi dell'oggetto aggiungiTrattaBean -->
 
 	<%
-	if (request.getParameter("ambiente") != null) {
-		
-		if (true) {
+	if (request.getParameter("Aggiungi Viaggio") != null) {
+		if (aggiungiTrattaBean.validate()) {
 			%>
-			<!-- Passa il controllo alla nuova pagina 
-			<jsp:forward page="AggiungiViaggio.jsp" />-->
+			<!-- Passa il controllo alla nuova pagina -->
+			<jsp:forward page="gestioneCatalogo.jsp" />
 			<%
 		}
+		
+		%>
+		<%-- Passa il controllo alla nuova pagina 
+		<jsp:forward page="AggiungiViaggio.jsp" />--%>
+		<%
 	}
 %>
     
@@ -30,18 +34,26 @@
 
 <body>
 
-<form>
-Ambiente: <select name="ambiente">
-<option value="aria">Aria</option>
-<option value="mare">Mare</option>
-<option value="terra" selected>Terra</option>
+<%-- 	<% if (request.getParameter("AggiungiViaggio") != null) { %>
+		<tr><td colspan=2 align="center"><p style="text-color:red;">Viaggio Inserito!</p></td></tr>
+	<% } else { %>
+		<tr><td colspan=2 align="center"><p style="text-color:red;">Viaggio _NON_ Inserito!</p></td></tr>
+	<% } %>
+ --%>	
+	
+<form method="POST">
+Ambiente: <select name="ambiente" id="ambiente">
+<option value="Aria">Aria</option>
+<option value="Mare">Mare</option>
+<option value="Terra" selected>Terra</option>
 </select>
 <br>
 
-Mezzo: <input type="text" name="Mezzo" id="Mezzo"><br>
+Mezzo: <input type="text" name="mezzo" id="mezzo"><br>
+Tipo Mezzo: <input type="text" name="tipoMezzo" id="tipoMezzo"><br>
 Città di partenza: <input type="text" name="partenza" id="partenza"><br>
 Città di arrivo: <input type="text" name="arrivo" id="arrivo"><br>
-Via: <input type="text" name="intermedia" id="intermedia"> <br>
+Via: <input type="text" name="via" id="via"> <br>
 Info: <input type="text" name="info" id="info">
 
  

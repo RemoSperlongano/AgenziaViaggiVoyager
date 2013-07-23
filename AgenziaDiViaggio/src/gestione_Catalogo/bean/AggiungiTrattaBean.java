@@ -1,5 +1,14 @@
 package gestione_Catalogo.bean;
 
+import java.lang.reflect.InvocationTargetException;
+
+import gestione_Catalogo.control.ControlloreGestioneCatalogo;
+import gestione_Catalogo.exception.CittaCoincidentiException;
+import gestione_Catalogo.exception.DirittiException;
+import gestione_Catalogo.exception.IDEsternoElementoException;
+import gestione_Catalogo.exception.TipoMezzoException;
+import gestione_Catalogo.exception.TrattaException;
+
 /**
  * @authors
  * Francesco Tomei
@@ -14,12 +23,40 @@ public class AggiungiTrattaBean {
 	private String arrivo;
 	private String via;
 	private String info;
-	
-	
+
 	public AggiungiTrattaBean(){
 	}
 
-
+	public boolean validate() {
+		System.out.println("sono nel validate");
+		if (this.getAmbiente() != null &&
+			this.getMezzo() != null &&
+			this.getPartenza() != null &&
+			this.getArrivo() != null)
+		{
+			System.out.println("sono nell'if");
+			if (this.getTipoMezzo() == null) { setTipoMezzo("");};
+			if (this.getVia() == null) { setVia(""); };
+			if (this.getInfo() == null) { setInfo("");};
+			System.out.println(this.toString());
+			ControlloreGestioneCatalogo controllore = new ControlloreGestioneCatalogo();
+			try {
+				System.out.println(this.toString());
+				controllore.aggiungiViaggio(ambiente, mezzo, tipoMezzo, partenza, arrivo, via, info);
+			} catch (ClassNotFoundException | NoSuchMethodException
+					| SecurityException | InstantiationException
+					| IllegalAccessException | IllegalArgumentException
+					| InvocationTargetException | TrattaException
+					| IDEsternoElementoException | CittaCoincidentiException
+					| TipoMezzoException | DirittiException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return false;
+			}
+			
+		} else { return false; }
+		return true;
+	} 
 
 	/**
 	 * @return the ambiente

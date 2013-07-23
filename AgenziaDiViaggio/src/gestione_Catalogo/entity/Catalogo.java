@@ -77,12 +77,12 @@ public class Catalogo {
 	
 	public boolean verificaEsistenzaViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via) throws IDEsternoElementoException, DirittiException{	
 		/*
-		 * Non va in exception: prima di prendere un elemento, verifica la sua esistenza...se c'è, lo prende, se non c'è, ritorna con false
+		 * Non va in exception: prima di prendere un elemento, verifica la sua esistenza...se c'ï¿½, lo prende, se non c'ï¿½, ritorna con false
 		 */
 
-		if (!mappaCatalogo.esistenzaElemento(ambiente)) return false;	//Se non c'è l'elemento ambiente nella prima mappa torna subito con false, altrimenti continua
+		if (!mappaCatalogo.esistenzaElemento(ambiente)) return false;	//Se non c'ï¿½ l'elemento ambiente nella prima mappa torna subito con false, altrimenti continua
 		ElementoCatalogo amb = mappaCatalogo.getElemento(ambiente);
-		if (!amb.esistenzaElemento(mezzo)) return false;  //se nn c'è il mezzo ritorna con false, altrimenti continua
+		if (!amb.esistenzaElemento(mezzo)) return false;  //se nn c'ï¿½ il mezzo ritorna con false, altrimenti continua
 		ElementoCatalogo mez = amb.getElemento(mezzo);
 		if (!mez.esistenzaElemento(cittaPartenza)) return false;
 		ElementoCatalogo part = mez.getElemento(cittaPartenza);
@@ -90,7 +90,7 @@ public class Catalogo {
 		ElementoCatalogo arr = part.getElemento(cittaArrivo);
 		if (!arr.esistenzaElemento(via)) return false;
 		
-		// Se tutti i controlli hanno dato esisto negativo, allora il viaggio è già presente
+		// Se tutti i controlli hanno dato esisto negativo, allora il viaggio ï¿½ giï¿½ presente
 		return true;
 	}
 	
@@ -118,7 +118,7 @@ public class Catalogo {
 	}
 	
 	
-	//Verifica se esiste un mezzo che è stato specificato con un tipo
+	//Verifica se esiste un mezzo che ï¿½ stato specificato con un tipo
 	public boolean verificaEsistenzaTipo(String mezzo){
 		for (int i=0; i<listaTratte.size(); i++){
 			
@@ -130,7 +130,7 @@ public class Catalogo {
 			
 		}
 			
-		//se non è ritornato con true e arriva qui, ritorna con false
+		//se non ï¿½ ritornato con true e arriva qui, ritorna con false
 		return false;
 			
 	}
@@ -263,6 +263,14 @@ public class Catalogo {
 	public Tratta getTrattaByValue(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via) throws TrattaInesistenteException{
 		for (Tratta tratta : listaTratte) {
 			if (tratta.verifyExistence(ambiente, mezzo, cittaPartenza, cittaArrivo, via))
+				return tratta;
+		}
+		throw new TrattaInesistenteException("Tratta non esistente.");
+	}
+	
+	public Tratta getTrattaByID(Integer idTratta) throws TrattaInesistenteException {
+		for (Tratta tratta : listaTratte) {
+			if (tratta.getID().equals(idTratta))
 				return tratta;
 		}
 		throw new TrattaInesistenteException("Tratta non esistente.");

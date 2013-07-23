@@ -59,6 +59,7 @@ public class LoginBean {
 			return s.equals("Promotore");
 		} catch (LoginFallitoException e) {
 			e.printStackTrace();
+			System.out.println("Sei un fallito.");
 		}
 		return false;
 	}

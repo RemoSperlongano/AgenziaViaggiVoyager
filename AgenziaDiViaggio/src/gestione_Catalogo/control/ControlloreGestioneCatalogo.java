@@ -38,7 +38,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 	public void aggiungiViaggio(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException, TipoMezzoException, DirittiException {	
 		if (via.equals("")) via = Via.DIRETTO;
 		
-		//Nel caso in cui ho selezionato un tipoMezzo devo verificare se il mezzo specificato non sia già stato introdotto in catalogo
+		//Nel caso in cui ho selezionato un tipoMezzo devo verificare se il mezzo specificato non sia giï¿½ stato introdotto in catalogo
 		if (!tipoMezzo.equals("")){
 			
 			if (catalogo.esistenzaMezzo(ambiente, mezzo)){
@@ -46,7 +46,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 			}
 			
 		} else {
-			//Nel caso in cui non ho selezionato un tipo di mezzo, devo verificare se il mezzo non sia già stato specificato in catalogo
+			//Nel caso in cui non ho selezionato un tipo di mezzo, devo verificare se il mezzo non sia giï¿½ stato specificato in catalogo
 			if(catalogo.verificaEsistenzaTipo(mezzo)){
 				throw new TipoMezzoException("Impossibile inserire un mezzo senza specificarne il tipo se esso e' gia' stato inserito in catalogo specificando il tipo.");
 			}
@@ -55,7 +55,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 		
 		
 		
-		//questo ciclo for mi serve per controllare se il mezzo passato da parametro ha già il tipo inserito (quindi se c'è uno spazio in mezzo)
+		//questo ciclo for mi serve per controllare se il mezzo passato da parametro ha giï¿½ il tipo inserito (quindi se c'ï¿½ uno spazio in mezzo)
 		for (int i = 0; i < mezzo.length(); i++){
 			char c = mezzo.charAt(i);
 			if (Character.isWhitespace(c)){
@@ -92,6 +92,15 @@ public class ControlloreGestioneCatalogo extends Controllore {
 		}
 	}
 
+	
+	public void rimuoviViaggio(Integer id) throws TrattaInesistenteException, IDEsternoElementoException, DirittiException, OffertaException {
+		Tratta tratta = catalogo.getTrattaByID(id);
+		if (catalogo.verificaEsistenzaOfferte(tratta.getAmbiente().getIDEsternoElemento(),tratta.getMezzo().getIDEsternoElemento(),tratta.getPartenza().getIDEsternoElemento(),tratta.getArrivo().getIDEsternoElemento(),tratta.getVia().getIDEsternoElemento())){
+			throw new OffertaException("Ci sono offerte attive! Il viaggio non puo' essere rimosso.");
+		}
+		catalogo.rimuoviViaggioDalCatalogo(tratta);
+		log.aggiornaLogRimuoviViaggio(sessione.getUsername(),tratta.getAmbiente().getIDEsternoElemento(),tratta.getMezzo().getIDEsternoElemento(),tratta.getPartenza().getIDEsternoElemento(),tratta.getArrivo().getIDEsternoElemento(),tratta.getVia().getIDEsternoElemento());
+	}
 	
 	public void rimuoviViaggio(String ambiente, String mezzo, String cittaPartenza, String cittaArrivo, String via) throws TrattaInesistenteException, OffertaException, IDEsternoElementoException, DirittiException {
 
@@ -444,7 +453,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 	public void aggiungiViaggioThread(String ambiente, String mezzo, String tipoMezzo, String cittaPartenza, String cittaArrivo, String via, String info) throws TrattaException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IDEsternoElementoException, CittaCoincidentiException, TipoMezzoException, DirittiException {	
 		if (via.equals("")) via = Via.DIRETTO;
 		
-		//Nel caso in cui ho selezionato un tipoMezzo devo verificare se il mezzo specificato non sia già stato introdotto in catalogo
+		//Nel caso in cui ho selezionato un tipoMezzo devo verificare se il mezzo specificato non sia giï¿½ stato introdotto in catalogo
 		if (!tipoMezzo.equals("")){
 			
 			if (catalogo.esistenzaMezzo(ambiente, mezzo)){
@@ -452,7 +461,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 			}
 			
 		} else {
-			//Nel caso in cui non ho selezionato un tipo di mezzo, devo verificare se il mezzo non sia già stato specificato in catalogo
+			//Nel caso in cui non ho selezionato un tipo di mezzo, devo verificare se il mezzo non sia giï¿½ stato specificato in catalogo
 			if(catalogo.verificaEsistenzaTipo(mezzo)){
 				throw new TipoMezzoException("Impossibile inserire un mezzo senza specificarne il tipo se esso e' gia' stato inserito in catalogo specificando il tipo.");
 			}
@@ -461,7 +470,7 @@ public class ControlloreGestioneCatalogo extends Controllore {
 		
 		
 		
-		//questo ciclo for mi serve per controllare se il mezzo passato da parametro ha già il tipo inserito (quindi se c'è uno spazio in mezzo)
+		//questo ciclo for mi serve per controllare se il mezzo passato da parametro ha giï¿½ il tipo inserito (quindi se c'ï¿½ uno spazio in mezzo)
 		for (int i = 0; i < mezzo.length(); i++){
 			char c = mezzo.charAt(i);
 			if (Character.isWhitespace(c)){
