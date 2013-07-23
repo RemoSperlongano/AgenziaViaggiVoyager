@@ -80,7 +80,7 @@
 			</tr>
 			<tr> <td colspan=2></td> </tr>
 			<tr>
-				<td colspan=2 align="center"> <input name="Aggiungi Viaggio" type="submit" id="AggiungiViaggio" value="AggiungiViaggio"> </td>
+				<td colspan=2 align="center"> <input name="Rimuovi Viaggio" type="submit" id="RimuoviViaggio" value="RimuoviViaggio"> </td>
 			</tr>
 </table>
 
