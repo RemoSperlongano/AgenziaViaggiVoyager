@@ -33,7 +33,8 @@
 </head>
 
 <body>
-
+<br> <a href="/AgenziaDiViaggio/gestioneCatalogo.jsp" >Torna alla gestione Catalogo</a> 
+<br>  <br> 
 <%-- 	<% if (request.getParameter("AggiungiViaggio") != null) { %>
 		<tr><td colspan=2 align="center"><p style="text-color:red;">Viaggio Inserito!</p></td></tr>
 	<% } else { %>
@@ -42,23 +43,46 @@
  --%>	
 	
 <form method="POST">
-Ambiente: <select name="ambiente" id="ambiente">
-<option value="Aria">Aria</option>
-<option value="Mare">Mare</option>
-<option value="Terra" selected>Terra</option>
-</select>
-<br>
-
-Mezzo: <input type="text" name="mezzo" id="mezzo"><br>
-Tipo Mezzo: <input type="text" name="tipoMezzo" id="tipoMezzo"><br>
-Città di partenza: <input type="text" name="partenza" id="partenza"><br>
-Città di arrivo: <input type="text" name="arrivo" id="arrivo"><br>
-Via: <input type="text" name="via" id="via"> <br>
-Info: <input type="text" name="info" id="info">
-
- 
-
-<input name="Aggiungi Viaggio" type="submit" id="AggiungiViaggio" value="AggiungiViaggio">
+<table>
+			<tr>
+				<td> Ambiente: </td>
+				<td>
+					<select name="ambiente" id="ambiente">
+					<option value="Aria">Aria</option>
+					<option value="Mare">Mare</option>
+					<option value="Terra" selected>Terra</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> Mezzo: </td>
+				<td><input type="text" name="mezzo" id="mezzo"> </td>
+			</tr>
+			<tr>
+				<td> Tipo Mezzo: </td>
+				<td> <input type="text" name="tipoMezzo" id="tipoMezzo"> </td>
+			</tr>
+			<tr>
+				<td> Città di partenza: </td>
+ 				<td> <input type="text" name="partenza" id="partenza"> </td>
+ 			</tr>
+			<tr>
+				<td> Città di arrivo: </td>
+ 				<td> <input type="text" name="arrivo" id="arrivo"> </td>
+			</tr>
+			<tr>
+				<td> Via: </td>
+ 				<td> <input type="text" name="via" id="via"> </td>
+			</tr>
+			<tr>
+				<td> Info: </td>
+ 				<td> <input type="text" name="info" id="info"> </td>
+ 			</tr>
+			<tr><td colspan=2></td> </tr>
+			<tr>
+				<td colspan=2 align="center"> <input name="Aggiungi Viaggio" type="submit" id="AggiungiViaggio" value="AggiungiViaggio"> </td>
+			</tr>
+</table>
 
 </form>
 </body>
